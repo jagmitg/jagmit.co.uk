@@ -1,0 +1,65 @@
+---
+import { Image } from "@astrojs/image/components";
+
+type Props = {
+  src: string;
+  alt: string;
+  className?: string;
+  lazy?: boolean;
+  isOptimization: boolean;
+  width?: number;
+  height?: number;
+};
+
+const {
+  src,
+  alt,
+  className,
+  lazy = true,
+  isOptimization,
+  width,
+  height,
+} = Astro.props;
+const placeholderColor =
+  "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mOcfPRvPQAHHgLWeG8FbgAAAABJRU5ErkJggg==";
+const loading = lazy ? "lazy" : "eager";
+
+if (isOptimization && (!width || !height)) {
+  throw new Error("width/height should be required");
+}
+---
+
+{
+  src === "" ? (
+    <div
+      style={{
+        width: `${width}px`,
+        height: `${height}px`,
+        background: `url('${placeholderColor}')`,
+      }}
+      class={className}
+    />
+  ) : isOptimization ? (
+    <Image
+      src={src}
+      class={className}
+      alt={alt}
+      format="webp"
+      fit="contain"
+      position="left top"
+      background="rgba(0,0,0,0)"
+      width={width! * 4}
+      height={height! * 4}
+      loading={loading}
+    />
+  ) : (
+    <img
+      src={src}
+      class={className}
+      decoding="async"
+      alt={alt}
+      loading={loading}
+      onerror={`this.onerror=null; this.src='${placeholderColor}'`}
+    />
+  )
+}

@@ -1,0 +1,39 @@
+---
+import Card from "./Card.astro";
+import Image from "./Image.astro";
+import { parseTags } from "../utils/blog";
+import { formatDate } from "../utils/formatDate";
+import type { CollectionEntry } from "astro:content";
+
+type Props = {
+  url: string;
+  frontmatter: CollectionEntry<"blog">["data"];
+};
+
+const { url, frontmatter } = Astro.props;
+---
+
+<Card>
+  <a href={url}>
+    <h2 class="text-blue-300">{frontmatter.title}</h2>
+    <div class="flex gap-2 mt-2">
+      <Image
+        src={frontmatter.image}
+        alt={frontmatter.title}
+        className="w-20 h-20"
+        isOptimization
+        width={20 * 4}
+        height={20 * 4}
+      />
+      <div class="flex justify-between gap-4 flex-col">
+        <p class="text-sm">{frontmatter.description}</p>
+        <div class="flex gap-3 items-center text-gray-300 text-sm">
+          <span>{formatDate(new Date(frontmatter.date))}</span>
+          <div class="flex gap-2">
+            {parseTags(frontmatter.tags).map((tag) => <span>#{tag}</span>)}
+          </div>
+        </div>
+      </div>
+    </div>
+  </a>
+</Card>

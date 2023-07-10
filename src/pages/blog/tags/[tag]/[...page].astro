@@ -1,0 +1,54 @@
+---
+import BlogCardItem from "../../../../components/BlogCardItem.astro";
+import TagsBox from "../../../../components/TagsBox.astro";
+import Layout from "../../../../layouts/Layout.astro";
+import MainLayout from "../../../../layouts/MainLayout.astro";
+import { getAllTags, getBlogs, parseTags } from "../../../../utils/blog";
+import BlogDescription from "../../../../components/BlogDescription.astro";
+import type { GetStaticPathsOptions, Page } from "astro";
+import Pagination from "../../../../components/Pagination.astro";
+import { BLOG_DESCRIPTION } from "../../../../constants";
+import type { CollectionEntry } from "astro:content";
+
+export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
+  const posts = await getBlogs();
+  const tags = getAllTags(posts);
+
+  return tags.map((tag) =>
+    paginate(
+      posts.filter((post) =>
+        parseTags(post.data.tags).some((current) => current === tag)
+      ),
+      {
+        params: { tag },
+        pageSize: 20,
+      }
+    )
+  );
+}
+
+const allPosts = await getBlogs();
+const allTags = getAllTags(allPosts);
+const { tag } = Astro.params;
+const { page } = Astro.props as {
+  page: Page<CollectionEntry<"blog">>;
+};
+---
+
+<Layout description={BLOG_DESCRIPTION}>
+  <MainLayout title={`Blog / ${tag}`}>
+    <BlogDescription slot="description" />
+    <TagsBox tags={allTags} slot="optional-content" />
+    <a class="text-right text-blue-300 mb-4 block" href="/blog"
+      >👋 Go back to blog/</a
+    >
+    <div class="gap-4 flex flex-col">
+      {
+        page.data.map(({ data, slug }) => (
+          <BlogCardItem url={`/blog/${slug}`} frontmatter={data} />
+        ))
+      }
+    </div>
+    <Pagination prev={page.url.prev} next={page.url.next} />
+  </MainLayout>
+</Layout>

@@ -1,0 +1,14 @@
+cover
+build
+node_modules
+npm-debug.log
+.cache
+.env
+.eslintcache
+dist
+.astro
+.lighthouseci
+test-results
+service_account_secret.json
+.githooks/*
+!/.githooks/pre-commit

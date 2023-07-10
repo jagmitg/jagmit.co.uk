@@ -1,0 +1,31 @@
+---
+type Props = {
+  href: string;
+  name: string;
+  text?: string;
+  className?: string;
+  textClassName?: string;
+};
+
+const { href, name, text, className = "w-5 h-5", textClassName } = Astro.props;
+---
+
+<a
+  href={href}
+  target="_blank"
+  class="hover:text-blue-300 text-gray-300 flex gap-2 items-center"
+  aria-label={`Link for ${name}`}
+>
+  <svg
+    class={className}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <slot />
+  </svg>
+  {text && <span class={textClassName}>{text}</span>}
+</a>

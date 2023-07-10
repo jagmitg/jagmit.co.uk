@@ -1,0 +1,47 @@
+---
+import Layout from "../layouts/Layout.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+import Image from "../components/Image.astro";
+import Link from "../components/Link.astro";
+import Code from "../components/Code.astro";
+---
+
+<Layout>
+  <MainLayout title="About">
+    <span slot="description">
+      Hi, I'm Yuta Hiroto! I'm a Node.js and webpack committer and I like
+      development and sleeping 😴
+    </span>
+    <div class="flex gap-5 flex-col sm:flex-row max-w-fit mx-auto items-center">
+      <div class="m-auto min-w-fit">
+        <Image
+          src="/images/me.png"
+          className="rounded-full w-24 h-24 md:w-32 md:h-32"
+          alt="hiroppy"
+          width={32 * 4}
+          height={32 * 4}
+          isOptimization
+          lazy={false}
+        />
+      </div>
+      <div class="flex-auto xl:text-lg">
+        <p>
+          Hiroppy is a JavaScript engineer and works on some OSS projects and
+          Japanese communities. I have lived in Japan and Ireland, and now I
+          work in <Link name="Yuimedi" href="https://yuimedi.com/en" isBlank>
+            Yuimedi, inc
+          </Link>
+          that is a medical IT company as VPoE in Japan.
+        </p>
+        <br />
+        <p>
+          If you have requests for talking, writing, and so on, feel free to
+          ping me on Twitter or <Code>hello[at]hiroppy.me</Code> . If you would like
+          to commission some work, please check <Link name="jobs" href="/jobs">
+            my skills
+          </Link> first.
+        </p>
+      </div>
+    </div>
+  </MainLayout>
+</Layout>
