@@ -4,44 +4,67 @@ import MainLayout from "../layouts/MainLayout.astro";
 import Image from "../components/Image.astro";
 import Link from "../components/Link.astro";
 import Code from "../components/Code.astro";
+import { getCollection } from "astro:content";
+
+const posts = (await getCollection("repo")).sort(
+  (b, a) => a.data.date.valueOf() - b.data.date.valueOf()
+);
 ---
 
 <Layout>
   <MainLayout title="About">
-    <span slot="description">
-      Hi, I'm Yuta Hiroto! I'm a Node.js and webpack committer and I like
-      development and sleeping 😴
-    </span>
-    <div class="flex gap-5 flex-col sm:flex-row max-w-fit mx-auto items-center">
-      <div class="m-auto min-w-fit">
-        <Image
-          src="/images/me.png"
-          className="rounded-full w-24 h-24 md:w-32 md:h-32"
-          alt="hiroppy"
-          width={32 * 4}
-          height={32 * 4}
-          isOptimization
-          lazy={false}
-        />
-      </div>
-      <div class="flex-auto xl:text-lg">
-        <p>
-          Hiroppy is a JavaScript engineer and works on some OSS projects and
-          Japanese communities. I have lived in Japan and Ireland, and now I
-          work in <Link name="Yuimedi" href="https://yuimedi.com/en" isBlank>
-            Yuimedi, inc
-          </Link>
-          that is a medical IT company as VPoE in Japan.
-        </p>
-        <br />
-        <p>
-          If you have requests for talking, writing, and so on, feel free to
-          ping me on Twitter or <Code>hello[at]hiroppy.me</Code> . If you would like
-          to commission some work, please check <Link name="jobs" href="/jobs">
-            my skills
-          </Link> first.
-        </p>
-      </div>
+    <p class="prose prose-neutral dark:prose-invert">
+      Hiroppy is a JavaScript engineer and works on some OSS projects and
+      Japanese communities. I have lived in Japan and Ireland, and now I work in <Link
+        name="Yuimedi"
+        href="https://yuimedi.com/en"
+        isBlank
+      >
+        Yuimedi, inc
+      </Link>
+      that is a medical IT company as VPoE in Japan.
+    </p>
+    <br />
+    <p>
+      If you have requests for talking, writing, and so on, feel free to ping me
+      on Twitter or <Code>hello[at]hiroppy.me</Code> . If you would like to commission
+      some work, please check <Link name="jobs" href="/jobs">my skills</Link> first.
+    </p>
+    <div class="grid gap-4 grid-cols-3 grid-rows-3">
+      {
+        posts
+          .sort(() => Math.random() - 0.5)
+          .slice(0, 6)
+          .map((post) => (
+            <a
+              href={post.data.repo}
+              class="p-4 border border-neutral-200 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-800 rounded flex items-center justify-between px-3 py-4 w-full"
+            >
+              <div class="flex flex-col">
+                <p class="font-bold text-neutral-900 dark:text-neutral-100">
+                  {post.data.title}
+                </p>
+                <p class="text-neutral-600 dark:text-neutral-400">
+                  Date Published: {post.data.date}
+                </p>
+              </div>
+              <div class="text-neutral-700 dark:text-neutral-300">
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 12 12"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M2.07102 11.3494L0.963068 10.2415L9.2017 1.98864H2.83807L2.85227 0.454545H11.8438V9.46023H10.2955L10.3097 3.09659L2.07102 11.3494Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </div>
+            </a>
+          ))
+      }
     </div>
   </MainLayout>
 </Layout>
