@@ -6,22 +6,22 @@ export const BLOG_DESCRIPTION =
 export const PAGE_LINKS = <const>[
   {
     icon: "😵‍💫",
-    title: "About",
+    title: "about",
     href: "/",
   },
   {
     icon: "👨‍💻",
-    title: "Jobs",
+    title: "jobs",
     href: "/jobs",
   },
   {
     icon: "🗒",
-    title: "Blog",
+    title: "blog",
     href: "/blog",
   },
   {
     icon: "🗒",
-    title: "Contact",
+    title: "contact",
     href: "/contact",
   },
 ];

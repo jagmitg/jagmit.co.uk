@@ -3,6 +3,7 @@ import { writeFile, readdir, unlink } from "fs/promises";
 import path from "path";
 
 const targetFolder = "./src/content/repo"; // Define the target folder here
+const excludedRepos = ["jagmitg"]; // Define the repos you want to exclude here
 
 function deleteAllMDFiles() {
   return readdir(targetFolder).then((files) => {
@@ -18,7 +19,7 @@ function createMDFiles() {
     .then((response) => response.json())
     .then((data) => {
       const writePromises = data
-        .filter((repo) => !repo.fork)
+        .filter((repo) => !repo.fork && !excludedRepos.includes(repo.name))
         .map((repo) => {
           let content = `---
 title: ${repo.name}

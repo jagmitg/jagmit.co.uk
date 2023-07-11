@@ -212,8 +212,6 @@ require.__defineExports = (exports, exporters) => {
 
 AST を弄りたい人は astexplorer を使うと便利です。
 
-<OG url="https://astexplorer.net" />
-
 CJS ではコードの書き換えは`require('module')` ->`require(1)`のように moduleId のみの書き換えでしたが ESM では呼び出し元等を編集する必要があります。
 
 ESM も CJS とモジュールのマップ作成の処理は共通なので、コードの走査処理だけが ESM 時に新しく追加されます。

@@ -27,43 +27,53 @@ const posts = (await getCollection("repo")).sort(
     <br />
     <p>
       If you have requests for talking, writing, and so on, feel free to ping me
-      on Twitter or <Code>hello[at]hiroppy.me</Code> . If you would like to commission
+      on Twitter or <Code>jag[at]jagmit.co.uk</Code> . If you would like to commission
       some work, please check <Link name="jobs" href="/jobs">my skills</Link> first.
     </p>
-    <div class="grid gap-4 grid-cols-3 grid-rows-3">
+    <div class="grid gap-4 grid-cols-1 grid-rows-2 mt-5 lg:grid-cols-2">
       {
         posts
           .sort(() => Math.random() - 0.5)
           .slice(0, 6)
-          .map((post) => (
-            <a
-              href={post.data.repo}
-              class="p-4 border border-neutral-200 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-800 rounded flex items-center justify-between px-3 py-4 w-full"
-            >
-              <div class="flex flex-col">
-                <p class="font-bold text-neutral-900 dark:text-neutral-100">
-                  {post.data.title}
-                </p>
-                <p class="text-neutral-600 dark:text-neutral-400">
-                  Date Published: {post.data.date}
-                </p>
-              </div>
-              <div class="text-neutral-700 dark:text-neutral-300">
-                <svg
-                  width="12"
-                  height="12"
-                  viewBox="0 0 12 12"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M2.07102 11.3494L0.963068 10.2415L9.2017 1.98864H2.83807L2.85227 0.454545H11.8438V9.46023H10.2955L10.3097 3.09659L2.07102 11.3494Z"
-                    fill="currentColor"
-                  />
-                </svg>
-              </div>
-            </a>
-          ))
+          .map((post) => {
+            const date = new Date(post.data.date);
+            const formattedDate = date.toLocaleDateString("en-GB", {
+              day: "2-digit",
+              month: "short",
+              year: "numeric",
+            });
+
+            return (
+              <a
+                href={post.data.repo}
+                target="_blank"
+                class="p-4 border border-neutral-200 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-800 rounded flex items-center justify-between px-3 py-4 w-full"
+              >
+                <div class="flex flex-col">
+                  <p class="font-bold text-neutral-900 dark:text-neutral-100">
+                    {post.data.title}
+                  </p>
+                  <p class="text-neutral-600 dark:text-neutral-400">
+                    Published: {formattedDate}
+                  </p>
+                </div>
+                <div class="text-neutral-700 dark:text-neutral-300">
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M2.07102 11.3494L0.963068 10.2415L9.2017 1.98864H2.83807L2.85227 0.454545H11.8438V9.46023H10.2955L10.3097 3.09659L2.07102 11.3494Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </div>
+              </a>
+            );
+          })
       }
     </div>
   </MainLayout>

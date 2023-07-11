@@ -1,17 +1,33 @@
 ---
+import Image from "../components/Image.astro";
 import { PAGE_LINKS } from "../constants";
 ---
 
-<header id="home" class="-ml-[8px] tracking-tight">
+<header
+  id="home"
+  class="-ml-[8px] tracking-tight border-b-2 border-b-slate-700"
+>
   <nav class="flex items-center justify-between flex-wrap p-6">
     <div class="flex items-center flex-shrink-0 mr-6">
-      <h1 class="font-bold text-2xl">
-        Hi, i'm jag &#128513; <br />nice to meet you! &#128075;
-      </h1>
+      <div class="flex flex-row items-center">
+        <Image
+          src="/images/me.png"
+          className="rounded-full w-24 h-24 md:w-32 md:h-32 mr-3"
+          alt="Jagmit Gabba"
+          width={32 * 4}
+          height={32 * 4}
+          isOptimization
+          lazy={false}
+        />
+
+        <h1 class="font-bold text-2xl align-middle">
+          <span>Hi, i'm jag &#128513; <br />nice to meet you! &#128075;</span>
+        </h1>
+      </div>
     </div>
 
-    <div class="w-full block flex-grow lg:flex lg:w-auto">
-      <div class="text-sm lg:flex-grow text-right">
+    <div class="heading-nav w-full block flex-grow lg:flex sm:w-auto">
+      <div class="text-lg lg:flex-grow text-right">
         {
           PAGE_LINKS.map(({ title, href, icon }) => {
             let currentPage = Astro.url.pathname === href;
@@ -31,3 +47,32 @@ import { PAGE_LINKS } from "../constants";
     </div>
   </nav>
 </header>
+<style>
+  .heading-nav a {
+    position: relative;
+    display: inline-block;
+    z-index: 0;
+  }
+  /* .heading-nav a:not(.current-page-class):hover::after { */
+  .heading-nav a.current-page-class::after,
+  .heading-nav a:not(.current-page-class):hover::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 0.5rem;
+    background-color: rgb(215 215 215);
+    transition: all ease-in-out;
+    transition-delay: 0.1s;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .heading-nav a:hover::after,
+  .heading-nav a:focus::after,
+  .heading-nav a:active::after {
+    width: 100%;
+  } /*!sc*/
+</style>
