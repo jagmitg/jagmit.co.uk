@@ -69,7 +69,6 @@ export async function getMeta(url, title) {
   };
 }
 
-// 取得したものはsiteのキーの中にいれて、判断はキーが有るか行う
 export async function crawlSites(filename) {
   const sites = await collectAlreadyHavingSites(filename);
   const data = await readData(filename);

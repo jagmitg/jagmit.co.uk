@@ -1,60 +1,33 @@
 ---
-import SnsIcon from "./SnsIcon.astro";
 import { PAGE_LINKS } from "../constants";
-import GitHub from "./icons/GitHub.astro";
-import Arrow from "./icons/Arrow.astro";
-
-const currentMenu = PAGE_LINKS.find(({ href }) =>
-  href === "/" ? Astro.url.pathname === href : Astro.url.pathname.includes(href)
-) ?? {
-  icon: "😵",
-  title: "not found",
-};
 ---
 
-<header class="h-10 border-t-5 sticky top-0 z-50">
-  <div class="container mx-auto px-4 flex items-center justify-between h-full">
-    <div class="text-gray-300">
-      <div class="flex lg:hidden items-center gap-1">
-        <input id="check" type="checkbox" name="menu" class="hidden peer" />
-        <label for="check" class="select-none"
-          >{currentMenu.icon} {currentMenu.title}</label
-        >
-        <svg
-          class="w-4 h-4 shrink-0 peer-checked:rotate-180 text-gray-400"
-          fill="currentColor"
-          viewBox="0 0 20 20"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <Arrow />
-        </svg>
-        <div
-          class="hidden peer-checked:block absolute top-10 z-50 w-32 rounded-lg border shadow-sm bg-gray-700 border-gray-600 py-2"
-        >
-          <ul class="flex gap-2 flex-col">
-            {
-              PAGE_LINKS.map(({ title, href, icon }) => (
-                <li class="mx-2">
-                  <a href={href} class="w-full block">
-                    {icon} {title}
-                  </a>
-                </li>
-              ))
-            }
-          </ul>
-        </div>
+<header id="home" class="-ml-[8px] tracking-tight">
+  <nav class="flex items-center justify-between flex-wrap p-6">
+    <div class="flex items-center flex-shrink-0 mr-6">
+      <h1 class="font-bold text-2xl">
+        Hi, i'm jag &#128513; <br />nice to meet you! &#128075;
+      </h1>
+    </div>
+
+    <div class="w-full block flex-grow lg:flex lg:w-auto">
+      <div class="text-sm lg:flex-grow text-right">
+        {
+          PAGE_LINKS.map(({ title, href, icon }) => {
+            let currentPage = Astro.url.pathname === href;
+            return (
+              <a
+                href={href}
+                class={`transition-all block mt-4 lg:inline-block lg:mt-0 ${
+                  currentPage ? "current-page-class" : ""
+                } hover:text-neutral-800 dark:hover:text-neutral-200`}
+              >
+                <span class="relative py-1 px-2">{title}</span>
+              </a>
+            );
+          })
+        }
       </div>
     </div>
-    <div class="flex gap-4">
-      <slot name="action" />
-      <SnsIcon href="https://github.com/hiroppy/site" name="GitHub">
-        <GitHub />
-      </SnsIcon>
-    </div>
-  </div>
+  </nav>
 </header>
-<style is:global>
-  header {
-    border-top: 5px solid rgb(182, 52, 17);
-  }
-</style>
