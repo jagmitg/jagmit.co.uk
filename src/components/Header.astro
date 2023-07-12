@@ -21,7 +21,7 @@ import { PAGE_LINKS } from "../constants";
         />
 
         <h1 class="font-bold text-2xl align-middle">
-          <span>Hi, i'm jag &#128513; <br />nice to meet you! &#128075;</span>
+          <span>Hi, i'm jag &#128513; <br />nice to meet you!</span>
         </h1>
       </div>
     </div>
@@ -67,6 +67,47 @@ import { PAGE_LINKS } from "../constants";
   });
 </script>
 <style>
+  header h1 span {
+    position: relative;
+    display: inline-block;
+  }
+
+  header h1 span::after {
+    content: "";
+    position: absolute;
+    bottom: 5px;
+    right: -20px;
+    display: inline-block;
+    background-color: #000;
+    vertical-align: top;
+    width: 17px;
+    height: 3px;
+    animation: blink 1s step-end infinite;
+  }
+
+  @-webkit-keyframes blink {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes blink {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
   .heading-nav a {
     position: relative;
     display: inline-block;
