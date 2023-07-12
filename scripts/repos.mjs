@@ -2,32 +2,39 @@ import fetch from "node-fetch";
 import { writeFile, readdir, unlink } from "fs/promises";
 import path from "path";
 
-const targetFolder = "./src/content/repo"; // Define the target folder here
-const excludedRepos = ["jagmitg"]; // Define the repos you want to exclude here
+const REPO_FETCH_SETTINGS = {
+  username: "jagmitg",
+  targetFolder: "./src/content/repo",
+  excludedRepos: ["jagmitg"],
+};
 
 function deleteAllMDFiles() {
-  return readdir(targetFolder).then((files) => {
+  return readdir(REPO_FETCH_SETTINGS.targetFolder).then((files) => {
     const deletePromises = files
       .filter((file) => file.endsWith(".mdx"))
-      .map((file) => unlink(path.join(targetFolder, file)));
+      .map((file) => unlink(path.join(REPO_FETCH_SETTINGS.targetFolder, file)));
     return Promise.all(deletePromises);
   });
 }
 
 function createMDFiles() {
-  fetch("https://api.github.com/users/jagmitg/repos")
+  fetch(`https://api.github.com/users/${REPO_FETCH_SETTINGS.username}/repos`)
     .then((response) => response.json())
     .then((data) => {
       const writePromises = data
-        .filter((repo) => !repo.fork && !excludedRepos.includes(repo.name))
+        .filter(
+          (repo) =>
+            !repo.fork && !REPO_FETCH_SETTINGS.excludedRepos.includes(repo.name)
+        )
         .map((repo) => {
           let content = `---
-title: ${repo.name}
+title: Repo ${repo.name}
 date: ${new Date().toISOString().slice(0, 10)}
+description: Repo ${repo.name} details fetched from GitHub API
 repo: ${repo.html_url}
 ---`;
           return writeFile(
-            path.join(targetFolder, `${repo.name}.mdx`),
+            path.join(REPO_FETCH_SETTINGS.targetFolder, `${repo.name}.mdx`),
             content
           );
         });

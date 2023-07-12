@@ -8,6 +8,13 @@
     "moduleResolution": "node",
     // Enable JSON imports.
     "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "allowJs": true,
+    "importHelpers": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+
     // Enable stricter transpilation for better output.
     "isolatedModules": true,
     // Astro will directly run your TypeScript code, no transpilation needed.
