@@ -36,12 +36,12 @@ const { page } = Astro.props as {
 ---
 
 <Layout description={BLOG_DESCRIPTION}>
-  <MainLayout title={`Blog / ${tag}`}>
+  <MainLayout>
     <BlogDescription slot="description" />
-    <TagsBox tags={allTags} slot="optional-content" />
-    <a class="text-right text-blue-300 mb-4 block" href="/blog"
-      >👋 Go back to blog/</a
-    >
+    <div class="flex justify-between items-center py-6">
+      <h2 class="text-2xl"><a href="/blog">Blog</a> / {tag}</h2>
+      <TagsBox tags={allTags} slot="optional-content" />
+    </div>
     <div class="gap-4 flex flex-col">
       {
         page.data.map(({ data, slug }) => (

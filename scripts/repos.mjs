@@ -28,9 +28,8 @@ function createMDFiles() {
         )
         .map((repo) => {
           let content = `---
-title: Repo ${repo.name}
+title: ${repo.name}
 date: ${new Date().toISOString().slice(0, 10)}
-description: Repo ${repo.name} details fetched from GitHub API
 repo: ${repo.html_url}
 ---`;
           return writeFile(

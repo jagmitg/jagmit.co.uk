@@ -3,7 +3,8 @@ import { getBlogs } from "../utils/blog";
 import { formatDate } from "../utils/formatDate";
 import Link from "./Link.astro";
 
-const posts = import.meta.env.PROD ? await getBlogs() : [];
+const posts = await getBlogs();
+// const posts = import.meta.env.PROD ? await getBlogs() : [];
 ---
 
 <div class="grid grid-cols-2">
@@ -23,7 +24,7 @@ const posts = import.meta.env.PROD ? await getBlogs() : [];
       href="https://abouthiroppy.hatenablog.jp/"
       name="技術探し"
       isBlank
-      className="text-inherit hover:text-blue-300"
+      className="text-inherit hover:text-blue-500"
       text="技術探し"
     />
   </span>

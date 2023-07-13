@@ -1,10 +1,10 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import MainLayout from "../layouts/MainLayout.astro";
-import Image from "../components/Image.astro";
 import Link from "../components/Link.astro";
 import Code from "../components/Code.astro";
 import { getCollection } from "astro:content";
+import { formatDate } from "../utils/formatDate";
 
 const posts = (await getCollection("repo")).sort(
   (b, a) => a.data.date.valueOf() - b.data.date.valueOf()
@@ -36,13 +36,6 @@ const posts = (await getCollection("repo")).sort(
           .sort(() => Math.random() - 0.5)
           .slice(0, 6)
           .map((post) => {
-            const date = new Date(post.data.date);
-            const formattedDate = date.toLocaleDateString("en-GB", {
-              day: "2-digit",
-              month: "short",
-              year: "numeric",
-            });
-
             return (
               <a
                 href={post.data.repo}
@@ -54,7 +47,7 @@ const posts = (await getCollection("repo")).sort(
                     {post.data.title}
                   </p>
                   <p class="text-neutral-600 dark:text-neutral-400">
-                    Published: {formattedDate}
+                    Published: {formatDate(new Date(post.data.date))}
                   </p>
                 </div>
                 <div class="text-neutral-700 dark:text-neutral-300">

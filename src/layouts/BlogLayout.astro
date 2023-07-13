@@ -2,8 +2,7 @@
 import { formatDate } from "../utils/formatDate";
 import Layout from "./Layout.astro";
 import MainLayout from "./MainLayout.astro";
-import Paper from "../components/Paper.astro";
-import ShareButtons from "../components/ShareButtons.astro";
+// import ShareButtons from "../components/ShareButtons.astro";
 import { getBlogs, parseTags } from "../utils/blog";
 import SnsIcon from "../components/SnsIcon.astro";
 import GitHub from "../components/icons/GitHub.astro";
@@ -21,7 +20,7 @@ const diffDate =
   (new Date().getTime() - new Date(frontmatter.date).getTime()) /
   (60 * 60 * 1000 * 24);
 const { title, url, description, image, tags } = frontmatter;
-const posts = import.meta.env.PROD ? await getBlogs() : [];
+const posts = await getBlogs();
 const index = posts.findIndex(
   ({ slug }) =>
     slug ===
@@ -36,9 +35,29 @@ const githubUrl = `https://github.com/hiroppy/site/tree/main/src/content/${Astro
 ---
 
 <Layout title={title} description={description} image={image}>
-  <MainLayout title={title}>
+  <MainLayout>
+    <div class="flex flex-wrap pb-2">
+      <div class="w-3/4">
+        <h2 class="text-2xl">{title}</h2>
+      </div>
+      <div class="w-1/4 flex flex-col items-end">
+        <div class="text-right text-lg">{date}</div>
+        <div class="text-right">
+          <SnsIcon
+            name="GitHub"
+            href={githubUrl}
+            text="Edit"
+            className="w-4 h-4 text-blue-500"
+            textClassName="text-blue-500"
+          >
+            <GitHub />
+          </SnsIcon>
+        </div>
+      </div>
+    </div>
+
     <BlogDescription slot="description" />
-    <Paper className="overflow-y-auto" slot="optional-content">
+    <!-- <Paper className="overflow-y-auto" slot="optional-content">
       <div class="p-4">
         <p>🔖 Post Contents</p>
         <ol class="mt-4">
@@ -53,19 +72,8 @@ const githubUrl = `https://github.com/hiroppy/site/tree/main/src/content/${Astro
           }
         </ol>
       </div>
-    </Paper>
-    <div class="flex gap-4 mb-10 justify-end items-center text-sm">
-      <p>{date}</p>
-      <SnsIcon
-        name="GitHub"
-        href={githubUrl}
-        text="Edit"
-        className="w-4 h-4 text-blue-300"
-        textClassName="text-blue-300"
-      >
-        <GitHub />
-      </SnsIcon>
-    </div>
+    </Paper> -->
+
     <div class="flex gap-4 flex-col">
       {
         parseTags(tags).includes("javascript") && diffDate > 365 && (
@@ -77,12 +85,12 @@ const githubUrl = `https://github.com/hiroppy/site/tree/main/src/content/${Astro
         )
       }
     </div>
-    <div class="blog text-gray-300">
+    <div class="blog text-gray-900">
       <slot />
     </div>
     <hr class="border-gray-600 mt-12" />
     <div>
-      <ShareButtons url={`${Astro.site?.origin}${url!}`} title={title} />
+      <!-- <ShareButtons url={`${Astro.site?.origin}${url!}`} title={title} /> -->
       {
         index !== -1 && (
           <Pagination
@@ -105,14 +113,14 @@ const githubUrl = `https://github.com/hiroppy/site/tree/main/src/content/${Astro
 </Layout>
 <style is:global>
   .blog {
-    font-size: 15px;
+    font-size: 16px;
     @apply sm:text-base;
   }
   .blog h1,
   .blog h2,
   .blog h3,
   .blog h4 {
-    @apply font-semibold text-gray-50 mt-10 mb-1;
+    @apply font-semibold text-gray-700 mt-10 mb-1;
   }
   .blog h1 {
     @apply text-2xl;
@@ -142,10 +150,10 @@ const githubUrl = `https://github.com/hiroppy/site/tree/main/src/content/${Astro
     @apply p-4 text-sm rounded-lg;
   }
   .blog a {
-    @apply text-blue-300;
+    @apply text-blue-500;
   }
   .blog hr {
-    @apply my-4 border-gray-500;
+    @apply my-4 border-gray-700;
   }
   .blog img {
     @apply mx-auto;

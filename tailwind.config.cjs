@@ -23,16 +23,7 @@ module.exports = {
     },
     extend: {
       colors: {
-        main: {
-          DEFAULT: "#3498db",
-          dark: darken("#3498db", 0.7),
-        },
-        javascript: {
-          DEFAULT: "#f1e05a",
-          dark: darken("#f1e05a", 0.7),
-        },
-        typescript: "#3178c6",
-        css: "#563d7c",
+        profile_blue: "#b9e1ff",
       },
       animation: {
         "fade-in": "fadeIn 0.3s ease-in-out",

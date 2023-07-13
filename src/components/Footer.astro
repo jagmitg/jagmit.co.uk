@@ -1,3 +1,12 @@
+---
+import SnsIcon from "../components/SnsIcon.astro";
+import Twitter from "../components/icons/Twitter.astro";
+import GitHub from "../components/icons/GitHub.astro";
+import Facebook from "../components/icons/Facebook.astro";
+import LinkedIn from "../components/icons/LinkedIn.astro";
+import Rss from "../components/icons/Rss.astro";
+---
+
 <footer class="h-20 border-t-2 border-t-slate-700">
   <div
     class="container mx-auto px-4 flex items-center justify-between h-full text-sm text-black-400"
@@ -5,5 +14,29 @@
     <span>
       © {new Date().getFullYear()} - Copyright jagmit.co.uk, All Rights Reserved.
     </span>
+    <div class="w-64 hidden lg:block shrink-0">
+      <div class="flex flex-col gap-4">
+        <div class="flex justify-around items-center p-4">
+          <SnsIcon href="https://twitter.com/about_hiroppy" name="Twitter">
+            <Twitter />
+          </SnsIcon>
+          <SnsIcon href="https://github.com/hiroppy" name="GitHub">
+            <GitHub />
+          </SnsIcon>
+          <SnsIcon
+            href="https://www.facebook.com/yuta.hiroto0429/"
+            name="Facebook"
+          >
+            <Facebook />
+          </SnsIcon>
+          <SnsIcon href="https://jp.linkedin.com/in/hiroppy" name="Linkedin">
+            <LinkedIn />
+          </SnsIcon>
+          <SnsIcon href="/blog/rss.xml" name="RSS">
+            <Rss />
+          </SnsIcon>
+        </div>
+      </div>
+    </div>
   </div>
 </footer>
