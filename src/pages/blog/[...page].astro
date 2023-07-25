@@ -1,6 +1,8 @@
 ---
 import type { GetStaticPathsOptions, Page } from "astro";
 import type { CollectionEntry } from "astro:content";
+import { getCollection } from "astro:content";
+
 import Pagination from "../../components/Pagination.astro";
 import TagsBox from "../../components/TagsBox.astro";
 import { BLOG_DESCRIPTION } from "../../constants";
@@ -14,9 +16,19 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
 }
 
 const allTags = getAllTags(await getBlogs());
+let repository = await getCollection("repo");
+const blog = await getCollection("blog");
+// Combining the two collections into one array
+let combinedCollection = [...repository, ...blog];
+console.dir(repository, { depth: null });
+
+// const repository = await getCollection("repo");
+
 const { page } = Astro.props as {
   page: Page<CollectionEntry<"blog">>;
 };
+
+// console.log(repository);
 ---
 
 <Layout description={BLOG_DESCRIPTION}>

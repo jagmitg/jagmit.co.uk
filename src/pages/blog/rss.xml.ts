@@ -7,7 +7,7 @@ const site = new URL("blog", import.meta.env.SITE).href;
 
 export const get = () =>
   rss({
-    title: "hiroppy's Blog",
+    title: "Jagmit's Blog",
     description: "a blog for hiroppy's life and programming",
     site,
     items: posts.map((post) => ({

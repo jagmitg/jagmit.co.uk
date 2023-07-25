@@ -19,7 +19,7 @@ const indices = headings.filter((heading) => heading.depth < 4);
 const diffDate =
   (new Date().getTime() - new Date(frontmatter.date).getTime()) /
   (60 * 60 * 1000 * 24);
-const { title, url, description, image, tags } = frontmatter;
+const { title, description, image, tags } = frontmatter;
 const posts = await getBlogs();
 const index = posts.findIndex(
   ({ slug }) =>
@@ -36,7 +36,7 @@ const githubUrl = `https://github.com/hiroppy/site/tree/main/src/content/${Astro
 
 <Layout title={title} description={description} image={image}>
   <MainLayout>
-    <div class="flex flex-wrap pb-2">
+    <div class="flex flex-wrap pt-3">
       <div class="w-3/4">
         <h2 class="text-2xl">{title}</h2>
       </div>
