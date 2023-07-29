@@ -9,45 +9,79 @@ import { BLOG_DESCRIPTION } from "../../constants";
 import Layout from "../../layouts/Layout.astro";
 import MainLayout from "../../layouts/MainLayout.astro";
 import { getAllTags, getBlogs } from "../../utils/blog";
+import { getRepos } from "../../utils/repo";
 import BlogCardItem from "../../components/BlogCardItem.astro";
 
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
-  return paginate(await getBlogs(), { pageSize: 20 });
+  const allPosts = await Astro.glob("../../content/**/*.md*");
+  const formattedPosts = allPosts
+    .sort(
+      (a: any, b: any) =>
+        new Date(a.frontmatter.date).getTime() -
+        new Date(b.frontmatter.date).getTime()
+    )
+    .reverse();
+
+  return paginate(formattedPosts, {
+    pageSize: 10,
+  });
 }
 
-const allTags = getAllTags(await getBlogs());
-let repository = await getCollection("repo");
-const blog = await getCollection("blog");
-// Combining the two collections into one array
-let combinedCollection = [...repository, ...blog];
-console.dir(repository, { depth: null });
+// export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
+//   return paginate(await getBlogs(), { pageSize: 20 });
+// }
+
+// const allTags = getAllTags(await getBlogs());
+// const allRepository = await getCollection("repo");
+// const blog = await getCollection("blog");
+// // Combining the two collections into one array
+// let combinedCollection = [...allRepository, ...blog];
+// console.dir(allRepository, { depth: null });
 
 // const repository = await getCollection("repo");
 
-const { page } = Astro.props as {
-  page: Page<CollectionEntry<"blog">>;
-};
+const { page } = Astro.props;
 
-// console.log(repository);
+console.log(page.data[0].frontmatter);
 ---
 
 <Layout description={BLOG_DESCRIPTION}>
   <MainLayout>
     <div class="flex justify-between items-center py-6">
       <h2 class="text-2xl">Read my blog...</h2>
-      <TagsBox tags={allTags} slot="optional-content" />
+      <!-- <TagsBox tags={allTags} slot="optional-content" /> -->
     </div>
 
     {
-      page.data.map(({ data, slug }) => (
-        <>
-          <BlogCardItem url={slug} frontmatter={data} />
-        </>
+      page.data.map(({ frontmatter }: any) => (
+        <a class="blogItemLink" href={`blog/${frontmatter.url}`}>
+          <div class="flex flex-wrap">
+            <div class="w-1/3 md:w-1/4 lg:w-1/6 p-4" />
+            <div class="w-2/3 md:w-3/4 lg:w-5/6 p-4">
+              <h2 class="font-bold mb-2">{frontmatter.title}</h2>
+              <p class="text-gray-600 mb-4 text-sm">
+                {frontmatter.description}
+              </p>
+              <div class="flex flex-wrap">
+                <span class="bg-gray-200 text-gray-700 rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2" />
+              </div>
+            </div>
+          </div>
+        </a>
       ))
     }
+
+    <!-- {
+      page.data.map(({ dat }) => (
+        <>
+          <BlogCardItem url={"testing"} frontmatter={page.frontmatter} />
+        </>
+      ))
+    } -->
     <Pagination prev={page.url.prev} next={page.url.next} />
   </MainLayout>
 </Layout>
+
 <style is:global>
   a.blogItemLink {
     border: 1px solid #fff;

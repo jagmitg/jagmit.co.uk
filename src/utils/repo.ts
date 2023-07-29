@@ -3,7 +3,7 @@ import type { CollectionEntry } from "astro:content";
 
 export type Collections = CollectionEntry<"repo">[];
 
-export async function getBlogs() {
+export async function getRepos() {
   const posts = await getCollection("repo");
 
   return sortByDate(posts);
