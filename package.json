@@ -10,7 +10,8 @@
     "test:update": "docker run --rm --network host -v $(pwd):/work/ -w /work/ -it mcr.microsoft.com/playwright:focal /bin/bash -c 'npm test -- -u'",
     "fmt": "prettier -w --plugin-search-dir=. .",
     "fmt:check": "prettier --check .",
-    "cache": "node scripts/generatecache.mjs"
+    "cache": "node scripts/generatecache.mjs",
+    "repo": "node scripts/repos.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.35.1",

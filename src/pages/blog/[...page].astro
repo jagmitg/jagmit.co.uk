@@ -42,7 +42,7 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
 
 const { page } = Astro.props;
 
-console.log(page.data[0].frontmatter);
+console.log(page.data[0].url);
 ---
 
 <Layout description={BLOG_DESCRIPTION}>
@@ -52,15 +52,18 @@ console.log(page.data[0].frontmatter);
       <!-- <TagsBox tags={allTags} slot="optional-content" /> -->
     </div>
 
-    {
-      page.data.map(({ frontmatter }: any) => (
-        <a class="blogItemLink" href={`blog/${frontmatter.url}`}>
+    <!-- {
+      page.data.map((data: any) => (
+        <a class="blogItemLink" href={`blog/${data.url}`}>
           <div class="flex flex-wrap">
-            <div class="w-1/3 md:w-1/4 lg:w-1/6 p-4" />
+            <div class="w-1/3 md:w-1/4 lg:w-1/6 p-4">
+              {data.frontmatter.image}
+              {data.frontmatter.title}
+            </div>
             <div class="w-2/3 md:w-3/4 lg:w-5/6 p-4">
-              <h2 class="font-bold mb-2">{frontmatter.title}</h2>
+              <h2 class="font-bold mb-2">{data.frontmatter.title}</h2>
               <p class="text-gray-600 mb-4 text-sm">
-                {frontmatter.description}
+                {data.frontmatter.description}
               </p>
               <div class="flex flex-wrap">
                 <span class="bg-gray-200 text-gray-700 rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2" />
@@ -69,15 +72,14 @@ console.log(page.data[0].frontmatter);
           </div>
         </a>
       ))
-    }
-
-    <!-- {
-      page.data.map(({ dat }) => (
+    } -->
+    {
+      page.data.map((data: any) => (
         <>
-          <BlogCardItem url={"testing"} frontmatter={page.frontmatter} />
+          <BlogCardItem url={"testing"} frontmatter={data.frontmatter} />
         </>
       ))
-    } -->
+    }
     <Pagination prev={page.url.prev} next={page.url.next} />
   </MainLayout>
 </Layout>

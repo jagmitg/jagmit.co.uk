@@ -15,6 +15,7 @@ const repoCollection = defineCollection({
     date: z.date(),
     title: z.string(),
     repo: z.string(),
+    tags: z.string(),
   }),
 });
 

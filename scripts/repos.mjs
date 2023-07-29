@@ -27,15 +27,26 @@ function createMDFiles() {
             !repo.fork && !REPO_FETCH_SETTINGS.excludedRepos.includes(repo.name)
         )
         .map((repo) => {
-          let content = `---
+          return fetch(
+            `https://api.github.com/repos/${REPO_FETCH_SETTINGS.username}/${repo.name}/languages`
+          )
+            .then((langResponse) => langResponse.json())
+            .then((languages) => {
+              let repoDate = new Date(repo.created_at)
+                .toISOString()
+                .slice(0, 10);
+              let languageKeys = Object.keys(languages).join(", ");
+              let content = `---
 title: ${repo.name}
-date: ${new Date().toISOString().slice(0, 10)}
+date: ${repoDate}
 repo: ${repo.html_url}
+tags: ${languageKeys}
 ---`;
-          return writeFile(
-            path.join(REPO_FETCH_SETTINGS.targetFolder, `${repo.name}.mdx`),
-            content
-          );
+              return writeFile(
+                path.join(REPO_FETCH_SETTINGS.targetFolder, `${repo.name}.mdx`),
+                content
+              );
+            });
         });
       return Promise.all(writePromises);
     })

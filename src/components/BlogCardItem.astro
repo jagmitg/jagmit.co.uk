@@ -1,6 +1,6 @@
 ---
 import Image from "./Image.astro";
-// import { parseTags } from "../utils/blog";
+import { parseTags } from "../utils/blog";
 import { formatDate } from "../utils/formatDate";
 import type { CollectionEntry } from "astro:content";
 
@@ -15,14 +15,14 @@ const { url, frontmatter } = Astro.props;
 <a class="blogItemLink" href={`blog/${url}`}>
   <div class="flex flex-wrap">
     <div class="w-1/3 md:w-1/4 lg:w-1/6 p-4">
-      <Image
+      <!-- <Image
         src={frontmatter.image}
         alt={frontmatter.title}
         className="w-30 h-30"
         isOptimization
         width={20 * 4}
         height={20 * 4}
-      />
+      /> -->
     </div>
     <div class="w-2/3 md:w-3/4 lg:w-5/6 p-4">
       <h2 class="font-bold mb-2">{frontmatter.title}</h2>
@@ -33,13 +33,13 @@ const { url, frontmatter } = Astro.props;
         >
           {formatDate(new Date(frontmatter.date))}
         </span>
-        <!-- {
+        {
           parseTags(frontmatter.tags).map((tag) => (
             <span class="bg-gray-200 text-gray-700 rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2">
               #{tag}
             </span>
           ))
-        } -->
+        }
       </div>
     </div>
   </div>
