@@ -7,14 +7,11 @@ const { tags } = Astro.props;
 ---
 
 <div class="flex flex-wrap">
-  {
-    tags.map((tag) => (
-      <a
-        class="py-1 px-3 mr-2 mb-2 rounded-lg bg-blue-300 shadow-sm border text-gray-900 text-sm hover:text-white"
-        href={`/blog/tags/${tag}`}
-      >
-        {tag}
-      </a>
-    ))
-  }
+  <select
+    class="py-1 px-3 mr-2 mb-2 rounded-lg bg-blue-300 shadow-sm border text-gray-900 text-sm hover:text-white"
+    onchange="location.href=`/blog/tags/${this.value}`"
+  >
+    <option selected disabled>tags...</option>
+    {tags.map((tag) => <option value={tag}>{tag}</option>)}
+  </select>
 </div>
