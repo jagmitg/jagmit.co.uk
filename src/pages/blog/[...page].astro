@@ -6,7 +6,7 @@ import Layout from "../../layouts/Layout.astro";
 import MainLayout from "../../layouts/MainLayout.astro";
 import BlogCardItem from "../../components/BlogCardItem.astro";
 import TagsBox from "../../components/TagsBox.astro";
-import { getAllTags, getBlogs } from "../../utils/blog";
+import { getBlogsAndRepos, getAllTags } from "../../utils/collections";
 
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
   const allPosts = await Astro.glob("../../content/**/*.{md,mdx}");
@@ -38,7 +38,10 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
     pageSize: 3,
   });
 }
-const allTags = getAllTags(await getBlogs());
+
+const { allCollections } = await getBlogsAndRepos();
+const allTags = getAllTags(allCollections);
+
 const { page } = Astro.props;
 ---
 
