@@ -3,6 +3,7 @@ import type { CollectionEntry } from "astro:content";
 
 export type BlogEntry = CollectionEntry<"blog">;
 export type RepoEntry = CollectionEntry<"repo">;
+export type BlogOrRepoEntry = BlogEntry | RepoEntry; // exporting BlogOrRepoEntry type
 
 export async function getBlogsAndRepos() {
   const blogs: BlogEntry[] = await getCollection("blog");

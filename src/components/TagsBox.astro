@@ -8,10 +8,254 @@ const { tags } = Astro.props;
 
 <div class="flex flex-wrap">
   <select
-    class="py-1 px-3 mr-2 mb-2 rounded-lg bg-blue-300 shadow-sm border text-gray-900 text-sm hover:text-white"
+    class="customSelectbox"
     onchange="location.href=`/blog/tags/${this.value}`"
   >
     <option selected disabled>tags...</option>
     {tags.map((tag) => <option value={tag}>{tag}</option>)}
   </select>
 </div>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", function () {
+    var defaultselectbox = document.querySelector(".customSelectbox");
+    var options = defaultselectbox.querySelectorAll("option");
+    var numOfOptions = options.length;
+
+    // hide select tag
+    defaultselectbox.classList.add("s-hidden");
+
+    // wrapping default selectbox into custom select block
+    var cusSelBlock = document.createElement("div");
+    cusSelBlock.className = "cusSelBlock";
+    defaultselectbox.parentNode.insertBefore(cusSelBlock, defaultselectbox);
+    cusSelBlock.appendChild(defaultselectbox);
+
+    // creating custom select div
+    var selectLabel = document.createElement("div");
+    selectLabel.className = "selectLabel";
+    cusSelBlock.appendChild(selectLabel);
+
+    // getting default select box selected value
+    selectLabel.textContent = options[0].textContent;
+
+    // appending options to custom un-ordered list tag
+    var cusList = document.createElement("ul");
+    cusList.className = "options";
+    cusSelBlock.appendChild(cusList);
+
+    // generating custom list items
+    for (var i = 0; i < numOfOptions; i++) {
+      var li = document.createElement("li");
+      li.textContent = options[i].textContent;
+      li.setAttribute("rel", options[i].value);
+      cusList.appendChild(li);
+    }
+
+    // open-list and close-list items functions
+    var openList = function () {
+      for (var i = 0; i < numOfOptions; i++) {
+        var li = cusList.children[i];
+        li.style.transform = "translateY(" + (i * 100 + 100) + "%)";
+        li.style.transitionDelay = i * 30 + "ms";
+      }
+    };
+
+    var closeList = function () {
+      for (var i = 0; i < numOfOptions; i++) {
+        var li = cusList.children[i];
+        li.style.transform = "translateY(0)";
+        li.style.transitionDelay = "0ms";
+      }
+      cusList.children[1].style.transform = "translateY(2px)";
+      cusList.children[2].style.transform = "translateY(4px)";
+    };
+
+    // click event functions
+    selectLabel.addEventListener("click", function () {
+      this.classList.toggle("active");
+      if (this.classList.contains("active")) {
+        openList();
+        focusItems();
+      } else {
+        closeList();
+      }
+    });
+
+    cusList.addEventListener("click", function (e) {
+      if (e.target && e.target.nodeName == "LI") {
+        Array.from(cusList.children).forEach((child) =>
+          child.classList.remove("active")
+        );
+        closeList();
+        selectLabel.classList.remove("active");
+        selectLabel.textContent = e.target.textContent;
+        defaultselectbox.value = e.target.textContent;
+        document.querySelector(".selected-item p span").textContent =
+          selectLabel.textContent;
+      }
+    });
+
+    function focusItems() {
+      var active = null;
+      cusList.addEventListener("focusin", function (e) {
+        if (e.target && e.target.nodeName == "LI") {
+          if (active) active.classList.remove("active");
+          active = e.target;
+          active.classList.add("active");
+        }
+      });
+
+      cusList.addEventListener("keydown", function (e) {
+        if (e.target && e.target.nodeName == "LI") {
+          var prev = e.target.previousElementSibling;
+          var next = e.target.nextElementSibling;
+          if (e.keyCode == 40 && next) {
+            // DOWN
+            next.focus();
+            e.preventDefault();
+          } else if (e.keyCode == 38 && prev) {
+            // UP
+            prev.focus();
+            e.preventDefault();
+          }
+        }
+      });
+    }
+  });
+</script>
+
+<style is:global>
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  .selected-item {
+    margin: 20px 0;
+  }
+  /* custom select style */
+  .cusSelBlock {
+    height: 40px;
+    min-width: 200px;
+  }
+  .customSelectbox {
+    height: 100%;
+    width: 100%;
+  }
+  .s-hidden {
+    visibility: hidden;
+  }
+  .cusSelBlock {
+    display: inline-block;
+    position: relative;
+    perspective: 800px;
+  }
+  .selectLabel {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 9999;
+    background-color: #fff;
+    border: 1px solid #333;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    color: #333;
+    cursor: pointer;
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 40px;
+    padding: 0 50px 0 20px;
+    text-align: left;
+    transform-style: preserve-3d;
+    transform-origin: 50% 0%;
+    transition: transform 300ms;
+    -webkit-backface-visibility: hidden;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  .selectLabel:after {
+    content: "\25BC";
+    border-left: 1px solid #333;
+    color: #333;
+    font-size: 12px;
+    line-height: 10px;
+    padding: 10px;
+    text-align: center;
+    position: absolute;
+    right: 0px;
+    top: 15%;
+    height: 70%;
+    width: 50px;
+  }
+  .selectLabel:active {
+    transform: rotateX(30deg);
+  }
+  .selectLabel:active:after {
+    content: "\25B2";
+  }
+  .selectLabel.active:after {
+    content: "\25B2";
+  }
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  .options {
+    position: absolute;
+    top: 50px;
+    height: 1px;
+    width: 100%;
+  }
+  .options li {
+    background-color: #ffffff;
+    border-left: 1px solid #333;
+    border-right: 1px solid #333;
+    border-bottom: 1px solid #333;
+    cursor: pointer;
+    display: block;
+    line-height: 40px;
+    list-style: none;
+    opacity: 1;
+    padding: 0 50px 0 20px;
+    text-align: left;
+    transition: transform 300ms ease;
+    position: absolute;
+    top: -50px;
+    left: 0;
+    z-index: 0;
+    height: 40px;
+    width: 100%;
+  }
+  .options li:hover,
+  .options li.active {
+    background-color: #333;
+    color: #fff;
+  }
+  .options li:nth-child(1) {
+    transform: translateY(2px);
+    z-index: 6;
+  }
+  .options li:nth-child(2) {
+    transform: translateY(4px);
+    z-index: 5;
+  }
+  .options li:nth-child(3) {
+    z-index: 4;
+  }
+  .options li:nth-child(4) {
+    z-index: 3;
+  }
+  .options li:nth-child(5) {
+    z-index: 2;
+  }
+  .options li:nth-child(6) {
+    z-index: 1;
+  }
+  /**/
+  .feaBlock {
+    margin: 20px 0;
+    text-align: left;
+  }
+</style>

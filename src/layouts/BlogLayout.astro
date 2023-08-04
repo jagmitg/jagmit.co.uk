@@ -2,8 +2,9 @@
 import { formatDate } from "../utils/formatDate";
 import Layout from "./Layout.astro";
 import MainLayout from "./MainLayout.astro";
-import { getBlogs, parseTags } from "../utils/blog";
+import { getBlogsAndRepos, parseTags } from "../utils/collections";
 import BlogDescription from "../components/BlogDescription.astro";
+import ShareButtons from "../components/ShareButtons.astro";
 import Pagination from "../components/Pagination.astro";
 import type { CollectionEntry } from "astro:content";
 import type { MarkdownLayoutProps } from "astro";
@@ -17,10 +18,10 @@ const diffDate =
   (new Date().getTime() - new Date(frontmatter.date).getTime()) /
   (60 * 60 * 1000 * 24);
 const { title, description, image, tags } = frontmatter;
-const posts = await getBlogs();
+const { allCollections: posts } = await getBlogsAndRepos();
 const index = posts.findIndex(
   ({ slug }) =>
-    slug ===
+    slug.replace(/^\//, "") ===
     Astro.url.pathname.replace(/\/blog\//, "").replace(/\/$/, "" /* for prod */)
 );
 ---
@@ -68,7 +69,7 @@ const index = posts.findIndex(
     </div>
     <hr class="border-gray-600 mt-12" />
     <div>
-      <!-- <ShareButtons url={`${Astro.site?.origin}${url!}`} title={title} /> -->
+      <!-- <ShareButtons url={`${Astro.site?.origin}`} title={title} /> -->
       {
         index !== -1 && (
           <Pagination
