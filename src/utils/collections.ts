@@ -6,8 +6,10 @@ export type RepoEntry = CollectionEntry<"repo">;
 export type BlogOrRepoEntry = BlogEntry | RepoEntry; // exporting BlogOrRepoEntry type
 
 export async function getBlogsAndRepos() {
-  const blogs: BlogEntry[] = await getCollection("blog");
+  const allBlogs: BlogEntry[] = await getCollection("blog");
   const repos: RepoEntry[] = await getCollection("repo");
+
+  const blogs = allBlogs.filter((blog) => blog.data.isDraft !== true);
 
   const sortedBlogs = sortByDate(blogs);
   const sortedRepos = sortByDate(repos);
@@ -20,9 +22,11 @@ export async function getBlogsAndRepos() {
 }
 
 export function sortByDate<T extends BlogEntry | RepoEntry>(collections: T[]) {
-  return collections.sort(
-    (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
-  );
+  return collections.sort((a, b) => {
+    const dateA = a.data.date ? new Date(a.data.date) : new Date(a.data.date);
+    const dateB = b.data.date ? new Date(b.data.date) : new Date(b.data.date);
+    return dateB.getTime() - dateA.getTime();
+  });
 }
 
 export function parseTags(tags: string) {

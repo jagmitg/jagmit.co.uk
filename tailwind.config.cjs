@@ -22,6 +22,9 @@ module.exports = {
       hyphen: "'-  '",
     },
     extend: {
+      width: {
+        custom: "52rem",
+      },
       colors: {
         profile_blue: "#b9e1ff",
       },

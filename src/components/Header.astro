@@ -3,30 +3,36 @@ import Image from "../components/Image.astro";
 import { PAGE_LINKS } from "../constants";
 ---
 
-<header id="home" class="-ml-[8px] tracking-tight">
+<header id="home" class="tracking-tight">
   <nav class="flex items-center justify-between flex-wrap py-6 px-2">
-    <div class="flex items-center flex-shrink-0 mr-6">
-      <div class="flex flex-row items-center">
+    <div class="flex items-center flex-shrink-0 mx-auto sm:mr-6">
+      <div
+        class="flex flex-col items-center sm:flex-row sm:items-center flex-shrink-0 mx-auto sm:mr-6"
+      >
         <a href="/">
           <Image
             src="/images/me.png"
-            className="rounded-full w-24 h-24 md:w-32 md:h-32 mr-3"
+            className="rounded-full w-32 h-32 sm:w-24 sm:h-24 md:w-32 md:h-32 mb-3 sm:mr-3"
             alt="Jagmit Gabba"
             width={32 * 4}
             height={32 * 4}
             isOptimization
             lazy={false}
-          /></a
-        >
+          />
+        </a>
 
-        <h1 class="font-bold text-2xl align-middle text-gray-900">
+        <h1
+          class="font-bold text-3xl sm:text-2xl align-middle text-gray-900 flex flex-wrap sm:block"
+        >
           <span>Hi, i'm jag &#128513; <br />nice to meet you!</span>
         </h1>
       </div>
     </div>
 
-    <div class="heading-nav w-full block flex-grow lg:flex sm:w-auto">
-      <div class="text-lg lg:flex-grow text-right">
+    <div
+      class="heading-nav w-full block flex-grow lg:flex sm:w-auto text-center sm:text-right"
+    >
+      <div class="text-lg lg:flex-grow">
         {
           PAGE_LINKS.map(({ title, href }) => {
             let currentPage = Astro.url.pathname === href;

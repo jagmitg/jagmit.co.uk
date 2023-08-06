@@ -4,7 +4,7 @@ import Layout from "./Layout.astro";
 import MainLayout from "./MainLayout.astro";
 import { getBlogsAndRepos, parseTags } from "../utils/collections";
 import BlogDescription from "../components/BlogDescription.astro";
-import ShareButtons from "../components/ShareButtons.astro";
+// import ShareButtons from "../components/ShareButtons.astro";
 import Pagination from "../components/Pagination.astro";
 import type { CollectionEntry } from "astro:content";
 import type { MarkdownLayoutProps } from "astro";
@@ -28,32 +28,39 @@ const index = posts.findIndex(
 
 <Layout title={title} description={description} image={image}>
   <MainLayout>
-    <div class="flex flex-wrap pt-3">
-      <div class="w-3/4">
-        <h2 class="text-2xl">{title}</h2>
+    <div class="flex flex-row">
+      <div class="w-3/4 pr-4 pb-6 border-r border-gray-300">
+        <div class="flex flex-wrap pt-3">
+          <div class="w-3/4">
+            <h2 class="text-2xl">{title}</h2>
+          </div>
+          <div class="w-1/4 flex flex-col items-end">
+            <div class="text-right text-lg">&#128467; {date}</div>
+          </div>
+        </div>
+        <div class="blog text-gray-900">
+          <slot />
+        </div>
       </div>
-      <div class="w-1/4 flex flex-col items-end">
-        <div class="text-right text-lg">{date}</div>
-      </div>
+      <aside class="w-1/4 p-4">
+        <div class="text-lg">&#128278; Post Contents</div>
+        <ol class="mt-4">
+          {
+            indices.map(({ slug, text, depth }) => (
+              <li style={{ marginLeft: `${(depth - 1) * 12}px` }}>
+                <a href={`#${slug}`} class="text-sm hover:text-blue-800">
+                  &#9758; {text}
+                </a>
+              </li>
+            ))
+          }
+        </ol>
+      </aside>
     </div>
 
     <BlogDescription slot="description" />
-    <!-- <div class="p-4">
-      <p>🔖 Post Contents</p>
-      <ol class="mt-4">
-        {
-          indices.map(({ slug, text, depth }) => (
-            <li style={{ marginLeft: `${(depth - 1) * 12}px` }}>
-              <a href={`#${slug}`} class="text-sm hover:text-blue-300">
-                - {text}
-              </a>
-            </li>
-          ))
-        }
-      </ol>
-    </div> -->
 
-    <div class="flex gap-4 flex-col">
+    <!-- <div class="flex gap-4 flex-col">
       {
         parseTags(tags).includes("javascript") && diffDate > 365 && (
           <div class="bg-yellow-500 p-3 rounded-md">
@@ -63,13 +70,8 @@ const index = posts.findIndex(
           </div>
         )
       }
-    </div>
-    <div class="blog text-gray-900">
-      <slot />
-    </div>
-    <hr class="border-gray-600 mt-12" />
-    <div>
-      <!-- <ShareButtons url={`${Astro.site?.origin}`} title={title} /> -->
+    </div> -->
+    <div class="border-t border-gray-300">
       {
         index !== -1 && (
           <Pagination
