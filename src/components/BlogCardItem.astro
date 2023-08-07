@@ -6,12 +6,18 @@ import type { CollectionEntry } from "astro:content";
 type Props = {
   url: string;
   frontmatter: CollectionEntry<"blog">["data"];
+  repo: boolean;
 };
 
-const { url, frontmatter } = Astro.props;
+const { url, frontmatter, repo } = Astro.props;
 ---
 
-<a class="blogItemLink mb-4" href={url}>
+<a
+  class="blogItemLink mb-4"
+  href={url}
+  target={repo ? "_blank" : undefined}
+  rel={repo ? "noopener noreferrer" : undefined}
+>
   <div class="flex flex-wrap">
     <div class="w-1/3 md:w-1/4 lg:w-1/6 p-2">
       <Image

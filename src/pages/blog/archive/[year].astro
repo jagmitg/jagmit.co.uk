@@ -1,0 +1,92 @@
+---
+import { getBlogsAndRepos } from "../../../utils/collections";
+import { BLOG_DESCRIPTION } from "../../../constants";
+import Layout from "../../../layouts/Layout.astro";
+import MainLayout from "../../../layouts/MainLayout.astro";
+
+export async function getStaticPaths() {
+  const allPosts = (await getBlogsAndRepos()).allCollections;
+  const postYears = new Map();
+
+  allPosts.forEach((post) => {
+    const year = new Date(post.data.date).getFullYear();
+
+    if (!postYears.get(year)) {
+      postYears.set(year, []);
+    }
+
+    postYears.get(year).push(post);
+  });
+
+  return [...postYears.entries()].map(([year, posts]) => ({
+    params: { year },
+    props: { posts },
+  }));
+}
+
+const allPosts = (await getBlogsAndRepos()).allCollections;
+const postYears = new Map();
+
+allPosts.forEach((post) => {
+  const year = new Date(post.data.date).getFullYear();
+
+  if (!postYears.get(year)) {
+    postYears.set(year, []);
+  }
+
+  postYears.get(year).push(post);
+});
+
+const { year } = Astro.params;
+const { posts } = Astro.props;
+---
+
+<Layout description={BLOG_DESCRIPTION}>
+  <MainLayout>
+    <div class="flex flex-row">
+      <div
+        class="w-full md:w-3/4 pr-0 md:pr-4 pb-6 border-r-0 md:border-r border-gray-300"
+      >
+        <div class="flex flex-wrap py-3">
+          <h2 class="text-2xl">Posts in {year}</h2>
+        </div>
+        <div class="blog text-gray-900">
+          <ul>
+            {
+              posts.map((post: any) => (
+                <li>
+                  <time datetime={post.data.date.toISOString()}>
+                    {post.data.date.toLocaleDateString("en-us", {
+                      year: "numeric",
+                      month: "short",
+                      day: "numeric",
+                    })}
+                  </time>
+                  <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+
+      <aside class="w-1/4 p-4 hidden md:block">
+        <div class="text-lg">&#128278; Archives</div>
+        <ol class="mt-4">
+          {
+            [...postYears.entries()].map(([archiveYear, archivePosts]) => (
+              <li>
+                <a
+                  href={`/blog/archive/${archiveYear}/`}
+                  class="text-sm hover:text-blue-800"
+                >
+                  {archiveYear} ({archivePosts.length})
+                </a>
+              </li>
+            ))
+          }
+        </ol>
+      </aside>
+    </div>
+  </MainLayout>
+</Layout>

@@ -2,7 +2,7 @@
 import { formatDate } from "../utils/formatDate";
 import Layout from "./Layout.astro";
 import MainLayout from "./MainLayout.astro";
-import { getBlogsAndRepos, parseTags } from "../utils/collections";
+import { getBlogsAndRepos } from "../utils/collections";
 import BlogDescription from "../components/BlogDescription.astro";
 // import ShareButtons from "../components/ShareButtons.astro";
 import Pagination from "../components/Pagination.astro";
@@ -29,7 +29,9 @@ const index = posts.findIndex(
 <Layout title={title} description={description} image={image}>
   <MainLayout>
     <div class="flex flex-row">
-      <div class="w-3/4 pr-4 pb-6 border-r border-gray-300">
+      <div
+        class="w-full md:w-3/4 pr-0 md:pr-4 pb-6 border-r-0 md:border-r border-gray-300"
+      >
         <div class="flex flex-wrap pt-3">
           <div class="w-3/4">
             <h2 class="text-2xl">{title}</h2>
@@ -42,7 +44,8 @@ const index = posts.findIndex(
           <slot />
         </div>
       </div>
-      <aside class="w-1/4 p-4">
+
+      <aside class="w-1/4 p-4 hidden md:block">
         <div class="text-lg">&#128278; Post Contents</div>
         <ol class="mt-4">
           {
@@ -59,19 +62,7 @@ const index = posts.findIndex(
     </div>
 
     <BlogDescription slot="description" />
-
-    <!-- <div class="flex gap-4 flex-col">
-      {
-        parseTags(tags).includes("javascript") && diffDate > 365 && (
-          <div class="bg-yellow-500 p-3 rounded-md">
-            <span class="text-gray-800 text-sm">
-              🚨 This article hasn't been updated in over a year
-            </span>
-          </div>
-        )
-      }
-    </div> -->
-    <div class="border-t border-gray-300">
+    <div>
       {
         index !== -1 && (
           <Pagination
@@ -85,7 +76,7 @@ const index = posts.findIndex(
                 ? posts[index + 1].data.title
                 : undefined
             }
-            className="mt-10 flex-col md:flex-row gap-2 text-center"
+            className="mt-3 flex-col md:flex-row gap-2 text-center"
           />
         )
       }
