@@ -1,16 +1,17 @@
 import rss from "@astrojs/rss";
 import { extname } from "node:path";
-import { getBlogs } from "../../utils/blog";
+import { getBlogsAndRepos } from "../../utils/collections";
 
-const posts = await getBlogs();
+const { allCollections } = await getBlogsAndRepos();
+
 const site = new URL("blog", import.meta.env.SITE).href;
 
 export const get = () =>
   rss({
     title: "Jagmit's Blog",
-    description: "a blog for hiroppy's life and programming",
+    description: "a blog for programming",
     site,
-    items: posts.map((post) => ({
+    items: allCollections.map((post) => ({
       link: `${site}/${post.slug}`,
       title: post.data.title,
       description: post.data.description,

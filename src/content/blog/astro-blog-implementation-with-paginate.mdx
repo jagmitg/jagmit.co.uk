@@ -1,0 +1,68 @@
+---
+layout: ../../layouts/BlogLayout.astro
+title: Implementing a Blog with Astro and TypeScript
+date: "2023-08-07"
+description: Choosing Astro framework as the framework of choice and the learning to implement in getStaticPaths
+image: /images/brands/astro.png
+tags: astro, typescript
+isDraft: true
+---
+
+Recently, I embarked on the task of setting up a blog on my personal website, choosing the Astro framework as the framework of choice. For those unfamiliar with it, Astro is a modern front-end framework that provides the ability to build faster websites with less client-side JavaScript. As I explored its capabilities, I found myself delving deep into its TypeScript integration.
+
+## The Challenge
+
+Building any feature-rich blog system presents a range of challenges, from sorting posts by date to ensuring a SEO-friendly URL structure. In my case, I faced the following hurdles:
+
+1. **Pagination**: Splitting up my posts so that they aren't all displayed on one massive page.
+2. **Generating Slugs for URLs**: Crafting neat, descriptive, and SEO-friendly URLs for each blog post.
+3. **Filtering Out Drafts**: Only showing published posts, leaving drafts out of the public eye.
+4. **Sorting by Date**: Presenting the most recent content at the top of the list.
+
+## Implementation
+
+Let's examine a crucial piece of the TypeScript code that powers this blog setup:
+
+```typescript
+export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
+  const allPosts = await Astro.glob("../../content/**/*.{md,mdx}");
+
+  const slugify = (filePath: string) => {
+    let fileName = filePath.split("/").pop();
+    fileName = fileName?.split(".").shift() || "";
+    return fileName
+      .toLowerCase()
+      .replace(/[^a-z0-9 -]/g, "")
+      .replace(/\s+/g, "-");
+  };
+
+  const formattedPosts = allPosts
+    .map((post: any) => {
+      return {
+        ...post,
+        slug: slugify(post.url),
+      };
+    })
+    .filter((post: any) => post.frontmatter.isDraft !== true)
+    .sort(
+      (a: any, b: any) =>
+        new Date(a.frontmatter.date).getTime() -
+        new Date(b.frontmatter.date).getTime()
+    )
+    .reverse();
+
+  return paginate(formattedPosts, {
+    pageSize: 5,
+  });
+}
+```
+
+- **Astro Globbing**: The function starts by fetching all markdown and MDX files from the content directory using Astro.glob(). This provides a list of all potential posts.
+
+- **Slugify Function**: A helper function named slugify takes a file path and returns a clean, URL-friendly slug. This ensures our URLs are tidy and descriptive.
+
+- **Formatting the Posts**: With the use of map, filter, and sort, the code then transforms the raw list of posts. It generates the slug, filters out drafts using the `frontmatter.isDraft `property, sorts them by date, and finally reverses the order to show the newest first.
+
+- **Pagination**: The paginate function is then utilised to split the sorted and filtered posts into pages, ensuring no more than 5 posts are displayed on a single page.
+
+- This function, `getStaticPaths`, is used within the `[...page].astro` file, providing it with the necessary information to render the posts correctly and elegantly.

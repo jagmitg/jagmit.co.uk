@@ -1,0 +1,60 @@
+---
+layout: ../../layouts/BlogLayout.astro
+title: Implementing Archives with the Astro Framework
+date: "2023-08-07"
+description: Creating an archive for blog posts with the Astro framework based on a year system.
+image: /images/blog/2021/ogp.png
+tags: typescript, astro
+isDraft: true
+---
+
+One such use case i was experimenting was creating an archive for blog posts. In this blog post, we'll discuss how to implement a year-based archive system using Astro.
+
+## Setting up Archives for Each Year
+
+Astro provides a way to fetch and use data during build time. The provided code showcases how one might use this to generate static paths based on the publishing year of blog posts.
+
+Let's break down the code:
+
+### Getting Static Paths for Every Year
+
+```typescript
+export async function getStaticPaths() {
+  const allPosts = (await getBlogsAndRepos()).allCollections;
+  const postYears = new Map();
+
+  allPosts.forEach((post) => {
+    const year = new Date(post.data.date).getFullYear();
+
+    if (!postYears.get(year)) {
+      postYears.set(year, []);
+    }
+
+    postYears.get(year).push(post);
+  });
+
+  return [...postYears.entries()].map(([year, posts]) => ({
+    params: { year },
+    props: { posts },
+  }));
+}
+```
+
+1. **Fetching all Posts**: We first get all posts using `getBlogsAndRepos()`. This method is assumed to be a custom function you've created to get content from your backend, API, or static file storage.
+
+2. **Grouping Posts by Year**: The goal is to create a map where the key is a year and the value is an array of posts for that year. We initialise an empty Map called `postYears` to store this data.
+
+3. **Iterating Over Each Post**: For each post, we extract the publication year and check if that year already exists as a key in our map. If it doesn't, we initialise it with an empty array. We then add the post to the respective year's array.
+
+4. **Generating Static Paths**: The final step is to transform our map into a format that Astro understands. We use the spread syntax to turn our map into an array of entries, then map each entry to an object with `params` and `props`. The `params` object contains the year (which can be used as a URL parameter), and the `props` object contains the array of posts for that year.
+
+### Accessing Year and Posts in the Component
+
+After defining the paths in the `getStaticPaths` function, you can access the year and posts in your Astro component as:
+
+```typescript
+const { year } = Astro.params;
+const { posts } = Astro.props;
+```
+
+`Astro.params` provides access to dynamic parameters in the URL (in this case, the year), and `Astro.props` gives you access to the props you passed when generating static paths.

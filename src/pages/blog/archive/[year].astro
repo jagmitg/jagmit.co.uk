@@ -3,6 +3,7 @@ import { getBlogsAndRepos } from "../../../utils/collections";
 import { BLOG_DESCRIPTION } from "../../../constants";
 import Layout from "../../../layouts/Layout.astro";
 import MainLayout from "../../../layouts/MainLayout.astro";
+import Archives from "../../../components/Archives.astro";
 
 export async function getStaticPaths() {
   const allPosts = (await getBlogsAndRepos()).allCollections;
@@ -23,19 +24,6 @@ export async function getStaticPaths() {
     props: { posts },
   }));
 }
-
-const allPosts = (await getBlogsAndRepos()).allCollections;
-const postYears = new Map();
-
-allPosts.forEach((post) => {
-  const year = new Date(post.data.date).getFullYear();
-
-  if (!postYears.get(year)) {
-    postYears.set(year, []);
-  }
-
-  postYears.get(year).push(post);
-});
 
 const { year } = Astro.params;
 const { posts } = Astro.props;
@@ -71,21 +59,7 @@ const { posts } = Astro.props;
       </div>
 
       <aside class="w-1/4 p-4 hidden md:block">
-        <div class="text-lg">&#128278; Archives</div>
-        <ol class="mt-4">
-          {
-            [...postYears.entries()].map(([archiveYear, archivePosts]) => (
-              <li>
-                <a
-                  href={`/blog/archive/${archiveYear}/`}
-                  class="text-sm hover:text-blue-800"
-                >
-                  {archiveYear} ({archivePosts.length})
-                </a>
-              </li>
-            ))
-          }
-        </ol>
+        <Archives />
       </aside>
     </div>
   </MainLayout>

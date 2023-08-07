@@ -4,6 +4,7 @@ import Layout from "./Layout.astro";
 import MainLayout from "./MainLayout.astro";
 import { getBlogsAndRepos } from "../utils/collections";
 import BlogDescription from "../components/BlogDescription.astro";
+import Archives from "../components/Archives.astro";
 // import ShareButtons from "../components/ShareButtons.astro";
 import Pagination from "../components/Pagination.astro";
 import type { CollectionEntry } from "astro:content";
@@ -46,18 +47,23 @@ const index = posts.findIndex(
       </div>
 
       <aside class="w-1/4 p-4 hidden md:block">
-        <div class="text-lg">&#128278; Post Contents</div>
-        <ol class="mt-4">
-          {
-            indices.map(({ slug, text, depth }) => (
-              <li style={{ marginLeft: `${(depth - 1) * 12}px` }}>
-                <a href={`#${slug}`} class="text-sm hover:text-blue-800">
-                  &#9758; {text}
-                </a>
-              </li>
-            ))
-          }
-        </ol>
+        <div class="mb-4">
+          <div class="text-lg">&#128278; Post Contents</div>
+          <ol class="mt-4">
+            {
+              indices.map(({ slug, text, depth }) => (
+                <li style={{ marginLeft: `${(depth - 1) * 12}px` }}>
+                  <a href={`#${slug}`} class="text-sm hover:text-blue-800">
+                    &#9758; {text}
+                  </a>
+                </li>
+              ))
+            }
+          </ol>
+        </div>
+        <div>
+          <Archives />
+        </div>
       </aside>
     </div>
 
