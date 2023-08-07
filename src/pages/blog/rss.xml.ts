@@ -4,26 +4,32 @@ import { getBlogsAndRepos } from "../../utils/collections";
 
 const { allCollections } = await getBlogsAndRepos();
 
-const site = new URL("blog", import.meta.env.SITE).href;
+const site = new URL("blog", import.meta.env.SITE).toString();
 
-export const get = () =>
-  rss({
+export const get = () => generateRss(site, allCollections);
+
+function generateRss(site: string, collections: any[]) {
+  return rss({
     title: "Jagmit's Blog",
     description: "a blog for programming",
     site,
-    items: allCollections.map((post) => ({
-      link: `${site}/${post.slug}`,
-      title: post.data.title,
-      description: post.data.description,
-      pubDate: new Date(post.data.date),
-      customData: `
-        <enclosure url="${import.meta.env.SITE}${post.data.image.replace(
-        /^\//,
-        ""
-      )}" length="0" type="image/${extname(post.data.image).replace(
-        /^\./,
-        ""
-      )}" />
-      `.trim(),
-    })),
+    items: collections.map((post) => {
+      const image = post.data.image ? post.data.image.replace(/^\//, "") : "";
+      const imageType = image
+        ? `image/${extname(image).replace(/^\./, "")}`
+        : "";
+
+      return {
+        link: `${site}/${post.slug}`,
+        title: post.data.title,
+        description: post.data.description || "",
+        pubDate: new Date(post.data.date),
+        customData: image
+          ? `
+            <enclosure url="${site}${image}" length="0" type="${imageType}" />
+          `.trim()
+          : "",
+      };
+    }),
   });
+}
