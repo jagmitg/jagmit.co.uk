@@ -4,7 +4,6 @@ import { formatDate } from "@utils/formatDate";
 import Link from "./Link.astro";
 
 const { allCollections: posts } = await getBlogsAndRepos();
-// const posts = import.meta.env.PROD ? await getBlogs() : [];
 ---
 
 <div class="grid grid-cols-2">
