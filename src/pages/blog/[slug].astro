@@ -1,6 +1,6 @@
 ---
-import type { BlogOrRepoEntry } from "../../utils/collections";
-import { getBlogsAndRepos } from "../../utils/collections";
+import type { BlogOrRepoEntry } from "@utils/collections";
+import { getBlogsAndRepos } from "@utils/collections";
 
 export async function getStaticPaths() {
   const { allCollections } = await getBlogsAndRepos();

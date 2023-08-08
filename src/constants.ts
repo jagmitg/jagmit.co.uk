@@ -4,7 +4,7 @@ export const SITE_DESCRIPTION =
 export const BLOG_DESCRIPTION =
   "This blog posts my life topic and tech topics mainly JavaScript.";
 export const REPO_PINNED = <const>["Wordpress-Select-Pagination"];
-
+export const PAGINATE_CONTENT = 5;
 export const PAGE_LINKS = <const>[
   {
     icon: "😵‍💫",

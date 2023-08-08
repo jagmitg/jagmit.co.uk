@@ -1,18 +1,18 @@
 ---
-import BlogCardItem from "../../../../components/BlogCardItem.astro";
-import TagsBox from "../../../../components/TagsBox.astro";
-import Layout from "../../../../layouts/Layout.astro";
-import MainLayout from "../../../../layouts/MainLayout.astro";
+import BlogCardItem from "@components/BlogCardItem.astro";
+import TagsBox from "@components/TagsBox.astro";
+import Layout from "@layouts/Layout.astro";
+import MainLayout from "@layouts/MainLayout.astro";
 import {
   getBlogsAndRepos,
-  CollectionEntry,
+  BlogOrRepoEntry,
   parseTags,
   getAllTags,
-} from "../../../../utils/collections";
-import BlogDescription from "../../../../components/BlogDescription.astro";
+} from "@utils/collections";
+import BlogDescription from "@components/BlogDescription.astro";
 import type { GetStaticPathsOptions, Page } from "astro";
-import Pagination from "../../../../components/Pagination.astro";
-import { BLOG_DESCRIPTION } from "../../../../constants";
+import Pagination from "@components/Pagination.astro";
+import { BLOG_DESCRIPTION, PAGINATE_CONTENT } from "@const";
 
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
   const { allCollections } = await getBlogsAndRepos();
@@ -26,7 +26,7 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
       ),
       {
         params: { tag },
-        pageSize: 3,
+        pageSize: PAGINATE_CONTENT,
       }
     )
   );
@@ -36,7 +36,7 @@ const { allCollections } = await getBlogsAndRepos();
 const allTags = getAllTags(allCollections);
 const { tag } = Astro.params;
 const { page } = Astro.props as {
-  page: Page<CollectionEntry>;
+  page: Page<BlogOrRepoEntry>;
 };
 ---
 
@@ -49,13 +49,26 @@ const { page } = Astro.props as {
     </div>
     <div class="gap-4 flex flex-col">
       {
-        page.data.map(({ data, slug }) => (
-          <BlogCardItem
-            url={data.repo ? data.repo : `/blog/${slug}`}
-            frontmatter={data}
-            repo={data.repo ? true : false}
-          />
-        ))
+        page.data.map(({ data, slug }) => {
+          if ("repo" in data) {
+            return (
+              <BlogCardItem
+                url={data.repo ? data.repo : `/blog/${slug}`}
+                frontmatter={data}
+                repo={!!data.repo}
+              />
+            );
+          } else {
+            // Handle the case where data does not have a 'repo' property, if needed.
+            return (
+              <BlogCardItem
+                url={`/blog/${slug}`}
+                frontmatter={data}
+                repo={false}
+              />
+            );
+          }
+        })
       }
     </div>
     <Pagination prev={page.url.prev} next={page.url.next} />

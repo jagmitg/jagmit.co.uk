@@ -1,9 +1,9 @@
 ---
-import { getBlogsAndRepos } from "../utils/collections";
-import { formatDate } from "../utils/formatDate";
+import { getBlogsAndRepos } from "@utils/collections";
+import { formatDate } from "@utils/formatDate";
 import Link from "./Link.astro";
 
-const posts = await getBlogsAndRepos();
+const { allCollections: posts } = await getBlogsAndRepos();
 // const posts = import.meta.env.PROD ? await getBlogs() : [];
 ---
 

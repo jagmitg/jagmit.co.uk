@@ -1,8 +1,8 @@
 ---
-import Footer from "../components/Footer.astro";
-import GA from "../components/GA.astro";
-import Header from "../components/Header.astro";
-import { SITE_DESCRIPTION, SITE_TITLE } from "../constants";
+import Footer from "@components/Footer.astro";
+import GA from "@components/GA.astro";
+import Header from "@components/Header.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "@const";
 
 type Props = {
   title?: string;
@@ -24,7 +24,6 @@ const titleContent =
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
     <meta name="description" content={siteDescription} />
     <meta property="theme-color" content="#3498db" />
     <meta property="og:type" content="website" />
