@@ -1,9 +1,10 @@
 ---
-import { getBlogsAndRepos } from "@utils/collections";
+import { getBlogsAndRepos, getAllTags } from "@utils/collections";
 import { BLOG_DESCRIPTION } from "../../../constants";
 import Layout from "@layouts/Layout.astro";
 import MainLayout from "@layouts/MainLayout.astro";
 import Archives from "@components/Archives.astro";
+import TagsBox from "@components/TagsBox.astro";
 
 export async function getStaticPaths() {
   const allPosts = (await getBlogsAndRepos()).allCollections;
@@ -25,19 +26,24 @@ export async function getStaticPaths() {
   }));
 }
 
+const { allCollections } = await getBlogsAndRepos();
+const allTags = getAllTags(allCollections);
+
 const { year } = Astro.params;
 const { posts } = Astro.props;
 ---
 
 <Layout description={BLOG_DESCRIPTION}>
   <MainLayout>
+    <div class="flex justify-between items-center pb-6">
+      <h2 class="text-2xl">Posts in {year}</h2>
+      <TagsBox tags={allTags} slot="optional-content" />
+    </div>
+
     <div class="flex flex-row">
       <div
         class="w-full md:w-3/4 pr-0 md:pr-4 pb-6 border-r-0 md:border-r border-gray-300"
       >
-        <div class="flex flex-wrap py-3">
-          <h2 class="text-2xl">Posts in {year}</h2>
-        </div>
         <div class="blog text-gray-900">
           <ul>
             {

@@ -13,7 +13,7 @@ const { url, frontmatter, repo } = Astro.props;
 ---
 
 <a
-  class="blogItemLink mb-4"
+  class="blogItemLink mb-4 border border-gray-300 hover:bg-gray-100 rounded-md"
   href={url}
   target={repo ? "_blank" : undefined}
   rel={repo ? "noopener noreferrer" : undefined}
@@ -25,7 +25,7 @@ const { url, frontmatter, repo } = Astro.props;
           ? frontmatter.image
           : "/images/brands/github-big.png"}
         alt={frontmatter.title}
-        className="w-30 h-30"
+        className="w-30 h-30 rounded-md"
         isOptimization
         width={20 * 4}
         height={20 * 4}
@@ -36,13 +36,13 @@ const { url, frontmatter, repo } = Astro.props;
       <p class="text-gray-600 mb-4 text-sm">{frontmatter.description}</p>
       <div class="flex flex-wrap absolute bottom-0">
         <span
-          class="bg-gray-200 text-gray-700 rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2"
+          class="bg-gray-200 text-gray-700 rounded-lg px-3 py-1 text-sm font-semibold mr-2 mb-2"
         >
           {formatDate(new Date(frontmatter.date))}
         </span>
         {
           parseTags(frontmatter.tags).map((tag) => (
-            <span class="bg-gray-200 text-gray-700 rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2">
+            <span class="bg-gray-200 text-gray-700 rounded-lg px-3 py-1 text-sm font-semibold mr-2 mb-2">
               #{tag}
             </span>
           ))
@@ -51,3 +51,16 @@ const { url, frontmatter, repo } = Astro.props;
     </div>
   </div>
 </a>
+<!-- <style is:global>
+  a.blogItemLink {
+    border: 1px solid #fff;
+    display: block;
+    cursor: pointer;
+    transition-property: all;
+    transition-timing-function: fade;
+    transition-duration: 150ms;
+  }
+  a.blogItemLink:hover {
+    border: 1px solid #b9e1ff;
+  }
+</style> -->

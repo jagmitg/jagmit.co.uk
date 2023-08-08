@@ -71,17 +71,3 @@ const { page } = Astro.props;
     <Pagination prev={page.url.prev} next={page.url.next} />
   </MainLayout>
 </Layout>
-
-<style is:global>
-  a.blogItemLink {
-    border: 1px solid #fff;
-    display: block;
-    cursor: pointer;
-    transition-property: all;
-    transition-timing-function: fade;
-    transition-duration: 150ms;
-  }
-  a.blogItemLink:hover {
-    border: 1px solid #b9e1ff;
-  }
-</style>
