@@ -8,6 +8,16 @@ import image from "@astrojs/image";
 // https://astro.build/config
 export default defineConfig({
   site: "https://jagmit.co.uk",
+  output: "static",
+  vite: {
+    build: {
+      rollupOptions: {
+        output: {
+          assetFileNames: "assets/[name][extname]",
+        },
+      },
+    },
+  },
   integrations: [
     tailwind(),
     partytown({

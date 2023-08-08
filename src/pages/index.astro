@@ -13,9 +13,7 @@ const posts = (await getCollection("repo")).sort(
 
 <Layout>
   <MainLayout title="About">
-    <p class="prose prose-neutral dark:prose-invert">
-      Hi im a JavaScript engineer.
-    </p>
+    <p class="prose prose-neutral">Hi im a JavaScript engineer.</p>
     <br />
     <p>
       If you have requests for talking, writing, and so on, feel free to ping me
@@ -32,17 +30,15 @@ const posts = (await getCollection("repo")).sort(
                 href={post.data.repo}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="p-4 border border-neutral-200 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-800 rounded flex items-center justify-between px-3 py-4 w-full hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors"
+                class="p-4 border border-neutral-200  bg-neutral-50 rounded flex items-center justify-between px-3 py-4 w-full hover:bg-neutral-200 transition-colors"
               >
                 <div class="flex flex-col">
-                  <p class="font-bold text-neutral-900 dark:text-neutral-100">
-                    {post.data.title}
-                  </p>
-                  <p class="text-neutral-600 dark:text-neutral-400">
+                  <p class="font-bold text-neutral-900 ">{post.data.title}</p>
+                  <p class="text-neutral-600 ">
                     Published: {formatDate(new Date(post.data.date))}
                   </p>
                 </div>
-                <div class="text-neutral-700 dark:text-neutral-300">
+                <div class="text-neutral-700 ">
                   <svg
                     width="12"
                     height="12"

@@ -1,19 +1,70 @@
 ---
+import { getBlogsAndRepos } from "@utils/collections";
+
+const allPosts = (await getBlogsAndRepos()).allCollections;
+const postYears = new Map();
+
+allPosts.forEach((post) => {
+  const year = new Date(post.data.date).getFullYear();
+
+  if (!postYears.get(year)) {
+    postYears.set(year, []);
+  }
+
+  postYears.get(year).push(post);
+});
+
 type Props = {
   tags: string[];
 };
 
 const { tags } = Astro.props;
+const currentPath = new URL(Astro.request.url).pathname;
+const pathParts = currentPath.split("/");
+const currentTag = pathParts.includes("tags")
+  ? pathParts[pathParts.length - 1]
+  : null;
+
+const currentYear = pathParts.includes("archive")
+  ? pathParts[pathParts.length - 1]
+  : null;
 ---
 
 <div class="flex flex-wrap">
-  <div class="select-wrapper">
+  <!-- Tags Dropdown -->
+  <div class="select-wrapper mr-3">
     <select
-      class="customSelectbox border shadow-sm bg-gray-700 border-gray-600 text-gray-300"
+      class="customSelectbox border shadow-sm bg-gray-700 rounded-md border-gray-300 text-gray-300"
       onchange="location.href=`/blog/tags/${this.value}`"
     >
       <option selected disabled>tags...</option>
-      {tags.map((tag) => <option value={tag}>{tag}</option>)}
+      {
+        tags.map((tag) => (
+          <option value={tag} selected={tag === currentTag}>
+            {tag}
+          </option>
+        ))
+      }
+    </select>
+  </div>
+
+  <!-- Archive Dropdown -->
+  <div class="select-wrapper">
+    <select
+      class="customSelectbox border shadow-sm bg-gray-700 rounded-md border-gray-300 text-gray-300"
+      onchange="location.href=`/blog/archive/${this.value}`"
+    >
+      <option selected disabled>archives...</option>
+      {
+        [...postYears.entries()].map(([archiveYear, archivePosts]) => (
+          <option
+            value={archiveYear}
+            selected={archiveYear.toString() === currentYear}
+          >
+            {archiveYear} ({archivePosts.length})
+          </option>
+        ))
+      }
     </select>
   </div>
 </div>
@@ -47,8 +98,8 @@ const { tags } = Astro.props;
     position: absolute;
     width: 20px;
     height: 20px;
-    top: 15px;
-    right: 17px;
+    top: 14px;
+    right: 5px;
     font-size: 24px;
     line-height: 20px;
     pointer-events: none;
@@ -66,7 +117,6 @@ const { tags } = Astro.props;
     outline: none;
     appearance: none;
     -webkit-appearance: none;
-    font-weight: bold;
     text-align-last: center;
   }
 </style>
