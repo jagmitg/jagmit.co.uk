@@ -37,7 +37,7 @@ const currentYear = pathParts.includes("archive")
       class="customSelectbox border shadow-sm bg-gray-700 rounded-md border-gray-300 text-gray-300"
       onchange="location.href=`/blog/tags/${this.value}`"
     >
-      <option selected disabled>filters...</option>
+      <option selected disabled>tags...</option>
       {
         tags.map((tag) => (
           <option value={tag} selected={tag === currentTag}>
@@ -117,7 +117,6 @@ const currentYear = pathParts.includes("archive")
     outline: none;
     appearance: none;
     -webkit-appearance: none;
-    font-weight: bold;
     text-align-last: center;
   }
 </style>
