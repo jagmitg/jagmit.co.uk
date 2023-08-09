@@ -35,8 +35,12 @@ const { posts } = Astro.props;
 
 <Layout description={BLOG_DESCRIPTION}>
   <MainLayout>
-    <div class="flex justify-between items-center pb-6">
-      <h2 class="text-2xl">Posts in {year}</h2>
+    <div
+      class="flex flex-col sm:flex-row justify-between sm:justify-between items-center pb-6"
+    >
+      <h2 class="text-2xl text-center sm:text-left mb-4 sm:mb-0">
+        Posts in {year}
+      </h2>
       <TagsBox tags={allTags} slot="optional-content" />
     </div>
 
@@ -51,11 +55,16 @@ const { posts } = Astro.props;
                 <li>
                   <a
                     href={`/blog/${post.slug}/`}
-                    class="mb-4 border border-gray-300 hover:bg-gray-100 rounded-md p-3 block"
+                    class="flex justify-between mb-4 border border-gray-300 hover:bg-gray-100 rounded-md p-3"
                   >
-                    <h2 class="font-bold mb-2">{post.data.title}</h2>
+                    <h2 class="font-bold text-md mb-1 flex-grow truncate pr-2">
+                      {post.data.title}
+                    </h2>
 
-                    <time datetime={post.data.date.toISOString()}>
+                    <time
+                      datetime={post.data.date.toISOString()}
+                      class="flex-shrink-0"
+                    >
                       {post.data.date.toLocaleDateString("en-us", {
                         year: "numeric",
                         month: "short",
