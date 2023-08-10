@@ -6,7 +6,8 @@
       "@components/*": ["src/components/*"],
       "@layouts/*": ["src/layouts/*"],
       "@utils/*": ["src/utils/*"],
-      "@const": ["src/constants"]
+      "@const": ["src/constants"],
+      "@data/*": ["src/data"]
     },
     "target": "ESNext",
     "module": "ESNext",

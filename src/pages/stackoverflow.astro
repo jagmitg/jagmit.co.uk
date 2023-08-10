@@ -1,0 +1,30 @@
+---
+import Layout from "@layouts/Layout.astro";
+import MainLayout from "@layouts/MainLayout.astro";
+import stackOverflowData from "../data/stackoverflow.json";
+
+const questions = Object.values(stackOverflowData);
+---
+
+<Layout>
+  <MainLayout>
+    <h2 class="text-2xl text-center sm:text-left mb-4 sm:mb-0">
+      StackOverflow Answers
+    </h2>
+
+    <ol style="list-style:decimal;">
+      {
+        questions.map((question) => (
+          <li>
+            <h2>
+              <a href={question.link} target="_blank" rel="noopener noreferrer">
+                {question.title}
+              </a>
+            </h2>
+            <p>Tags: {question.tags.join(", ")}</p>
+          </li>
+        ))
+      }
+    </ol>
+  </MainLayout>
+</Layout>
