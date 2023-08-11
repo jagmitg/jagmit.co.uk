@@ -72,7 +72,7 @@ async function fetchQuestionDetailsBulk(questionIds) {
 }
 
 async function fetchDataAndSaveToJson() {
-  let results = {};
+  let results = [];
   const allQuestionIds = await fetchAllAnswers();
 
   console.log("Fetching question details for each answer...");
@@ -82,7 +82,7 @@ async function fetchDataAndSaveToJson() {
     const batchQuestionIds = allQuestionIds.slice(i, i + batchSize);
     const questionsDetails = await fetchQuestionDetailsBulk(batchQuestionIds);
     questionsDetails.forEach((details) => {
-      results[details.question_id] = {
+      results.push({
         question_id: details.question_id,
         answer_id: details.accepted_answer_id,
         creation_date: details.creation_date,
@@ -90,14 +90,15 @@ async function fetchDataAndSaveToJson() {
         tags: details.tags,
         link: details.link,
         title: details.title,
-      };
+      });
     });
   }
 
+  // Sort the results by creation_date
+  results.sort((a, b) => b.creation_date - a.creation_date);
+
   console.log(
-    `Imported details for ${Object.keys(results).length} questions out of ${
-      allQuestionIds.length
-    } unique questions.`
+    `Imported details for ${results.length} questions out of ${allQuestionIds.length} unique questions.`
   );
   console.log("Saving data to 'src/data/stackoverflow.json'...");
   writeFileSync(
