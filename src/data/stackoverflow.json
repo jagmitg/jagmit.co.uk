@@ -1,1702 +1,1843 @@
-[
-  {
-    "question_id": 76870195,
-    "creation_date": 1691603589,
-    "is_accepted": false,
-    "tags": [
-      "javascript",
-      "typescript",
-      "vue.js",
-      "components",
-      "vuejs3"
-    ],
-    "link": "https://stackoverflow.com/questions/76870195/how-do-i-pass-custom-props-to-dynamic-components-in-vue-3",
-    "title": "How do I pass custom props to dynamic components in Vue 3?"
-  },
-  {
-    "question_id": 76854817,
-    "creation_date": 1691438020,
-    "is_accepted": false,
-    "tags": [
-      "reactjs",
-      "typescript",
-      "react-hook-form"
-    ],
-    "link": "https://stackoverflow.com/questions/76854817/why-does-my-react-hook-form-still-refresh-the-page-on-submit",
-    "title": "Why Does My React Hook Form Still Refresh The Page On Submit"
-  },
-  {
-    "question_id": 76853754,
-    "answer_id": 76853781,
-    "creation_date": 1691427727,
-    "is_accepted": true,
-    "tags": [
-      "typescript"
-    ],
-    "link": "https://stackoverflow.com/questions/76853754/returning-an-object-which-has-keys-as-the-values-of-passed-array",
-    "title": "Returning an object which has keys as the values of passed array"
-  },
-  {
-    "question_id": 76853149,
-    "creation_date": 1691422245,
-    "is_accepted": false,
-    "tags": [
-      "html",
-      "css"
-    ],
-    "link": "https://stackoverflow.com/questions/76853149/video-element-not-stretching-full-length-of-parent-div",
-    "title": "Video Element Not Stretching Full Length of Parent Div"
-  },
-  {
-    "question_id": 76853115,
-    "answer_id": 76853725,
-    "creation_date": 1691421975,
-    "is_accepted": true,
-    "tags": [
-      "html",
-      "css",
-      "row",
-      "line",
-      "space"
-    ],
-    "link": "https://stackoverflow.com/questions/76853115/how-to-add-a-space-below-each-line",
-    "title": "How to add a space below each line"
-  },
-  {
-    "question_id": 76846020,
-    "answer_id": 76846086,
-    "creation_date": 1691327046,
-    "is_accepted": true,
-    "tags": [
-      "javascript",
-      "reactjs",
-      "react-router-dom"
-    ],
-    "link": "https://stackoverflow.com/questions/76846020/react-js-separator-publictheme-and-publictheme",
-    "title": "React JS - Separator PublicTheme and PublicTheme"
-  },
-  {
-    "question_id": 76845532,
-    "answer_id": 76845692,
-    "creation_date": 1691319114,
-    "is_accepted": true,
-    "tags": [
-      "typescript"
-    ],
-    "link": "https://stackoverflow.com/questions/76845532/how-to-type-the-return-of-a-function-when-you-need-to-return-an-object-in-which",
-    "title": "how to type the return of a function when you need to return an object in which all keys are required or all keys are optional?"
-  },
-  {
-    "question_id": 76845393,
-    "answer_id": 76845417,
-    "creation_date": 1691316933,
-    "is_accepted": true,
-    "tags": [
-      "javascript",
-      "jquery"
-    ],
-    "link": "https://stackoverflow.com/questions/76845393/why-console-shows-scrollintoview-is-not-a-function",
-    "title": "Why console shows &quot;scrollIntoView() is not a function&quot;?"
-  },
-  {
-    "question_id": 76843968,
-    "answer_id": 76844040,
-    "creation_date": 1691279967,
-    "is_accepted": true,
-    "tags": [
-      "python",
-      "dataframe",
-      "list",
-      "multidimensional-array",
-      "jupyter-notebook"
-    ],
-    "link": "https://stackoverflow.com/questions/76843968/how-to-return-a-similar-match-in-the-same-2d-list",
-    "title": "How to return a similar match in the same 2d list"
-  },
-  {
-    "question_id": 76843910,
-    "answer_id": 76843965,
-    "creation_date": 1691278106,
-    "is_accepted": true,
-    "tags": [
-      "typescript",
-      "typescript-typings",
-      "typescript-generics"
-    ],
-    "link": "https://stackoverflow.com/questions/76843910/how-to-forward-a-typescript-generic-type-into-inner-function",
-    "title": "How to forward a Typescript generic type into inner function"
-  },
-  {
-    "question_id": 76842580,
-    "answer_id": 76842597,
-    "creation_date": 1691253071,
-    "is_accepted": true,
-    "tags": [
-      "javascript",
-      "reactjs",
-      "typescript",
-      "zod"
-    ],
-    "link": "https://stackoverflow.com/questions/76842580/how-to-validate-a-field-in-zod-depending-on-the-value-of-another-field",
-    "title": "How to validate a field in Zod depending on the value of another field?"
-  },
-  {
-    "question_id": 76842553,
-    "creation_date": 1691252757,
-    "is_accepted": false,
-    "tags": [
-      "python",
-      "mocking",
-      "patch"
-    ],
-    "link": "https://stackoverflow.com/questions/76842553/how-to-unit-test-the-python-code-using-mock-patch",
-    "title": "How to unit test the python code using mock patch?"
-  },
-  {
-    "question_id": 76840856,
-    "creation_date": 1691225437,
-    "is_accepted": false,
-    "tags": [
-      "python",
-      "tkinter",
-      "python-imaging-library",
-      "attributeerror"
-    ],
-    "link": "https://stackoverflow.com/questions/76840856/attributeerror-photoimage-object-has-no-attribute-tobytes",
-    "title": "AttributeError: &#39;PhotoImage&#39; object has no attribute &#39;tobytes&#39;"
-  },
-  {
-    "question_id": 76840747,
-    "answer_id": 76840826,
-    "creation_date": 1691223839,
-    "is_accepted": true,
-    "tags": [
-      "html",
-      "less",
-      "css-float"
-    ],
-    "link": "https://stackoverflow.com/questions/76840747/an-element-with-css-float-moving-out-from-its-parent-element",
-    "title": "An element with CSS float moving out from its parent element"
-  },
-  {
-    "question_id": 76821532,
-    "creation_date": 1690991053,
-    "is_accepted": false,
-    "tags": [
-      "regex",
-      "bash",
-      "pattern-matching"
-    ],
-    "link": "https://stackoverflow.com/questions/76821532/how-to-match-only-full-directory-file-names-in-bash-script",
-    "title": "How to match only full directory/file names in bash script"
-  },
-  {
-    "question_id": 76819277,
-    "creation_date": 1690974594,
-    "is_accepted": false,
-    "tags": [
-      "typescript"
-    ],
-    "link": "https://stackoverflow.com/questions/76819277/how-to-create-an-array-that-will-adhere-to-certain-union-type-without-having-to",
-    "title": "How to create an array that will adhere to certain Union type without having to copy myself?"
-  },
-  {
-    "question_id": 76814703,
-    "answer_id": 76814713,
-    "creation_date": 1690918510,
-    "is_accepted": true,
-    "tags": [
-      "typescript",
-      "amazon-dynamodb"
-    ],
-    "link": "https://stackoverflow.com/questions/76814703/how-to-get-only-the-key-and-value-from-a-filter-expression-dynamodb-query-in-typ",
-    "title": "How to get only the key and value from a Filter expression DynamoDb Query in Typescript"
-  },
-  {
-    "question_id": 76814494,
-    "creation_date": 1690916369,
-    "is_accepted": false,
-    "tags": [
-      "typescript",
-      "typescript-generics",
-      "type-inference",
-      "union-types"
-    ],
-    "link": "https://stackoverflow.com/questions/76814494/extract-the-first-token-from-an-or-list-union-in-typescript",
-    "title": "Extract the first token from an &quot;or list&quot; (union) in Typescript"
-  },
-  {
-    "question_id": 76806916,
-    "creation_date": 1690834977,
-    "is_accepted": false,
-    "tags": [
-      "javascript",
-      "reactjs"
-    ],
-    "link": "https://stackoverflow.com/questions/76806916/input-shows-the-previous-value-for-a-while",
-    "title": "Input shows the previous value for a while"
-  },
-  {
-    "question_id": 76805630,
-    "answer_id": 76805678,
-    "creation_date": 1690821982,
-    "is_accepted": true,
-    "tags": [
-      "node.js",
-      "typescript",
-      "express"
-    ],
-    "link": "https://stackoverflow.com/questions/76805630/syntaxerror-invalid-regular-expression-while-creating-a-route-with-route-params",
-    "title": "SyntaxError: Invalid regular expression while creating a route with route params"
-  },
-  {
-    "question_id": 76804784,
-    "creation_date": 1690815073,
-    "is_accepted": false,
-    "tags": [
-      "javascript",
-      "typescript",
-      "web-scraping",
-      "x-ray"
-    ],
-    "link": "https://stackoverflow.com/questions/76804784/x-ray-how-to-parse-non-nested-structure-into-array-of-objects",
-    "title": "X-ray. How to parse non-nested structure into array of objects?"
-  },
-  {
-    "question_id": 76803803,
-    "answer_id": 76803840,
-    "creation_date": 1690807792,
-    "is_accepted": true,
-    "tags": [
-      "php",
-      "mysql",
-      "laravel"
-    ],
-    "link": "https://stackoverflow.com/questions/76803803/mysql-grab-last-row-of-a-group-of-data-but-specific-to-a-column-value",
-    "title": "MySQL grab last row of a group of data but specific to a column value"
-  },
-  {
-    "question_id": 76799471,
-    "creation_date": 1690747988,
-    "is_accepted": false,
-    "tags": [
-      "javascript",
-      "reactjs"
-    ],
-    "link": "https://stackoverflow.com/questions/76799471/modal-is-disappearing-when-click-on-the-input-button-inside-it-reactjs",
-    "title": "Modal is disappearing when click on the input button inside it (ReactJS)"
-  },
-  {
-    "question_id": 76799449,
-    "creation_date": 1690747639,
-    "is_accepted": false,
-    "tags": [
-      "jquery",
-      "ajax"
-    ],
-    "link": "https://stackoverflow.com/questions/76799449/cant-resubmit-ajax-form-after-initial-submit",
-    "title": "Cant resubmit ajax form after initial submit"
-  },
-  {
-    "question_id": 76799079,
-    "creation_date": 1690740624,
-    "is_accepted": false,
-    "tags": [
-      "javascript",
-      "html",
-      "css"
-    ],
-    "link": "https://stackoverflow.com/questions/76799079/how-to-be-able-to-delete-right-aligned-text-from-the-left-side",
-    "title": "How to be able to delete right-aligned text from the left side?"
-  },
-  {
-    "question_id": 76799040,
-    "creation_date": 1690739879,
-    "is_accepted": false,
-    "tags": [
-      "javascript",
-      "google-chrome-extension"
-    ],
-    "link": "https://stackoverflow.com/questions/76799040/use-a-string-as-an-object-name",
-    "title": "Use a string as an object name"
-  },
-  {
-    "question_id": 76798963,
-    "answer_id": 76799177,
-    "creation_date": 1690738839,
-    "is_accepted": true,
-    "tags": [
-      "python",
-      "pandas",
-      "dataframe"
-    ],
-    "link": "https://stackoverflow.com/questions/76798963/how-to-make-label-column-in-pandas-dataframe-while-grouping-by-counts",
-    "title": "How to make label column in pandas dataframe while grouping by counts?"
-  },
-  {
-    "question_id": 76798830,
-    "creation_date": 1690736724,
-    "is_accepted": false,
-    "tags": [
-      "jquery"
-    ],
-    "link": "https://stackoverflow.com/questions/76798830/replaces-all-of-these-words-except-those-in-the-img-and-h2-tags",
-    "title": "Replaces all of these words except those in the img and h2 tags"
-  },
-  {
-    "question_id": 76797076,
-    "creation_date": 1690708283,
-    "is_accepted": false,
-    "tags": [
-      "css"
-    ],
-    "link": "https://stackoverflow.com/questions/76797076/half-line-ellipsis",
-    "title": "Half line ellipsis"
-  },
-  {
-    "question_id": 76795845,
-    "creation_date": 1690674531,
-    "is_accepted": false,
-    "tags": [
-      "php",
-      "json"
-    ],
-    "link": "https://stackoverflow.com/questions/76795845/php-traversing-object-fails-if-elements-value-is-not-of-type-string",
-    "title": "PHP - Traversing object fails if element&#39;s value is not of type STRING"
-  },
-  {
-    "question_id": 76792826,
-    "creation_date": 1690620931,
-    "is_accepted": false,
-    "tags": [
-      "reactjs",
-      "typescript"
-    ],
-    "link": "https://stackoverflow.com/questions/76792826/unexpected-token",
-    "title": "Unexpected Token"
-  },
-  {
-    "question_id": 76792811,
-    "answer_id": 76792870,
-    "creation_date": 1690620609,
-    "is_accepted": true,
-    "tags": [
-      "python",
-      "python-3.x",
-      "exception"
-    ],
-    "link": "https://stackoverflow.com/questions/76792811/how-to-get-detailed-exception-in-python",
-    "title": "How to Get Detailed Exception in Python?"
-  },
-  {
-    "question_id": 76792789,
-    "answer_id": 76792901,
-    "creation_date": 1690620131,
-    "is_accepted": true,
-    "tags": [
-      "javascript",
-      "reactjs",
-      "next.js",
-      "date-fns",
-      "date-fns-tz"
-    ],
-    "link": "https://stackoverflow.com/questions/76792789/date-fns-showing-invalid-interval-when-comparing-dates-using-iswithininterval-an",
-    "title": "date-fns showing invalid interval when comparing dates using isWithinInterval and a users timezone"
-  },
-  {
-    "question_id": 76792625,
-    "creation_date": 1690617546,
-    "is_accepted": false,
-    "tags": [
-      "html",
-      "css",
-      "select",
-      "dropdown"
-    ],
-    "link": "https://stackoverflow.com/questions/76792625/select-dropdown-form-options-in-html-are-when-clicked-way-to-big-relative-to-t",
-    "title": "Select dropdown form options in HTML are (when clicked) way to big relative to the initial select box?"
-  },
-  {
-    "question_id": 76792125,
-    "answer_id": 76802647,
-    "creation_date": 1690607279,
-    "is_accepted": true,
-    "tags": [
-      "reactjs",
-      "monaco-editor",
-      "react-monaco-editor"
-    ],
-    "link": "https://stackoverflow.com/questions/76792125/set-up-listeners-when-a-model-is-created-or-disposed-for-monaco-editor-react",
-    "title": "Set up listeners when a model is created or disposed for @monaco-editor/react"
-  },
-  {
-    "question_id": 76791061,
-    "creation_date": 1690578943,
-    "is_accepted": false,
-    "tags": [
-      "python",
-      "pandas",
-      "dataframe",
-      "numpy",
-      "dask"
-    ],
-    "link": "https://stackoverflow.com/questions/76791061/how-to-use-dask-to-parallelize-iterating-and-updating-numpy-array",
-    "title": "How to use Dask to parallelize iterating and updating numpy array"
-  },
-  {
-    "question_id": 76788467,
-    "answer_id": 76789478,
-    "creation_date": 1690552475,
-    "is_accepted": true,
-    "tags": [
-      "javascript",
-      "methods",
-      "binding",
-      "this",
-      "object-literal"
-    ],
-    "link": "https://stackoverflow.com/questions/76788467/javascript-object-literal-how-to-replace-this-keyword-for-another-thing",
-    "title": "JavaScript Object Literal - how to replace `this` keyword for another thing"
-  },
-  {
-    "question_id": 76772248,
-    "answer_id": 76772572,
-    "creation_date": 1690381105,
-    "is_accepted": true,
-    "tags": [
-      "reactjs",
-      "list",
-      "performance",
-      "optimization",
-      "react-hooks"
-    ],
-    "link": "https://stackoverflow.com/questions/76772248/react-bad-performance-in-list-while-selecting-a-listitem",
-    "title": "React bad performance in list while selecting a listitem"
-  },
-  {
-    "question_id": 76765578,
-    "answer_id": 76765603,
-    "creation_date": 1690309665,
-    "is_accepted": true,
-    "tags": [
-      "javascript",
-      "html"
-    ],
-    "link": "https://stackoverflow.com/questions/76765578/how-do-i-get-the-even-odd-number-check-to-print-the-results",
-    "title": "How do I get the even/odd number check to print the results?"
-  },
-  {
-    "question_id": 76746222,
-    "answer_id": 76746309,
-    "creation_date": 1690071479,
-    "is_accepted": true,
-    "tags": [
-      "javascript",
-      "html",
-      "css"
-    ],
-    "link": "https://stackoverflow.com/questions/76746222/how-can-i-apply-the-active-pseudoclass-to-multiple-elements-at-the-same-time",
-    "title": "How can I apply the :active pseudoclass to multiple elements at the same time?"
-  },
-  {
-    "question_id": 76746213,
-    "creation_date": 1690071023,
-    "is_accepted": false,
-    "tags": [
-      "javascript",
-      "properties",
-      "duplicates",
-      "ecmascript-5",
-      "use-strict"
-    ],
-    "link": "https://stackoverflow.com/questions/76746213/javascript-duplicate-property-name-and-getter-setter-an-error-in-es5",
-    "title": "JavaScript: duplicate property name and getter/setter an error in ES5?"
-  },
-  {
-    "question_id": 76746195,
-    "answer_id": 76746245,
-    "creation_date": 1690070510,
-    "is_accepted": true,
-    "tags": [
-      "javascript",
-      "loops"
-    ],
-    "link": "https://stackoverflow.com/questions/76746195/rock-paper-scissors-round-loop-javascript",
-    "title": "Rock, Paper, Scissors - Round Loop Javascript"
-  },
-  {
-    "question_id": 76702745,
-    "answer_id": 76702846,
-    "creation_date": 1689583134,
-    "is_accepted": true,
-    "tags": [
-      "javascript",
-      "reactjs",
-      "typescript"
-    ],
-    "link": "https://stackoverflow.com/questions/76702745/how-to-pass-types-as-props-in-a-reuseable-component",
-    "title": "how to pass types as props in a reuseable component"
-  },
-  {
-    "question_id": 76690333,
-    "creation_date": 1689359528,
-    "is_accepted": false,
-    "tags": [
-      "typescript",
-      "conditional-operator",
-      "union-types"
-    ],
-    "link": "https://stackoverflow.com/questions/76690333/type-string-is-not-assignable-to-type-never-ts2322-union-of-conditional",
-    "title": "Type &#39;string&#39; is not assignable to type &#39;never&#39;.ts(2322) -- union of conditional type not working"
-  },
-  {
-    "question_id": 76688719,
-    "creation_date": 1689345428,
-    "is_accepted": false,
-    "tags": [
-      "typescript",
-      "mixins"
-    ],
-    "link": "https://stackoverflow.com/questions/76688719/typescript-mixin-loose-generic-type",
-    "title": "Typescript mixin loose generic type"
-  },
-  {
-    "question_id": 76687719,
-    "answer_id": 76687755,
-    "creation_date": 1689337916,
-    "is_accepted": true,
-    "tags": [
-      "javascript",
-      "typeerror",
-      "pushstate",
-      "html5-history"
-    ],
-    "link": "https://stackoverflow.com/questions/76687719/replacing-history-pushstate-to-send-events-getting-ilegal-invocation-error",
-    "title": "Replacing history.pushState to send events (getting Ilegal invocation error)"
-  },
-  {
-    "question_id": 76686611,
-    "creation_date": 1689328642,
-    "is_accepted": false,
-    "tags": [
-      "typescript",
-      "tsconfig",
-      "nrwl-nx",
-      "next"
-    ],
-    "link": "https://stackoverflow.com/questions/76686611/tsconfig-alias-not-resolving-at-paths-above-baseuri",
-    "title": "tsconfig alias not resolving at paths above baseUri"
-  },
-  {
-    "question_id": 76681808,
-    "answer_id": 76681832,
-    "creation_date": 1689268158,
-    "is_accepted": true,
-    "tags": [
-      "javascript",
-      "typescript",
-      "types"
-    ],
-    "link": "https://stackoverflow.com/questions/76681808/typescript-deep-pick-by-key-without-specifying-a-path",
-    "title": "Typescript deep Pick by key without specifying a path"
-  },
-  {
-    "question_id": 76681759,
-    "answer_id": 76681801,
-    "creation_date": 1689267626,
-    "is_accepted": true,
-    "tags": [
-      "javascript",
-      "typescript",
-      "maps",
-      "hierarchy"
-    ],
-    "link": "https://stackoverflow.com/questions/76681759/facing-issues-with-typescript-multi-hierarchy-key-map-pair",
-    "title": "Facing issues with typescript multi hierarchy key map pair"
-  },
-  {
-    "question_id": 76681569,
-    "creation_date": 1689265923,
-    "is_accepted": false,
-    "tags": [
-      "angular",
-      "typescript",
-      "asynchronous"
-    ],
-    "link": "https://stackoverflow.com/questions/76681569/angular-wait-for-observable-method-called-in-ngoninit-to-finish-to-continue-exec",
-    "title": "Angular wait for observable method called in ngOnInit to finish to continue execution"
-  },
-  {
-    "question_id": 76681480,
-    "answer_id": 76681528,
-    "creation_date": 1689265146,
-    "is_accepted": true,
-    "tags": [
-      "javascript",
-      "typescript",
-      "declare"
-    ],
-    "link": "https://stackoverflow.com/questions/76681480/how-to-declare-experimental-global-variables-in-typescript",
-    "title": "How to declare experimental global variables in TypeScript?"
-  },
-  {
-    "question_id": 76681388,
-    "creation_date": 1689264339,
-    "is_accepted": false,
-    "tags": [
-      "javascript",
-      "reactjs",
-      "authentication",
-      "react-hooks",
-      "axios"
-    ],
-    "link": "https://stackoverflow.com/questions/76681388/setstate-to-a-state-located-in-app-js-from-another-file",
-    "title": "setState to a state located in App.js from another file"
-  },
-  {
-    "question_id": 76680660,
-    "answer_id": 76680741,
-    "creation_date": 1689259327,
-    "is_accepted": true,
-    "tags": [
-      "python",
-      "expression"
-    ],
-    "link": "https://stackoverflow.com/questions/76680660/how-to-use-dataarray-values-as-list-indexes",
-    "title": "How to use DataArray values ​as list indexes?"
-  },
-  {
-    "question_id": 76680225,
-    "answer_id": 76680279,
-    "creation_date": 1689256767,
-    "is_accepted": true,
-    "tags": [
-      "html",
-      "reactjs",
-      "input",
-      "touch"
-    ],
-    "link": "https://stackoverflow.com/questions/76680225/react-input-text-field-how-to-focus-on-touch",
-    "title": "React Input Text Field - How to Focus on Touch?"
-  },
-  {
-    "question_id": 76680147,
-    "creation_date": 1689256206,
-    "is_accepted": false,
-    "tags": [
-      "html",
-      "css"
-    ],
-    "link": "https://stackoverflow.com/questions/76680147/how-do-i-fix-style-of-my-sliding-pseudo-class",
-    "title": "How do I fix style of my sliding pseudo class?"
-  },
-  {
-    "question_id": 76679438,
-    "answer_id": 76692602,
-    "creation_date": 1689251625,
-    "is_accepted": true,
-    "tags": [
-      "javascript",
-      "reactjs",
-      "react-hooks",
-      "react-router-dom"
-    ],
-    "link": "https://stackoverflow.com/questions/76679438/does-the-useparams-hook-return-a-persistent-object-from-render-to-render",
-    "title": "Does the useParams hook return a persistent object from render to render?"
-  },
-  {
-    "question_id": 76679258,
-    "creation_date": 1689250451,
-    "is_accepted": false,
-    "tags": [
-      "javascript",
-      "arrays",
-      "angular"
-    ],
-    "link": "https://stackoverflow.com/questions/76679258/how-to-start-at-a-index-but-without-missing-any-items-in-the-array",
-    "title": "How to start at a index but without missing any items in the array?"
-  },
-  {
-    "question_id": 76679155,
-    "creation_date": 1689249756,
-    "is_accepted": false,
-    "tags": [
-      "python",
-      "git",
-      "github"
-    ],
-    "link": "https://stackoverflow.com/questions/76679155/how-can-i-forbid-commit-file-that-was-already-pushed-git-and-github",
-    "title": "How can I forbid commit file that was already pushed? Git and GitHub"
-  },
-  {
-    "question_id": 76679097,
-    "creation_date": 1689249299,
-    "is_accepted": false,
-    "tags": [
-      "node.js",
-      "reactjs",
-      "next.js",
-      "axios",
-      "swr"
-    ],
-    "link": "https://stackoverflow.com/questions/76679097/i-am-unable-to-fetch-data-with-swr-in-nextjs",
-    "title": "I am unable to fetch data with SWR in Nextjs"
-  },
-  {
-    "question_id": 76679081,
-    "answer_id": 76679115,
-    "creation_date": 1689249180,
-    "is_accepted": true,
-    "tags": [
-      "javascript",
-      "mysql",
-      "express",
-      "sequelize.js",
-      "ejs"
-    ],
-    "link": "https://stackoverflow.com/questions/76679081/cannot-read-properties-of-undefined-reading-findall",
-    "title": "Cannot read properties of undefined (reading &#39;findAll&#39;)"
-  },
-  {
-    "question_id": 76679051,
-    "answer_id": 76679089,
-    "creation_date": 1689248953,
-    "is_accepted": true,
-    "tags": [
-      "reactjs"
-    ],
-    "link": "https://stackoverflow.com/questions/76679051/how-the-onchange-event-of-a-switchstacked-can-continue-after-modal",
-    "title": "How the onChange event of a SwitchStacked can continue after modal?"
-  },
-  {
-    "question_id": 76661947,
-    "answer_id": 76683402,
-    "creation_date": 1689078211,
-    "is_accepted": true,
-    "tags": [
-      "javascript",
-      "html",
-      "jquery",
-      "css"
-    ],
-    "link": "https://stackoverflow.com/questions/76661947/how-to-apply-position-sticky-on-a-div-based-on-its-innertext",
-    "title": "How to apply position sticky on a div based on its innerText?"
-  },
-  {
-    "question_id": 65781096,
-    "answer_id": 65824287,
-    "creation_date": 1610998972,
-    "is_accepted": true,
-    "tags": [
-      "javascript",
-      "node.js",
-      "express",
-      "http"
-    ],
-    "link": "https://stackoverflow.com/questions/65781096/201-status-node-express-api-always-failing",
-    "title": "201 status node express API always failing"
-  },
-  {
-    "question_id": 63900042,
-    "answer_id": 63916498,
-    "creation_date": 1600166083,
-    "is_accepted": true,
-    "tags": [
-      "javascript",
-      "reactjs",
-      "typescript",
-      "redux"
-    ],
-    "link": "https://stackoverflow.com/questions/63900042/react-overload-on-typescript-combinereducer",
-    "title": "React overload on Typescript - CombineReducer"
-  },
-  {
-    "question_id": 62729863,
-    "creation_date": 1593870048,
-    "is_accepted": false,
-    "tags": [
-      "javascript",
-      "html",
-      "dom"
-    ],
-    "link": "https://stackoverflow.com/questions/62729863/dom-scroll-touchmove-event-how-to-find-which-element-scrolls",
-    "title": "DOM scroll (touchmove) event, how to find which element scrolls"
-  },
-  {
-    "question_id": 62492305,
-    "answer_id": 62492471,
-    "creation_date": 1592691115,
-    "is_accepted": true,
-    "tags": [
-      "javascript",
-      "html"
-    ],
-    "link": "https://stackoverflow.com/questions/62492305/onblur-function-not-working-for-me-might-be-my-coding",
-    "title": "onblur function not working for me- might be my coding"
-  },
-  {
-    "question_id": 62484401,
-    "answer_id": 62484781,
-    "creation_date": 1592647718,
-    "is_accepted": true,
-    "tags": [
-      "javascript",
-      "html",
-      "css"
-    ],
-    "link": "https://stackoverflow.com/questions/62484401/how-do-i-hide-li-when-the-span-inside-contains-certain-text",
-    "title": "How do I hide &lt;li&gt; when the &lt;span&gt; inside contains certain text?"
-  },
-  {
-    "question_id": 62484015,
-    "creation_date": 1592645341,
-    "is_accepted": false,
-    "tags": [
-      "reactjs"
-    ],
-    "link": "https://stackoverflow.com/questions/62484015/how-am-i-getting-this-js-error-from-div-element",
-    "title": "How am I getting this JS error from &lt;div&gt; element?"
-  },
-  {
-    "question_id": 62452971,
-    "creation_date": 1592492324,
-    "is_accepted": false,
-    "tags": [
-      "javascript",
-      "object",
-      "javascript-objects"
-    ],
-    "link": "https://stackoverflow.com/questions/62452971/tostring-method-behaviour-in-objects",
-    "title": "toString() method behaviour in Objects"
-  },
-  {
-    "question_id": 62449626,
-    "creation_date": 1592482022,
-    "is_accepted": false,
-    "tags": [
-      "javascript",
-      "html"
-    ],
-    "link": "https://stackoverflow.com/questions/62449626/eventlistener-that-makes-a-tag-with-a-value",
-    "title": "eventlistener that makes a tag with a value"
-  },
-  {
-    "question_id": 62449157,
-    "answer_id": 62449347,
-    "creation_date": 1592480336,
-    "is_accepted": true,
-    "tags": [
-      "javascript",
-      "express"
-    ],
-    "link": "https://stackoverflow.com/questions/62449157/how-to-change-the-form-to-content-type-application-json",
-    "title": "How to change the form to Content-Type: application / json"
-  },
-  {
-    "question_id": 62320284,
-    "creation_date": 1591864514,
-    "is_accepted": false,
-    "tags": [
-      "reactjs",
-      "database",
-      "image",
-      "file",
-      "flask"
-    ],
-    "link": "https://stackoverflow.com/questions/62320284/react-best-practice-storing-images-on-server",
-    "title": "React best practice storing images on server"
-  },
-  {
-    "question_id": 42455437,
-    "answer_id": 42455611,
-    "creation_date": 1488021977,
-    "is_accepted": true,
-    "tags": [
-      "php",
-      "html",
-      "json",
-      "html-table",
-      "slim"
-    ],
-    "link": "https://stackoverflow.com/questions/42455437/display-json-content-in-php-table",
-    "title": "Display json content in php table"
-  },
-  {
-    "question_id": 42455301,
-    "creation_date": 1488021213,
-    "is_accepted": false,
-    "tags": [
-      "html",
-      "css",
-      "responsive-design",
-      "flexbox"
-    ],
-    "link": "https://stackoverflow.com/questions/42455301/flexbox-wont-float-to-center",
-    "title": "Flexbox wont float to center"
-  },
-  {
-    "question_id": 36980505,
-    "answer_id": 36981574,
-    "creation_date": 1462185689,
-    "is_accepted": true,
-    "tags": [
-      "php"
-    ],
-    "link": "https://stackoverflow.com/questions/36980505/identifying-before-and-after-with-fixed-point-loop",
-    "title": "Identifying before and after with fixed point (Loop)"
-  },
-  {
-    "question_id": 32850334,
-    "answer_id": 32850639,
-    "creation_date": 1443548064,
-    "is_accepted": true,
-    "tags": [
-      "jquery",
-      "foreach",
-      "each"
-    ],
-    "link": "https://stackoverflow.com/questions/32850334/step-through-json-results-with-a-delay-between-each",
-    "title": "step through json results with a delay between each?"
-  },
-  {
-    "question_id": 32608237,
-    "answer_id": 32658674,
-    "creation_date": 1442405453,
-    "is_accepted": true,
-    "tags": [
-      "javascript",
-      "html",
-      "css",
-      "lazy-loading"
-    ],
-    "link": "https://stackoverflow.com/questions/32608237/lazy-loading-effect-doesnt-seems-to-work-on-my-page",
-    "title": "lazy loading effect doesn&#39;t seems to work on my page"
-  },
-  {
-    "question_id": 32607953,
-    "answer_id": 32608296,
-    "creation_date": 1442404679,
-    "is_accepted": true,
-    "tags": [
-      "javascript",
-      "jquery",
-      "ajax"
-    ],
-    "link": "https://stackoverflow.com/questions/32607953/checking-if-a-m3u8-url-is-broken-using-javascript",
-    "title": "Checking if a m3u8 URL is broken using Javascript"
-  },
-  {
-    "question_id": 32583519,
-    "answer_id": 32584537,
-    "creation_date": 1442312316,
-    "is_accepted": true,
-    "tags": [
-      "html",
-      "css",
-      "wordpress"
-    ],
-    "link": "https://stackoverflow.com/questions/32583519/margin-of-one-div-seems-to-affect-whole-site",
-    "title": "margin of one div seems to affect whole site"
-  },
-  {
-    "question_id": 31819213,
-    "answer_id": 31819485,
-    "creation_date": 1438721917,
-    "is_accepted": true,
-    "tags": [
-      "html",
-      "css"
-    ],
-    "link": "https://stackoverflow.com/questions/31819213/change-color-of-div-with-several-classes-with-css",
-    "title": "Change color of div with several classes with CSS"
-  },
-  {
-    "question_id": 28287326,
-    "creation_date": 1422913423,
-    "is_accepted": false,
-    "tags": [
-      "javascript",
-      "php",
-      "jquery",
-      "wordpress"
-    ],
-    "link": "https://stackoverflow.com/questions/28287326/including-jquery-in-wordpress-plugin",
-    "title": "Including jQuery in Wordpress-Plugin"
-  },
-  {
-    "question_id": 28268826,
-    "answer_id": 28268905,
-    "creation_date": 1422830653,
-    "is_accepted": true,
-    "tags": [
-      "javascript",
-      "html"
-    ],
-    "link": "https://stackoverflow.com/questions/28268826/javascript-instead-of-repetitive-html-lines",
-    "title": "JavaScript instead of repetitive HTML lines"
-  },
-  {
-    "question_id": 27025632,
-    "answer_id": 27026177,
-    "creation_date": 1416426349,
-    "is_accepted": true,
-    "tags": [
-      "php",
-      "wordpress"
-    ],
-    "link": "https://stackoverflow.com/questions/27025632/table-and-post-values",
-    "title": "Table and post values"
-  },
-  {
-    "question_id": 26684512,
-    "answer_id": 26685133,
-    "creation_date": 1414795746,
-    "is_accepted": true,
-    "tags": [
-      "javascript",
-      "jquery",
-      "google-maps",
-      "google-maps-api-3"
-    ],
-    "link": "https://stackoverflow.com/questions/26684512/google-map-api-autocomplete-search-on-current-map",
-    "title": "Google Map API - Autocomplete search on current map"
-  },
-  {
-    "question_id": 26560024,
-    "answer_id": 26563377,
-    "creation_date": 1414220024,
-    "is_accepted": true,
-    "tags": [
-      "css",
-      "laravel",
-      "laravel-4"
-    ],
-    "link": "https://stackoverflow.com/questions/26560024/laravel-4-css-does-not-get-loaded",
-    "title": "Laravel 4 - CSS does not get loaded"
-  },
-  {
-    "question_id": 26337578,
-    "answer_id": 26347935,
-    "creation_date": 1413195296,
-    "is_accepted": true,
-    "tags": [
-      "excel",
-      "excel-formula",
-      "worksheet-function",
-      "substitution",
-      "bulletedlist"
-    ],
-    "link": "https://stackoverflow.com/questions/26337578/replace-bullets-with-numbering",
-    "title": "Replace bullets with numbering"
-  },
-  {
-    "question_id": 26185328,
-    "answer_id": 26185428,
-    "creation_date": 1412363682,
-    "is_accepted": true,
-    "tags": [
-      "css",
-      "ruby-on-rails-3"
-    ],
-    "link": "https://stackoverflow.com/questions/26185328/dynamic-menu-class-assignment-in-rails",
-    "title": "Dynamic menu class assignment in Rails"
-  },
-  {
-    "question_id": 26148325,
-    "answer_id": 26148465,
-    "creation_date": 1412188930,
-    "is_accepted": true,
-    "tags": [
-      "php",
-      "forms",
-      "function",
-      "onchange"
-    ],
-    "link": "https://stackoverflow.com/questions/26148325/textbox-onchange-call-php-function",
-    "title": "textbox onchange call php function"
-  },
-  {
-    "question_id": 26129097,
-    "answer_id": 26129762,
-    "creation_date": 1412107339,
-    "is_accepted": true,
-    "tags": [
-      "javascript",
-      "jquery"
-    ],
-    "link": "https://stackoverflow.com/questions/26129097/change-event-firing-without-click",
-    "title": "Change event firing without click"
-  },
-  {
-    "question_id": 26083386,
-    "creation_date": 1411895697,
-    "is_accepted": false,
-    "tags": [
-      "html"
-    ],
-    "link": "https://stackoverflow.com/questions/26083386/html-table-add-header-to-each-row",
-    "title": "HTML table add header to each row"
-  },
-  {
-    "question_id": 25955152,
-    "answer_id": 25955201,
-    "creation_date": 1411265730,
-    "is_accepted": true,
-    "tags": [
-      "php",
-      "session",
-      "url",
-      "no-www"
-    ],
-    "link": "https://stackoverflow.com/questions/25955152/php-www-website-pre-fix-and-no-pre-fix-use-different-session-variables",
-    "title": "PHP - WWW website pre-fix and no pre-fix use different SESSION variables"
-  },
-  {
-    "question_id": 25900681,
-    "answer_id": 25901133,
-    "creation_date": 1410989506,
-    "is_accepted": true,
-    "tags": [
-      "php"
-    ],
-    "link": "https://stackoverflow.com/questions/25900681/passing-a-variable-through-get",
-    "title": "Passing a variable through _GET"
-  },
-  {
-    "question_id": 25796073,
-    "answer_id": 25796365,
-    "creation_date": 1410466176,
-    "is_accepted": true,
-    "tags": [
-      "css"
-    ],
-    "link": "https://stackoverflow.com/questions/25796073/issue-on-applying-css-specific-rules-only-on-safari",
-    "title": "Issue on Applying CSS Specific Rules Only On Safari"
-  },
-  {
-    "question_id": 25708569,
-    "answer_id": 25708623,
-    "creation_date": 1410080128,
-    "is_accepted": true,
-    "tags": [
-      "html",
-      "css",
-      "forms"
-    ],
-    "link": "https://stackoverflow.com/questions/25708569/font-awesome-icons-in-html-form",
-    "title": "Font awesome icons in html form"
-  },
-  {
-    "question_id": 25704773,
-    "answer_id": 25704819,
-    "creation_date": 1410037756,
-    "is_accepted": true,
-    "tags": [
-      "php",
-      "breadcrumbs"
-    ],
-    "link": "https://stackoverflow.com/questions/25704773/remove-hyphen-in-breadcrumbs",
-    "title": "Remove hyphen in breadcrumbs"
-  },
-  {
-    "question_id": 25702190,
-    "answer_id": 25702261,
-    "creation_date": 1410020084,
-    "is_accepted": true,
-    "tags": [
-      "html",
-      "css",
-      "containers"
-    ],
-    "link": "https://stackoverflow.com/questions/25702190/how-to-create-a-div-container-with-equal-spacing-on-child-divs",
-    "title": "How to create a div container with equal spacing on child divs"
-  },
-  {
-    "question_id": 25701335,
-    "answer_id": 25701383,
-    "creation_date": 1410014312,
-    "is_accepted": true,
-    "tags": [
-      "css",
-      "html"
-    ],
-    "link": "https://stackoverflow.com/questions/25701335/add-lines-in-html-texarea",
-    "title": "Add lines in HTML texarea"
-  },
-  {
-    "question_id": 25700284,
-    "creation_date": 1410006764,
-    "is_accepted": false,
-    "tags": [
-      "php",
-      "upload",
-      "wordpress"
-    ],
-    "link": "https://stackoverflow.com/questions/25700284/how-to-upload-pictures-in-custom-folders-in-wordpress",
-    "title": "How to upload pictures in custom folders in WordPress"
-  },
-  {
-    "question_id": 25697901,
-    "answer_id": 25698484,
-    "creation_date": 1409988110,
-    "is_accepted": true,
-    "tags": [
-      "php",
-      "html",
-      "lan"
-    ],
-    "link": "https://stackoverflow.com/questions/25697901/how-to-access-localhost-over-lan-ip-in-php",
-    "title": "How to access localhost over LAN ip in php?"
-  },
-  {
-    "question_id": 25691677,
-    "creation_date": 1409940759,
-    "is_accepted": false,
-    "tags": [
-      "html",
-      "wordpress",
-      "forms",
-      "iframe",
-      "responsive-design"
-    ],
-    "link": "https://stackoverflow.com/questions/25691677/how-to-make-contents-in-an-iframe-resposive",
-    "title": "how to make contents in an Iframe resposive?"
-  },
-  {
-    "question_id": 25591489,
-    "answer_id": 25591604,
-    "creation_date": 1409484296,
-    "is_accepted": true,
-    "tags": [
-      "javascript",
-      "jquery",
-      "html",
-      "css",
-      "blogger"
-    ],
-    "link": "https://stackoverflow.com/questions/25591489/how-to-random-color-half-of-the-words-within-h2-tag",
-    "title": "How to random color half of the words within h2 tag?"
-  },
-  {
-    "question_id": 25587431,
-    "creation_date": 1409439435,
-    "is_accepted": false,
-    "tags": [
-      "javascript",
-      "php"
-    ],
-    "link": "https://stackoverflow.com/questions/25587431/javascript-is-executing-and-displaying",
-    "title": "Javascript is Executing and Displaying"
-  },
-  {
-    "question_id": 25587284,
-    "answer_id": 25587396,
-    "creation_date": 1409437807,
-    "is_accepted": true,
-    "tags": [
-      "html",
-      "css"
-    ],
-    "link": "https://stackoverflow.com/questions/25587284/how-to-make-text-slide-by-only-using-css-html",
-    "title": "How to make text slide by only using css/html"
-  },
-  {
-    "question_id": 25582874,
-    "answer_id": 25582918,
-    "creation_date": 1409405363,
-    "is_accepted": true,
-    "tags": [
-      "php",
-      "thumbnails",
-      "vine"
-    ],
-    "link": "https://stackoverflow.com/questions/25582874/getting-vine-thumbnail",
-    "title": "Getting vine thumbnail"
-  },
-  {
-    "question_id": 25582516,
-    "creation_date": 1409402745,
-    "is_accepted": false,
-    "tags": [
-      "wordpress"
-    ],
-    "link": "https://stackoverflow.com/questions/25582516/wordpress-limit-total-post-and-paging-number",
-    "title": "WordPress - limit total post and paging number"
-  },
-  {
-    "question_id": 25582487,
-    "creation_date": 1409402557,
-    "is_accepted": false,
-    "tags": [
-      "html",
-      "css",
-      "mobile",
-      "viewport"
-    ],
-    "link": "https://stackoverflow.com/questions/25582487/viewport-tag-not-working",
-    "title": "Viewport tag not working"
-  },
-  {
-    "question_id": 25582468,
-    "creation_date": 1409402420,
-    "is_accepted": false,
-    "tags": [
-      "php",
-      "html"
-    ],
-    "link": "https://stackoverflow.com/questions/25582468/limiting-the-output-of-php-to-100-characters",
-    "title": "Limiting the output of PHP to 100 characters"
-  },
-  {
-    "question_id": 25582368,
-    "answer_id": 25582387,
-    "creation_date": 1409401689,
-    "is_accepted": true,
-    "tags": [
-      "css",
-      "tumblr",
-      "overlap",
-      "overlapping"
-    ],
-    "link": "https://stackoverflow.com/questions/25582368/css-content-overlapping-with-sidebar-tumblr-theme",
-    "title": "CSS: Content Overlapping with Sidebar (Tumblr Theme)"
-  },
-  {
-    "question_id": 25581506,
-    "answer_id": 25581659,
-    "creation_date": 1409395523,
-    "is_accepted": true,
-    "tags": [
-      "html",
-      "css",
-      "hyperlink"
-    ],
-    "link": "https://stackoverflow.com/questions/25581506/styling-link-text-in-a-div",
-    "title": "styling link text in a div"
-  },
-  {
-    "question_id": 25511981,
-    "answer_id": 25532142,
-    "creation_date": 1409074921,
-    "is_accepted": true,
-    "tags": [
-      "wordpress",
-      "encoding"
-    ],
-    "link": "https://stackoverflow.com/questions/25511981/textarea-output-is-not-well-encoded",
-    "title": "&lt;textarea&gt; output is not well encoded"
-  },
-  {
-    "question_id": 25511684,
-    "answer_id": 25512010,
-    "creation_date": 1409073793,
-    "is_accepted": true,
-    "tags": [
-      "javascript",
-      "jquery",
-      "html"
-    ],
-    "link": "https://stackoverflow.com/questions/25511684/javascript-replace-reg-and-html-tags",
-    "title": "javascript replace &amp;reg; and html tags"
-  },
-  {
-    "question_id": 25485128,
-    "answer_id": 25485237,
-    "creation_date": 1408966919,
-    "is_accepted": true,
-    "tags": [
-      "java"
-    ],
-    "link": "https://stackoverflow.com/questions/25485128/how-to-convert-a-string-value-512m-into-integer-value-512",
-    "title": "how to convert a String value 512m into integer value 512?"
-  },
-  {
-    "question_id": 25484742,
-    "answer_id": 25484850,
-    "creation_date": 1408965535,
-    "is_accepted": true,
-    "tags": [
-      "jquery"
-    ],
-    "link": "https://stackoverflow.com/questions/25484742/how-to-show-a-default-image-incase-the-image-is-found",
-    "title": "how to show a default image Incase the Image is found"
-  },
-  {
-    "question_id": 25392594,
-    "answer_id": 25392700,
-    "creation_date": 1408480876,
-    "is_accepted": true,
-    "tags": [
-      "html",
-      "css"
-    ],
-    "link": "https://stackoverflow.com/questions/25392594/how-do-i-increase-the-size-of-the-text-contained",
-    "title": "How do I increase the size of the text contained?"
-  },
-  {
-    "question_id": 25392487,
-    "answer_id": 25392599,
-    "creation_date": 1408480422,
-    "is_accepted": true,
-    "tags": [
-      "jquery"
-    ],
-    "link": "https://stackoverflow.com/questions/25392487/hide-and-show-a-div-class-based-on-a-radio-groups-value",
-    "title": "Hide and show a div class based on a radio group&#39;s value"
-  },
-  {
-    "question_id": 25373290,
-    "creation_date": 1408402512,
-    "is_accepted": false,
-    "tags": [
-      "html",
-      "css"
-    ],
-    "link": "https://stackoverflow.com/questions/25373290/why-is-my-table-doing-this",
-    "title": "Why is my table doing this?"
-  },
-  {
-    "question_id": 25373027,
-    "answer_id": 25373189,
-    "creation_date": 1408400914,
-    "is_accepted": true,
-    "tags": [
-      "javascript",
-      "html"
-    ],
-    "link": "https://stackoverflow.com/questions/25373027/repeat-block-of-text-for-each-div-instance",
-    "title": "Repeat block of text for each DIV instance"
-  },
-  {
-    "question_id": 25372834,
-    "creation_date": 1408399767,
-    "is_accepted": false,
-    "tags": [
-      "html",
-      "css"
-    ],
-    "link": "https://stackoverflow.com/questions/25372834/input-box-text-color-with-css-wheather-on-focus-or-not",
-    "title": "Input Box Text Color with CSS wheather on focus or not"
-  },
-  {
-    "question_id": 25365789,
-    "creation_date": 1408372190,
-    "is_accepted": false,
-    "tags": [
-      "jquery",
-      "html",
-      "html-input"
-    ],
-    "link": "https://stackoverflow.com/questions/25365789/make-an-input-adapt-to-its-text",
-    "title": "Make an input adapt to its text"
-  },
-  {
-    "question_id": 25359686,
-    "creation_date": 1408352820,
-    "is_accepted": false,
-    "tags": [
-      "css",
-      "jsf"
-    ],
-    "link": "https://stackoverflow.com/questions/25359686/override-css-for-a-single-column-in-richdatatable",
-    "title": "Override css for a single column in richdatatable"
-  },
-  {
-    "question_id": 25359465,
-    "creation_date": 1408351944,
-    "is_accepted": false,
-    "tags": [
-      "php",
-      "mysql",
-      "match",
-      "boolean-search"
-    ],
-    "link": "https://stackoverflow.com/questions/25359465/mysql-find-best-matching-word-in-one-row",
-    "title": "mysql find best matching word in one row"
-  },
-  {
-    "question_id": 25358804,
-    "answer_id": 25358867,
-    "creation_date": 1408349290,
-    "is_accepted": true,
-    "tags": [
-      "php",
-      "wordpress"
-    ],
-    "link": "https://stackoverflow.com/questions/25358804/wordpress-search-for-only-single-category",
-    "title": "wordpress search for only single category"
-  },
-  {
-    "question_id": 25358608,
-    "answer_id": 25358817,
-    "creation_date": 1408348499,
-    "is_accepted": true,
-    "tags": [
-      "php",
-      "apache",
-      ".htaccess",
-      "mod-rewrite",
-      "redirect"
-    ],
-    "link": "https://stackoverflow.com/questions/25358608/htaccess-friendly-urls-with-parameters-2",
-    "title": "HTACCESS friendly urls with parameters 2"
-  },
-  {
-    "question_id": 25358576,
-    "creation_date": 1408348374,
-    "is_accepted": false,
-    "tags": [
-      "php",
-      "email",
-      "phpmailer"
-    ],
-    "link": "https://stackoverflow.com/questions/25358576/phpmailer-can-not-send-email-now",
-    "title": "PHPMailer can not send email now"
-  },
-  {
-    "question_id": 25351646,
-    "creation_date": 1408295926,
-    "is_accepted": false,
-    "tags": [
-      "javascript",
-      "jquery",
-      "setfocus"
-    ],
-    "link": "https://stackoverflow.com/questions/25351646/always-return-focus-to-a-specific-input-field",
-    "title": "Always return focus to a specific input field"
-  },
-  {
-    "question_id": 25351628,
-    "answer_id": 25351654,
-    "creation_date": 1408295700,
-    "is_accepted": true,
-    "tags": [
-      "html",
-      "ajax",
-      "button"
-    ],
-    "link": "https://stackoverflow.com/questions/25351628/ajax-call-which-button-pressed",
-    "title": "Ajax call - Which button pressed?"
-  },
-  {
-    "question_id": 25351512,
-    "answer_id": 25351531,
-    "creation_date": 1408294911,
-    "is_accepted": true,
-    "tags": [
-      "php",
-      "regex"
-    ],
-    "link": "https://stackoverflow.com/questions/25351512/in-php-extract-specific-text-from-a-string",
-    "title": "In php extract specific text from a string"
-  },
-  {
-    "question_id": 25230943,
-    "answer_id": 25837867,
-    "creation_date": 1407689739,
-    "is_accepted": true,
-    "tags": [
-      "php",
-      "wordpress"
-    ],
-    "link": "https://stackoverflow.com/questions/25230943/wordpress-paginate-links-select-option",
-    "title": "Wordpress paginate_links select option"
-  },
-  {
-    "question_id": 25227032,
-    "answer_id": 25227158,
-    "creation_date": 1407660783,
-    "is_accepted": true,
-    "tags": [
-      "javascript",
-      "jquery",
-      "html",
-      "jquery-mobile"
-    ],
-    "link": "https://stackoverflow.com/questions/25227032/jquery-script-and-drop-down-lists",
-    "title": "jQuery script and drop down lists"
-  },
-  {
-    "question_id": 25105020,
-    "creation_date": 1407071808,
-    "is_accepted": false,
-    "tags": [
-      "html",
-      "css"
-    ],
-    "link": "https://stackoverflow.com/questions/25105020/children-not-occupying-parent-containers-whole-width",
-    "title": "children not occupying parent container&#39;s whole width"
-  },
-  {
-    "question_id": 24674750,
-    "answer_id": 24679696,
-    "creation_date": 1404989823,
-    "is_accepted": true,
-    "tags": [
-      "php",
-      "wordpress",
-      "advanced-custom-fields"
-    ],
-    "link": "https://stackoverflow.com/questions/24674750/acf-form-not-creating-unique-entities",
-    "title": "ACF Form not creating unique entities"
-  },
-  {
-    "question_id": 22261382,
-    "creation_date": 1394229065,
-    "is_accepted": false,
-    "tags": [
-      "filter"
-    ],
-    "link": "https://stackoverflow.com/questions/22261382/exclude-ip-with-slash-number-on-google-analytics",
-    "title": "Exclude IP with slash number on Google Analytics"
-  },
-  {
-    "question_id": 22074858,
-    "creation_date": 1393519480,
-    "is_accepted": false,
-    "tags": [
-      "jquery"
-    ],
-    "link": "https://stackoverflow.com/questions/22074858/jquery-tabs-not-loading-jquery-tabs",
-    "title": "jQuery tabs not loading jquery tabs"
-  },
-  {
-    "question_id": 21839498,
-    "answer_id": 25586648,
-    "creation_date": 1392672096,
-    "is_accepted": true,
-    "tags": [
-      "php",
-      "salesforce"
-    ],
-    "link": "https://stackoverflow.com/questions/21839498/curl-validation-on-salesforce-web2lead",
-    "title": "cURL validation on salesforce Web2Lead"
-  },
-  {
-    "question_id": 11595117,
-    "answer_id": 25710893,
-    "creation_date": 1342897803,
-    "is_accepted": true,
-    "tags": [
-      "php",
-      "sql",
-      "database"
-    ],
-    "link": "https://stackoverflow.com/questions/11595117/preg-match-sql-database-connect",
-    "title": "Preg_match sql database connect"
-  },
-  {
-    "question_id": 7942541,
-    "answer_id": 25710862,
-    "creation_date": 1319933743,
-    "is_accepted": true,
-    "tags": [
-      "ruby-on-rails",
-      "ruby",
-      "ruby-on-rails-3",
-      "ruby-on-rails-3.1"
-    ],
-    "link": "https://stackoverflow.com/questions/7942541/interlinking-2-scaffolds",
-    "title": "Interlinking 2 scaffolds"
-  }
-]
+{
+  "fetched_data": {
+    "date_stamp": "2023-08-11T18:28:54.682Z"
+  },
+  "data": [
+    {
+      "question_id": 76870195,
+      "creation_date": 1691603589,
+      "is_accepted": false,
+      "tags": [
+        "javascript",
+        "typescript",
+        "vue.js",
+        "components",
+        "vuejs3"
+      ],
+      "link": "https://stackoverflow.com/questions/76870195/how-do-i-pass-custom-props-to-dynamic-components-in-vue-3",
+      "title": "How do I pass custom props to dynamic components in Vue 3?",
+      "key": 1
+    },
+    {
+      "question_id": 76854817,
+      "creation_date": 1691438020,
+      "is_accepted": false,
+      "tags": [
+        "reactjs",
+        "typescript",
+        "react-hook-form"
+      ],
+      "link": "https://stackoverflow.com/questions/76854817/why-does-my-react-hook-form-still-refresh-the-page-on-submit",
+      "title": "Why Does My React Hook Form Still Refresh The Page On Submit",
+      "key": 2
+    },
+    {
+      "question_id": 76853754,
+      "answer_id": 76853781,
+      "creation_date": 1691427727,
+      "is_accepted": true,
+      "tags": [
+        "typescript"
+      ],
+      "link": "https://stackoverflow.com/questions/76853754/returning-an-object-which-has-keys-as-the-values-of-passed-array",
+      "title": "Returning an object which has keys as the values of passed array",
+      "key": 3
+    },
+    {
+      "question_id": 76853149,
+      "creation_date": 1691422245,
+      "is_accepted": false,
+      "tags": [
+        "html",
+        "css"
+      ],
+      "link": "https://stackoverflow.com/questions/76853149/video-element-not-stretching-full-length-of-parent-div",
+      "title": "Video Element Not Stretching Full Length of Parent Div",
+      "key": 4
+    },
+    {
+      "question_id": 76853115,
+      "answer_id": 76853725,
+      "creation_date": 1691421975,
+      "is_accepted": true,
+      "tags": [
+        "html",
+        "css",
+        "row",
+        "line",
+        "space"
+      ],
+      "link": "https://stackoverflow.com/questions/76853115/how-to-add-a-space-below-each-line",
+      "title": "How to add a space below each line",
+      "key": 5
+    },
+    {
+      "question_id": 76846020,
+      "answer_id": 76846086,
+      "creation_date": 1691327046,
+      "is_accepted": true,
+      "tags": [
+        "javascript",
+        "reactjs",
+        "react-router-dom"
+      ],
+      "link": "https://stackoverflow.com/questions/76846020/react-js-separator-publictheme-and-publictheme",
+      "title": "React JS - Separator PublicTheme and PublicTheme",
+      "key": 6
+    },
+    {
+      "question_id": 76845532,
+      "answer_id": 76845692,
+      "creation_date": 1691319114,
+      "is_accepted": true,
+      "tags": [
+        "typescript"
+      ],
+      "link": "https://stackoverflow.com/questions/76845532/how-to-type-the-return-of-a-function-when-you-need-to-return-an-object-in-which",
+      "title": "how to type the return of a function when you need to return an object in which all keys are required or all keys are optional?",
+      "key": 7
+    },
+    {
+      "question_id": 76845393,
+      "answer_id": 76845417,
+      "creation_date": 1691316933,
+      "is_accepted": true,
+      "tags": [
+        "javascript",
+        "jquery"
+      ],
+      "link": "https://stackoverflow.com/questions/76845393/why-console-shows-scrollintoview-is-not-a-function",
+      "title": "Why console shows &quot;scrollIntoView() is not a function&quot;?",
+      "key": 8
+    },
+    {
+      "question_id": 76843968,
+      "answer_id": 76844040,
+      "creation_date": 1691279967,
+      "is_accepted": true,
+      "tags": [
+        "python",
+        "dataframe",
+        "list",
+        "multidimensional-array",
+        "jupyter-notebook"
+      ],
+      "link": "https://stackoverflow.com/questions/76843968/how-to-return-a-similar-match-in-the-same-2d-list",
+      "title": "How to return a similar match in the same 2d list",
+      "key": 9
+    },
+    {
+      "question_id": 76843910,
+      "answer_id": 76843965,
+      "creation_date": 1691278106,
+      "is_accepted": true,
+      "tags": [
+        "typescript",
+        "typescript-typings",
+        "typescript-generics"
+      ],
+      "link": "https://stackoverflow.com/questions/76843910/how-to-forward-a-typescript-generic-type-into-inner-function",
+      "title": "How to forward a Typescript generic type into inner function",
+      "key": 10
+    },
+    {
+      "question_id": 76842580,
+      "answer_id": 76842597,
+      "creation_date": 1691253071,
+      "is_accepted": true,
+      "tags": [
+        "javascript",
+        "reactjs",
+        "typescript",
+        "zod"
+      ],
+      "link": "https://stackoverflow.com/questions/76842580/how-to-validate-a-field-in-zod-depending-on-the-value-of-another-field",
+      "title": "How to validate a field in Zod depending on the value of another field?",
+      "key": 11
+    },
+    {
+      "question_id": 76842553,
+      "creation_date": 1691252757,
+      "is_accepted": false,
+      "tags": [
+        "python",
+        "mocking",
+        "patch"
+      ],
+      "link": "https://stackoverflow.com/questions/76842553/how-to-unit-test-the-python-code-using-mock-patch",
+      "title": "How to unit test the python code using mock patch?",
+      "key": 12
+    },
+    {
+      "question_id": 76840856,
+      "creation_date": 1691225437,
+      "is_accepted": false,
+      "tags": [
+        "python",
+        "tkinter",
+        "python-imaging-library",
+        "attributeerror"
+      ],
+      "link": "https://stackoverflow.com/questions/76840856/attributeerror-photoimage-object-has-no-attribute-tobytes",
+      "title": "AttributeError: &#39;PhotoImage&#39; object has no attribute &#39;tobytes&#39;",
+      "key": 13
+    },
+    {
+      "question_id": 76840747,
+      "answer_id": 76840826,
+      "creation_date": 1691223839,
+      "is_accepted": true,
+      "tags": [
+        "html",
+        "less",
+        "css-float"
+      ],
+      "link": "https://stackoverflow.com/questions/76840747/an-element-with-css-float-moving-out-from-its-parent-element",
+      "title": "An element with CSS float moving out from its parent element",
+      "key": 14
+    },
+    {
+      "question_id": 76821532,
+      "creation_date": 1690991053,
+      "is_accepted": false,
+      "tags": [
+        "regex",
+        "bash",
+        "pattern-matching"
+      ],
+      "link": "https://stackoverflow.com/questions/76821532/how-to-match-only-full-directory-file-names-in-bash-script",
+      "title": "How to match only full directory/file names in bash script",
+      "key": 15
+    },
+    {
+      "question_id": 76819277,
+      "creation_date": 1690974594,
+      "is_accepted": false,
+      "tags": [
+        "typescript"
+      ],
+      "link": "https://stackoverflow.com/questions/76819277/how-to-create-an-array-that-will-adhere-to-certain-union-type-without-having-to",
+      "title": "How to create an array that will adhere to certain Union type without having to copy myself?",
+      "key": 16
+    },
+    {
+      "question_id": 76814703,
+      "answer_id": 76814713,
+      "creation_date": 1690918510,
+      "is_accepted": true,
+      "tags": [
+        "typescript",
+        "amazon-dynamodb"
+      ],
+      "link": "https://stackoverflow.com/questions/76814703/how-to-get-only-the-key-and-value-from-a-filter-expression-dynamodb-query-in-typ",
+      "title": "How to get only the key and value from a Filter expression DynamoDb Query in Typescript",
+      "key": 17
+    },
+    {
+      "question_id": 76814494,
+      "creation_date": 1690916369,
+      "is_accepted": false,
+      "tags": [
+        "typescript",
+        "typescript-generics",
+        "type-inference",
+        "union-types"
+      ],
+      "link": "https://stackoverflow.com/questions/76814494/extract-the-first-token-from-an-or-list-union-in-typescript",
+      "title": "Extract the first token from an &quot;or list&quot; (union) in Typescript",
+      "key": 18
+    },
+    {
+      "question_id": 76806916,
+      "creation_date": 1690834977,
+      "is_accepted": false,
+      "tags": [
+        "javascript",
+        "reactjs"
+      ],
+      "link": "https://stackoverflow.com/questions/76806916/input-shows-the-previous-value-for-a-while",
+      "title": "Input shows the previous value for a while",
+      "key": 19
+    },
+    {
+      "question_id": 76805630,
+      "answer_id": 76805678,
+      "creation_date": 1690821982,
+      "is_accepted": true,
+      "tags": [
+        "node.js",
+        "typescript",
+        "express"
+      ],
+      "link": "https://stackoverflow.com/questions/76805630/syntaxerror-invalid-regular-expression-while-creating-a-route-with-route-params",
+      "title": "SyntaxError: Invalid regular expression while creating a route with route params",
+      "key": 20
+    },
+    {
+      "question_id": 76804784,
+      "creation_date": 1690815073,
+      "is_accepted": false,
+      "tags": [
+        "javascript",
+        "typescript",
+        "web-scraping",
+        "x-ray"
+      ],
+      "link": "https://stackoverflow.com/questions/76804784/x-ray-how-to-parse-non-nested-structure-into-array-of-objects",
+      "title": "X-ray. How to parse non-nested structure into array of objects?",
+      "key": 21
+    },
+    {
+      "question_id": 76803803,
+      "answer_id": 76803840,
+      "creation_date": 1690807792,
+      "is_accepted": true,
+      "tags": [
+        "php",
+        "mysql",
+        "laravel"
+      ],
+      "link": "https://stackoverflow.com/questions/76803803/mysql-grab-last-row-of-a-group-of-data-but-specific-to-a-column-value",
+      "title": "MySQL grab last row of a group of data but specific to a column value",
+      "key": 22
+    },
+    {
+      "question_id": 76799471,
+      "creation_date": 1690747988,
+      "is_accepted": false,
+      "tags": [
+        "javascript",
+        "reactjs"
+      ],
+      "link": "https://stackoverflow.com/questions/76799471/modal-is-disappearing-when-click-on-the-input-button-inside-it-reactjs",
+      "title": "Modal is disappearing when click on the input button inside it (ReactJS)",
+      "key": 23
+    },
+    {
+      "question_id": 76799449,
+      "creation_date": 1690747639,
+      "is_accepted": false,
+      "tags": [
+        "jquery",
+        "ajax"
+      ],
+      "link": "https://stackoverflow.com/questions/76799449/cant-resubmit-ajax-form-after-initial-submit",
+      "title": "Cant resubmit ajax form after initial submit",
+      "key": 24
+    },
+    {
+      "question_id": 76799079,
+      "creation_date": 1690740624,
+      "is_accepted": false,
+      "tags": [
+        "javascript",
+        "html",
+        "css"
+      ],
+      "link": "https://stackoverflow.com/questions/76799079/how-to-be-able-to-delete-right-aligned-text-from-the-left-side",
+      "title": "How to be able to delete right-aligned text from the left side?",
+      "key": 25
+    },
+    {
+      "question_id": 76799040,
+      "creation_date": 1690739879,
+      "is_accepted": false,
+      "tags": [
+        "javascript",
+        "google-chrome-extension"
+      ],
+      "link": "https://stackoverflow.com/questions/76799040/use-a-string-as-an-object-name",
+      "title": "Use a string as an object name",
+      "key": 26
+    },
+    {
+      "question_id": 76798963,
+      "answer_id": 76799177,
+      "creation_date": 1690738839,
+      "is_accepted": true,
+      "tags": [
+        "python",
+        "pandas",
+        "dataframe"
+      ],
+      "link": "https://stackoverflow.com/questions/76798963/how-to-make-label-column-in-pandas-dataframe-while-grouping-by-counts",
+      "title": "How to make label column in pandas dataframe while grouping by counts?",
+      "key": 27
+    },
+    {
+      "question_id": 76798830,
+      "creation_date": 1690736724,
+      "is_accepted": false,
+      "tags": [
+        "jquery"
+      ],
+      "link": "https://stackoverflow.com/questions/76798830/replaces-all-of-these-words-except-those-in-the-img-and-h2-tags",
+      "title": "Replaces all of these words except those in the img and h2 tags",
+      "key": 28
+    },
+    {
+      "question_id": 76797076,
+      "creation_date": 1690708283,
+      "is_accepted": false,
+      "tags": [
+        "css"
+      ],
+      "link": "https://stackoverflow.com/questions/76797076/half-line-ellipsis",
+      "title": "Half line ellipsis",
+      "key": 29
+    },
+    {
+      "question_id": 76795845,
+      "creation_date": 1690674531,
+      "is_accepted": false,
+      "tags": [
+        "php",
+        "json"
+      ],
+      "link": "https://stackoverflow.com/questions/76795845/php-traversing-object-fails-if-elements-value-is-not-of-type-string",
+      "title": "PHP - Traversing object fails if element&#39;s value is not of type STRING",
+      "key": 30
+    },
+    {
+      "question_id": 76792826,
+      "creation_date": 1690620931,
+      "is_accepted": false,
+      "tags": [
+        "reactjs",
+        "typescript"
+      ],
+      "link": "https://stackoverflow.com/questions/76792826/unexpected-token",
+      "title": "Unexpected Token",
+      "key": 31
+    },
+    {
+      "question_id": 76792811,
+      "answer_id": 76792870,
+      "creation_date": 1690620609,
+      "is_accepted": true,
+      "tags": [
+        "python",
+        "python-3.x",
+        "exception"
+      ],
+      "link": "https://stackoverflow.com/questions/76792811/how-to-get-detailed-exception-in-python",
+      "title": "How to Get Detailed Exception in Python?",
+      "key": 32
+    },
+    {
+      "question_id": 76792789,
+      "answer_id": 76792901,
+      "creation_date": 1690620131,
+      "is_accepted": true,
+      "tags": [
+        "javascript",
+        "reactjs",
+        "next.js",
+        "date-fns",
+        "date-fns-tz"
+      ],
+      "link": "https://stackoverflow.com/questions/76792789/date-fns-showing-invalid-interval-when-comparing-dates-using-iswithininterval-an",
+      "title": "date-fns showing invalid interval when comparing dates using isWithinInterval and a users timezone",
+      "key": 33
+    },
+    {
+      "question_id": 76792625,
+      "creation_date": 1690617546,
+      "is_accepted": false,
+      "tags": [
+        "html",
+        "css",
+        "select",
+        "dropdown"
+      ],
+      "link": "https://stackoverflow.com/questions/76792625/select-dropdown-form-options-in-html-are-when-clicked-way-to-big-relative-to-t",
+      "title": "Select dropdown form options in HTML are (when clicked) way to big relative to the initial select box?",
+      "key": 34
+    },
+    {
+      "question_id": 76792125,
+      "answer_id": 76802647,
+      "creation_date": 1690607279,
+      "is_accepted": true,
+      "tags": [
+        "reactjs",
+        "monaco-editor",
+        "react-monaco-editor"
+      ],
+      "link": "https://stackoverflow.com/questions/76792125/set-up-listeners-when-a-model-is-created-or-disposed-for-monaco-editor-react",
+      "title": "Set up listeners when a model is created or disposed for @monaco-editor/react",
+      "key": 35
+    },
+    {
+      "question_id": 76791061,
+      "creation_date": 1690578943,
+      "is_accepted": false,
+      "tags": [
+        "python",
+        "pandas",
+        "dataframe",
+        "numpy",
+        "dask"
+      ],
+      "link": "https://stackoverflow.com/questions/76791061/how-to-use-dask-to-parallelize-iterating-and-updating-numpy-array",
+      "title": "How to use Dask to parallelize iterating and updating numpy array",
+      "key": 36
+    },
+    {
+      "question_id": 76788467,
+      "answer_id": 76789478,
+      "creation_date": 1690552475,
+      "is_accepted": true,
+      "tags": [
+        "javascript",
+        "methods",
+        "binding",
+        "this",
+        "object-literal"
+      ],
+      "link": "https://stackoverflow.com/questions/76788467/javascript-object-literal-how-to-replace-this-keyword-for-another-thing",
+      "title": "JavaScript Object Literal - how to replace `this` keyword for another thing",
+      "key": 37
+    },
+    {
+      "question_id": 76772248,
+      "answer_id": 76772572,
+      "creation_date": 1690381105,
+      "is_accepted": true,
+      "tags": [
+        "reactjs",
+        "list",
+        "performance",
+        "optimization",
+        "react-hooks"
+      ],
+      "link": "https://stackoverflow.com/questions/76772248/react-bad-performance-in-list-while-selecting-a-listitem",
+      "title": "React bad performance in list while selecting a listitem",
+      "key": 38
+    },
+    {
+      "question_id": 76765578,
+      "answer_id": 76765603,
+      "creation_date": 1690309665,
+      "is_accepted": true,
+      "tags": [
+        "javascript",
+        "html"
+      ],
+      "link": "https://stackoverflow.com/questions/76765578/how-do-i-get-the-even-odd-number-check-to-print-the-results",
+      "title": "How do I get the even/odd number check to print the results?",
+      "key": 39
+    },
+    {
+      "question_id": 76746222,
+      "answer_id": 76746309,
+      "creation_date": 1690071479,
+      "is_accepted": true,
+      "tags": [
+        "javascript",
+        "html",
+        "css"
+      ],
+      "link": "https://stackoverflow.com/questions/76746222/how-can-i-apply-the-active-pseudoclass-to-multiple-elements-at-the-same-time",
+      "title": "How can I apply the :active pseudoclass to multiple elements at the same time?",
+      "key": 40
+    },
+    {
+      "question_id": 76746213,
+      "creation_date": 1690071023,
+      "is_accepted": false,
+      "tags": [
+        "javascript",
+        "properties",
+        "duplicates",
+        "ecmascript-5",
+        "use-strict"
+      ],
+      "link": "https://stackoverflow.com/questions/76746213/javascript-duplicate-property-name-and-getter-setter-an-error-in-es5",
+      "title": "JavaScript: duplicate property name and getter/setter an error in ES5?",
+      "key": 41
+    },
+    {
+      "question_id": 76746195,
+      "answer_id": 76746245,
+      "creation_date": 1690070510,
+      "is_accepted": true,
+      "tags": [
+        "javascript",
+        "loops"
+      ],
+      "link": "https://stackoverflow.com/questions/76746195/rock-paper-scissors-round-loop-javascript",
+      "title": "Rock, Paper, Scissors - Round Loop Javascript",
+      "key": 42
+    },
+    {
+      "question_id": 76702745,
+      "answer_id": 76702846,
+      "creation_date": 1689583134,
+      "is_accepted": true,
+      "tags": [
+        "javascript",
+        "reactjs",
+        "typescript"
+      ],
+      "link": "https://stackoverflow.com/questions/76702745/how-to-pass-types-as-props-in-a-reuseable-component",
+      "title": "how to pass types as props in a reuseable component",
+      "key": 43
+    },
+    {
+      "question_id": 76690333,
+      "creation_date": 1689359528,
+      "is_accepted": false,
+      "tags": [
+        "typescript",
+        "conditional-operator",
+        "union-types"
+      ],
+      "link": "https://stackoverflow.com/questions/76690333/type-string-is-not-assignable-to-type-never-ts2322-union-of-conditional",
+      "title": "Type &#39;string&#39; is not assignable to type &#39;never&#39;.ts(2322) -- union of conditional type not working",
+      "key": 44
+    },
+    {
+      "question_id": 76688719,
+      "creation_date": 1689345428,
+      "is_accepted": false,
+      "tags": [
+        "typescript",
+        "mixins"
+      ],
+      "link": "https://stackoverflow.com/questions/76688719/typescript-mixin-loose-generic-type",
+      "title": "Typescript mixin loose generic type",
+      "key": 45
+    },
+    {
+      "question_id": 76687719,
+      "answer_id": 76687755,
+      "creation_date": 1689337916,
+      "is_accepted": true,
+      "tags": [
+        "javascript",
+        "typeerror",
+        "pushstate",
+        "html5-history"
+      ],
+      "link": "https://stackoverflow.com/questions/76687719/replacing-history-pushstate-to-send-events-getting-ilegal-invocation-error",
+      "title": "Replacing history.pushState to send events (getting Ilegal invocation error)",
+      "key": 46
+    },
+    {
+      "question_id": 76686611,
+      "creation_date": 1689328642,
+      "is_accepted": false,
+      "tags": [
+        "typescript",
+        "tsconfig",
+        "nrwl-nx",
+        "next"
+      ],
+      "link": "https://stackoverflow.com/questions/76686611/tsconfig-alias-not-resolving-at-paths-above-baseuri",
+      "title": "tsconfig alias not resolving at paths above baseUri",
+      "key": 47
+    },
+    {
+      "question_id": 76681808,
+      "answer_id": 76681832,
+      "creation_date": 1689268158,
+      "is_accepted": true,
+      "tags": [
+        "javascript",
+        "typescript",
+        "types"
+      ],
+      "link": "https://stackoverflow.com/questions/76681808/typescript-deep-pick-by-key-without-specifying-a-path",
+      "title": "Typescript deep Pick by key without specifying a path",
+      "key": 48
+    },
+    {
+      "question_id": 76681759,
+      "answer_id": 76681801,
+      "creation_date": 1689267626,
+      "is_accepted": true,
+      "tags": [
+        "javascript",
+        "typescript",
+        "maps",
+        "hierarchy"
+      ],
+      "link": "https://stackoverflow.com/questions/76681759/facing-issues-with-typescript-multi-hierarchy-key-map-pair",
+      "title": "Facing issues with typescript multi hierarchy key map pair",
+      "key": 49
+    },
+    {
+      "question_id": 76681569,
+      "creation_date": 1689265923,
+      "is_accepted": false,
+      "tags": [
+        "angular",
+        "typescript",
+        "asynchronous"
+      ],
+      "link": "https://stackoverflow.com/questions/76681569/angular-wait-for-observable-method-called-in-ngoninit-to-finish-to-continue-exec",
+      "title": "Angular wait for observable method called in ngOnInit to finish to continue execution",
+      "key": 50
+    },
+    {
+      "question_id": 76681480,
+      "answer_id": 76681528,
+      "creation_date": 1689265146,
+      "is_accepted": true,
+      "tags": [
+        "javascript",
+        "typescript",
+        "declare"
+      ],
+      "link": "https://stackoverflow.com/questions/76681480/how-to-declare-experimental-global-variables-in-typescript",
+      "title": "How to declare experimental global variables in TypeScript?",
+      "key": 51
+    },
+    {
+      "question_id": 76681388,
+      "creation_date": 1689264339,
+      "is_accepted": false,
+      "tags": [
+        "javascript",
+        "reactjs",
+        "authentication",
+        "react-hooks",
+        "axios"
+      ],
+      "link": "https://stackoverflow.com/questions/76681388/setstate-to-a-state-located-in-app-js-from-another-file",
+      "title": "setState to a state located in App.js from another file",
+      "key": 52
+    },
+    {
+      "question_id": 76680660,
+      "answer_id": 76680741,
+      "creation_date": 1689259327,
+      "is_accepted": true,
+      "tags": [
+        "python",
+        "expression"
+      ],
+      "link": "https://stackoverflow.com/questions/76680660/how-to-use-dataarray-values-as-list-indexes",
+      "title": "How to use DataArray values ​as list indexes?",
+      "key": 53
+    },
+    {
+      "question_id": 76680225,
+      "answer_id": 76680279,
+      "creation_date": 1689256767,
+      "is_accepted": true,
+      "tags": [
+        "html",
+        "reactjs",
+        "input",
+        "touch"
+      ],
+      "link": "https://stackoverflow.com/questions/76680225/react-input-text-field-how-to-focus-on-touch",
+      "title": "React Input Text Field - How to Focus on Touch?",
+      "key": 54
+    },
+    {
+      "question_id": 76680147,
+      "creation_date": 1689256206,
+      "is_accepted": false,
+      "tags": [
+        "html",
+        "css"
+      ],
+      "link": "https://stackoverflow.com/questions/76680147/how-do-i-fix-style-of-my-sliding-pseudo-class",
+      "title": "How do I fix style of my sliding pseudo class?",
+      "key": 55
+    },
+    {
+      "question_id": 76679438,
+      "answer_id": 76692602,
+      "creation_date": 1689251625,
+      "is_accepted": true,
+      "tags": [
+        "javascript",
+        "reactjs",
+        "react-hooks",
+        "react-router-dom"
+      ],
+      "link": "https://stackoverflow.com/questions/76679438/does-the-useparams-hook-return-a-persistent-object-from-render-to-render",
+      "title": "Does the useParams hook return a persistent object from render to render?",
+      "key": 56
+    },
+    {
+      "question_id": 76679258,
+      "creation_date": 1689250451,
+      "is_accepted": false,
+      "tags": [
+        "javascript",
+        "arrays",
+        "angular"
+      ],
+      "link": "https://stackoverflow.com/questions/76679258/how-to-start-at-a-index-but-without-missing-any-items-in-the-array",
+      "title": "How to start at a index but without missing any items in the array?",
+      "key": 57
+    },
+    {
+      "question_id": 76679155,
+      "creation_date": 1689249756,
+      "is_accepted": false,
+      "tags": [
+        "python",
+        "git",
+        "github"
+      ],
+      "link": "https://stackoverflow.com/questions/76679155/how-can-i-forbid-commit-file-that-was-already-pushed-git-and-github",
+      "title": "How can I forbid commit file that was already pushed? Git and GitHub",
+      "key": 58
+    },
+    {
+      "question_id": 76679097,
+      "creation_date": 1689249299,
+      "is_accepted": false,
+      "tags": [
+        "node.js",
+        "reactjs",
+        "next.js",
+        "axios",
+        "swr"
+      ],
+      "link": "https://stackoverflow.com/questions/76679097/i-am-unable-to-fetch-data-with-swr-in-nextjs",
+      "title": "I am unable to fetch data with SWR in Nextjs",
+      "key": 59
+    },
+    {
+      "question_id": 76679081,
+      "answer_id": 76679115,
+      "creation_date": 1689249180,
+      "is_accepted": true,
+      "tags": [
+        "javascript",
+        "mysql",
+        "express",
+        "sequelize.js",
+        "ejs"
+      ],
+      "link": "https://stackoverflow.com/questions/76679081/cannot-read-properties-of-undefined-reading-findall",
+      "title": "Cannot read properties of undefined (reading &#39;findAll&#39;)",
+      "key": 60
+    },
+    {
+      "question_id": 76679051,
+      "answer_id": 76679089,
+      "creation_date": 1689248953,
+      "is_accepted": true,
+      "tags": [
+        "reactjs"
+      ],
+      "link": "https://stackoverflow.com/questions/76679051/how-the-onchange-event-of-a-switchstacked-can-continue-after-modal",
+      "title": "How the onChange event of a SwitchStacked can continue after modal?",
+      "key": 61
+    },
+    {
+      "question_id": 76661947,
+      "answer_id": 76683402,
+      "creation_date": 1689078211,
+      "is_accepted": true,
+      "tags": [
+        "javascript",
+        "html",
+        "jquery",
+        "css"
+      ],
+      "link": "https://stackoverflow.com/questions/76661947/how-to-apply-position-sticky-on-a-div-based-on-its-innertext",
+      "title": "How to apply position sticky on a div based on its innerText?",
+      "key": 62
+    },
+    {
+      "question_id": 65781096,
+      "answer_id": 65824287,
+      "creation_date": 1610998972,
+      "is_accepted": true,
+      "tags": [
+        "javascript",
+        "node.js",
+        "express",
+        "http"
+      ],
+      "link": "https://stackoverflow.com/questions/65781096/201-status-node-express-api-always-failing",
+      "title": "201 status node express API always failing",
+      "key": 63
+    },
+    {
+      "question_id": 63900042,
+      "answer_id": 63916498,
+      "creation_date": 1600166083,
+      "is_accepted": true,
+      "tags": [
+        "javascript",
+        "reactjs",
+        "typescript",
+        "redux"
+      ],
+      "link": "https://stackoverflow.com/questions/63900042/react-overload-on-typescript-combinereducer",
+      "title": "React overload on Typescript - CombineReducer",
+      "key": 64
+    },
+    {
+      "question_id": 62729863,
+      "creation_date": 1593870048,
+      "is_accepted": false,
+      "tags": [
+        "javascript",
+        "html",
+        "dom"
+      ],
+      "link": "https://stackoverflow.com/questions/62729863/dom-scroll-touchmove-event-how-to-find-which-element-scrolls",
+      "title": "DOM scroll (touchmove) event, how to find which element scrolls",
+      "key": 65
+    },
+    {
+      "question_id": 62492305,
+      "answer_id": 62492471,
+      "creation_date": 1592691115,
+      "is_accepted": true,
+      "tags": [
+        "javascript",
+        "html"
+      ],
+      "link": "https://stackoverflow.com/questions/62492305/onblur-function-not-working-for-me-might-be-my-coding",
+      "title": "onblur function not working for me- might be my coding",
+      "key": 66
+    },
+    {
+      "question_id": 62484401,
+      "answer_id": 62484781,
+      "creation_date": 1592647718,
+      "is_accepted": true,
+      "tags": [
+        "javascript",
+        "html",
+        "css"
+      ],
+      "link": "https://stackoverflow.com/questions/62484401/how-do-i-hide-li-when-the-span-inside-contains-certain-text",
+      "title": "How do I hide &lt;li&gt; when the &lt;span&gt; inside contains certain text?",
+      "key": 67
+    },
+    {
+      "question_id": 62484015,
+      "creation_date": 1592645341,
+      "is_accepted": false,
+      "tags": [
+        "reactjs"
+      ],
+      "link": "https://stackoverflow.com/questions/62484015/how-am-i-getting-this-js-error-from-div-element",
+      "title": "How am I getting this JS error from &lt;div&gt; element?",
+      "key": 68
+    },
+    {
+      "question_id": 62452971,
+      "creation_date": 1592492324,
+      "is_accepted": false,
+      "tags": [
+        "javascript",
+        "object",
+        "javascript-objects"
+      ],
+      "link": "https://stackoverflow.com/questions/62452971/tostring-method-behaviour-in-objects",
+      "title": "toString() method behaviour in Objects",
+      "key": 69
+    },
+    {
+      "question_id": 62449626,
+      "creation_date": 1592482022,
+      "is_accepted": false,
+      "tags": [
+        "javascript",
+        "html"
+      ],
+      "link": "https://stackoverflow.com/questions/62449626/eventlistener-that-makes-a-tag-with-a-value",
+      "title": "eventlistener that makes a tag with a value",
+      "key": 70
+    },
+    {
+      "question_id": 62449157,
+      "answer_id": 62449347,
+      "creation_date": 1592480336,
+      "is_accepted": true,
+      "tags": [
+        "javascript",
+        "express"
+      ],
+      "link": "https://stackoverflow.com/questions/62449157/how-to-change-the-form-to-content-type-application-json",
+      "title": "How to change the form to Content-Type: application / json",
+      "key": 71
+    },
+    {
+      "question_id": 62320284,
+      "creation_date": 1591864514,
+      "is_accepted": false,
+      "tags": [
+        "reactjs",
+        "database",
+        "image",
+        "file",
+        "flask"
+      ],
+      "link": "https://stackoverflow.com/questions/62320284/react-best-practice-storing-images-on-server",
+      "title": "React best practice storing images on server",
+      "key": 72
+    },
+    {
+      "question_id": 42455437,
+      "answer_id": 42455611,
+      "creation_date": 1488021977,
+      "is_accepted": true,
+      "tags": [
+        "php",
+        "html",
+        "json",
+        "html-table",
+        "slim"
+      ],
+      "link": "https://stackoverflow.com/questions/42455437/display-json-content-in-php-table",
+      "title": "Display json content in php table",
+      "key": 73
+    },
+    {
+      "question_id": 42455301,
+      "creation_date": 1488021213,
+      "is_accepted": false,
+      "tags": [
+        "html",
+        "css",
+        "responsive-design",
+        "flexbox"
+      ],
+      "link": "https://stackoverflow.com/questions/42455301/flexbox-wont-float-to-center",
+      "title": "Flexbox wont float to center",
+      "key": 74
+    },
+    {
+      "question_id": 36980505,
+      "answer_id": 36981574,
+      "creation_date": 1462185689,
+      "is_accepted": true,
+      "tags": [
+        "php"
+      ],
+      "link": "https://stackoverflow.com/questions/36980505/identifying-before-and-after-with-fixed-point-loop",
+      "title": "Identifying before and after with fixed point (Loop)",
+      "key": 75
+    },
+    {
+      "question_id": 32850334,
+      "answer_id": 32850639,
+      "creation_date": 1443548064,
+      "is_accepted": true,
+      "tags": [
+        "jquery",
+        "foreach",
+        "each"
+      ],
+      "link": "https://stackoverflow.com/questions/32850334/step-through-json-results-with-a-delay-between-each",
+      "title": "step through json results with a delay between each?",
+      "key": 76
+    },
+    {
+      "question_id": 32608237,
+      "answer_id": 32658674,
+      "creation_date": 1442405453,
+      "is_accepted": true,
+      "tags": [
+        "javascript",
+        "html",
+        "css",
+        "lazy-loading"
+      ],
+      "link": "https://stackoverflow.com/questions/32608237/lazy-loading-effect-doesnt-seems-to-work-on-my-page",
+      "title": "lazy loading effect doesn&#39;t seems to work on my page",
+      "key": 77
+    },
+    {
+      "question_id": 32607953,
+      "answer_id": 32608296,
+      "creation_date": 1442404679,
+      "is_accepted": true,
+      "tags": [
+        "javascript",
+        "jquery",
+        "ajax"
+      ],
+      "link": "https://stackoverflow.com/questions/32607953/checking-if-a-m3u8-url-is-broken-using-javascript",
+      "title": "Checking if a m3u8 URL is broken using Javascript",
+      "key": 78
+    },
+    {
+      "question_id": 32583519,
+      "answer_id": 32584537,
+      "creation_date": 1442312316,
+      "is_accepted": true,
+      "tags": [
+        "html",
+        "css",
+        "wordpress"
+      ],
+      "link": "https://stackoverflow.com/questions/32583519/margin-of-one-div-seems-to-affect-whole-site",
+      "title": "margin of one div seems to affect whole site",
+      "key": 79
+    },
+    {
+      "question_id": 31819213,
+      "answer_id": 31819485,
+      "creation_date": 1438721917,
+      "is_accepted": true,
+      "tags": [
+        "html",
+        "css"
+      ],
+      "link": "https://stackoverflow.com/questions/31819213/change-color-of-div-with-several-classes-with-css",
+      "title": "Change color of div with several classes with CSS",
+      "key": 80
+    },
+    {
+      "question_id": 28287326,
+      "creation_date": 1422913423,
+      "is_accepted": false,
+      "tags": [
+        "javascript",
+        "php",
+        "jquery",
+        "wordpress"
+      ],
+      "link": "https://stackoverflow.com/questions/28287326/including-jquery-in-wordpress-plugin",
+      "title": "Including jQuery in Wordpress-Plugin",
+      "key": 81
+    },
+    {
+      "question_id": 28268826,
+      "answer_id": 28268905,
+      "creation_date": 1422830653,
+      "is_accepted": true,
+      "tags": [
+        "javascript",
+        "html"
+      ],
+      "link": "https://stackoverflow.com/questions/28268826/javascript-instead-of-repetitive-html-lines",
+      "title": "JavaScript instead of repetitive HTML lines",
+      "key": 82
+    },
+    {
+      "question_id": 27025632,
+      "answer_id": 27026177,
+      "creation_date": 1416426349,
+      "is_accepted": true,
+      "tags": [
+        "php",
+        "wordpress"
+      ],
+      "link": "https://stackoverflow.com/questions/27025632/table-and-post-values",
+      "title": "Table and post values",
+      "key": 83
+    },
+    {
+      "question_id": 26684512,
+      "answer_id": 26685133,
+      "creation_date": 1414795746,
+      "is_accepted": true,
+      "tags": [
+        "javascript",
+        "jquery",
+        "google-maps",
+        "google-maps-api-3"
+      ],
+      "link": "https://stackoverflow.com/questions/26684512/google-map-api-autocomplete-search-on-current-map",
+      "title": "Google Map API - Autocomplete search on current map",
+      "key": 84
+    },
+    {
+      "question_id": 26560024,
+      "answer_id": 26563377,
+      "creation_date": 1414220024,
+      "is_accepted": true,
+      "tags": [
+        "css",
+        "laravel",
+        "laravel-4"
+      ],
+      "link": "https://stackoverflow.com/questions/26560024/laravel-4-css-does-not-get-loaded",
+      "title": "Laravel 4 - CSS does not get loaded",
+      "key": 85
+    },
+    {
+      "question_id": 26337578,
+      "answer_id": 26347935,
+      "creation_date": 1413195296,
+      "is_accepted": true,
+      "tags": [
+        "excel",
+        "excel-formula",
+        "worksheet-function",
+        "substitution",
+        "bulletedlist"
+      ],
+      "link": "https://stackoverflow.com/questions/26337578/replace-bullets-with-numbering",
+      "title": "Replace bullets with numbering",
+      "key": 86
+    },
+    {
+      "question_id": 26185328,
+      "answer_id": 26185428,
+      "creation_date": 1412363682,
+      "is_accepted": true,
+      "tags": [
+        "css",
+        "ruby-on-rails-3"
+      ],
+      "link": "https://stackoverflow.com/questions/26185328/dynamic-menu-class-assignment-in-rails",
+      "title": "Dynamic menu class assignment in Rails",
+      "key": 87
+    },
+    {
+      "question_id": 26148325,
+      "answer_id": 26148465,
+      "creation_date": 1412188930,
+      "is_accepted": true,
+      "tags": [
+        "php",
+        "forms",
+        "function",
+        "onchange"
+      ],
+      "link": "https://stackoverflow.com/questions/26148325/textbox-onchange-call-php-function",
+      "title": "textbox onchange call php function",
+      "key": 88
+    },
+    {
+      "question_id": 26129097,
+      "answer_id": 26129762,
+      "creation_date": 1412107339,
+      "is_accepted": true,
+      "tags": [
+        "javascript",
+        "jquery"
+      ],
+      "link": "https://stackoverflow.com/questions/26129097/change-event-firing-without-click",
+      "title": "Change event firing without click",
+      "key": 89
+    },
+    {
+      "question_id": 26083386,
+      "creation_date": 1411895697,
+      "is_accepted": false,
+      "tags": [
+        "html"
+      ],
+      "link": "https://stackoverflow.com/questions/26083386/html-table-add-header-to-each-row",
+      "title": "HTML table add header to each row",
+      "key": 90
+    },
+    {
+      "question_id": 25955152,
+      "answer_id": 25955201,
+      "creation_date": 1411265730,
+      "is_accepted": true,
+      "tags": [
+        "php",
+        "session",
+        "url",
+        "no-www"
+      ],
+      "link": "https://stackoverflow.com/questions/25955152/php-www-website-pre-fix-and-no-pre-fix-use-different-session-variables",
+      "title": "PHP - WWW website pre-fix and no pre-fix use different SESSION variables",
+      "key": 91
+    },
+    {
+      "question_id": 25900681,
+      "answer_id": 25901133,
+      "creation_date": 1410989506,
+      "is_accepted": true,
+      "tags": [
+        "php"
+      ],
+      "link": "https://stackoverflow.com/questions/25900681/passing-a-variable-through-get",
+      "title": "Passing a variable through _GET",
+      "key": 92
+    },
+    {
+      "question_id": 25796073,
+      "answer_id": 25796365,
+      "creation_date": 1410466176,
+      "is_accepted": true,
+      "tags": [
+        "css"
+      ],
+      "link": "https://stackoverflow.com/questions/25796073/issue-on-applying-css-specific-rules-only-on-safari",
+      "title": "Issue on Applying CSS Specific Rules Only On Safari",
+      "key": 93
+    },
+    {
+      "question_id": 25708569,
+      "answer_id": 25708623,
+      "creation_date": 1410080128,
+      "is_accepted": true,
+      "tags": [
+        "html",
+        "css",
+        "forms"
+      ],
+      "link": "https://stackoverflow.com/questions/25708569/font-awesome-icons-in-html-form",
+      "title": "Font awesome icons in html form",
+      "key": 94
+    },
+    {
+      "question_id": 25704773,
+      "answer_id": 25704819,
+      "creation_date": 1410037756,
+      "is_accepted": true,
+      "tags": [
+        "php",
+        "breadcrumbs"
+      ],
+      "link": "https://stackoverflow.com/questions/25704773/remove-hyphen-in-breadcrumbs",
+      "title": "Remove hyphen in breadcrumbs",
+      "key": 95
+    },
+    {
+      "question_id": 25702190,
+      "answer_id": 25702261,
+      "creation_date": 1410020084,
+      "is_accepted": true,
+      "tags": [
+        "html",
+        "css",
+        "containers"
+      ],
+      "link": "https://stackoverflow.com/questions/25702190/how-to-create-a-div-container-with-equal-spacing-on-child-divs",
+      "title": "How to create a div container with equal spacing on child divs",
+      "key": 96
+    },
+    {
+      "question_id": 25701335,
+      "answer_id": 25701383,
+      "creation_date": 1410014312,
+      "is_accepted": true,
+      "tags": [
+        "css",
+        "html"
+      ],
+      "link": "https://stackoverflow.com/questions/25701335/add-lines-in-html-texarea",
+      "title": "Add lines in HTML texarea",
+      "key": 97
+    },
+    {
+      "question_id": 25700284,
+      "creation_date": 1410006764,
+      "is_accepted": false,
+      "tags": [
+        "php",
+        "upload",
+        "wordpress"
+      ],
+      "link": "https://stackoverflow.com/questions/25700284/how-to-upload-pictures-in-custom-folders-in-wordpress",
+      "title": "How to upload pictures in custom folders in WordPress",
+      "key": 98
+    },
+    {
+      "question_id": 25697901,
+      "answer_id": 25698484,
+      "creation_date": 1409988110,
+      "is_accepted": true,
+      "tags": [
+        "php",
+        "html",
+        "lan"
+      ],
+      "link": "https://stackoverflow.com/questions/25697901/how-to-access-localhost-over-lan-ip-in-php",
+      "title": "How to access localhost over LAN ip in php?",
+      "key": 99
+    },
+    {
+      "question_id": 25691677,
+      "creation_date": 1409940759,
+      "is_accepted": false,
+      "tags": [
+        "html",
+        "wordpress",
+        "forms",
+        "iframe",
+        "responsive-design"
+      ],
+      "link": "https://stackoverflow.com/questions/25691677/how-to-make-contents-in-an-iframe-resposive",
+      "title": "how to make contents in an Iframe resposive?",
+      "key": 100
+    },
+    {
+      "question_id": 25591489,
+      "answer_id": 25591604,
+      "creation_date": 1409484296,
+      "is_accepted": true,
+      "tags": [
+        "javascript",
+        "jquery",
+        "html",
+        "css",
+        "blogger"
+      ],
+      "link": "https://stackoverflow.com/questions/25591489/how-to-random-color-half-of-the-words-within-h2-tag",
+      "title": "How to random color half of the words within h2 tag?",
+      "key": 101
+    },
+    {
+      "question_id": 25587431,
+      "creation_date": 1409439435,
+      "is_accepted": false,
+      "tags": [
+        "javascript",
+        "php"
+      ],
+      "link": "https://stackoverflow.com/questions/25587431/javascript-is-executing-and-displaying",
+      "title": "Javascript is Executing and Displaying",
+      "key": 102
+    },
+    {
+      "question_id": 25587284,
+      "answer_id": 25587396,
+      "creation_date": 1409437807,
+      "is_accepted": true,
+      "tags": [
+        "html",
+        "css"
+      ],
+      "link": "https://stackoverflow.com/questions/25587284/how-to-make-text-slide-by-only-using-css-html",
+      "title": "How to make text slide by only using css/html",
+      "key": 103
+    },
+    {
+      "question_id": 25582874,
+      "answer_id": 25582918,
+      "creation_date": 1409405363,
+      "is_accepted": true,
+      "tags": [
+        "php",
+        "thumbnails",
+        "vine"
+      ],
+      "link": "https://stackoverflow.com/questions/25582874/getting-vine-thumbnail",
+      "title": "Getting vine thumbnail",
+      "key": 104
+    },
+    {
+      "question_id": 25582516,
+      "creation_date": 1409402745,
+      "is_accepted": false,
+      "tags": [
+        "wordpress"
+      ],
+      "link": "https://stackoverflow.com/questions/25582516/wordpress-limit-total-post-and-paging-number",
+      "title": "WordPress - limit total post and paging number",
+      "key": 105
+    },
+    {
+      "question_id": 25582487,
+      "creation_date": 1409402557,
+      "is_accepted": false,
+      "tags": [
+        "html",
+        "css",
+        "mobile",
+        "viewport"
+      ],
+      "link": "https://stackoverflow.com/questions/25582487/viewport-tag-not-working",
+      "title": "Viewport tag not working",
+      "key": 106
+    },
+    {
+      "question_id": 25582468,
+      "creation_date": 1409402420,
+      "is_accepted": false,
+      "tags": [
+        "php",
+        "html"
+      ],
+      "link": "https://stackoverflow.com/questions/25582468/limiting-the-output-of-php-to-100-characters",
+      "title": "Limiting the output of PHP to 100 characters",
+      "key": 107
+    },
+    {
+      "question_id": 25582368,
+      "answer_id": 25582387,
+      "creation_date": 1409401689,
+      "is_accepted": true,
+      "tags": [
+        "css",
+        "tumblr",
+        "overlap",
+        "overlapping"
+      ],
+      "link": "https://stackoverflow.com/questions/25582368/css-content-overlapping-with-sidebar-tumblr-theme",
+      "title": "CSS: Content Overlapping with Sidebar (Tumblr Theme)",
+      "key": 108
+    },
+    {
+      "question_id": 25581506,
+      "answer_id": 25581659,
+      "creation_date": 1409395523,
+      "is_accepted": true,
+      "tags": [
+        "html",
+        "css",
+        "hyperlink"
+      ],
+      "link": "https://stackoverflow.com/questions/25581506/styling-link-text-in-a-div",
+      "title": "styling link text in a div",
+      "key": 109
+    },
+    {
+      "question_id": 25511981,
+      "answer_id": 25532142,
+      "creation_date": 1409074921,
+      "is_accepted": true,
+      "tags": [
+        "wordpress",
+        "encoding"
+      ],
+      "link": "https://stackoverflow.com/questions/25511981/textarea-output-is-not-well-encoded",
+      "title": "&lt;textarea&gt; output is not well encoded",
+      "key": 110
+    },
+    {
+      "question_id": 25511684,
+      "answer_id": 25512010,
+      "creation_date": 1409073793,
+      "is_accepted": true,
+      "tags": [
+        "javascript",
+        "jquery",
+        "html"
+      ],
+      "link": "https://stackoverflow.com/questions/25511684/javascript-replace-reg-and-html-tags",
+      "title": "javascript replace &amp;reg; and html tags",
+      "key": 111
+    },
+    {
+      "question_id": 25485128,
+      "answer_id": 25485237,
+      "creation_date": 1408966919,
+      "is_accepted": true,
+      "tags": [
+        "java"
+      ],
+      "link": "https://stackoverflow.com/questions/25485128/how-to-convert-a-string-value-512m-into-integer-value-512",
+      "title": "how to convert a String value 512m into integer value 512?",
+      "key": 112
+    },
+    {
+      "question_id": 25484742,
+      "answer_id": 25484850,
+      "creation_date": 1408965535,
+      "is_accepted": true,
+      "tags": [
+        "jquery"
+      ],
+      "link": "https://stackoverflow.com/questions/25484742/how-to-show-a-default-image-incase-the-image-is-found",
+      "title": "how to show a default image Incase the Image is found",
+      "key": 113
+    },
+    {
+      "question_id": 25392594,
+      "answer_id": 25392700,
+      "creation_date": 1408480876,
+      "is_accepted": true,
+      "tags": [
+        "html",
+        "css"
+      ],
+      "link": "https://stackoverflow.com/questions/25392594/how-do-i-increase-the-size-of-the-text-contained",
+      "title": "How do I increase the size of the text contained?",
+      "key": 114
+    },
+    {
+      "question_id": 25392487,
+      "answer_id": 25392599,
+      "creation_date": 1408480422,
+      "is_accepted": true,
+      "tags": [
+        "jquery"
+      ],
+      "link": "https://stackoverflow.com/questions/25392487/hide-and-show-a-div-class-based-on-a-radio-groups-value",
+      "title": "Hide and show a div class based on a radio group&#39;s value",
+      "key": 115
+    },
+    {
+      "question_id": 25373290,
+      "creation_date": 1408402512,
+      "is_accepted": false,
+      "tags": [
+        "html",
+        "css"
+      ],
+      "link": "https://stackoverflow.com/questions/25373290/why-is-my-table-doing-this",
+      "title": "Why is my table doing this?",
+      "key": 116
+    },
+    {
+      "question_id": 25373027,
+      "answer_id": 25373189,
+      "creation_date": 1408400914,
+      "is_accepted": true,
+      "tags": [
+        "javascript",
+        "html"
+      ],
+      "link": "https://stackoverflow.com/questions/25373027/repeat-block-of-text-for-each-div-instance",
+      "title": "Repeat block of text for each DIV instance",
+      "key": 117
+    },
+    {
+      "question_id": 25372834,
+      "creation_date": 1408399767,
+      "is_accepted": false,
+      "tags": [
+        "html",
+        "css"
+      ],
+      "link": "https://stackoverflow.com/questions/25372834/input-box-text-color-with-css-wheather-on-focus-or-not",
+      "title": "Input Box Text Color with CSS wheather on focus or not",
+      "key": 118
+    },
+    {
+      "question_id": 25365789,
+      "creation_date": 1408372190,
+      "is_accepted": false,
+      "tags": [
+        "jquery",
+        "html",
+        "html-input"
+      ],
+      "link": "https://stackoverflow.com/questions/25365789/make-an-input-adapt-to-its-text",
+      "title": "Make an input adapt to its text",
+      "key": 119
+    },
+    {
+      "question_id": 25359686,
+      "creation_date": 1408352820,
+      "is_accepted": false,
+      "tags": [
+        "css",
+        "jsf"
+      ],
+      "link": "https://stackoverflow.com/questions/25359686/override-css-for-a-single-column-in-richdatatable",
+      "title": "Override css for a single column in richdatatable",
+      "key": 120
+    },
+    {
+      "question_id": 25359465,
+      "creation_date": 1408351944,
+      "is_accepted": false,
+      "tags": [
+        "php",
+        "mysql",
+        "match",
+        "boolean-search"
+      ],
+      "link": "https://stackoverflow.com/questions/25359465/mysql-find-best-matching-word-in-one-row",
+      "title": "mysql find best matching word in one row",
+      "key": 121
+    },
+    {
+      "question_id": 25358804,
+      "answer_id": 25358867,
+      "creation_date": 1408349290,
+      "is_accepted": true,
+      "tags": [
+        "php",
+        "wordpress"
+      ],
+      "link": "https://stackoverflow.com/questions/25358804/wordpress-search-for-only-single-category",
+      "title": "wordpress search for only single category",
+      "key": 122
+    },
+    {
+      "question_id": 25358608,
+      "answer_id": 25358817,
+      "creation_date": 1408348499,
+      "is_accepted": true,
+      "tags": [
+        "php",
+        "apache",
+        ".htaccess",
+        "mod-rewrite",
+        "redirect"
+      ],
+      "link": "https://stackoverflow.com/questions/25358608/htaccess-friendly-urls-with-parameters-2",
+      "title": "HTACCESS friendly urls with parameters 2",
+      "key": 123
+    },
+    {
+      "question_id": 25358576,
+      "creation_date": 1408348374,
+      "is_accepted": false,
+      "tags": [
+        "php",
+        "email",
+        "phpmailer"
+      ],
+      "link": "https://stackoverflow.com/questions/25358576/phpmailer-can-not-send-email-now",
+      "title": "PHPMailer can not send email now",
+      "key": 124
+    },
+    {
+      "question_id": 25351646,
+      "creation_date": 1408295926,
+      "is_accepted": false,
+      "tags": [
+        "javascript",
+        "jquery",
+        "setfocus"
+      ],
+      "link": "https://stackoverflow.com/questions/25351646/always-return-focus-to-a-specific-input-field",
+      "title": "Always return focus to a specific input field",
+      "key": 125
+    },
+    {
+      "question_id": 25351628,
+      "answer_id": 25351654,
+      "creation_date": 1408295700,
+      "is_accepted": true,
+      "tags": [
+        "html",
+        "ajax",
+        "button"
+      ],
+      "link": "https://stackoverflow.com/questions/25351628/ajax-call-which-button-pressed",
+      "title": "Ajax call - Which button pressed?",
+      "key": 126
+    },
+    {
+      "question_id": 25351512,
+      "answer_id": 25351531,
+      "creation_date": 1408294911,
+      "is_accepted": true,
+      "tags": [
+        "php",
+        "regex"
+      ],
+      "link": "https://stackoverflow.com/questions/25351512/in-php-extract-specific-text-from-a-string",
+      "title": "In php extract specific text from a string",
+      "key": 127
+    },
+    {
+      "question_id": 25230943,
+      "answer_id": 25837867,
+      "creation_date": 1407689739,
+      "is_accepted": true,
+      "tags": [
+        "php",
+        "wordpress"
+      ],
+      "link": "https://stackoverflow.com/questions/25230943/wordpress-paginate-links-select-option",
+      "title": "Wordpress paginate_links select option",
+      "key": 128
+    },
+    {
+      "question_id": 25227032,
+      "answer_id": 25227158,
+      "creation_date": 1407660783,
+      "is_accepted": true,
+      "tags": [
+        "javascript",
+        "jquery",
+        "html",
+        "jquery-mobile"
+      ],
+      "link": "https://stackoverflow.com/questions/25227032/jquery-script-and-drop-down-lists",
+      "title": "jQuery script and drop down lists",
+      "key": 129
+    },
+    {
+      "question_id": 25105020,
+      "creation_date": 1407071808,
+      "is_accepted": false,
+      "tags": [
+        "html",
+        "css"
+      ],
+      "link": "https://stackoverflow.com/questions/25105020/children-not-occupying-parent-containers-whole-width",
+      "title": "children not occupying parent container&#39;s whole width",
+      "key": 130
+    },
+    {
+      "question_id": 24674750,
+      "answer_id": 24679696,
+      "creation_date": 1404989823,
+      "is_accepted": true,
+      "tags": [
+        "php",
+        "wordpress",
+        "advanced-custom-fields"
+      ],
+      "link": "https://stackoverflow.com/questions/24674750/acf-form-not-creating-unique-entities",
+      "title": "ACF Form not creating unique entities",
+      "key": 131
+    },
+    {
+      "question_id": 22261382,
+      "creation_date": 1394229065,
+      "is_accepted": false,
+      "tags": [
+        "filter"
+      ],
+      "link": "https://stackoverflow.com/questions/22261382/exclude-ip-with-slash-number-on-google-analytics",
+      "title": "Exclude IP with slash number on Google Analytics",
+      "key": 132
+    },
+    {
+      "question_id": 22074858,
+      "creation_date": 1393519480,
+      "is_accepted": false,
+      "tags": [
+        "jquery"
+      ],
+      "link": "https://stackoverflow.com/questions/22074858/jquery-tabs-not-loading-jquery-tabs",
+      "title": "jQuery tabs not loading jquery tabs",
+      "key": 133
+    },
+    {
+      "question_id": 21839498,
+      "answer_id": 25586648,
+      "creation_date": 1392672096,
+      "is_accepted": true,
+      "tags": [
+        "php",
+        "salesforce"
+      ],
+      "link": "https://stackoverflow.com/questions/21839498/curl-validation-on-salesforce-web2lead",
+      "title": "cURL validation on salesforce Web2Lead",
+      "key": 134
+    },
+    {
+      "question_id": 11595117,
+      "answer_id": 25710893,
+      "creation_date": 1342897803,
+      "is_accepted": true,
+      "tags": [
+        "php",
+        "sql",
+        "database"
+      ],
+      "link": "https://stackoverflow.com/questions/11595117/preg-match-sql-database-connect",
+      "title": "Preg_match sql database connect",
+      "key": 135
+    },
+    {
+      "question_id": 7942541,
+      "answer_id": 25710862,
+      "creation_date": 1319933743,
+      "is_accepted": true,
+      "tags": [
+        "ruby-on-rails",
+        "ruby",
+        "ruby-on-rails-3",
+        "ruby-on-rails-3.1"
+      ],
+      "link": "https://stackoverflow.com/questions/7942541/interlinking-2-scaffolds",
+      "title": "Interlinking 2 scaffolds",
+      "key": 136
+    }
+  ]
+}

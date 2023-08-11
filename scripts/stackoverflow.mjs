@@ -43,7 +43,7 @@ async function fetchAllAnswers() {
   }
 
   console.log(`Fetched a total of ${allAnswers.length} answers.`);
-  return Array.from(new Set(allAnswers)); // return only unique question_ids
+  return Array.from(new Set(allAnswers));
 }
 
 async function fetchQuestionDetailsBulk(questionIds) {
@@ -97,14 +97,21 @@ async function fetchDataAndSaveToJson() {
   // Sort the results by creation_date
   results.sort((a, b) => b.creation_date - a.creation_date);
 
+  // Reorder the sequence for the key after sorting
+  results.forEach((item, index) => {
+    item.key = index + 1;
+  });
+
   console.log(
     `Imported details for ${results.length} questions out of ${allQuestionIds.length} unique questions.`
   );
+
   console.log("Saving data to 'src/data/stackoverflow.json'...");
-  writeFileSync(
-    "src/data/stackoverflow.json",
-    JSON.stringify(results, null, 2)
-  );
+  const output = {
+    fetched_data: { date_stamp: new Date().toISOString() },
+    data: results,
+  };
+  writeFileSync("src/data/stackoverflow.json", JSON.stringify(output, null, 2));
   console.log("Data saved successfully!");
 }
 
