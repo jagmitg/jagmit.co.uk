@@ -1,0 +1,41 @@
+---
+import { fetchAnswers } from "@utils/stackoverflow";
+
+let answers: any[] = [];
+let total = 0;
+let totalPages = 1;
+let page = 1;
+
+try {
+  page = 1;
+  const result = await fetchAnswers(page);
+  answers = result.answers;
+  total = result.total;
+  totalPages = Math.ceil(total / 10);
+} catch (error) {
+  console.error("Error fetching answers:", error);
+}
+---
+
+<div>
+  <ul>
+    {
+      answers.map((answer) => (
+        <li>
+          <a
+            href={`https://stackoverflow.com/a/${answer.answer_id}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {answer.title}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+
+  <div>
+    {page > 1 && <a href={`?page=${page - 1}`}>Previous</a>}
+    {page < totalPages && <a href={`?page=${page + 1}`}>Next</a>}
+  </div>
+</div>

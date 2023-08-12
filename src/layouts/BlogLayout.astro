@@ -86,6 +86,11 @@ const index = posts.findIndex(
     </div>
   </MainLayout>
 </Layout>
+<script
+  type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/gist-embed@1.0.4/dist/gist-embed.min.js"
+></script>
+
 <style is:global>
   .blog {
     font-size: 16px;
@@ -109,11 +114,15 @@ const index = posts.findIndex(
   .blog h4 {
     @apply text-base;
   }
-  .blog code:not(pre > *) {
+  /* .blog code:not(pre > *) {
     @apply text-gray-200  bg-gray-600 mx-1 px-1 rounded-sm shadow-lg ring-white/5;
-  }
+  } */
   .blog ul {
     @apply list-hyphen pl-4 my-2;
+  }
+  .blog ol {
+    @apply pl-4 my-2;
+    list-style: decimal;
   }
   .blog li > ul {
     @apply my-0;
@@ -134,22 +143,47 @@ const index = posts.findIndex(
     @apply mx-auto;
   }
   .blog strong {
-    @apply font-semibold text-orange-300;
+    @apply font-semibold text-blue-500;
   }
   .blog blockquote {
     @apply px-4 border border-gray-600 border-l-blue-300 border-l-2;
   }
+  /* General styles for all tables inside .blog */
   .blog table {
     @apply border-collapse table-auto w-full text-sm;
   }
+
   .blog th {
-    @apply border-b border-gray-600  p-4 pl-8 pt-0 text-gray-200 text-left;
+    @apply border-b border-gray-600 p-4 pl-8 pt-0 text-gray-200 text-left;
   }
+
   .blog tbody {
     @apply bg-gray-800;
   }
+
   .blog td {
     @apply border-b border-slate-700 p-4 pl-8 text-gray-400;
+  }
+
+  /* Reset or override styles for tables inside <code> tags */
+  .blog code table {
+    /* Reset or override styles here as needed */
+    @apply border-none; /* As an example, removing borders */
+  }
+
+  .blog code th {
+    /* Reset or override styles here as needed */
+    @apply border-none; /* As an example */
+  }
+
+  .blog code tbody {
+    /* Reset or override styles here as needed */
+    @apply bg-transparent; /* As an example */
+  }
+
+  .blog code td {
+    /* Reset or override styles here as needed */
+    @apply border-none; /* As an example */
   }
 
   .blog iframe {

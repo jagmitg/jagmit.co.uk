@@ -20,14 +20,26 @@ type Props = {
 
 const { tags } = Astro.props;
 const currentPath = new URL(Astro.request.url).pathname;
-const pathParts = currentPath.split("/");
-const currentTag = pathParts.includes("tags")
-  ? pathParts[pathParts.length - 1]
-  : null;
+const pathParts = currentPath.split("/").filter((part) => part !== "");
 
-const currentYear = pathParts.includes("archive")
-  ? pathParts[pathParts.length - 1]
-  : null;
+let currentTag: string | null = null;
+let currentYear: string | null = null;
+
+const tagsIndex = pathParts.indexOf("tags");
+
+console.log(tagsIndex);
+
+if (tagsIndex !== -1 && tagsIndex + 1 < pathParts.length) {
+  currentTag = pathParts[tagsIndex + 1];
+}
+
+const archiveIndex = pathParts.indexOf("archive");
+
+console.log(archiveIndex);
+
+if (archiveIndex !== -1 && archiveIndex + 1 < pathParts.length) {
+  currentYear = pathParts[archiveIndex + 1];
+}
 ---
 
 <div class="flex flex-wrap">

@@ -1,0 +1,69 @@
+---
+import type { GetStaticPathsOptions } from "astro";
+import Layout from "@layouts/Layout.astro";
+import MainLayout from "@layouts/MainLayout.astro";
+import stackOverflowData from "../../data/stackoverflow.json";
+import Pagination from "@components/Pagination.astro";
+import { formatDate } from "@utils/formatDate";
+
+export async function getStaticPaths({ paginate }) {
+  const questions = Object.values(stackOverflowData.data);
+
+  return paginate(questions, {
+    pageSize: 10,
+  });
+}
+
+const { page } = Astro.props;
+const questions = page.data;
+---
+
+<Layout>
+  <MainLayout>
+    <h2 class="text-2xl text-center sm:text-left mb-4 sm:mb-0">
+      StackOverflow Answers
+    </h2>
+
+    <div class="grid gap-4 grid-cols-1 grid-rows-2 mt-5 lg:grid-cols-2">
+      {
+        questions.map((question) => (
+          <>
+            <a
+              href={question.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="p-4 border mb-2 border-neutral-200  bg-neutral-50 rounded flex items-center justify-between px-3 py-4 w-full hover:bg-neutral-200 transition-colors"
+            >
+              <div class="flex flex-col">
+                <p class="font-bold text-neutral-900 ">{question.key}</p>
+                <p class="font-bold text-neutral-900 ">{question.title}</p>
+                <p class="text-neutral-600 ">
+                  {formatDate(question.creation_date)}
+                </p>
+                <p class="text-neutral-600 ">
+                  Tags: {question.tags.join(", ")}
+                </p>
+              </div>
+              <div class="text-neutral-700">
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 12 12"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M2.07102 11.3494L0.963068 10.2415L9.2017 1.98864H2.83807L2.85227 0.454545H11.8438V9.46023H10.2955L10.3097 3.09659L2.07102 11.3494Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </div>
+            </a>
+          </>
+        ))
+      }
+    </div>
+
+    <Pagination prev={page.url.prev} next={page.url.next} />
+  </MainLayout>
+</Layout>
