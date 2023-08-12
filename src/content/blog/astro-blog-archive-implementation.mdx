@@ -3,9 +3,9 @@ layout: ../../layouts/BlogLayout.astro
 title: Implementing Archives with the Astro Framework
 date: "2023-08-07"
 description: Creating an archive for blog posts with the Astro framework based on a year system.
-image: /images/blog/2021/ogp.png
+image: /images/blog/astro-blog-archive-implementation/astro.png
 tags: typescript, astro
-isDraft: true
+isDraft: false
 ---
 
 One such use case i was experimenting was creating an archive for blog posts. In this blog post, we'll discuss how to implement a year-based archive system using Astro.
@@ -18,27 +18,10 @@ Let's break down the code:
 
 ### Getting Static Paths for Every Year
 
-```typescript
-export async function getStaticPaths() {
-  const allPosts = (await getBlogsAndRepos()).allCollections;
-  const postYears = new Map();
-
-  allPosts.forEach((post) => {
-    const year = new Date(post.data.date).getFullYear();
-
-    if (!postYears.get(year)) {
-      postYears.set(year, []);
-    }
-
-    postYears.get(year).push(post);
-  });
-
-  return [...postYears.entries()].map(([year, posts]) => ({
-    params: { year },
-    props: { posts },
-  }));
-}
-```
+<code
+  data-gist-id="6a4df6e594bcd50a62395d0b5f7a5c02"
+  data-gist-file="getStaticPaths.ts"
+></code>
 
 1. **Fetching all Posts**: We first get all posts using `getBlogsAndRepos()`. This method is assumed to be a custom function you've created to get content from your backend, API, or static file storage.
 
@@ -52,9 +35,10 @@ export async function getStaticPaths() {
 
 After defining the paths in the `getStaticPaths` function, you can access the year and posts in your Astro component as:
 
-```typescript
-const { year } = Astro.params;
-const { posts } = Astro.props;
-```
+<code
+  data-gist-id="6a4df6e594bcd50a62395d0b5f7a5c02"
+  data-gist-file="component.astro"
+  data-gist-hide-footer="true"
+></code>
 
 `Astro.params` provides access to dynamic parameters in the URL (in this case, the year), and `Astro.props` gives you access to the props you passed when generating static paths.
