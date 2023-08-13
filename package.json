@@ -40,6 +40,12 @@
     "astro": "^2.7.4",
     "gist-embed": "^1.0.4",
     "instantsearch.js": "^4.56.4",
-    "node-fetch": "^3.3.1"
+    "node-fetch": "^3.3.1",
+    "rehype-external-links": "^2.1.0",
+    "sass": "^1.65.1",
+    "stylelint": "^15.10.2",
+    "stylelint-config-property-sort-order-smacss": "^9.1.0",
+    "stylelint-order": "^6.0.3",
+    "stylelint-scss": "^5.1.0"
   }
 }

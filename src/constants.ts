@@ -1,6 +1,6 @@
 export const SITE_TITLE = "Jagmit Gabba";
 export const SITE_DESCRIPTION =
-  "Jagmit is a JavaScript engineer and working on some OSS projects and Japanese communities.";
+  "Principle Full-Stack Engineer with 12+ years of experience specialising in open-source technologies. A passionate accessibility advocate, Jag is dedicated to an inclusive web, showcasing expertise in web, TypeScript, JavaScript, Node.js, Python etc... As a DevOps enthusiast & proponent of test-driven development.";
 export const BLOG_DESCRIPTION =
   "This blog posts my life topic and tech topics mainly JavaScript.";
 export const REPO_PINNED = <const>["Wordpress-Select-Pagination"];
@@ -41,11 +41,6 @@ export const PAGE_LINKS = <const>[
 //     icon: "👨‍💻",
 //     title: "jobs",
 //     href: "/jobs",
-//   },
-//   {
-//     icon: "🗒",
-//     title: "blog",
-//     href: "/blog",
 //   },
 //   {
 //     icon: "🗒",

@@ -21,7 +21,7 @@ const { url, frontmatter, repo } = Astro.props;
 >
   <div class="flex flex-nowrap items-stretch">
     <div
-      class="w-1/4 md:w-1/7 p-2 flex-none flex items-center justify-center overflow-hidden"
+      class="w-1/4 md:w-1/7 p-2 flex-none flex items-center justify-center overflow-hidden rounded-md border"
       style={`background-image: url(${
         frontmatter.image ? frontmatter.image : "/images/brands/github-big.png"
       }); background-size: cover; background-position: center;`}
