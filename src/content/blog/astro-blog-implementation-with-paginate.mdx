@@ -23,39 +23,7 @@ Building any feature-rich blog system presents a range of challenges, from sorti
 
 Let's examine a crucial piece of the TypeScript code that powers this blog setup:
 
-```typescript
-export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
-  const allPosts = await Astro.glob("../../content/**/*.{md,mdx}");
-
-  const slugify = (filePath: string) => {
-    let fileName = filePath.split("/").pop();
-    fileName = fileName?.split(".").shift() || "";
-    return fileName
-      .toLowerCase()
-      .replace(/[^a-z0-9 -]/g, "")
-      .replace(/\s+/g, "-");
-  };
-
-  const formattedPosts = allPosts
-    .map((post: any) => {
-      return {
-        ...post,
-        slug: slugify(post.url),
-      };
-    })
-    .filter((post: any) => post.frontmatter.isDraft !== true)
-    .sort(
-      (a: any, b: any) =>
-        new Date(a.frontmatter.date).getTime() -
-        new Date(b.frontmatter.date).getTime()
-    )
-    .reverse();
-
-  return paginate(formattedPosts, {
-    pageSize: 5,
-  });
-}
-```
+<code data-gist-id="1d6c046c0c3c69b0aac033773631501d"></code>
 
 - **Astro Globbing**: The function starts by fetching all markdown and MDX files from the content directory using Astro.glob(). This provides a list of all potential posts.
 

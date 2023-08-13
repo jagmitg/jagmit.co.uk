@@ -27,15 +27,11 @@ let currentYear: string | null = null;
 
 const tagsIndex = pathParts.indexOf("tags");
 
-console.log(tagsIndex);
-
 if (tagsIndex !== -1 && tagsIndex + 1 < pathParts.length) {
   currentTag = pathParts[tagsIndex + 1];
 }
 
 const archiveIndex = pathParts.indexOf("archive");
-
-console.log(archiveIndex);
 
 if (archiveIndex !== -1 && archiveIndex + 1 < pathParts.length) {
   currentYear = pathParts[archiveIndex + 1];

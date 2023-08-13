@@ -1,42 +1,42 @@
 ---
 layout: ../../layouts/BlogLayout.astro
-title: Integrating with StackExchange API
+title: Fetching with StackExchange API
 date: "2023-08-12"
 description: Integrating with StackExchange API in Astro
-image: /images/brands/astro.png
+image: /images/blog/stack-exchange-api-fetch/stackexchange.png
 tags: astro, javascript, nodejs
 isDraft: false
 ---
 
-Recently, I embarked on a journey to harness the power of the [StackExchange API](https://api.stackexchange.com/), aiming to curate a list of all the questions I've responded to. This experience was filled with numerous learnings, technical challenges, and of course, a few bumps on the road.
+Recently, I began the journey to fetch information from the [StackExchange API](https://api.stackexchange.com/), aiming to create a list of all the questions I've responded to throughout the lifetime of the account. This experience was filled with learnings, technical challenges, and of course, a few bumps on the road.
 
-## The Challenge of Throttling
+## Throttling Challenge
 
 One of the initial stumbling blocks was an oversight on my part regarding API throttling. StackExchange has put mechanisms in place to ensure that the API is not abused. While this is perfectly logical from the service provider's viewpoint, not reading about the [throttling details](https://api.stackexchange.com/docs/throttle) landed me a 24-hour ban. An important lesson learned: always understand the limits before you hit them!
 
-## The Strategic Pivot
+## The Pivot
 
-After the temporary ban, it was clear that a more optimized approach was necessary. Instead of making direct calls to the API every time data was required, I pivoted to downloading the API output into a JSON object. This strategy helps in multiple ways:
+After the temporary ban, it was clear that a more optimised approach was necessary. Instead of making direct calls to the API every time data was required, I pivoted to downloading the API output into a JSON object. This strategy helps in multiple ways:
 
 - **Caching**: Reduces the need for frequent calls.
 - **Cost Efficiency**: Limits the expensive calls to the API server, conserving both server and client resources.
 
-## Understanding API Data Structure
+## API Data Structure
 
 The StackExchange API has its nuances. For my specific purpose, I had to first fetch the questions associated with a user ID. Only after fetching these questions, I could loop through to extract the relevant answers associated with that user. This two-step process added an extra layer of complexity to my task.
 
-## The Mystery of Batching
+## Batching Issue
 
 The documentation suggested that the API could allow up to 100 IDs in a single batch request. But as is often the case with technical documentation, reality proved different. Through a process of trial and error, I discovered the actual limit was a mere 30 IDs. Such discrepancies, as outlined [here](https://api.stackexchange.com/docs/vectors), can cause hiccups, especially when you're basing your program's logic on the documented specifications.
 
-## The Solution: A Node.js Script
+## The Script
 
 To simplify this data-fetching task, I decided to develop a Node.js script. This script essentially does the heavy lifting—fetching the required information from the API and outputting it as a JSON file.
 
-Here is the script:
+**Here is the script**:
 
 <code data-gist-id="b9f7cad21d912fef91e3119a58a692a8"></code>
 
-## In Conclusion
+## Conclusion
 
 Integrating with the StackExchange API has been both rewarding and challenging. Through this experience, I not only honed my technical skills but also understood the importance of adapting to unforeseen challenges. For any developers out there planning to integrate with the StackExchange API or any other similar service, always remember to thoroughly read the documentation, anticipate potential roadblocks, and be prepared to pivot when necessary.

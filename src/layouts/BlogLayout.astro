@@ -9,6 +9,7 @@ import Archives from "@components/Archives.astro";
 import Pagination from "@components/Pagination.astro";
 import type { CollectionEntry } from "astro:content";
 import type { MarkdownLayoutProps } from "astro";
+import Image from "@components/Image.astro";
 
 const { frontmatter, headings } = Astro.props as MarkdownLayoutProps<
   CollectionEntry<"blog">["data"]
@@ -44,6 +45,16 @@ const index = posts.findIndex(
       </div>
 
       <aside class="w-1/4 p-4 hidden md:block">
+        <div class="mb-4">
+          <Image
+            src={image ? image : "/images/brands/github-big.png"}
+            alt={title}
+            className="w-30 h-30 rounded-md"
+            isOptimization
+            width={20 * 4}
+            height={20 * 4}
+          />
+        </div>
         <div class="mb-4">
           <div class="text-lg">&#128278; Post Contents</div>
           <ol class="mt-4">
