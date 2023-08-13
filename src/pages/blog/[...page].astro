@@ -36,7 +36,7 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
     .reverse();
 
   return paginate(formattedPosts, {
-    pageSize: 5,
+    pageSize: 10,
   });
 }
 
@@ -44,8 +44,6 @@ const { allCollections } = await getBlogsAndRepos();
 const allTags = getAllTags(allCollections);
 
 const { page } = Astro.props;
-
-// console.log(page);
 ---
 
 <Layout description={BLOG_DESCRIPTION}>
