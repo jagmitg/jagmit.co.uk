@@ -72,7 +72,7 @@ const { page } = Astro.props;
         .sort(([yearA], [yearB]) => Number(yearB) - Number(yearA))
         .map(([year, posts]) => (
           <>
-            <h3 class="text-xl mb-4">{year}</h3>
+            <h3 class="text-xl mb-4 border-b pb-4">{year}</h3>
             {posts.map((post: any) => (
               <BlogCardItem
                 url={
