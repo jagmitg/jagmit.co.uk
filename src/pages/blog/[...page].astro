@@ -44,6 +44,8 @@ const { allCollections } = await getBlogsAndRepos();
 const allTags = getAllTags(allCollections);
 
 const { page } = Astro.props;
+
+// console.log(page);
 ---
 
 <Layout description={BLOG_DESCRIPTION}>
