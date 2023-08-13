@@ -21,17 +21,7 @@ const repoCollection = defineCollection({
   }),
 });
 
-const todayCollection = defineCollection({
-  schema: z.object({
-    date: z.date(),
-    title: z.string(),
-    description: z.string(),
-    tags: z.string(),
-  }),
-});
-
 export const collections = <const>{
   blog: blogCollection,
   repo: repoCollection,
-  today: todayCollection,
 };
