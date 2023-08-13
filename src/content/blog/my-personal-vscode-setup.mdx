@@ -1,0 +1,81 @@
+---
+layout: ../../layouts/BlogLayout.astro
+title: VSCode config for TypeScript (or JS), Python, and Frontend Development
+date: "2022-06-05"
+description: Here is my VSCode configuration for typescript, javascript, python and most front-end development.
+image: /images/blog/my-personal-vscode-setup/vscode.png
+tags: typescript, javascript, vscode, python
+isDraft: false
+---
+
+When it comes to crafting your perfect development environment, the devil is in the details. The slightest configuration tweak can lead to significant productivity improvements and a smoother coding experience. Today, I'm sharing my preferred VSCode configuration for JavaScript, Python, and frontend development. Here's a breakdown of the settings:
+
+## 1. **Editor Customisations:**
+
+- **Whitespace and Formatting:** With whitespace, I can see all whitespace characters, which can be especially useful for debugging unwanted spaces. Additionally, formatting on paste as well as formatting on save ensure that my code is always tidy, without any manual intervention.
+
+<code
+  data-gist-id="db74dd305e077968ab48494bec344692"
+  data-gist-file="editorwhitespace.json"
+></code>
+
+- **Font and Size:** Using a comfortable font size of 14 and line leight of 24 paired with font ligatures provides a visually appealing and readable code.
+
+<code
+  data-gist-id="db74dd305e077968ab48494bec344692"
+  data-gist-file="fonts-line-height.json"
+></code>
+
+- **Tab and Indentation:** tab size and insert spaces ensure consistent spacing and indentation.
+
+<code
+  data-gist-id="db74dd305e077968ab48494bec344692"
+  data-gist-file="tabs-space.json"
+></code>
+
+## 2. **Search and File Exclusions:**
+
+To keep the search fast and decluttered, I've excluded folders like `node_modules`, `bower_components`, and others from search results. Similarly, `"files.exclude"` keeps unnecessary files and folders from crowding my explorer pane.
+
+<code
+  data-gist-id="db74dd305e077968ab48494bec344692"
+  data-gist-file="search_exclude.json"
+></code>
+
+## 3. **Visual Aesthetics:**
+
+The `workbench.colorTheme` set to `"Atom One Dark"` offers a pleasant dark theme. I've also chosen the `vscode-icons` for a better visual representation of files and directories.
+
+## 4. **HTML and Prettier Settings:**
+
+With specific HTML formatting settings and Prettier configurations, my frontend code remains consistent and neatly formatted.
+
+<code
+  data-gist-id="db74dd305e077968ab48494bec344692"
+  data-gist-file="prettier-formatter.json"
+></code>
+
+## 5. **Language-Specific Settings:**
+
+For JavaScript, I use the Prettier formatter (`"esbenp.prettier-vscode"`) to ensure a consistent coding style. For Python, I've disabled `"editor.formatOnPaste"` to avoid any unintentional code changes.
+
+## 6. **Terminal and Launch Settings:**
+
+The configuration allows me to launch Webpack directly from VSCode, enhancing the development workflow. I've also set the external terminal for macOS to iTerm for a better terminal experience.
+
+## Benefits:
+
+1. **Consistency**: The use of formatters and specific tab sizes ensures that my code remains consistent, regardless of the project or language.
+
+2. **Efficiency**: With settings like format on save, automatic exclusion of unnecessary files, and direct launch configurations, I can streamline many repetitive tasks.
+
+3. **Clarity**: The visual customisations provide a clear and pleasant coding environment, reducing visual fatigue during long coding sessions.
+
+4. **Seamless Workflow**: By integrating specific tools like Webpack directly into my environment, I can maintain an uninterrupted workflow.
+
+In conclusion, while configurations can be deeply personal and what works for one might not work for another, I've found this setup to be quite effective for my needs. If you're looking to refine your VSCode setup for JavaScript, Python, or frontend development, perhaps some of these settings might prove beneficial for you too. Happy coding!
+
+<code
+  data-gist-id="db74dd305e077968ab48494bec344692"
+  data-gist-file="settings.json"
+></code>
