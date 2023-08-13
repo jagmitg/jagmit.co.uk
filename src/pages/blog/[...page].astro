@@ -36,7 +36,7 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
     .reverse();
 
   return paginate(formattedPosts, {
-    pageSize: 10,
+    pageSize: 9,
   });
 }
 

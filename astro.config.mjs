@@ -4,8 +4,8 @@ import partytown from "@astrojs/partytown";
 import sitemap from "@astrojs/sitemap";
 import mdx from "@astrojs/mdx";
 import image from "@astrojs/image";
+import externalLinks from "rehype-external-links";
 
-// https://astro.build/config
 export default defineConfig({
   site: "https://jagmit.co.uk",
   output: "static",
@@ -32,6 +32,10 @@ export default defineConfig({
     }),
   ],
   markdown: {
+    syntaxHighlight: "prism",
+    rehypePlugins: [
+      [externalLinks, { rel: ["noopener", "noreferrer"], target: "_blank" }],
+    ],
     shikiConfig: {
       theme: "nord",
     },
