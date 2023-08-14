@@ -15,6 +15,7 @@ const repoCollection = defineCollection({
   schema: z.object({
     date: z.date(),
     title: z.string(),
+    description: z.string().optional(),
     repo: z.string(),
     tags: z.string(),
     isDraft: z.boolean().default(true),

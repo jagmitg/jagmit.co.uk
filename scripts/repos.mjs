@@ -32,13 +32,14 @@ function createMDFiles() {
           )
             .then((langResponse) => langResponse.json())
             .then((languages) => {
-              let repoDate = new Date(repo.updated_at)
+              let repoDate = new Date(repo.created_at)
                 .toISOString()
                 .slice(0, 10);
               let languageKeys = Object.keys(languages).join(", ");
               let content = `---
 title: ${repo.name}
 date: ${repoDate}
+description: ${repo.description}
 repo: ${repo.html_url}
 tags: ${languageKeys}
 ---`;
