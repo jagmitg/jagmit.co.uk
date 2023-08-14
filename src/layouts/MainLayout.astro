@@ -1,2 +1,39 @@
-<slot name="optional-content" />
+---
+import Breadcrumb from "@components/icons/Breadcrumb.astro";
+import TagsBox from "@components/TagsBox.astro";
+import Pagination from "@components/Pagination.astro";
+
+type Props = {
+  title?: string;
+  tags?: any;
+  breadcrumb?: boolean;
+  pagination?: any;
+};
+
+const { title, tags, breadcrumb, pagination } = Astro.props;
+---
+
+{
+  title && (
+    <div class="flex flex-col sm:flex-row justify-between sm:justify-between items-center pb-6">
+      <h2 class="text-2xl text-center sm:text-left mb-4 sm:mb-0 flex items-center">
+        {breadcrumb ? (
+          <>
+            <a href="/blog" class="mr-2">
+              Blog
+            </a>
+            <Breadcrumb />
+            <span>{title}</span>
+          </>
+        ) : (
+          title
+        )}
+      </h2>
+      {tags ? <TagsBox tags={tags} /> : undefined}
+    </div>
+  )
+}
+
 <slot />
+
+{pagination && <Pagination prev={pagination.prev} next={pagination.next} />}
