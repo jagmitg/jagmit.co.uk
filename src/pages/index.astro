@@ -1,12 +1,13 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import MainLayout from "@layouts/MainLayout.astro";
-import External from "@components/icons/External.astro";
 import Code from "@components/Code.astro";
-import { getCollection } from "astro:content";
 import { formatDate } from "@utils/formatDate";
+import { getBlogsAndRepos } from "@utils/collections";
 
-const posts = (await getCollection("repo")).sort(
+const { allCollections } = await getBlogsAndRepos();
+
+const posts = allCollections.sort(
   (b, a) => a.data.date.valueOf() - b.data.date.valueOf()
 );
 ---
@@ -26,32 +27,26 @@ const posts = (await getCollection("repo")).sort(
       If you have requests for talking, writing, and so on, feel free to ping me
       on my email <Code>jag[at]jagmit.co.uk</Code> .
     </p>
-    <div class="grid gap-4 grid-cols-1 grid-rows-2 mt-5 lg:grid-cols-2">
+    <div class="grid gap-4 grid-cols-1 grid-rows-2 mt-5 lg:grid-cols-4">
       {
-        posts
-          .sort(() => Math.random() - 0.5)
-          .slice(0, 6)
-          .map((post) => {
-            return (
-              <a
-                href={post.data.repo}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="p-4 border border-neutral-200  bg-neutral-50 rounded flex items-center justify-between px-3 py-4 w-full hover:bg-neutral-200 transition-colors"
-              >
-                <div class="flex flex-col">
-                  <p class="font-bold text-neutral-900 ">{post.data.title}</p>
-                  <p class="text-neutral-600 ">
-                    Updated at: {formatDate(new Date(post.data.date))}
-                  </p>
-                </div>
-                <div class="text-neutral-700 ">
-                  <External />
-                </div>
-              </a>
-            );
-          })
+        posts.slice(0, 8).map((post) => {
+          return (
+            <a
+              href={post.data.repo ? post.data.repo : `/blog/${post.slug}`}
+              class="homepage-recent-blog p-4 border border-neutral-200 bg-neutral-50 rounded flex items-center justify-between px-3 py-4 w-full hover:bg-neutral-200 transition-colors"
+            >
+              <div class="flex flex-col">
+                <p class="text-neutral-600 text-sm">
+                  {formatDate(new Date(post.data.date))}
+                </p>
+                <p class="font-bold text-neutral-900 ">{post.data.title}</p>
+              </div>
+            </a>
+          );
+        })
       }
     </div>
   </MainLayout>
 </Layout>
+
+<style is:inline></style>
