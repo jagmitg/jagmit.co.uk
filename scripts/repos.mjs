@@ -39,6 +39,7 @@ function createMDFiles() {
               let content = `---
 title: ${repo.name}
 date: ${repoDate}
+description: ${repo.description}
 repo: ${repo.html_url}
 tags: ${languageKeys}
 ---`;

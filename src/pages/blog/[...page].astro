@@ -25,18 +25,18 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
       return {
         ...post,
         slug: slugify(post.url),
+        year: new Date(post.frontmatter.date).getFullYear(),
       };
     })
     .filter((post: any) => post.frontmatter.isDraft !== true)
     .sort(
       (a: any, b: any) =>
-        new Date(a.frontmatter.date).getTime() -
-        new Date(b.frontmatter.date).getTime()
-    )
-    .reverse();
+        new Date(b.frontmatter.date).getTime() -
+        new Date(a.frontmatter.date).getTime()
+    );
 
   return paginate(formattedPosts, {
-    pageSize: 9,
+    pageSize: 8,
   });
 }
 
@@ -58,20 +58,36 @@ const { page } = Astro.props;
     </div>
 
     {
-      page.data.map((data: any) => (
-        <>
-          <BlogCardItem
-            url={
-              data.frontmatter.repo
-                ? data.frontmatter.repo
-                : `/blog/${data.slug}`
+      (
+        Object.entries(
+          page.data.reduce((acc: any, curr: any) => {
+            if (!acc[curr.year]) {
+              acc[curr.year] = [];
             }
-            frontmatter={data.frontmatter}
-            repo={data.frontmatter.repo ? true : false}
-          />
-        </>
-      ))
+            acc[curr.year].push(curr);
+            return acc;
+          }, {})
+        ) as [string, any[]][]
+      )
+        .sort(([yearA], [yearB]) => Number(yearB) - Number(yearA))
+        .map(([year, posts]) => (
+          <>
+            <h3 class="text-xl mb-4 border-b pb-4">{year}</h3>
+            {posts.map((post: any) => (
+              <BlogCardItem
+                url={
+                  post.frontmatter.repo
+                    ? post.frontmatter.repo
+                    : `/blog/${post.slug}`
+                }
+                frontmatter={post.frontmatter}
+                repo={post.frontmatter.repo ? true : false}
+              />
+            ))}
+          </>
+        ))
     }
+
     <Pagination prev={page.url.prev} next={page.url.next} />
   </MainLayout>
 </Layout>
