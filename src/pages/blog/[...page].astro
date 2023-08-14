@@ -5,7 +5,6 @@ import { BLOG_DESCRIPTION } from "../../constants";
 import Layout from "@layouts/Layout.astro";
 import MainLayout from "@layouts/MainLayout.astro";
 import BlogCardItem from "@components/BlogCardItem.astro";
-import TagsBox from "@components/TagsBox.astro";
 import { getBlogsAndRepos, getAllTags } from "@utils/collections";
 
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
