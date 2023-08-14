@@ -32,7 +32,7 @@ function createMDFiles() {
           )
             .then((langResponse) => langResponse.json())
             .then((languages) => {
-              let repoDate = new Date(repo.created_at)
+              let repoDate = new Date(repo.updated_at)
                 .toISOString()
                 .slice(0, 10);
               let languageKeys = Object.keys(languages).join(", ");

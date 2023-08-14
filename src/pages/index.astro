@@ -42,7 +42,7 @@ const posts = (await getCollection("repo")).sort(
                 <div class="flex flex-col">
                   <p class="font-bold text-neutral-900 ">{post.data.title}</p>
                   <p class="text-neutral-600 ">
-                    Published: {formatDate(new Date(post.data.date))}
+                    Updated at: {formatDate(new Date(post.data.date))}
                   </p>
                 </div>
                 <div class="text-neutral-700 ">
