@@ -29,14 +29,12 @@ const posts = allCollections.sort(
       on my email <Code>jag[at]jagmit.co.uk</Code> .
     </p>
     <div class="grid gap-4 grid-cols-2 grid-rows-2 mt-5 lg:grid-cols-4">
-      <!-- <div class="grid gap-4 grid-cols-2 lg:grid-cols-4 mt-5"> -->
-
       {
         posts.slice(0, 8).map((post) => {
           return (
             <a
               href={post.data.repo ? post.data.repo : `/blog/${post.slug}`}
-              class="homepage-recent-blog p-4 border border-neutral-200 bg-neutral-50 rounded flex items-center justify-between px-3 py-4 w-full transition-transform transform hover:-translate-y-2 hover:bg-neutral-200 transition-colors relative shadow-md hover:shadow-xl"
+              class="homepage-recent-blog p-4 border border-neutral-200 bg-neutral-50 rounded flex items-center justify-between px-3 py-4 w-full transform hover:-translate-y-2 hover:bg-neutral-200 transition relative shadow-md hover:shadow-xl"
               style={`--bg-url: url(${
                 post.data.image
                   ? post.data.image
