@@ -1,6 +1,12 @@
 {
   "name": "jagmit.co.uk",
   "version": "0.0.1",
+  "author": "Jagmit Gabba",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jagmitg/jagmit.co.uk.git",
+    "directory": "src"
+  },
   "scripts": {
     "dev": "astro dev",
     "build": "npm run repo && astro build",

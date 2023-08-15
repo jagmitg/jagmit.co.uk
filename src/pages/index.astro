@@ -1,12 +1,14 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import MainLayout from "@layouts/MainLayout.astro";
-import External from "@components/icons/External.astro";
 import Code from "@components/Code.astro";
-import { getCollection } from "astro:content";
 import { formatDate } from "@utils/formatDate";
+import { getBlogsAndRepos } from "@utils/collections";
+import External from "@components/icons/External.astro";
 
-const posts = (await getCollection("repo")).sort(
+const { allCollections } = await getBlogsAndRepos();
+
+const posts = allCollections.sort(
   (b, a) => a.data.date.valueOf() - b.data.date.valueOf()
 );
 ---
@@ -26,32 +28,52 @@ const posts = (await getCollection("repo")).sort(
       If you have requests for talking, writing, and so on, feel free to ping me
       on my email <Code>jag[at]jagmit.co.uk</Code> .
     </p>
-    <div class="grid gap-4 grid-cols-1 grid-rows-2 mt-5 lg:grid-cols-2">
+    <div class="grid gap-4 grid-cols-2 grid-rows-2 mt-5 lg:grid-cols-4">
       {
-        posts
-          .sort(() => Math.random() - 0.5)
-          .slice(0, 6)
-          .map((post) => {
-            return (
-              <a
-                href={post.data.repo}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="p-4 border border-neutral-200  bg-neutral-50 rounded flex items-center justify-between px-3 py-4 w-full hover:bg-neutral-200 transition-colors"
-              >
-                <div class="flex flex-col">
-                  <p class="font-bold text-neutral-900 ">{post.data.title}</p>
-                  <p class="text-neutral-600 ">
-                    Updated at: {formatDate(new Date(post.data.date))}
-                  </p>
-                </div>
-                <div class="text-neutral-700 ">
-                  <External />
-                </div>
-              </a>
-            );
-          })
+        posts.slice(0, 8).map((post) => {
+          return (
+            <a
+              href={post.data.repo ? post.data.repo : `/blog/${post.slug}`}
+              class="homepage-recent-blog p-4 border border-neutral-200 bg-neutral-50 rounded flex items-center justify-between px-3 py-4 w-full transform hover:-translate-y-2 hover:bg-neutral-200 transition relative shadow-md hover:shadow-xl"
+              style={`--bg-url: url(${
+                post.data.image
+                  ? post.data.image
+                  : "/images/brands/github-big.png"
+              }); background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.95)), var(--bg-url); background-size: cover; background-position: center;`}
+            >
+              <div class="flex flex-col ">
+                <p class="text-white text-sm">
+                  {formatDate(new Date(post.data.date))}
+                </p>
+                <p class="font-bold text-white">{post.data.title}</p>
+
+                {post.data.repo && (
+                  <div class="absolute right-3 top-3 external-svg">
+                    <External />
+                  </div>
+                )}
+              </div>
+            </a>
+          );
+        })
       }
     </div>
   </MainLayout>
 </Layout>
+
+<style is:inline>
+  .external-svg svg {
+    color: white;
+  }
+  .homepage-recent-blog {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+
+  .homepage-recent-blog:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+      0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      var(--bg-url);
+  }
+</style>

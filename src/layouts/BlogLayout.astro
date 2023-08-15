@@ -3,7 +3,6 @@ import { formatDate } from "@utils/formatDate";
 import Layout from "./Layout.astro";
 import MainLayout from "./MainLayout.astro";
 import { getBlogsAndRepos } from "@utils/collections";
-import BlogDescription from "@components/BlogDescription.astro";
 import Archives from "@components/Archives.astro";
 // import ShareButtons from "@components/ShareButtons.astro";
 import Pagination from "@components/Pagination.astro";
@@ -75,7 +74,6 @@ const index = posts.findIndex(
       </aside>
     </div>
 
-    <BlogDescription slot="description" />
     <div>
       {
         index !== -1 && (

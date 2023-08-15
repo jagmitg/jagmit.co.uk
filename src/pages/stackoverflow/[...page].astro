@@ -3,11 +3,10 @@ import type { GetStaticPathsOptions } from "astro";
 import Layout from "@layouts/Layout.astro";
 import MainLayout from "@layouts/MainLayout.astro";
 import stackOverflowData from "../../data/stackoverflow.json";
-import Pagination from "@components/Pagination.astro";
 import { formatDate } from "@utils/formatDate";
 import External from "@components/icons/External.astro";
 
-export async function getStaticPaths({ paginate }) {
+export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
   const questions = Object.values(stackOverflowData.data);
 
   return paginate(questions, {
@@ -19,15 +18,14 @@ const { page } = Astro.props;
 const questions = page.data;
 ---
 
-<Layout>
-  <MainLayout>
-    <h2 class="text-2xl text-center sm:text-left mb-4 sm:mb-0">
-      StackOverflow Answers
-    </h2>
-
+<Layout title="Stackoverflow Answers">
+  <MainLayout
+    title="StackOverflow Answers"
+    pagination={{ prev: page.url.prev, next: page.url.next }}
+  >
     <div class="grid gap-4 grid-cols-1 grid-rows-2 mt-5 lg:grid-cols-2">
       {
-        questions.map((question) => (
+        questions.map((question: any) => (
           <>
             <a
               href={question.link}
@@ -53,7 +51,5 @@ const questions = page.data;
         ))
       }
     </div>
-
-    <Pagination prev={page.url.prev} next={page.url.next} />
   </MainLayout>
 </Layout>

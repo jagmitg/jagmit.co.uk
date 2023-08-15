@@ -3,7 +3,7 @@ import type { CollectionEntry } from "astro:content";
 
 export type BlogEntry = CollectionEntry<"blog">;
 export type RepoEntry = CollectionEntry<"repo">;
-export type BlogOrRepoEntry = BlogEntry | RepoEntry; // exporting BlogOrRepoEntry type
+export type BlogOrRepoEntry = BlogEntry | RepoEntry;
 
 export async function getBlogsAndRepos() {
   const allBlogs: BlogEntry[] = await getCollection("blog");
@@ -39,7 +39,7 @@ export function getAllTags<T extends BlogEntry | RepoEntry>(collections: T[]) {
       collections
         .map((post) => parseTags(post.data.tags))
         .flat()
-        .map((tag) => tag.toLowerCase()) // Make each tag lowercase
+        .map((tag) => tag.toLowerCase())
         .sort((a, b) => a.length - b.length)
     ),
   ];
