@@ -44,9 +44,9 @@ const allTags = getAllTags(allCollections);
 const { page } = Astro.props;
 ---
 
-<Layout title="Read my Blog..." description={BLOG_DESCRIPTION}>
+<Layout title="Read my Blog" description={BLOG_DESCRIPTION}>
   <MainLayout
-    title="Read my blog.."
+    title="Read my blog..."
     tags={allTags}
     pagination={{ prev: page.url.prev, next: page.url.next }}
   >

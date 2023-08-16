@@ -22,9 +22,15 @@ const titleContent =
 <!DOCTYPE html>
 <html lang="en" class="text-black bg-white">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{titleContent}</title>
+    <meta name="title" content={titleContent} />
     <meta name="description" content={siteDescription} />
+
     <meta property="theme-color" content="#3498db" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={SITE_TITLE} />
@@ -32,10 +38,13 @@ const titleContent =
     <meta property="og:title" content={titleContent} />
     <meta property="og:description" content={siteDescription} />
     <meta property="og:image" content={ogImage} />
-    <meta property="twitter:card" content="summary" />
-    <meta property="twitter:creator" content="@jagmitg" />
-    <title>{titleContent}</title>
-    <link rel="icon" href="/favicon.ico" />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={Astro.url} />
+    <meta property="twitter:title" content={titleContent} />
+    <meta property="twitter:description" content={siteDescription} />
+    <meta property="twitter:image" content={new URL(ogImage, Astro.url)} />
+
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="canonical" href={url} />
     <link rel="dns-prefetch" href="//www.googletagmanager.com" />
