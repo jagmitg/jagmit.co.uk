@@ -19,6 +19,20 @@ type Props = {
 };
 
 const { tags } = Astro.props;
+const development = [
+  "html",
+  "css",
+  "php",
+  "nodejs",
+  "python",
+  "javascript",
+  "typescript",
+  "shell",
+  "batchfile",
+];
+const software = ["mdx", "astro", "vscode"]; // Example tags for Array 2
+const generic = ["review", "purchase"]; // Example tags for Array 3
+
 const currentPath = new URL(Astro.request.url).pathname;
 const pathParts = currentPath.split("/").filter((part) => part !== "");
 
@@ -46,12 +60,53 @@ if (archiveIndex !== -1 && archiveIndex + 1 < pathParts.length) {
       onchange="location.href=`/blog/tags/${this.value}`"
     >
       <option selected disabled>tags...</option>
+
+      <optgroup label="Development">
+        {
+          tags
+            .filter((tag) => development.includes(tag))
+            .map((tag) => (
+              <option value={tag} selected={tag === currentTag}>
+                {tag}
+              </option>
+            ))
+        }
+      </optgroup>
+
+      <optgroup label="Software">
+        {
+          tags
+            .filter((tag) => software.includes(tag))
+            .map((tag) => (
+              <option value={tag} selected={tag === currentTag}>
+                {tag}
+              </option>
+            ))
+        }
+      </optgroup>
+
+      <optgroup label="Generic">
+        {
+          tags
+            .filter((tag) => generic.includes(tag))
+            .map((tag) => (
+              <option value={tag} selected={tag === currentTag}>
+                {tag}
+              </option>
+            ))
+        }
+      </optgroup>
+
       {
-        tags.map((tag) => (
-          <option value={tag} selected={tag === currentTag}>
-            {tag}
-          </option>
-        ))
+        tags
+          .filter(
+            (tag) => ![...development, ...software, ...generic].includes(tag)
+          )
+          .map((tag) => (
+            <option value={tag} selected={tag === currentTag}>
+              {tag}
+            </option>
+          ))
       }
     </select>
   </div>
