@@ -41,29 +41,34 @@ const { posts } = Astro.props;
         <div class="blog text-gray-900">
           <ul>
             {
-              posts.map((post: any) => (
-                <li>
-                  <a
-                    href={`/blog/${post.slug}/`}
-                    class="flex justify-between mb-4 border border-gray-300 hover:bg-gray-100 rounded-md p-3"
-                  >
-                    <h2 class="font-bold text-md mb-1 flex-grow truncate pr-2">
-                      {post.data.title}
-                    </h2>
-
-                    <time
-                      datetime={post.data.date.toISOString()}
-                      class="flex-shrink-0"
+              posts.map((post: any) => {
+                const repo = post.data.repo;
+                return (
+                  <li>
+                    <a
+                      href={repo ? repo : `/blog/${post.slug}/`}
+                      class="flex justify-between mb-4 border border-gray-300 hover:bg-gray-100 rounded-md p-3"
+                      target={repo ? "_blank" : undefined}
+                      rel={repo ? "noopener noreferrer" : undefined}
                     >
-                      {post.data.date.toLocaleDateString("en-us", {
-                        year: "numeric",
-                        month: "short",
-                        day: "numeric",
-                      })}
-                    </time>
-                  </a>
-                </li>
-              ))
+                      <h2 class="font-bold text-md mb-1 flex-grow truncate pr-2">
+                        {post.data.title}
+                      </h2>
+
+                      <time
+                        datetime={post.data.date.toISOString()}
+                        class="flex-shrink-0"
+                      >
+                        {post.data.date.toLocaleDateString("en-us", {
+                          year: "numeric",
+                          month: "short",
+                          day: "numeric",
+                        })}
+                      </time>
+                    </a>
+                  </li>
+                );
+              })
             }
           </ul>
         </div>

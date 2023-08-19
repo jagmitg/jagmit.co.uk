@@ -9,6 +9,8 @@ export interface Config {
 
 export interface AnswerResponseItem {
   question_id: number;
+  is_accepted: boolean;
+  score: number;
 }
 
 export interface QuestionDetail {

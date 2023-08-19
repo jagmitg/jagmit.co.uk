@@ -36,9 +36,14 @@ async function fetchAllAnswers(): Promise<number[]> {
       };
       if (!data.items || data.items.length === 0) break;
 
+      // Filter the items based on the conditions
+      const filteredItems = data.items.filter(
+        (item) => item.is_accepted || item.score > 0,
+      );
+
       allAnswers = [
         ...allAnswers,
-        ...data.items.map((item) => item.question_id),
+        ...filteredItems.map((item) => item.question_id),
       ];
 
       page++;
@@ -93,9 +98,8 @@ async function fetchDataAndSaveToJson(): Promise<void> {
   // Sort the results by creation_date
   results.sort((a, b) => b.creation_date - a.creation_date);
 
-  // Reorder the sequence for the key after sorting
   results.forEach((item, index) => {
-    (item as any).key = index + 1; // We're adding a new key 'key' to QuestionDetail which doesn't exist, so using 'as any'.
+    (item as any).key = index + 1;
   });
 
   console.log(

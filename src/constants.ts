@@ -5,14 +5,6 @@ export const BLOG_DESCRIPTION =
   "Dive into TypeScript, JavaScript, Node.js, Python, and TDD insights. DevOps enthusiast. Join the journey!";
 export const REPO_PINNED = <const>["Wordpress-Select-Pagination"];
 export const PAGINATE_CONTENT = 5;
-export const STACKOVERFLOW_CONFIG = {
-  userId: 2244383,
-  endpoints: {
-    answers: "https://api.stackexchange.com/2.3/users",
-    question: "https://api.stackexchange.com/2.3/questions",
-  },
-  pageSize: 20,
-};
 
 export const PAGE_LINKS = <const>[
   {
@@ -23,12 +15,12 @@ export const PAGE_LINKS = <const>[
   {
     icon: "🗒",
     title: "blog",
-    href: "/blog",
+    href: "/blog/",
   },
   {
     icon: "🗒",
     title: "stackoverflow",
-    href: "/stackoverflow",
+    href: "/stackoverflow/",
   },
 ];
 

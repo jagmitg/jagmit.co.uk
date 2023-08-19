@@ -14,7 +14,6 @@
     "preview": "astro preview",
     "check": "astro check",
     "test": "playwright test",
-    "test:update": "docker run --rm --network host -v $(pwd):/work/ -w /work/ -it mcr.microsoft.com/playwright:focal /bin/bash -c 'npm test -- -u'",
     "fmt": "prettier -w --plugin-search-dir=. .",
     "fmt:check": "prettier --check .",
     "cache": "ts-node --esm scripts/generatecache.ts",

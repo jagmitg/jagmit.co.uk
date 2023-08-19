@@ -60,7 +60,7 @@ function isBlogEntry(entry: BlogOrRepoEntry): entry is BlogEntry {
               href={
                 isRepoEntry(post) && post.data.repo
                   ? post.data.repo
-                  : `/blog/${post.slug}`
+                  : `/blog/${post.slug}/`
               }
               class="homepage-recent-blog p-4 border border-neutral-200 bg-neutral-50 rounded flex items-center justify-between px-3 py-4 w-full transform hover:-translate-y-2 hover:bg-neutral-200 transition relative shadow-md hover:shadow-xl"
               style={`--bg-url: url(${backgroundImage}); background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.95)), var(--bg-url); background-size: cover; background-position: center;`}
