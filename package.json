@@ -2,6 +2,7 @@
   "name": "jagmit.co.uk",
   "version": "1.0.0",
   "author": "Jagmit Gabba",
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "https://github.com/jagmitg/jagmit.co.uk.git",
@@ -9,15 +10,16 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "npm run repo && astro build",
+    "build": "npm run repo && astro check && tsc --noEmit && astro build",
     "preview": "astro preview",
     "check": "astro check",
     "test": "playwright test",
     "test:update": "docker run --rm --network host -v $(pwd):/work/ -w /work/ -it mcr.microsoft.com/playwright:focal /bin/bash -c 'npm test -- -u'",
     "fmt": "prettier -w --plugin-search-dir=. .",
     "fmt:check": "prettier --check .",
-    "cache": "node scripts/generatecache.mjs",
-    "repo": "NODE_TLS_REJECT_UNAUTHORIZED=0 node scripts/repos.mjs"
+    "cache": "ts-node --esm scripts/generatecache.ts",
+    "repo": "NODE_TLS_REJECT_UNAUTHORIZED=0 ts-node --esm scripts/repos.ts",
+    "stackoverflow": "ts-node --esm scripts/stackoverflow.ts"
   },
   "devDependencies": {
     "@playwright/test": "^1.35.1",
@@ -42,6 +44,7 @@
     "@astrojs/rss": "^2.4.4",
     "@astrojs/sitemap": "^2.0.2",
     "@astrojs/tailwind": "^4.0.0",
+    "@astrojs/ts-plugin": "^1.1.1",
     "algoliasearch": "^4.18.0",
     "astro": "^2.10.9",
     "gist-embed": "^1.0.4",

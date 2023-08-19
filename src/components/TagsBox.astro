@@ -4,7 +4,7 @@ import { getBlogsAndRepos } from "@utils/collections";
 const allPosts = (await getBlogsAndRepos()).allCollections;
 const postYears = new Map();
 
-allPosts.forEach((post) => {
+allPosts.forEach((post: any) => {
   const year = new Date(post.data.date).getFullYear();
 
   if (!postYears.get(year)) {
@@ -100,7 +100,7 @@ if (archiveIndex !== -1 && archiveIndex + 1 < pathParts.length) {
       {
         tags
           .filter(
-            (tag) => ![...development, ...software, ...generic].includes(tag)
+            (tag) => ![...development, ...software, ...generic].includes(tag),
           )
           .map((tag) => (
             <option value={tag} selected={tag === currentTag}>

@@ -5,7 +5,7 @@ import { getBlogsAndRepos } from "@utils/collections";
 export async function getStaticPaths() {
   const { allCollections } = await getBlogsAndRepos();
 
-  return allCollections.map((entry) => ({
+  return allCollections.map((entry: any) => ({
     params: { slug: entry.slug },
     props: { entry },
   }));

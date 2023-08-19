@@ -6,10 +6,20 @@ import { formatDate } from "@utils/formatDate";
 import { getBlogsAndRepos } from "@utils/collections";
 import External from "@components/icons/External.astro";
 
+interface Post {
+  slug: string;
+  data: {
+    date: Date;
+    title: string;
+    repo?: string;
+    image?: string;
+  };
+}
+
 const { allCollections } = await getBlogsAndRepos();
 
 const posts = allCollections.sort(
-  (b, a) => a.data.date.valueOf() - b.data.date.valueOf()
+  (b, a) => a.data.date.valueOf() - b.data.date.valueOf(),
 );
 ---
 
@@ -30,7 +40,7 @@ const posts = allCollections.sort(
     </p>
     <div class="grid gap-4 grid-cols-2 grid-rows-2 mt-5 lg:grid-cols-4">
       {
-        posts.slice(0, 8).map((post) => {
+        posts.slice(0, 8).map((post: Post) => {
           return (
             <a
               href={post.data.repo ? post.data.repo : `/blog/${post.slug}`}
@@ -66,12 +76,14 @@ const posts = allCollections.sort(
     color: white;
   }
   .homepage-recent-blog {
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    box-shadow:
+      0 4px 6px -1px rgba(0, 0, 0, 0.1),
       0 2px 4px -1px rgba(0, 0, 0, 0.06);
   }
 
   .homepage-recent-blog:hover {
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    box-shadow:
+      0 20px 25px -5px rgba(0, 0, 0, 0.1),
       0 10px 10px -5px rgba(0, 0, 0, 0.04);
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
       var(--bg-url);

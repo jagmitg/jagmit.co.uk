@@ -20,7 +20,9 @@ const { allCollections: posts } = await getBlogsAndRepos();
 const index = posts.findIndex(
   ({ slug }) =>
     slug.replace(/^\//, "") ===
-    Astro.url.pathname.replace(/\/blog\//, "").replace(/\/$/, "" /* for prod */)
+    Astro.url.pathname
+      .replace(/\/blog\//, "")
+      .replace(/\/$/, "" /* for prod */),
 );
 ---
 

@@ -1,0 +1,67 @@
+import fetch from "node-fetch";
+import { writeFile, readdir, unlink } from "fs/promises";
+import path from "path";
+import dotenv from "dotenv";
+
+dotenv.config();
+
+import type { RepoFetchSettings, GithubRepo } from "../types";
+
+const REPO_FETCH_SETTINGS: RepoFetchSettings = {
+  username: process.env.USERNAME!,
+  targetFolder: process.env.TARGET_FOLDER!,
+  excludedRepos: process.env.EXCLUDED_REPOS!.split(","),
+};
+
+async function deleteAllMDFiles(): Promise<void[]> {
+  const files = await readdir(REPO_FETCH_SETTINGS.targetFolder);
+  const deletePromises = files
+    .filter((file) => file.endsWith(".mdx"))
+    .map((file) => unlink(path.join(REPO_FETCH_SETTINGS.targetFolder, file)));
+  return Promise.all(deletePromises);
+}
+
+async function createMDFiles(): Promise<void> {
+  try {
+    const response = await fetch(
+      `https://api.github.com/users/${REPO_FETCH_SETTINGS.username}/repos`,
+    );
+    const data = (await response.json()) as GithubRepo[];
+
+    const writePromises = data
+      .filter(
+        (repo) =>
+          !repo.fork && !REPO_FETCH_SETTINGS.excludedRepos.includes(repo.name),
+      )
+      .map(async (repo) => {
+        const langResponse = await fetch(
+          `https://api.github.com/repos/${REPO_FETCH_SETTINGS.username}/${repo.name}/languages`,
+        );
+        const languages = await langResponse.json();
+
+        const repoDate = new Date(repo.created_at).toISOString().slice(0, 10);
+        const languageKeys = Object.keys(languages).join(", ");
+        const content = `---
+title: ${repo.name}
+date: ${repoDate}
+description: ${repo.description}
+repo: ${repo.html_url}
+tags: ${languageKeys}
+---`;
+
+        return writeFile(
+          path.join(REPO_FETCH_SETTINGS.targetFolder, `${repo.name}.mdx`),
+          content,
+        );
+      });
+
+    await Promise.all(writePromises);
+    console.log("All markdown files have been created successfully.");
+  } catch (error) {
+    console.error("An error occurred:", error);
+  }
+}
+
+deleteAllMDFiles()
+  .then(createMDFiles)
+  .catch((error) => console.error("An error occurred:", error));
