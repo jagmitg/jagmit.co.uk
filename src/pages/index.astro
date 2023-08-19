@@ -4,6 +4,7 @@ import MainLayout from "@layouts/MainLayout.astro";
 import Code from "@components/Code.astro";
 import { formatDate } from "@utils/formatDate";
 import { getBlogsAndRepos } from "@utils/collections";
+import type { BlogOrRepoEntry, RepoEntry, BlogEntry } from "@utils/collections";
 import External from "@components/icons/External.astro";
 
 interface Post {
@@ -21,6 +22,14 @@ const { allCollections } = await getBlogsAndRepos();
 const posts = allCollections.sort(
   (b, a) => a.data.date.valueOf() - b.data.date.valueOf(),
 );
+
+function isRepoEntry(entry: BlogOrRepoEntry): entry is RepoEntry {
+  return "repo" in entry.data;
+}
+
+function isBlogEntry(entry: BlogOrRepoEntry): entry is BlogEntry {
+  return "image" in entry.data;
+}
 ---
 
 <Layout>
@@ -40,16 +49,21 @@ const posts = allCollections.sort(
     </p>
     <div class="grid gap-4 grid-cols-2 grid-rows-2 mt-5 lg:grid-cols-4">
       {
-        posts.slice(0, 8).map((post: Post) => {
+        posts.slice(0, 8).map((post: BlogOrRepoEntry) => {
+          const backgroundImage =
+            isBlogEntry(post) && post.data.image
+              ? post.data.image
+              : "/images/brands/github-big.png";
+
           return (
             <a
-              href={post.data.repo ? post.data.repo : `/blog/${post.slug}`}
+              href={
+                isRepoEntry(post) && post.data.repo
+                  ? post.data.repo
+                  : `/blog/${post.slug}`
+              }
               class="homepage-recent-blog p-4 border border-neutral-200 bg-neutral-50 rounded flex items-center justify-between px-3 py-4 w-full transform hover:-translate-y-2 hover:bg-neutral-200 transition relative shadow-md hover:shadow-xl"
-              style={`--bg-url: url(${
-                post.data.image
-                  ? post.data.image
-                  : "/images/brands/github-big.png"
-              }); background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.95)), var(--bg-url); background-size: cover; background-position: center;`}
+              style={`--bg-url: url(${backgroundImage}); background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.95)), var(--bg-url); background-size: cover; background-position: center;`}
             >
               <div class="flex flex-col ">
                 <p class="text-white text-sm">
@@ -57,7 +71,7 @@ const posts = allCollections.sort(
                 </p>
                 <p class="font-bold text-white">{post.data.title}</p>
 
-                {post.data.repo && (
+                {isRepoEntry(post) && (
                   <div class="absolute right-3 top-3 external-svg">
                     <External />
                   </div>

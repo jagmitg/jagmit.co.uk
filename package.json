@@ -18,8 +18,8 @@
     "fmt": "prettier -w --plugin-search-dir=. .",
     "fmt:check": "prettier --check .",
     "cache": "ts-node --esm scripts/generatecache.ts",
-    "repo": "NODE_TLS_REJECT_UNAUTHORIZED=0 ts-node --esm scripts/repos.ts",
-    "stackoverflow": "ts-node --esm scripts/stackoverflow.ts"
+    "repo": "NODE_TLS_REJECT_UNAUTHORIZED=0 ts-node --esm scripts/fetchRepos.ts",
+    "stackoverflow": "ts-node --esm scripts/fetchStackoverflow.ts"
   },
   "devDependencies": {
     "@playwright/test": "^1.35.1",
