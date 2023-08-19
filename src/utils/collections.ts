@@ -4,6 +4,9 @@ import type { CollectionEntry } from "astro:content";
 export type BlogEntry = CollectionEntry<"blog">;
 export type RepoEntry = CollectionEntry<"repo">;
 export type BlogOrRepoEntry = BlogEntry | RepoEntry;
+type Question = {
+  tags: string[];
+};
 
 export async function getBlogsAndRepos(): Promise<{
   sortedBlogs: BlogEntry[];
@@ -49,4 +52,16 @@ export function getAllTags<T extends BlogOrRepoEntry>(
         .sort(),
     ),
   ];
+}
+
+export function generateUniqueTags(questions: Question[]): string[] {
+  let allTags = new Set<string>();
+
+  questions.forEach((question: Question) => {
+    question.tags.forEach((tag: string) => {
+      allTags.add(tag);
+    });
+  });
+
+  return [...allTags];
 }

@@ -7,16 +7,6 @@ import { getBlogsAndRepos } from "@utils/collections";
 import type { BlogOrRepoEntry, RepoEntry, BlogEntry } from "@utils/collections";
 import External from "@components/icons/External.astro";
 
-interface Post {
-  slug: string;
-  data: {
-    date: Date;
-    title: string;
-    repo?: string;
-    image?: string;
-  };
-}
-
 const { allCollections } = await getBlogsAndRepos();
 
 const posts = allCollections.sort(

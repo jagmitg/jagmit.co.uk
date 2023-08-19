@@ -1,0 +1,56 @@
+---
+import { generateUniqueTags } from "@utils/collections";
+import Layout from "@layouts/Layout.astro";
+import MainLayout from "@layouts/MainLayout.astro";
+import { PAGINATE_CONTENT } from "@const";
+import stackOverflowData from "../../../../data/stackoverflow.json";
+
+export async function getStaticPaths({ paginate }) {
+  const questions = Object.values(stackOverflowData.data);
+  const tags = generateUniqueTags(questions);
+
+  const pathsArray = tags.map((tag: any) => {
+    const filteredQuestions = questions.filter(
+      (post: any) =>
+        post.tags &&
+        post.tags.some(
+          (current: any) => current.toLowerCase() === tag.toLowerCase(),
+        ),
+    );
+    return paginate(filteredQuestions, {
+      params: { tag },
+      pageSize: PAGINATE_CONTENT,
+      props: { questions: filteredQuestions }, // Make sure to pass questions as props
+    });
+  });
+
+  return pathsArray.flat();
+}
+
+// const { tag } = Astro.params;
+const { questions, page } = Astro.props;
+---
+
+<Layout>
+  <MainLayout pagination={{ prev: page.url.prev, next: page.url.next }}>
+    <div class="gap-4 flex flex-col">
+      {
+        questions?.map((question: any) => (
+          <a
+            href={question.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="p-4 border mb-2 border-neutral-200  bg-neutral-50 rounded flex items-center justify-between px-3 py-4 w-full hover:bg-neutral-200 transition-colors"
+          >
+            <div class="flex flex-col">
+              <p class="font-bold text-neutral-900 ">{question.key}</p>
+              <p class="font-bold text-neutral-900 ">{question.title}</p>
+              <p class="text-neutral-600 " />
+              <p class="text-neutral-600 ">Tags: {question.tags.join(", ")}</p>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </MainLayout>
+</Layout>

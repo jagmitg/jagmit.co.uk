@@ -5,6 +5,7 @@ import Layout from "@layouts/Layout.astro";
 import MainLayout from "@layouts/MainLayout.astro";
 import BlogCardItem from "@components/BlogCardItem.astro";
 import { getBlogsAndRepos, getAllTags } from "@utils/collections";
+import { PAGINATE_CONTENT } from "@const";
 
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
   const allPosts = await Astro.glob("../../content/**/*.{md,mdx}");
@@ -30,11 +31,11 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
     .sort(
       (a: any, b: any) =>
         new Date(b.frontmatter.date).getTime() -
-        new Date(a.frontmatter.date).getTime()
+        new Date(a.frontmatter.date).getTime(),
     );
 
   return paginate(formattedPosts, {
-    pageSize: 8,
+    pageSize: PAGINATE_CONTENT,
   });
 }
 
@@ -44,7 +45,10 @@ const allTags = getAllTags(allCollections);
 const { page } = Astro.props;
 ---
 
-<Layout title="Read my Blog" description={BLOG_DESCRIPTION}>
+<Layout
+  title={page.lastPage > 1 ? `Blog - Page ${page.currentPage}` : `Blog`}
+  description={BLOG_DESCRIPTION}
+>
   <MainLayout
     title="Read my blog..."
     tags={allTags}
@@ -59,7 +63,7 @@ const { page } = Astro.props;
             }
             acc[curr.year].push(curr);
             return acc;
-          }, {})
+          }, {}),
         ) as [string, any[]][]
       )
         .sort(([yearA], [yearB]) => Number(yearB) - Number(yearA))

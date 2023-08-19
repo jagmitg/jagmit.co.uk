@@ -4,7 +4,7 @@ export const SITE_DESCRIPTION =
 export const BLOG_DESCRIPTION =
   "Dive into TypeScript, JavaScript, Node.js, Python, and TDD insights. DevOps enthusiast. Join the journey!";
 export const REPO_PINNED = <const>["Wordpress-Select-Pagination"];
-export const PAGINATE_CONTENT = 5;
+export const PAGINATE_CONTENT = 10;
 
 export const PAGE_LINKS = <const>[
   {
