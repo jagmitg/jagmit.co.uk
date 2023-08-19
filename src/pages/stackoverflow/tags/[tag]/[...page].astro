@@ -20,7 +20,7 @@ export async function getStaticPaths({ paginate }) {
     return paginate(filteredQuestions, {
       params: { tag },
       pageSize: PAGINATE_CONTENT,
-      props: { questions: filteredQuestions }, // Make sure to pass questions as props
+      props: { questions: filteredQuestions },
     });
   });
 
