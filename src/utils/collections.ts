@@ -1,5 +1,6 @@
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
+import { TAGS_DEFINITION } from "@const";
 
 export type BlogEntry = CollectionEntry<"blog">;
 export type RepoEntry = CollectionEntry<"repo">;
@@ -59,9 +60,28 @@ export function generateUniqueTags(questions: Question[]): string[] {
 
   questions.forEach((question: Question) => {
     question.tags.forEach((tag: string) => {
-      allTags.add(tag);
+      for (let overarchingTag in TAGS_DEFINITION) {
+        if (matchesTagDefinition(tag, TAGS_DEFINITION[overarchingTag])) {
+          allTags.add(overarchingTag);
+          break;
+        }
+      }
     });
   });
 
   return [...allTags];
+}
+
+export function matchesTagDefinition(
+  tag: string,
+  definitions: (string | RegExp)[],
+): boolean {
+  for (let definition of definitions) {
+    if (typeof definition === "string" && tag === definition) {
+      return true;
+    } else if (definition instanceof RegExp && definition.test(tag)) {
+      return true;
+    }
+  }
+  return false;
 }

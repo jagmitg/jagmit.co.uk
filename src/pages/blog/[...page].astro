@@ -5,14 +5,18 @@ import Layout from "@layouts/Layout.astro";
 import MainLayout from "@layouts/MainLayout.astro";
 import BlogCardItem from "@components/BlogCardItem.astro";
 import { getBlogsAndRepos, getAllTags } from "@utils/collections";
-import { PAGINATE_CONTENT } from "@const";
 
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
   const allPosts = await Astro.glob("../../content/**/*.{md,mdx}");
 
   const slugify = (filePath: string) => {
+    if (filePath.endsWith("/")) {
+      filePath = filePath.slice(0, -1);
+    }
+
     let fileName = filePath.split("/").pop();
     fileName = fileName?.split(".").shift() || "";
+
     return fileName
       .toLowerCase()
       .replace(/[^a-z0-9 -]/g, "")
@@ -35,7 +39,7 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
     );
 
   return paginate(formattedPosts, {
-    pageSize: PAGINATE_CONTENT,
+    pageSize: 8,
   });
 }
 
@@ -45,10 +49,7 @@ const allTags = getAllTags(allCollections);
 const { page } = Astro.props;
 ---
 
-<Layout
-  title={page.lastPage > 1 ? `Blog - Page ${page.currentPage}` : `Blog`}
-  description={BLOG_DESCRIPTION}
->
+<Layout title="Read my Blog" description={BLOG_DESCRIPTION}>
   <MainLayout
     title="Read my blog..."
     tags={allTags}
@@ -75,7 +76,7 @@ const { page } = Astro.props;
                 url={
                   post.frontmatter.repo
                     ? post.frontmatter.repo
-                    : `/blog/${post.slug}`
+                    : `/blog/${post.slug}/`
                 }
                 frontmatter={post.frontmatter}
                 repo={post.frontmatter.repo ? true : false}

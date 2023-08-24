@@ -6,6 +6,14 @@ export const BLOG_DESCRIPTION =
 export const REPO_PINNED = <const>["Wordpress-Select-Pagination"];
 export const PAGINATE_CONTENT = 10;
 
+export const TAGS_DEFINITION = {
+  html: [/html/],
+  vue: [/vue/],
+  python: [/python/],
+  javascript: [/javascript/],
+  angular: [/angular/],
+};
+
 export const PAGE_LINKS = <const>[
   {
     icon: "😵‍💫",

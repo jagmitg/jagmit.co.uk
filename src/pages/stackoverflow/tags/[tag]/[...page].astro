@@ -1,8 +1,8 @@
 ---
-import { generateUniqueTags } from "@utils/collections";
+import { generateUniqueTags, matchesTagDefinition } from "@utils/collections";
 import Layout from "@layouts/Layout.astro";
 import MainLayout from "@layouts/MainLayout.astro";
-import { PAGINATE_CONTENT } from "@const";
+import { PAGINATE_CONTENT, TAGS_DEFINITION } from "@const";
 import stackOverflowData from "../../../../data/stackoverflow.json";
 
 export async function getStaticPaths({ paginate }) {
@@ -13,8 +13,8 @@ export async function getStaticPaths({ paginate }) {
     const filteredQuestions = questions.filter(
       (post: any) =>
         post.tags &&
-        post.tags.some(
-          (current: any) => current.toLowerCase() === tag.toLowerCase(),
+        post.tags.some((current: any) =>
+          matchesTagDefinition(current, TAGS_DEFINITION[tag] || []),
         ),
     );
     return paginate(filteredQuestions, {

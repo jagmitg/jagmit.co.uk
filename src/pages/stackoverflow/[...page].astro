@@ -18,7 +18,8 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
 
 const { page } = Astro.props;
 const questions = page.data;
-const uniqueTags = generateUniqueTags(questions);
+const allQuestions = Object.values(stackOverflowData.data);
+const uniqueTags = generateUniqueTags(allQuestions);
 ---
 
 <Layout
