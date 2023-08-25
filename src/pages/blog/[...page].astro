@@ -10,8 +10,13 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
   const allPosts = await Astro.glob("../../content/**/*.{md,mdx}");
 
   const slugify = (filePath: string) => {
+    if (filePath.endsWith("/")) {
+      filePath = filePath.slice(0, -1);
+    }
+
     let fileName = filePath.split("/").pop();
     fileName = fileName?.split(".").shift() || "";
+
     return fileName
       .toLowerCase()
       .replace(/[^a-z0-9 -]/g, "")
@@ -30,7 +35,7 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
     .sort(
       (a: any, b: any) =>
         new Date(b.frontmatter.date).getTime() -
-        new Date(a.frontmatter.date).getTime()
+        new Date(a.frontmatter.date).getTime(),
     );
 
   return paginate(formattedPosts, {
@@ -44,9 +49,9 @@ const allTags = getAllTags(allCollections);
 const { page } = Astro.props;
 ---
 
-<Layout title="Read my Blog..." description={BLOG_DESCRIPTION}>
+<Layout title="Read my Blog" description={BLOG_DESCRIPTION}>
   <MainLayout
-    title="Read my blog.."
+    title="Read my blog..."
     tags={allTags}
     pagination={{ prev: page.url.prev, next: page.url.next }}
   >
@@ -59,7 +64,7 @@ const { page } = Astro.props;
             }
             acc[curr.year].push(curr);
             return acc;
-          }, {})
+          }, {}),
         ) as [string, any[]][]
       )
         .sort(([yearA], [yearB]) => Number(yearB) - Number(yearA))
@@ -71,7 +76,7 @@ const { page } = Astro.props;
                 url={
                   post.frontmatter.repo
                     ? post.frontmatter.repo
-                    : `/blog/${post.slug}`
+                    : `/blog/${post.slug}/`
                 }
                 frontmatter={post.frontmatter}
                 repo={post.frontmatter.repo ? true : false}

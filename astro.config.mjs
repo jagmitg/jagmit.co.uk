@@ -9,6 +9,8 @@ import externalLinks from "rehype-external-links";
 export default defineConfig({
   site: "https://jagmit.co.uk",
   output: "static",
+  trailingSlash: "always",
+  compressHTML: true,
   vite: {
     build: {
       rollupOptions: {
