@@ -1,68 +1,88 @@
 ---
 import { generateUniqueTags, matchesTagDefinition } from "@utils/collections";
 import Layout from "@layouts/Layout.astro";
-import MainLayout from "@layouts/MainLayout.astro";
 import { PAGINATE_CONTENT, TAGS_DEFINITION } from "@const";
 import stackOverflowData from "../../../../data/stackoverflow.json";
+import StackoverflowLayout from "@layouts/StackoverflowLayout.astro";
 
-export async function getStaticPaths({ paginate }) {
+export async function getStaticPaths() {
   const questions = Object.values(stackOverflowData.data);
   const tags = generateUniqueTags(questions);
 
-  const pathsArray = tags.map((tag: any) => {
+  let allPaths = [];
+  let questionIndex = 1;
+
+  for (const tag of tags) {
     const filteredQuestions = questions.filter(
-      (post: any) =>
+      (post) =>
         post.tags &&
-        post.tags.some((current: any) =>
+        post.tags.some((current) =>
           matchesTagDefinition(current, TAGS_DEFINITION[tag] || []),
         ),
     );
-    return paginate(filteredQuestions, {
-      params: { tag },
-      pageSize: PAGINATE_CONTENT,
-      props: { questions: filteredQuestions },
+
+    filteredQuestions.sort((a, b) => b.creation_date - a.creation_date);
+
+    filteredQuestions.map((post) => {
+      post.key = questionIndex;
+      questionIndex++;
+      return post;
     });
-  });
 
-  return pathsArray.flat();
+    const numberOfPages = Math.ceil(
+      filteredQuestions.length / PAGINATE_CONTENT,
+    );
+
+    for (let i = 1; i <= numberOfPages; i++) {
+      const prevPage = i === 1 ? null : `/stackoverflow/tags/${tag}/${i - 1}/`;
+      const nextPage =
+        i === numberOfPages ? null : `/stackoverflow/tags/${tag}/${i + 1}/`;
+
+      allPaths.push({
+        params: { tag, page: i },
+        props: {
+          questions: filteredQuestions.slice(
+            (i - 1) * PAGINATE_CONTENT,
+            i * PAGINATE_CONTENT,
+          ),
+          page: {
+            lastPage: i.toString(),
+            currentPage: 1,
+            url: {
+              prev: prevPage,
+              next: nextPage,
+            },
+          },
+        },
+      });
+    }
+  }
+
+  return allPaths;
 }
-const allQuestions = Object.values(stackOverflowData.data);
-const uniqueTags = generateUniqueTags(allQuestions);
 
-// const { tag } = Astro.params;
 const { questions, page } = Astro.props;
 ---
 
-<Layout>
-  <MainLayout pagination={{ prev: page.url.prev, next: page.url.next }}>
-    <h2 class="text-2xl mb-4">Tag: {Astro.params.tag}</h2>
-    <div class="select-wrapper">
-      <select
-        class="customSelectbox border shadow-sm bg-gray-700 rounded-md border-gray-300 text-gray-300"
-        onchange="location.href=`/stackoverflow/tags/${this.value}/`"
-      >
-        <option selected disabled>tags...</option>
-        {
-          uniqueTags.map((tag) => (
-            <option value={tag} selected={tag === Astro.params.tag}>
-              {tag}
-            </option>
-          ))
-        }
-      </select>
-    </div>
-
-    <div class="gap-4 flex flex-col">
+<Layout
+  title={page?.lastPage > 1
+    ? `${Astro.params.tag} - My Stackoverflow Tag - Page ${page.currentPage}`
+    : `${Astro.params.tag} - My Stackoverflow Tag`}
+>
+  <StackoverflowLayout
+    title={`Tag: ${Astro.params.tag}`}
+    pagination={{ prev: page?.url?.prev, next: page?.url?.next }}
+  >
+    <div class="grid gap-4 grid-cols-1 grid-rows-2 mt-5 lg:grid-cols-2">
       {
-        questions?.map((question: any) => (
+        questions?.map((question) => (
           <a
             href={question.link}
             target="_blank"
             rel="noopener noreferrer"
-            class="p-4 border mb-2 border-neutral-200  bg-neutral-50 rounded flex items-center justify-between px-3 py-4 w-full hover:bg-neutral-200 transition-colors"
+            class="p-4 border mb-2 relative border-neutral-200  bg-neutral-50 rounded flex items-center justify-between px-3 py-4 w-full hover:bg-neutral-200 transition-colors"
           >
             <div class="flex flex-col">
-              <p class="font-bold text-neutral-900 ">{question.key}</p>
               <p class="font-bold text-neutral-900 ">{question.title}</p>
               <p class="text-neutral-600 " />
               <p class="text-neutral-600 ">Tags: {question.tags.join(", ")}</p>
@@ -71,5 +91,20 @@ const { questions, page } = Astro.props;
         ))
       }
     </div>
-  </MainLayout>
+  </StackoverflowLayout>
 </Layout>
+<style>
+  .questionKeys {
+    position: absolute;
+    top: -20px;
+    right: 0;
+    border-top-right-radius: 33%;
+    border-top-left-radius: 33%;
+    padding: 0 10px;
+    box-shadow: 0 4px 2px -2px gray;
+
+    @apply text-neutral-100;
+    @apply font-bold;
+    @apply bg-blue-400;
+  }
+</style>

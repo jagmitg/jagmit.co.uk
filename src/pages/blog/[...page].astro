@@ -1,10 +1,10 @@
 ---
 import type { GetStaticPathsOptions } from "astro";
-import { BLOG_DESCRIPTION } from "../../constants";
 import Layout from "@layouts/Layout.astro";
 import MainLayout from "@layouts/MainLayout.astro";
 import BlogCardItem from "@components/BlogCardItem.astro";
 import { getBlogsAndRepos, getAllTags } from "@utils/collections";
+import { BLOG_DESCRIPTION, PAGINATE_CONTENT } from "@const";
 
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
   const allPosts = await Astro.glob("../../content/**/*.{md,mdx}");
@@ -39,7 +39,7 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
     );
 
   return paginate(formattedPosts, {
-    pageSize: 8,
+    pageSize: PAGINATE_CONTENT,
   });
 }
 
