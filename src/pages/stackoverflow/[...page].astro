@@ -34,7 +34,7 @@ const uniqueTags = generateUniqueTags(allQuestions);
     <div class="select-wrapper">
       <select
         class="customSelectbox border shadow-sm bg-gray-700 rounded-md border-gray-300 text-gray-300"
-        onchange="location.href=`/stackoverflow/tags/${this.value}/`"
+        onchange="location.href=`/stackoverflow/tags/${this.value}/1/`"
       >
         <option selected disabled>tags...</option>
         {uniqueTags.map((tag) => <option value={tag}>{tag}</option>)}
