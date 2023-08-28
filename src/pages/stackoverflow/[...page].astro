@@ -2,7 +2,7 @@
 import { generateUniqueTags } from "@utils/collections";
 import type { GetStaticPathsOptions } from "astro";
 import Layout from "@layouts/Layout.astro";
-import MainLayout from "@layouts/MainLayout.astro";
+import StackoverflowLayout from "@layouts/StackoverflowLayout.astro";
 import stackOverflowData from "../../data/stackoverflow.json";
 import { formatDate } from "@utils/formatDate";
 import External from "@components/icons/External.astro";
@@ -18,8 +18,6 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
 
 const { page } = Astro.props;
 const questions = page.data;
-const allQuestions = Object.values(stackOverflowData.data);
-const uniqueTags = generateUniqueTags(allQuestions);
 ---
 
 <Layout
@@ -27,20 +25,10 @@ const uniqueTags = generateUniqueTags(allQuestions);
     ? `My Stackoverflow Answers - Page ${page.currentPage}`
     : `My Stackoverflow Answers`}
 >
-  <MainLayout
+  <StackoverflowLayout
     title="My StackOverflow Answers"
     pagination={{ prev: page.url.prev, next: page.url.next }}
   >
-    <div class="select-wrapper">
-      <select
-        class="customSelectbox border shadow-sm bg-gray-700 rounded-md border-gray-300 text-gray-300"
-        onchange="location.href=`/stackoverflow/tags/${this.value}/1/`"
-      >
-        <option selected disabled>tags...</option>
-        {uniqueTags.map((tag) => <option value={tag}>{tag}</option>)}
-      </select>
-    </div>
-
     <div class="grid gap-4 grid-cols-1 grid-rows-2 mt-5 lg:grid-cols-2">
       {
         questions.map((question: any) => (
@@ -49,10 +37,10 @@ const uniqueTags = generateUniqueTags(allQuestions);
               href={question.link}
               target="_blank"
               rel="noopener noreferrer"
-              class="p-4 border mb-2 border-neutral-200 bg-neutral-50 rounded flex items-center justify-between px-3 py-4 w-full hover:bg-neutral-200 transition-colors"
+              class="p-4 border mb-2 border-neutral-200 bg-neutral-50 rounded flex items-center justify-between px-3 py-4 w-full relative hover:bg-neutral-200 transition-colors"
             >
+              <div class="questionKeys">{question.key}</div>
               <div class="flex flex-col">
-                <p class="font-bold text-neutral-900 ">{question.key}</p>
                 <p class="font-bold text-neutral-900 ">{question.title}</p>
                 <p class="text-neutral-600 ">
                   {formatDate(question.creation_date)}
@@ -69,5 +57,21 @@ const uniqueTags = generateUniqueTags(allQuestions);
         ))
       }
     </div>
-  </MainLayout>
+  </StackoverflowLayout>
 </Layout>
+
+<style>
+  .questionKeys {
+    position: absolute;
+    top: -10px;
+    right: 0;
+    border-top-right-radius: 33%;
+    border-top-left-radius: 33%;
+    padding: 0 10px;
+    box-shadow: 0 4px 2px -2px gray;
+
+    @apply text-neutral-100;
+    @apply font-bold;
+    @apply bg-blue-400;
+  }
+</style>

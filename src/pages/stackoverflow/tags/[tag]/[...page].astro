@@ -1,9 +1,9 @@
 ---
 import { generateUniqueTags, matchesTagDefinition } from "@utils/collections";
 import Layout from "@layouts/Layout.astro";
-import MainLayout from "@layouts/MainLayout.astro";
 import { PAGINATE_CONTENT, TAGS_DEFINITION } from "@const";
 import stackOverflowData from "../../../../data/stackoverflow.json";
+import StackoverflowLayout from "@layouts/StackoverflowLayout.astro";
 
 export async function getStaticPaths({ paginate }) {
   const questions = Object.values(stackOverflowData.data);
@@ -63,27 +63,10 @@ const { questions, page } = Astro.props;
     ? `${Astro.params.tag} - My Stackoverflow Tag - Page ${page.currentPage}`
     : `${Astro.params.tag} - My Stackoverflow Tag`}
 >
-  <MainLayout pagination={{ prev: page?.url?.prev, next: page?.url?.next }}>
-    <h2 class="text-2xl mb-4">Tag: {Astro.params.tag}</h2>
-    <div class="flex flex-wrap">
-      <!-- Tags Dropdown -->
-      <div class="select-wrapper mr-3">
-        <select
-          class="customSelectbox border shadow-sm bg-gray-700 rounded-md border-gray-300 text-gray-300"
-          onchange="location.href=`/stackoverflow/tags/${this.value}/1/`"
-        >
-          <option selected disabled>tags...</option>
-          {
-            uniqueTags.map((tag) => (
-              <option value={tag} selected={tag === Astro.params.tag}>
-                {tag}
-              </option>
-            ))
-          }
-        </select>
-      </div>
-    </div>
-
+  <StackoverflowLayout
+    title={`Tag: ${Astro.params.tag}`}
+    pagination={{ prev: page?.url?.prev, next: page?.url?.next }}
+  >
     <div class="grid gap-4 grid-cols-1 grid-rows-2 mt-5 lg:grid-cols-2">
       {
         questions?.map((question) => (
@@ -102,5 +85,5 @@ const { questions, page } = Astro.props;
         ))
       }
     </div>
-  </MainLayout>
+  </StackoverflowLayout>
 </Layout>

@@ -1,16 +1,54 @@
 ---
+import { getBlogsAndRepos } from "@utils/collections";
+import Dropdown from "@components/Dropdown.astro";
 import Breadcrumb from "@components/icons/Breadcrumb.astro";
-import TagsBox from "@components/TagsBox.astro";
 import Pagination from "@components/Pagination.astro";
 
 type Props = {
   title?: string;
-  tags?: any;
+  tags?: string[];
   breadcrumb?: boolean;
   pagination?: any;
 };
 
 const { title, tags, breadcrumb, pagination } = Astro.props;
+
+const allPosts = (await getBlogsAndRepos()).allCollections;
+const postYears = new Map();
+
+allPosts.forEach((post: any) => {
+  const year = new Date(post.data.date).getFullYear();
+
+  if (!postYears.get(year)) {
+    postYears.set(year, []);
+  }
+
+  postYears.get(year).push(post);
+});
+
+const currentPath = new URL(Astro.request.url).pathname;
+const pathParts = currentPath.split("/").filter((part) => part !== "");
+
+let currentTag: string | null = null;
+let currentYear: string | null = null;
+
+const tagsIndex = pathParts.indexOf("tags");
+if (tagsIndex !== -1 && tagsIndex + 1 < pathParts.length) {
+  currentTag = pathParts[tagsIndex + 1];
+}
+
+const archiveIndex = pathParts.indexOf("archive");
+if (archiveIndex !== -1 && archiveIndex + 1 < pathParts.length) {
+  currentYear = pathParts[archiveIndex + 1];
+}
+
+const tagOptions = tags?.map((tag) => ({ label: tag, value: tag }));
+const archiveOptions = [...postYears.entries()].map(
+  ([archiveYear, archivePosts]) => ({
+    label: `${archiveYear} (${archivePosts.length})`,
+    value: archiveYear.toString(),
+  }),
+);
 ---
 
 {
@@ -19,7 +57,7 @@ const { title, tags, breadcrumb, pagination } = Astro.props;
       <h2 class="text-2xl text-center sm:text-left mb-4 sm:mb-0 flex items-center">
         {breadcrumb ? (
           <>
-            <a href="/blog" class="mr-2">
+            <a href="/blog/" class="mr-2">
               Blog
             </a>
             <Breadcrumb />
@@ -29,7 +67,24 @@ const { title, tags, breadcrumb, pagination } = Astro.props;
           title
         )}
       </h2>
-      {tags ? <TagsBox tags={tags} /> : undefined}
+
+      {tags && (
+        <div class="flex flex-wrap">
+          <Dropdown
+            options={tagOptions}
+            currentSelection={currentTag}
+            baseUrl="/blog/tags/"
+            placeholder="tags..."
+          />
+
+          <Dropdown
+            options={archiveOptions}
+            currentSelection={currentYear}
+            baseUrl="/blog/archive/"
+            placeholder="archives..."
+          />
+        </div>
+      )}
     </div>
   )
 }
