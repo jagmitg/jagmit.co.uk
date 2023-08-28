@@ -52,7 +52,7 @@ const { page } = Astro.props as {
           if ("repo" in data) {
             return (
               <BlogCardItem
-                url={data.repo ? data.repo : `/blog/${slug}`}
+                url={data.repo ? data.repo : `/blog/${slug}/`}
                 frontmatter={data}
                 repo={!!data.repo}
               />
@@ -60,7 +60,7 @@ const { page } = Astro.props as {
           } else {
             return (
               <BlogCardItem
-                url={`/blog/${slug}`}
+                url={`/blog/${slug}/`}
                 frontmatter={data}
                 repo={false}
               />
