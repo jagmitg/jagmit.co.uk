@@ -1,6 +1,6 @@
 {
   "fetched_data": {
-    "date_stamp": "2023-08-19T18:43:01.320Z"
+    "date_stamp": "2023-08-28T16:24:20.824Z"
   },
   "data": [
     {
@@ -18,7 +18,7 @@
         "link": "https://stackoverflow.com/users/21989515/shulee"
       },
       "is_answered": true,
-      "view_count": 35,
+      "view_count": 39,
       "closed_date": 1692218363,
       "accepted_answer_id": 76916902,
       "answer_count": 1,
@@ -39,7 +39,7 @@
       ],
       "owner": {
         "account_id": 2385436,
-        "reputation": 2446,
+        "reputation": 2470,
         "user_id": 2819689,
         "user_type": "registered",
         "accept_rate": 98,
@@ -48,7 +48,7 @@
         "link": "https://stackoverflow.com/users/2819689/mikibelavista"
       },
       "is_answered": true,
-      "view_count": 35,
+      "view_count": 43,
       "accepted_answer_id": 76912859,
       "answer_count": 3,
       "score": 0,
@@ -75,7 +75,7 @@
         "link": "https://stackoverflow.com/users/11374375/jayyron"
       },
       "is_answered": true,
-      "view_count": 67,
+      "view_count": 71,
       "accepted_answer_id": 76908161,
       "answer_count": 3,
       "score": 0,
@@ -96,16 +96,11 @@
         "flask"
       ],
       "owner": {
-        "account_id": 29231380,
-        "reputation": 11,
-        "user_id": 22395013,
-        "user_type": "registered",
-        "profile_image": "https://i.stack.imgur.com/NLKGf.jpg?s=256&g=1",
-        "display_name": "John Carter",
-        "link": "https://stackoverflow.com/users/22395013/john-carter"
+        "user_type": "does_not_exist",
+        "display_name": "user22395013"
       },
       "is_answered": true,
-      "view_count": 46,
+      "view_count": 47,
       "accepted_answer_id": 76908125,
       "answer_count": 2,
       "score": 0,
@@ -117,6 +112,34 @@
       "link": "https://stackoverflow.com/questions/76908087/prepending-data-in-pandas",
       "title": "Prepending data in Pandas",
       "key": 4
+    },
+    {
+      "tags": [
+        "typescript"
+      ],
+      "owner": {
+        "account_id": 6788724,
+        "reputation": 776,
+        "user_id": 5226538,
+        "user_type": "registered",
+        "accept_rate": 46,
+        "profile_image": "https://www.gravatar.com/avatar/4e6ce66c757fb8dd7b5cba5276daed58?s=256&d=identicon&r=PG&f=y&so-version=2",
+        "display_name": "Altaula",
+        "link": "https://stackoverflow.com/users/5226538/altaula"
+      },
+      "is_answered": true,
+      "view_count": 23,
+      "accepted_answer_id": 76907926,
+      "answer_count": 1,
+      "score": 0,
+      "last_activity_date": 1692120058,
+      "creation_date": 1692118896,
+      "last_edit_date": 1692119411,
+      "question_id": 76907816,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/76907816/ts2722-in-combination-with-strict-parameter-in-tsconfig",
+      "title": "TS2722 in combination with strict parameter in tsconfig",
+      "key": 5
     },
     {
       "tags": [
@@ -133,7 +156,7 @@
         "link": "https://stackoverflow.com/users/22390541/thebatz"
       },
       "is_answered": true,
-      "view_count": 39,
+      "view_count": 40,
       "accepted_answer_id": 76902663,
       "answer_count": 1,
       "score": 1,
@@ -144,7 +167,7 @@
       "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76902578/how-can-i-save-all-the-input-of-the-opening-hours-in-a-variable",
       "title": "How can I save all the input of the opening hours in a variable?",
-      "key": 5
+      "key": 6
     },
     {
       "tags": [
@@ -153,7 +176,7 @@
       ],
       "owner": {
         "account_id": 9138006,
-        "reputation": 491,
+        "reputation": 495,
         "user_id": 6797003,
         "user_type": "registered",
         "accept_rate": 38,
@@ -173,7 +196,7 @@
       "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76901476/image-with-div-as-half-background",
       "title": "Image with div as half background",
-      "key": 6
+      "key": 7
     },
     {
       "tags": [
@@ -182,7 +205,7 @@
       ],
       "owner": {
         "account_id": 1237641,
-        "reputation": 1988,
+        "reputation": 2012,
         "user_id": 1200914,
         "user_type": "registered",
         "accept_rate": 89,
@@ -191,7 +214,7 @@
         "link": "https://stackoverflow.com/users/1200914/learning-from-masters"
       },
       "is_answered": true,
-      "view_count": 39,
+      "view_count": 40,
       "accepted_answer_id": 76900580,
       "answer_count": 1,
       "score": 0,
@@ -201,7 +224,7 @@
       "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76900560/is-there-any-way-to-define-a-set-element-with-an-or",
       "title": "Is there any way to define a set element with an OR?",
-      "key": 7
+      "key": 8
     },
     {
       "tags": [
@@ -229,7 +252,7 @@
       "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76900487/node-js-using-sequalize-relations-one-to-many",
       "title": "Node js using Sequalize, Relations one to many",
-      "key": 8
+      "key": 9
     },
     {
       "tags": [
@@ -249,7 +272,7 @@
         "link": "https://stackoverflow.com/users/15050200/space-ninja-x"
       },
       "is_answered": true,
-      "view_count": 39,
+      "view_count": 46,
       "answer_count": 1,
       "score": 0,
       "last_activity_date": 1691606657,
@@ -258,7 +281,7 @@
       "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76870195/how-do-i-pass-custom-props-to-dynamic-components-in-vue-3",
       "title": "How do I pass custom props to dynamic components in Vue 3?",
-      "key": 9
+      "key": 10
     },
     {
       "tags": [
@@ -266,7 +289,7 @@
       ],
       "owner": {
         "account_id": 26148195,
-        "reputation": 310,
+        "reputation": 302,
         "user_id": 19989260,
         "user_type": "registered",
         "profile_image": "https://lh3.googleusercontent.com/a/AItbvmlmiuaiNF8e82nRvxQ6cbxAiIpkLtnpJECOxNiZ=k-s256",
@@ -285,7 +308,7 @@
       "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76853754/returning-an-object-which-has-keys-as-the-values-of-passed-array",
       "title": "Returning an object which has keys as the values of passed array",
-      "key": 10
+      "key": 11
     },
     {
       "tags": [
@@ -305,7 +328,7 @@
         "link": "https://stackoverflow.com/users/20555528/bradley-kohr"
       },
       "is_answered": true,
-      "view_count": 23,
+      "view_count": 24,
       "accepted_answer_id": 76853725,
       "answer_count": 1,
       "score": 0,
@@ -316,7 +339,7 @@
       "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76853115/how-to-add-a-space-below-each-line",
       "title": "How to add a space below each line",
-      "key": 11
+      "key": 12
     },
     {
       "tags": [
@@ -334,7 +357,7 @@
         "link": "https://stackoverflow.com/users/17208064/jfeel"
       },
       "is_answered": true,
-      "view_count": 41,
+      "view_count": 43,
       "accepted_answer_id": 76846086,
       "answer_count": 3,
       "score": 1,
@@ -345,7 +368,7 @@
       "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76846020/react-js-separator-publictheme-and-publictheme",
       "title": "React JS - Separator PublicTheme and PublicTheme",
-      "key": 12
+      "key": 13
     },
     {
       "tags": [
@@ -354,7 +377,7 @@
       ],
       "owner": {
         "account_id": 29135770,
-        "reputation": 1,
+        "reputation": 3,
         "user_id": 22319979,
         "user_type": "registered",
         "profile_image": "https://lh3.googleusercontent.com/a/AAcHTtdX-OrqPOTCqbrCBuNuBFrGisnS70BKBktbrZpao49Z=k-s256",
@@ -362,7 +385,7 @@
         "link": "https://stackoverflow.com/users/22319979/jane-lim"
       },
       "is_answered": true,
-      "view_count": 51,
+      "view_count": 55,
       "accepted_answer_id": 76845417,
       "answer_count": 1,
       "score": -1,
@@ -373,7 +396,7 @@
       "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76845393/why-console-shows-scrollintoview-is-not-a-function",
       "title": "Why console shows &quot;scrollIntoView() is not a function&quot;?",
-      "key": 13
+      "key": 14
     },
     {
       "tags": [
@@ -393,7 +416,7 @@
         "link": "https://stackoverflow.com/users/12269799/outkast20"
       },
       "is_answered": true,
-      "view_count": 43,
+      "view_count": 47,
       "accepted_answer_id": 76844040,
       "answer_count": 1,
       "score": 0,
@@ -404,7 +427,7 @@
       "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76843968/how-to-return-a-similar-match-in-the-same-2d-list",
       "title": "How to return a similar match in the same 2d list",
-      "key": 14
+      "key": 15
     },
     {
       "tags": [
@@ -422,7 +445,7 @@
         "link": "https://stackoverflow.com/users/11741190/loromagnoni"
       },
       "is_answered": true,
-      "view_count": 41,
+      "view_count": 44,
       "accepted_answer_id": 76843965,
       "answer_count": 1,
       "score": 0,
@@ -432,7 +455,7 @@
       "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76843910/how-to-forward-a-typescript-generic-type-into-inner-function",
       "title": "How to forward a Typescript generic type into inner function",
-      "key": 15
+      "key": 16
     },
     {
       "tags": [
@@ -443,7 +466,7 @@
       ],
       "owner": {
         "account_id": 29166911,
-        "reputation": 3,
+        "reputation": 1,
         "user_id": 22344264,
         "user_type": "registered",
         "profile_image": "https://lh3.googleusercontent.com/a/AAcHTtdt6Yq5F0XhIloe2L7gSj9yBy2hT7zhXRWpx9Hnnhlv=k-s256",
@@ -451,7 +474,7 @@
         "link": "https://stackoverflow.com/users/22344264/witcher"
       },
       "is_answered": true,
-      "view_count": 30,
+      "view_count": 60,
       "accepted_answer_id": 76842597,
       "answer_count": 1,
       "score": 0,
@@ -461,7 +484,7 @@
       "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76842580/how-to-validate-a-field-in-zod-depending-on-the-value-of-another-field",
       "title": "How to validate a field in Zod depending on the value of another field?",
-      "key": 16
+      "key": 17
     },
     {
       "tags": [
@@ -480,7 +503,7 @@
         "link": "https://stackoverflow.com/users/21455187/ismail"
       },
       "is_answered": true,
-      "view_count": 51,
+      "view_count": 53,
       "answer_count": 1,
       "score": -1,
       "last_activity_date": 1691244881,
@@ -490,7 +513,7 @@
       "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76840856/attributeerror-photoimage-object-has-no-attribute-tobytes",
       "title": "AttributeError: &#39;PhotoImage&#39; object has no attribute &#39;tobytes&#39;",
-      "key": 17
+      "key": 18
     },
     {
       "tags": [
@@ -500,7 +523,7 @@
       ],
       "owner": {
         "account_id": 29004802,
-        "reputation": 362,
+        "reputation": 425,
         "user_id": 22217619,
         "user_type": "registered",
         "profile_image": "https://i.stack.imgur.com/WoK3Q.png?s=256&g=1",
@@ -519,7 +542,7 @@
       "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76840747/an-element-with-css-float-moving-out-from-its-parent-element",
       "title": "An element with CSS float moving out from its parent element",
-      "key": 18
+      "key": 19
     },
     {
       "tags": [
@@ -537,7 +560,7 @@
         "link": "https://stackoverflow.com/users/10039647/andromda"
       },
       "is_answered": true,
-      "view_count": 61,
+      "view_count": 62,
       "answer_count": 3,
       "score": 0,
       "last_activity_date": 1690994249,
@@ -547,7 +570,7 @@
       "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76821532/how-to-match-only-full-directory-file-names-in-bash-script",
       "title": "How to match only full directory/file names in bash script",
-      "key": 19
+      "key": 20
     },
     {
       "tags": [
@@ -555,7 +578,7 @@
       ],
       "owner": {
         "account_id": 19615875,
-        "reputation": 1774,
+        "reputation": 1794,
         "user_id": 15357136,
         "user_type": "registered",
         "profile_image": "https://i.stack.imgur.com/ye8nX.jpg?s=256&g=1",
@@ -572,7 +595,7 @@
       "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76819277/how-to-create-an-array-that-will-adhere-to-certain-union-type-without-having-to",
       "title": "How to create an array that will adhere to certain Union type without having to copy myself?",
-      "key": 20
+      "key": 21
     },
     {
       "tags": [
@@ -589,7 +612,7 @@
         "link": "https://stackoverflow.com/users/12298581/salt-pepper"
       },
       "is_answered": true,
-      "view_count": 19,
+      "view_count": 23,
       "accepted_answer_id": 76814713,
       "answer_count": 1,
       "score": 0,
@@ -599,7 +622,7 @@
       "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76814703/how-to-get-only-the-key-and-value-from-a-filter-expression-dynamodb-query-in-typ",
       "title": "How to get only the key and value from a Filter expression DynamoDb Query in Typescript",
-      "key": 21
+      "key": 22
     },
     {
       "tags": [
@@ -616,7 +639,7 @@
         "link": "https://stackoverflow.com/users/15355943/skelaw"
       },
       "is_answered": true,
-      "view_count": 43,
+      "view_count": 44,
       "answer_count": 1,
       "score": 0,
       "last_activity_date": 1690836024,
@@ -626,7 +649,7 @@
       "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76806916/input-shows-the-previous-value-for-a-while",
       "title": "Input shows the previous value for a while",
-      "key": 22
+      "key": 23
     },
     {
       "tags": [
@@ -644,7 +667,7 @@
         "link": "https://stackoverflow.com/users/14420302/alp-durak"
       },
       "is_answered": true,
-      "view_count": 16,
+      "view_count": 19,
       "accepted_answer_id": 76805678,
       "answer_count": 1,
       "score": -1,
@@ -655,7 +678,7 @@
       "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76805630/syntaxerror-invalid-regular-expression-while-creating-a-route-with-route-params",
       "title": "SyntaxError: Invalid regular expression while creating a route with route params",
-      "key": 23
+      "key": 24
     },
     {
       "tags": [
@@ -665,7 +688,7 @@
       ],
       "owner": {
         "account_id": 1934528,
-        "reputation": 4512,
+        "reputation": 4522,
         "user_id": 1743124,
         "user_type": "registered",
         "accept_rate": 75,
@@ -674,7 +697,7 @@
         "link": "https://stackoverflow.com/users/1743124/mayeenul-islam"
       },
       "is_answered": true,
-      "view_count": 46,
+      "view_count": 47,
       "accepted_answer_id": 76803840,
       "answer_count": 1,
       "score": 0,
@@ -685,7 +708,34 @@
       "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76803803/mysql-grab-last-row-of-a-group-of-data-but-specific-to-a-column-value",
       "title": "MySQL grab last row of a group of data but specific to a column value",
-      "key": 24
+      "key": 25
+    },
+    {
+      "tags": [
+        "javascript",
+        "reactjs"
+      ],
+      "owner": {
+        "account_id": 28998006,
+        "reputation": 49,
+        "user_id": 22212216,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/ffcff9601d88d3cb13f4b7056f00f092?s=256&d=identicon&r=PG&f=y&so-version=2",
+        "display_name": "Mercer",
+        "link": "https://stackoverflow.com/users/22212216/mercer"
+      },
+      "is_answered": true,
+      "view_count": 49,
+      "answer_count": 1,
+      "score": 0,
+      "last_activity_date": 1690801546,
+      "creation_date": 1690747988,
+      "last_edit_date": 1690801546,
+      "question_id": 76799471,
+      "content_license": "CC BY-SA 4.0",
+      "link": "https://stackoverflow.com/questions/76799471/modal-is-disappearing-when-click-on-the-input-button-inside-it-reactjs",
+      "title": "Modal is disappearing when click on the input button inside it (ReactJS)",
+      "key": 26
     },
     {
       "tags": [
@@ -694,7 +744,7 @@
       ],
       "owner": {
         "account_id": 26822048,
-        "reputation": 63,
+        "reputation": 61,
         "user_id": 20411234,
         "user_type": "registered",
         "profile_image": "https://www.gravatar.com/avatar/ce12eee8a49bf3b544a2f94d7d1a99e5?s=256&d=identicon&r=PG",
@@ -714,7 +764,7 @@
       "link": "https://stackoverflow.com/questions/76799040/use-a-string-as-an-object-name",
       "closed_reason": "Duplicate",
       "title": "Use a string as an object name",
-      "key": 25
+      "key": 27
     },
     {
       "tags": [
@@ -724,7 +774,7 @@
       ],
       "owner": {
         "account_id": 15285573,
-        "reputation": 1073,
+        "reputation": 1093,
         "user_id": 11028689,
         "user_type": "registered",
         "profile_image": "https://graph.facebook.com/10157217103299459/picture?type=large",
@@ -743,7 +793,7 @@
       "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76798963/how-to-make-label-column-in-pandas-dataframe-while-grouping-by-counts",
       "title": "How to make label column in pandas dataframe while grouping by counts?",
-      "key": 26
+      "key": 28
     },
     {
       "tags": [
@@ -768,7 +818,7 @@
       "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76797076/half-line-ellipsis",
       "title": "Half line ellipsis",
-      "key": 27
+      "key": 29
     },
     {
       "tags": [
@@ -795,7 +845,7 @@
       "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76795845/php-traversing-object-fails-if-elements-value-is-not-of-type-string",
       "title": "PHP - Traversing object fails if element&#39;s value is not of type STRING",
-      "key": 28
+      "key": 30
     },
     {
       "tags": [
@@ -812,7 +862,7 @@
         "link": "https://stackoverflow.com/users/22056499/05j6-kapil"
       },
       "is_answered": true,
-      "view_count": 34,
+      "view_count": 35,
       "answer_count": 1,
       "score": 0,
       "last_activity_date": 1690621972,
@@ -821,7 +871,7 @@
       "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76792826/unexpected-token",
       "title": "Unexpected Token",
-      "key": 29
+      "key": 31
     },
     {
       "tags": [
@@ -839,7 +889,7 @@
         "link": "https://stackoverflow.com/users/22293320/tu%c4%9fberk-y%c4%b1ld%c4%b1r%c4%b1m"
       },
       "is_answered": true,
-      "view_count": 33,
+      "view_count": 34,
       "closed_date": 1690623385,
       "accepted_answer_id": 76792870,
       "answer_count": 2,
@@ -851,7 +901,7 @@
       "link": "https://stackoverflow.com/questions/76792811/how-to-get-detailed-exception-in-python",
       "closed_reason": "Duplicate",
       "title": "How to Get Detailed Exception in Python?",
-      "key": 30
+      "key": 32
     },
     {
       "tags": [
@@ -863,7 +913,7 @@
       ],
       "owner": {
         "account_id": 15893950,
-        "reputation": 323,
+        "reputation": 345,
         "user_id": 11468190,
         "user_type": "registered",
         "profile_image": "https://www.gravatar.com/avatar/647741d9a80514136754dedf05bc8254?s=256&d=identicon&r=PG&f=y&so-version=2",
@@ -871,7 +921,7 @@
         "link": "https://stackoverflow.com/users/11468190/codesauce"
       },
       "is_answered": true,
-      "view_count": 39,
+      "view_count": 66,
       "accepted_answer_id": 76792901,
       "answer_count": 1,
       "score": 0,
@@ -881,7 +931,7 @@
       "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76792789/date-fns-showing-invalid-interval-when-comparing-dates-using-iswithininterval-an",
       "title": "date-fns showing invalid interval when comparing dates using isWithinInterval and a users timezone",
-      "key": 31
+      "key": 33
     },
     {
       "tags": [
@@ -891,7 +941,7 @@
       ],
       "owner": {
         "account_id": 360789,
-        "reputation": 5914,
+        "reputation": 5606,
         "user_id": 702977,
         "user_type": "registered",
         "accept_rate": 82,
@@ -900,7 +950,7 @@
         "link": "https://stackoverflow.com/users/702977/softtimur"
       },
       "is_answered": true,
-      "view_count": 72,
+      "view_count": 92,
       "accepted_answer_id": 76802647,
       "answer_count": 2,
       "score": 2,
@@ -910,7 +960,7 @@
       "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76792125/set-up-listeners-when-a-model-is-created-or-disposed-for-monaco-editor-react",
       "title": "Set up listeners when a model is created or disposed for @monaco-editor/react",
-      "key": 32
+      "key": 34
     },
     {
       "tags": [
@@ -940,7 +990,7 @@
       "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76772248/react-bad-performance-in-list-while-selecting-a-listitem",
       "title": "React bad performance in list while selecting a listitem",
-      "key": 33
+      "key": 35
     },
     {
       "tags": [
@@ -957,7 +1007,7 @@
         "link": "https://stackoverflow.com/users/9589858/alyssa"
       },
       "is_answered": true,
-      "view_count": 66,
+      "view_count": 69,
       "accepted_answer_id": 76765603,
       "answer_count": 3,
       "score": 0,
@@ -968,7 +1018,7 @@
       "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76765578/how-do-i-get-the-even-odd-number-check-to-print-the-results",
       "title": "How do I get the even/odd number check to print the results?",
-      "key": 34
+      "key": 36
     },
     {
       "tags": [
@@ -980,7 +1030,7 @@
       ],
       "owner": {
         "account_id": 15172444,
-        "reputation": 57,
+        "reputation": 87,
         "user_id": 10948090,
         "user_type": "registered",
         "profile_image": "https://www.gravatar.com/avatar/21df1e3be951fb9ac8234c9e1f740b6e?s=256&d=identicon&r=PG&f=y&so-version=2",
@@ -988,7 +1038,7 @@
         "link": "https://stackoverflow.com/users/10948090/mishar"
       },
       "is_answered": true,
-      "view_count": 22,
+      "view_count": 24,
       "accepted_answer_id": 76746216,
       "answer_count": 1,
       "score": 0,
@@ -998,7 +1048,7 @@
       "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76746213/javascript-duplicate-property-name-and-getter-setter-an-error-in-es5",
       "title": "JavaScript: duplicate property name and getter/setter an error in ES5?",
-      "key": 35
+      "key": 37
     },
     {
       "tags": [
@@ -1026,7 +1076,7 @@
       "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76746195/rock-paper-scissors-round-loop-javascript",
       "title": "Rock, Paper, Scissors - Round Loop Javascript",
-      "key": 36
+      "key": 38
     },
     {
       "tags": [
@@ -1044,7 +1094,7 @@
         "link": "https://stackoverflow.com/users/19785869/mehrdad-karami-jourabi"
       },
       "is_answered": true,
-      "view_count": 49,
+      "view_count": 50,
       "accepted_answer_id": 76702846,
       "answer_count": 3,
       "score": 0,
@@ -1054,7 +1104,7 @@
       "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76702745/how-to-pass-types-as-props-in-a-reuseable-component",
       "title": "how to pass types as props in a reuseable component",
-      "key": 37
+      "key": 39
     },
     {
       "tags": [
@@ -1084,7 +1134,7 @@
       "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76687719/replacing-history-pushstate-to-send-events-getting-ilegal-invocation-error",
       "title": "Replacing history.pushState to send events (getting Ilegal invocation error)",
-      "key": 38
+      "key": 40
     },
     {
       "tags": [
@@ -1102,7 +1152,7 @@
         "link": "https://stackoverflow.com/users/2150128/giulio"
       },
       "is_answered": true,
-      "view_count": 23,
+      "view_count": 25,
       "accepted_answer_id": 76681832,
       "answer_count": 1,
       "score": 0,
@@ -1112,7 +1162,7 @@
       "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76681808/typescript-deep-pick-by-key-without-specifying-a-path",
       "title": "Typescript deep Pick by key without specifying a path",
-      "key": 39
+      "key": 41
     },
     {
       "tags": [
@@ -1141,7 +1191,7 @@
       "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76681759/facing-issues-with-typescript-multi-hierarchy-key-map-pair",
       "title": "Facing issues with typescript multi hierarchy key map pair",
-      "key": 40
+      "key": 42
     },
     {
       "tags": [
@@ -1151,7 +1201,7 @@
       ],
       "owner": {
         "account_id": 5550454,
-        "reputation": 21082,
+        "reputation": 21122,
         "user_id": 4403732,
         "user_type": "registered",
         "accept_rate": 43,
@@ -1160,7 +1210,7 @@
         "link": "https://stackoverflow.com/users/4403732/robo-robok"
       },
       "is_answered": true,
-      "view_count": 35,
+      "view_count": 39,
       "accepted_answer_id": 76681528,
       "answer_count": 1,
       "score": 0,
@@ -1170,7 +1220,7 @@
       "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76681480/how-to-declare-experimental-global-variables-in-typescript",
       "title": "How to declare experimental global variables in TypeScript?",
-      "key": 41
+      "key": 43
     },
     {
       "tags": [
@@ -1199,7 +1249,7 @@
       "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76681388/setstate-to-a-state-located-in-app-js-from-another-file",
       "title": "setState to a state located in App.js from another file",
-      "key": 42
+      "key": 44
     },
     {
       "tags": [
@@ -1216,7 +1266,7 @@
         "link": "https://stackoverflow.com/users/22222310/morgane"
       },
       "is_answered": true,
-      "view_count": 30,
+      "view_count": 31,
       "accepted_answer_id": 76680741,
       "answer_count": 1,
       "score": 2,
@@ -1227,7 +1277,7 @@
       "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76680660/how-to-use-dataarray-values-as-list-indexes",
       "title": "How to use DataArray values ​as list indexes?",
-      "key": 43
+      "key": 45
     },
     {
       "tags": [
@@ -1246,7 +1296,7 @@
         "link": "https://stackoverflow.com/users/21656918/mpiland"
       },
       "is_answered": true,
-      "view_count": 50,
+      "view_count": 70,
       "accepted_answer_id": 76680279,
       "answer_count": 1,
       "score": 0,
@@ -1257,7 +1307,7 @@
       "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76680225/react-input-text-field-how-to-focus-on-touch",
       "title": "React Input Text Field - How to Focus on Touch?",
-      "key": 44
+      "key": 46
     },
     {
       "tags": [
@@ -1285,7 +1335,7 @@
       "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76679258/how-to-start-at-a-index-but-without-missing-any-items-in-the-array",
       "title": "How to start at a index but without missing any items in the array?",
-      "key": 45
+      "key": 47
     },
     {
       "tags": [
@@ -1305,7 +1355,7 @@
         "link": "https://stackoverflow.com/users/22221465/pedro-stahl"
       },
       "is_answered": true,
-      "view_count": 41,
+      "view_count": 43,
       "accepted_answer_id": 76679115,
       "answer_count": 1,
       "score": 0,
@@ -1315,7 +1365,7 @@
       "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76679081/cannot-read-properties-of-undefined-reading-findall",
       "title": "Cannot read properties of undefined (reading &#39;findAll&#39;)",
-      "key": 46
+      "key": 48
     },
     {
       "tags": [
@@ -1331,7 +1381,7 @@
         "link": "https://stackoverflow.com/users/4061217/ipapag"
       },
       "is_answered": true,
-      "view_count": 13,
+      "view_count": 14,
       "accepted_answer_id": 76679089,
       "answer_count": 1,
       "score": 0,
@@ -1341,7 +1391,7 @@
       "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76679051/how-the-onchange-event-of-a-switchstacked-can-continue-after-modal",
       "title": "How the onChange event of a SwitchStacked can continue after modal?",
-      "key": 47
+      "key": 49
     },
     {
       "tags": [
@@ -1351,7 +1401,7 @@
       ],
       "owner": {
         "account_id": 91388,
-        "reputation": 4065,
+        "reputation": 4075,
         "user_id": 250944,
         "user_type": "registered",
         "accept_rate": 82,
@@ -1360,7 +1410,7 @@
         "link": "https://stackoverflow.com/users/250944/dfr"
       },
       "is_answered": true,
-      "view_count": 189,
+      "view_count": 194,
       "answer_count": 5,
       "score": 4,
       "last_activity_date": 1691406203,
@@ -1370,7 +1420,7 @@
       "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/62729863/dom-scroll-touchmove-event-how-to-find-which-element-scrolls",
       "title": "DOM scroll (touchmove) event, how to find which element scrolls",
-      "key": 48
+      "key": 50
     },
     {
       "tags": [
@@ -1387,7 +1437,7 @@
         "link": "https://stackoverflow.com/users/11580073/rexbex"
       },
       "is_answered": true,
-      "view_count": 82,
+      "view_count": 83,
       "accepted_answer_id": 62492471,
       "answer_count": 2,
       "score": 1,
@@ -1398,7 +1448,7 @@
       "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/62492305/onblur-function-not-working-for-me-might-be-my-coding",
       "title": "onblur function not working for me- might be my coding",
-      "key": 49
+      "key": 51
     },
     {
       "tags": [
@@ -1424,7 +1474,7 @@
       "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/62484015/how-am-i-getting-this-js-error-from-div-element",
       "title": "How am I getting this JS error from &lt;div&gt; element?",
-      "key": 50
+      "key": 52
     },
     {
       "tags": [
@@ -1433,7 +1483,7 @@
       ],
       "owner": {
         "account_id": 18781039,
-        "reputation": 31,
+        "reputation": 43,
         "user_id": 13695695,
         "user_type": "registered",
         "profile_image": "https://lh4.googleusercontent.com/-IeH70VNXrMw/AAAAAAAAAAI/AAAAAAAAAAA/AMZuuclqkxXMaceXmbzfi9cVIjUk3tSxqA/photo.jpg?sz=256",
@@ -1441,7 +1491,7 @@
         "link": "https://stackoverflow.com/users/13695695/%d7%a9%d7%9e%d7%a2%d7%95%d7%9f-%d7%a4%d7%95%d7%a7%d7%a1"
       },
       "is_answered": true,
-      "view_count": 438,
+      "view_count": 440,
       "accepted_answer_id": 62449347,
       "answer_count": 1,
       "score": -1,
@@ -1452,7 +1502,7 @@
       "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/62449157/how-to-change-the-form-to-content-type-application-json",
       "title": "How to change the form to Content-Type: application / json",
-      "key": 51
+      "key": 53
     },
     {
       "tags": [
@@ -1472,7 +1522,7 @@
         "link": "https://stackoverflow.com/users/11646936/chris"
       },
       "is_answered": true,
-      "view_count": 1023,
+      "view_count": 1027,
       "answer_count": 1,
       "score": 0,
       "last_activity_date": 1591865460,
@@ -1481,7 +1531,7 @@
       "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/62320284/react-best-practice-storing-images-on-server",
       "title": "React best practice storing images on server",
-      "key": 52
+      "key": 54
     },
     {
       "tags": [
@@ -1502,7 +1552,7 @@
         "link": "https://stackoverflow.com/users/5788814/dopeat"
       },
       "is_answered": true,
-      "view_count": 4885,
+      "view_count": 4900,
       "accepted_answer_id": 42455611,
       "answer_count": 2,
       "score": 0,
@@ -1513,7 +1563,7 @@
       "content_license": "CC BY-SA 3.0",
       "link": "https://stackoverflow.com/questions/42455437/display-json-content-in-php-table",
       "title": "Display json content in php table",
-      "key": 53
+      "key": 55
     },
     {
       "tags": [
@@ -1543,7 +1593,7 @@
       "content_license": "CC BY-SA 3.0",
       "link": "https://stackoverflow.com/questions/42455301/flexbox-wont-float-to-center",
       "title": "Flexbox wont float to center",
-      "key": 54
+      "key": 56
     },
     {
       "tags": [
@@ -1556,7 +1606,7 @@
         "display_name": "user736893"
       },
       "is_answered": true,
-      "view_count": 1404,
+      "view_count": 1407,
       "accepted_answer_id": 32850639,
       "answer_count": 2,
       "score": 1,
@@ -1566,7 +1616,7 @@
       "content_license": "CC BY-SA 3.0",
       "link": "https://stackoverflow.com/questions/32850334/step-through-json-results-with-a-delay-between-each",
       "title": "step through json results with a delay between each?",
-      "key": 55
+      "key": 57
     },
     {
       "tags": [
@@ -1585,7 +1635,7 @@
         "link": "https://stackoverflow.com/users/1788736/user1788736"
       },
       "is_answered": true,
-      "view_count": 2093,
+      "view_count": 2095,
       "accepted_answer_id": 32608296,
       "answer_count": 1,
       "score": 0,
@@ -1596,7 +1646,7 @@
       "content_license": "CC BY-SA 3.0",
       "link": "https://stackoverflow.com/questions/32607953/checking-if-a-m3u8-url-is-broken-using-javascript",
       "title": "Checking if a m3u8 URL is broken using Javascript",
-      "key": 56
+      "key": 58
     },
     {
       "tags": [
@@ -1626,7 +1676,7 @@
       "content_license": "CC BY-SA 3.0",
       "link": "https://stackoverflow.com/questions/32583519/margin-of-one-div-seems-to-affect-whole-site",
       "title": "margin of one div seems to affect whole site",
-      "key": 57
+      "key": 59
     },
     {
       "tags": [
@@ -1644,7 +1694,7 @@
         "link": "https://stackoverflow.com/users/2236787/ricol"
       },
       "is_answered": true,
-      "view_count": 10373,
+      "view_count": 10389,
       "accepted_answer_id": 31819485,
       "answer_count": 6,
       "score": 1,
@@ -1655,7 +1705,7 @@
       "content_license": "CC BY-SA 3.0",
       "link": "https://stackoverflow.com/questions/31819213/change-color-of-div-with-several-classes-with-css",
       "title": "Change color of div with several classes with CSS",
-      "key": 58
+      "key": 60
     },
     {
       "tags": [
@@ -1683,7 +1733,7 @@
       "content_license": "CC BY-SA 3.0",
       "link": "https://stackoverflow.com/questions/28268826/javascript-instead-of-repetitive-html-lines",
       "title": "JavaScript instead of repetitive HTML lines",
-      "key": 59
+      "key": 61
     },
     {
       "tags": [
@@ -1711,7 +1761,7 @@
       "content_license": "CC BY-SA 3.0",
       "link": "https://stackoverflow.com/questions/27025632/table-and-post-values",
       "title": "Table and post values",
-      "key": 60
+      "key": 62
     },
     {
       "tags": [
@@ -1721,7 +1771,7 @@
       ],
       "owner": {
         "account_id": 2815104,
-        "reputation": 4689,
+        "reputation": 4713,
         "user_id": 2847689,
         "user_type": "registered",
         "accept_rate": 83,
@@ -1730,7 +1780,7 @@
         "link": "https://stackoverflow.com/users/2847689/carol-kar"
       },
       "is_answered": true,
-      "view_count": 298,
+      "view_count": 299,
       "accepted_answer_id": 26563377,
       "answer_count": 3,
       "score": 0,
@@ -1740,7 +1790,7 @@
       "content_license": "CC BY-SA 3.0",
       "link": "https://stackoverflow.com/questions/26560024/laravel-4-css-does-not-get-loaded",
       "title": "Laravel 4 - CSS does not get loaded",
-      "key": 61
+      "key": 63
     },
     {
       "tags": [
@@ -1768,7 +1818,7 @@
       "content_license": "CC BY-SA 3.0",
       "link": "https://stackoverflow.com/questions/26185328/dynamic-menu-class-assignment-in-rails",
       "title": "Dynamic menu class assignment in Rails",
-      "key": 62
+      "key": 64
     },
     {
       "tags": [
@@ -1788,7 +1838,7 @@
         "link": "https://stackoverflow.com/users/4092832/varcor"
       },
       "is_answered": true,
-      "view_count": 65411,
+      "view_count": 65473,
       "closed_date": 1412189774,
       "accepted_answer_id": 26148465,
       "answer_count": 4,
@@ -1800,7 +1850,7 @@
       "link": "https://stackoverflow.com/questions/26148325/textbox-onchange-call-php-function",
       "closed_reason": "Duplicate",
       "title": "textbox onchange call php function",
-      "key": 63
+      "key": 65
     },
     {
       "tags": [
@@ -1830,7 +1880,7 @@
       "content_license": "CC BY-SA 3.0",
       "link": "https://stackoverflow.com/questions/25955152/php-www-website-pre-fix-and-no-pre-fix-use-different-session-variables",
       "title": "PHP - WWW website pre-fix and no pre-fix use different SESSION variables",
-      "key": 64
+      "key": 66
     },
     {
       "tags": [
@@ -1838,7 +1888,7 @@
       ],
       "owner": {
         "account_id": 1006689,
-        "reputation": 4183,
+        "reputation": 4224,
         "user_id": 1020254,
         "user_type": "registered",
         "accept_rate": 58,
@@ -1847,7 +1897,7 @@
         "link": "https://stackoverflow.com/users/1020254/jagmitg"
       },
       "is_answered": true,
-      "view_count": 62,
+      "view_count": 64,
       "accepted_answer_id": 25901133,
       "answer_count": 1,
       "score": -1,
@@ -1858,7 +1908,7 @@
       "content_license": "CC BY-SA 3.0",
       "link": "https://stackoverflow.com/questions/25900681/passing-a-variable-through-get",
       "title": "Passing a variable through _GET",
-      "key": 65
+      "key": 67
     },
     {
       "tags": [
@@ -1876,7 +1926,7 @@
         "link": "https://stackoverflow.com/users/4016204/vaigunth"
       },
       "is_answered": true,
-      "view_count": 2994,
+      "view_count": 2995,
       "accepted_answer_id": 25708623,
       "answer_count": 2,
       "score": 0,
@@ -1886,7 +1936,7 @@
       "content_license": "CC BY-SA 3.0",
       "link": "https://stackoverflow.com/questions/25708569/font-awesome-icons-in-html-form",
       "title": "Font awesome icons in html form",
-      "key": 66
+      "key": 68
     },
     {
       "tags": [
@@ -1896,7 +1946,7 @@
       ],
       "owner": {
         "account_id": 1877879,
-        "reputation": 8378,
+        "reputation": 8388,
         "user_id": 1698695,
         "user_type": "registered",
         "accept_rate": 63,
@@ -1905,7 +1955,7 @@
         "link": "https://stackoverflow.com/users/1698695/david-williams"
       },
       "is_answered": true,
-      "view_count": 1762,
+      "view_count": 1764,
       "accepted_answer_id": 25702261,
       "answer_count": 4,
       "score": 0,
@@ -1916,7 +1966,7 @@
       "content_license": "CC BY-SA 3.0",
       "link": "https://stackoverflow.com/questions/25702190/how-to-create-a-div-container-with-equal-spacing-on-child-divs",
       "title": "How to create a div container with equal spacing on child divs",
-      "key": 67
+      "key": 69
     },
     {
       "tags": [
@@ -1934,7 +1984,7 @@
         "link": "https://stackoverflow.com/users/3758257/user3758257"
       },
       "is_answered": true,
-      "view_count": 190,
+      "view_count": 191,
       "accepted_answer_id": 25701383,
       "answer_count": 2,
       "score": 3,
@@ -1944,7 +1994,7 @@
       "content_license": "CC BY-SA 3.0",
       "link": "https://stackoverflow.com/questions/25701335/add-lines-in-html-texarea",
       "title": "Add lines in HTML texarea",
-      "key": 68
+      "key": 70
     },
     {
       "tags": [
@@ -1973,7 +2023,7 @@
       "content_license": "CC BY-SA 3.0",
       "link": "https://stackoverflow.com/questions/25697901/how-to-access-localhost-over-lan-ip-in-php",
       "title": "How to access localhost over LAN ip in php?",
-      "key": 69
+      "key": 71
     },
     {
       "tags": [
@@ -1994,7 +2044,7 @@
         "link": "https://stackoverflow.com/users/3284379/shan-eapen-koshy"
       },
       "is_answered": true,
-      "view_count": 358,
+      "view_count": 359,
       "accepted_answer_id": 25591604,
       "answer_count": 2,
       "score": -4,
@@ -2005,7 +2055,7 @@
       "content_license": "CC BY-SA 3.0",
       "link": "https://stackoverflow.com/questions/25591489/how-to-random-color-half-of-the-words-within-h2-tag",
       "title": "How to random color half of the words within h2 tag?",
-      "key": 70
+      "key": 72
     },
     {
       "tags": [
@@ -2035,7 +2085,7 @@
       "content_license": "CC BY-SA 3.0",
       "link": "https://stackoverflow.com/questions/25582874/getting-vine-thumbnail",
       "title": "Getting vine thumbnail",
-      "key": 71
+      "key": 73
     },
     {
       "tags": [
@@ -2046,7 +2096,7 @@
       ],
       "owner": {
         "account_id": 4961972,
-        "reputation": 3263,
+        "reputation": 3273,
         "user_id": 3992768,
         "user_type": "registered",
         "accept_rate": 64,
@@ -2064,7 +2114,7 @@
       "content_license": "CC BY-SA 3.0",
       "link": "https://stackoverflow.com/questions/25582487/viewport-tag-not-working",
       "title": "Viewport tag not working",
-      "key": 72
+      "key": 74
     },
     {
       "tags": [
@@ -2094,7 +2144,7 @@
       "content_license": "CC BY-SA 3.0",
       "link": "https://stackoverflow.com/questions/25582368/css-content-overlapping-with-sidebar-tumblr-theme",
       "title": "CSS: Content Overlapping with Sidebar (Tumblr Theme)",
-      "key": 73
+      "key": 75
     },
     {
       "tags": [
@@ -2113,7 +2163,7 @@
         "link": "https://stackoverflow.com/users/3979495/chance-smith"
       },
       "is_answered": true,
-      "view_count": 808,
+      "view_count": 809,
       "closed_date": 1409075080,
       "accepted_answer_id": 25512010,
       "answer_count": 2,
@@ -2125,7 +2175,7 @@
       "link": "https://stackoverflow.com/questions/25511684/javascript-replace-reg-and-html-tags",
       "closed_reason": "Needs details or clarity",
       "title": "javascript replace &amp;reg; and html tags",
-      "key": 74
+      "key": 76
     },
     {
       "tags": [
@@ -2133,7 +2183,7 @@
       ],
       "owner": {
         "account_id": 411865,
-        "reputation": 31455,
+        "reputation": 31525,
         "user_id": 784597,
         "user_type": "registered",
         "accept_rate": 65,
@@ -2152,7 +2202,7 @@
       "content_license": "CC BY-SA 3.0",
       "link": "https://stackoverflow.com/questions/25484742/how-to-show-a-default-image-incase-the-image-is-found",
       "title": "how to show a default image Incase the Image is found",
-      "key": 75
+      "key": 77
     },
     {
       "tags": [
@@ -2169,7 +2219,7 @@
         "link": "https://stackoverflow.com/users/3686062/taliciaem"
       },
       "is_answered": true,
-      "view_count": 75,
+      "view_count": 76,
       "accepted_answer_id": 25373189,
       "answer_count": 4,
       "score": 0,
@@ -2180,7 +2230,7 @@
       "content_license": "CC BY-SA 3.0",
       "link": "https://stackoverflow.com/questions/25373027/repeat-block-of-text-for-each-div-instance",
       "title": "Repeat block of text for each DIV instance",
-      "key": 76
+      "key": 78
     },
     {
       "tags": [
@@ -2198,7 +2248,7 @@
         "link": "https://stackoverflow.com/users/3833587/logi"
       },
       "is_answered": true,
-      "view_count": 2942,
+      "view_count": 2946,
       "answer_count": 1,
       "score": 1,
       "last_activity_date": 1408401161,
@@ -2207,7 +2257,7 @@
       "content_license": "CC BY-SA 3.0",
       "link": "https://stackoverflow.com/questions/25372834/input-box-text-color-with-css-wheather-on-focus-or-not",
       "title": "Input Box Text Color with CSS wheather on focus or not",
-      "key": 77
+      "key": 79
     },
     {
       "tags": [
@@ -2225,7 +2275,7 @@
         "link": "https://stackoverflow.com/users/1651091/abhi"
       },
       "is_answered": true,
-      "view_count": 5841,
+      "view_count": 5852,
       "accepted_answer_id": 25358867,
       "answer_count": 2,
       "score": 2,
@@ -2235,7 +2285,7 @@
       "content_license": "CC BY-SA 3.0",
       "link": "https://stackoverflow.com/questions/25358804/wordpress-search-for-only-single-category",
       "title": "wordpress search for only single category",
-      "key": 78
+      "key": 80
     },
     {
       "tags": [
@@ -2265,7 +2315,7 @@
       "content_license": "CC BY-SA 3.0",
       "link": "https://stackoverflow.com/questions/25358608/htaccess-friendly-urls-with-parameters-2",
       "title": "HTACCESS friendly urls with parameters 2",
-      "key": 79
+      "key": 81
     },
     {
       "tags": [
@@ -2294,7 +2344,7 @@
       "link": "https://stackoverflow.com/questions/25358576/phpmailer-can-not-send-email-now",
       "closed_reason": "Duplicate",
       "title": "PHPMailer can not send email now",
-      "key": 80
+      "key": 82
     },
     {
       "tags": [
@@ -2323,7 +2373,7 @@
       "link": "https://stackoverflow.com/questions/25351512/in-php-extract-specific-text-from-a-string",
       "closed_reason": "Not suitable for this site",
       "title": "In php extract specific text from a string",
-      "key": 81
+      "key": 83
     },
     {
       "tags": [
@@ -2332,7 +2382,7 @@
       ],
       "owner": {
         "account_id": 1006689,
-        "reputation": 4183,
+        "reputation": 4224,
         "user_id": 1020254,
         "user_type": "registered",
         "accept_rate": 58,
@@ -2341,7 +2391,7 @@
         "link": "https://stackoverflow.com/users/1020254/jagmitg"
       },
       "is_answered": true,
-      "view_count": 1040,
+      "view_count": 1043,
       "accepted_answer_id": 25837867,
       "answer_count": 2,
       "score": 1,
@@ -2351,7 +2401,7 @@
       "content_license": "CC BY-SA 3.0",
       "link": "https://stackoverflow.com/questions/25230943/wordpress-paginate-links-select-option",
       "title": "Wordpress paginate_links select option",
-      "key": 82
+      "key": 84
     },
     {
       "tags": [
@@ -2361,7 +2411,7 @@
       ],
       "owner": {
         "account_id": 1006689,
-        "reputation": 4183,
+        "reputation": 4224,
         "user_id": 1020254,
         "user_type": "registered",
         "accept_rate": 58,
@@ -2370,7 +2420,7 @@
         "link": "https://stackoverflow.com/users/1020254/jagmitg"
       },
       "is_answered": true,
-      "view_count": 4092,
+      "view_count": 4093,
       "accepted_answer_id": 24679696,
       "answer_count": 1,
       "score": 0,
@@ -2380,7 +2430,7 @@
       "content_license": "CC BY-SA 3.0",
       "link": "https://stackoverflow.com/questions/24674750/acf-form-not-creating-unique-entities",
       "title": "ACF Form not creating unique entities",
-      "key": 83
+      "key": 85
     },
     {
       "tags": [
@@ -2389,7 +2439,7 @@
       ],
       "owner": {
         "account_id": 1006689,
-        "reputation": 4183,
+        "reputation": 4224,
         "user_id": 1020254,
         "user_type": "registered",
         "accept_rate": 58,
@@ -2398,7 +2448,7 @@
         "link": "https://stackoverflow.com/users/1020254/jagmitg"
       },
       "is_answered": true,
-      "view_count": 1010,
+      "view_count": 1011,
       "accepted_answer_id": 25586648,
       "answer_count": 1,
       "score": 0,
@@ -2408,7 +2458,7 @@
       "content_license": "CC BY-SA 3.0",
       "link": "https://stackoverflow.com/questions/21839498/curl-validation-on-salesforce-web2lead",
       "title": "cURL validation on salesforce Web2Lead",
-      "key": 84
+      "key": 86
     },
     {
       "tags": [
@@ -2416,7 +2466,7 @@
       ],
       "owner": {
         "account_id": 1006689,
-        "reputation": 4183,
+        "reputation": 4224,
         "user_id": 1020254,
         "user_type": "registered",
         "accept_rate": 58,
@@ -2425,7 +2475,7 @@
         "link": "https://stackoverflow.com/users/1020254/jagmitg"
       },
       "is_answered": true,
-      "view_count": 11013,
+      "view_count": 11016,
       "answer_count": 2,
       "score": 0,
       "last_activity_date": 1520255192,
@@ -2434,7 +2484,7 @@
       "content_license": "CC BY-SA 3.0",
       "link": "https://stackoverflow.com/questions/18881715/run-two-vlookup-if-an-n-a",
       "title": "Run two vlookup if an &#39;N/A&#39;",
-      "key": 85
+      "key": 87
     },
     {
       "tags": [
@@ -2465,7 +2515,7 @@
       "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/15862096/transparent-div-with-text-on-image",
       "title": "Transparent div with text on image",
-      "key": 86
+      "key": 88
     },
     {
       "tags": [
@@ -2477,7 +2527,7 @@
       ],
       "owner": {
         "account_id": 1006689,
-        "reputation": 4183,
+        "reputation": 4224,
         "user_id": 1020254,
         "user_type": "registered",
         "accept_rate": 58,
@@ -2497,7 +2547,7 @@
       "content_license": "CC BY-SA 3.0",
       "link": "https://stackoverflow.com/questions/13280015/apache-404-error-drupal",
       "title": "Apache 404 Error - Drupal",
-      "key": 87
+      "key": 89
     }
   ]
 }

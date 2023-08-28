@@ -5,11 +5,12 @@ import { PAGINATE_CONTENT, TAGS_DEFINITION } from "@const";
 import stackOverflowData from "../../../../data/stackoverflow.json";
 import StackoverflowLayout from "@layouts/StackoverflowLayout.astro";
 
-export async function getStaticPaths({ paginate }) {
+export async function getStaticPaths() {
   const questions = Object.values(stackOverflowData.data);
   const tags = generateUniqueTags(questions);
 
   let allPaths = [];
+  let questionIndex = 1;
 
   for (const tag of tags) {
     const filteredQuestions = questions.filter(
@@ -19,6 +20,14 @@ export async function getStaticPaths({ paginate }) {
           matchesTagDefinition(current, TAGS_DEFINITION[tag] || []),
         ),
     );
+
+    filteredQuestions.sort((a, b) => b.creation_date - a.creation_date);
+
+    filteredQuestions.map((post) => {
+      post.key = questionIndex;
+      questionIndex++;
+      return post;
+    });
 
     const numberOfPages = Math.ceil(
       filteredQuestions.length / PAGINATE_CONTENT,
@@ -52,9 +61,6 @@ export async function getStaticPaths({ paginate }) {
   return allPaths;
 }
 
-const allQuestions = Object.values(stackOverflowData.data);
-const uniqueTags = generateUniqueTags(allQuestions);
-
 const { questions, page } = Astro.props;
 ---
 
@@ -74,7 +80,7 @@ const { questions, page } = Astro.props;
             href={question.link}
             target="_blank"
             rel="noopener noreferrer"
-            class="p-4 border mb-2 border-neutral-200  bg-neutral-50 rounded flex items-center justify-between px-3 py-4 w-full hover:bg-neutral-200 transition-colors"
+            class="p-4 border mb-2 relative border-neutral-200  bg-neutral-50 rounded flex items-center justify-between px-3 py-4 w-full hover:bg-neutral-200 transition-colors"
           >
             <div class="flex flex-col">
               <p class="font-bold text-neutral-900 ">{question.title}</p>
@@ -87,3 +93,18 @@ const { questions, page } = Astro.props;
     </div>
   </StackoverflowLayout>
 </Layout>
+<style>
+  .questionKeys {
+    position: absolute;
+    top: -20px;
+    right: 0;
+    border-top-right-radius: 33%;
+    border-top-left-radius: 33%;
+    padding: 0 10px;
+    box-shadow: 0 4px 2px -2px gray;
+
+    @apply text-neutral-100;
+    @apply font-bold;
+    @apply bg-blue-400;
+  }
+</style>
