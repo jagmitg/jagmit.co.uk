@@ -36,8 +36,10 @@ const questions = page.data;
               href={question.link}
               target="_blank"
               rel="noopener noreferrer"
-              class="p-4 border mb-2 border-neutral-200 bg-neutral-50 rounded flex items-center justify-between px-3 py-4 w-full hover:bg-neutral-200 transition-colors"
+              class="p-4 border mb-2 border-neutral-200 relative bg-neutral-50 rounded flex items-center justify-between px-3 py-4 w-full hover:bg-neutral-200 transition-colors"
             >
+              <div class="questionKeys">{question.key}</div>
+
               <div class="flex flex-col">
                 <p class="font-bold text-neutral-900 ">{question.title}</p>
                 <p class="text-neutral-600 ">
@@ -57,3 +59,18 @@ const questions = page.data;
     </div>
   </StackoverflowLayout>
 </Layout>
+<style>
+  .questionKeys {
+    position: absolute;
+    top: -20px;
+    right: 0;
+    border-top-right-radius: 33%;
+    border-top-left-radius: 33%;
+    padding: 0 10px;
+    box-shadow: 0 4px 2px -2px gray;
+
+    @apply text-neutral-100;
+    @apply font-bold;
+    @apply bg-blue-400;
+  }
+</style>
