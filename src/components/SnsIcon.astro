@@ -1,14 +1,11 @@
 ---
 type Props = {
   href: string;
-  name: string;
+  name?: string;
   icon: string;
-  text?: string;
-  className?: string;
-  textClassName?: string;
 };
 
-const { href, name, text, className = "w-5 h-5", icon } = Astro.props;
+const { href, name, icon } = Astro.props;
 ---
 
 <a
@@ -18,5 +15,5 @@ const { href, name, text, className = "w-5 h-5", icon } = Astro.props;
   class="mx-2 opacity-50 hover:opacity-100"
   aria-label={`Link for ${name}`}
 >
-  <img src={icon} alt={text} class="w-6 h-6" />
+  <img src={icon} alt={name} class="w-6 h-6" />
 </a>
