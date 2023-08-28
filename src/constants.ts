@@ -7,10 +7,11 @@ export const REPO_PINNED = <const>["Wordpress-Select-Pagination"];
 export const PAGINATE_CONTENT = 10;
 
 export const TAGS_DEFINITION = {
+  typescript: [/typescript/],
+  javascript: [/javascript/],
+  python: [/python/],
   html: [/html/],
   vue: [/vue/],
-  python: [/python/],
-  javascript: [/javascript/],
   angular: [/angular/],
 };
 
