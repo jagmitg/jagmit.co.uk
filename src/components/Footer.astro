@@ -1,43 +1,44 @@
 ---
-// import SnsIcon from "../components/SnsIcon.astro";
-// import Twitter from "../components/icons/Twitter.astro";
-// import GitHub from "../components/icons/GitHub.astro";
-// import LinkedIn from "../components/icons/LinkedIn.astro";
-// import Stackoverflow from "../components/icons/Stackoverflow.astro";
-// import Rss from "../components/icons/Rss.astro";
+import SnsIcon from "../components/SnsIcon.astro";
 ---
 
-<footer class="h-20 border-t border-gray-300">
+<footer class="h-auto md:h-20 border-t border-gray-300">
   <div
-    class="container mx-auto px-4 flex items-center justify-between h-full text-sm text-black-400"
+    class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between text-sm text-black-400 py-4"
   >
-    <span>
-      © {new Date().getFullYear()} - Copyright jagmit.co.uk, All Rights Reserved.
+    <span class="mb-4 md:mb-0 text-center">
+      © {new Date().getFullYear()} - Copyright jagmit.co.uk, All Rights
+      Reserved.
     </span>
-    <div class="w-64 hidden lg:block shrink-0">
+    <div class="w-full md:w-64">
       <div class="flex flex-col gap-4">
-        <div class="flex justify-around items-center p-4">
-          <!-- <SnsIcon href="https://twitter.com/jagmitg" name="Twitter">
-            <Twitter />
-          </SnsIcon>
-          <SnsIcon href="https://github.com/jagmitg" name="GitHub">
-            <GitHub />
-          </SnsIcon>
-          <SnsIcon href="https://www.linkedin.com/in/jagmitg/" name="Linkedin">
-            <LinkedIn />
-          </SnsIcon>
-          <SnsIcon href="https://dribbble.com/jagmitg" name="Dribbble">
-            <LinkedIn />
-          </SnsIcon>
+        <div class="flex justify-around items-center">
           <SnsIcon
-            href="https://stackoverflow.com/users/2244383/jagmitg"
-            name="Stackoverflow"
-          >
-            <Stackoverflow />
-          </SnsIcon>
-          <SnsIcon href="/blog/rss.xml" name="RSS">
-            <Rss />
-          </SnsIcon> -->
+            href="https://github.com/jagmitg"
+            icon="/images/icon/github.svg"
+            name="Github - jagmitg"
+          />
+          <SnsIcon
+            href="https://stackoverflow.com/users/1020254/jagmitg"
+            icon="/images/icon/stackoverflow.svg"
+            name="Stackoverflow - jagmitg"
+          />
+          <SnsIcon
+            href="https://dribbble.com/jagmitg"
+            icon="/images/icon/dribbble.svg"
+            name="Dribbble - jagmitg"
+          />
+          <SnsIcon
+            href="https://www.linkedin.com/in/jagmitg/"
+            icon="/images/icon/linkedin.svg"
+            name="Linkedin - jagmitg"
+          />
+
+          <SnsIcon
+            href="https://twitter.com/jagmitg"
+            icon="/images/icon/twitter.svg"
+            name="Twitter - jagmitg"
+          />
         </div>
       </div>
     </div>

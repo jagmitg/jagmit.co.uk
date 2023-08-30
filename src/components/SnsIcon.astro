@@ -1,31 +1,19 @@
 ---
 type Props = {
   href: string;
-  name: string;
-  text?: string;
-  className?: string;
-  textClassName?: string;
+  name?: string;
+  icon: string;
 };
 
-const { href, name, text, className = "w-5 h-5", textClassName } = Astro.props;
+const { href, name, icon } = Astro.props;
 ---
 
 <a
   href={href}
   target="_blank"
-  class="hover:text-blue-500 text-gray-300 flex gap-2 items-center"
+  rel="noopener noreferrer"
+  class="mx-2 opacity-50 hover:opacity-100"
   aria-label={`Link for ${name}`}
 >
-  <svg
-    class={className}
-    viewBox="0 0 30 30"
-    fill="none"
-    stroke="currentColor"
-    stroke-width="2"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-  >
-    <slot />
-  </svg>
-  {text && <span class={textClassName}>{text}</span>}
+  <img src={icon} alt={name} class="w-6 h-6" />
 </a>

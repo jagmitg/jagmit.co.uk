@@ -1,6 +1,6 @@
 {
   "fetched_data": {
-    "date_stamp": "2023-08-28T16:24:20.824Z"
+    "date_stamp": "2023-08-28T20:36:33.475Z"
   },
   "data": [
     {
@@ -18,7 +18,7 @@
         "link": "https://stackoverflow.com/users/21989515/shulee"
       },
       "is_answered": true,
-      "view_count": 39,
+      "view_count": 40,
       "closed_date": 1692218363,
       "accepted_answer_id": 76916902,
       "answer_count": 1,
@@ -48,7 +48,7 @@
         "link": "https://stackoverflow.com/users/2819689/mikibelavista"
       },
       "is_answered": true,
-      "view_count": 43,
+      "view_count": 44,
       "accepted_answer_id": 76912859,
       "answer_count": 3,
       "score": 0,
@@ -75,7 +75,7 @@
         "link": "https://stackoverflow.com/users/11374375/jayyron"
       },
       "is_answered": true,
-      "view_count": 71,
+      "view_count": 72,
       "accepted_answer_id": 76908161,
       "answer_count": 3,
       "score": 0,
@@ -100,7 +100,7 @@
         "display_name": "user22395013"
       },
       "is_answered": true,
-      "view_count": 47,
+      "view_count": 48,
       "accepted_answer_id": 76908125,
       "answer_count": 2,
       "score": 0,
@@ -156,7 +156,7 @@
         "link": "https://stackoverflow.com/users/22390541/thebatz"
       },
       "is_answered": true,
-      "view_count": 40,
+      "view_count": 41,
       "accepted_answer_id": 76902663,
       "answer_count": 1,
       "score": 1,
@@ -185,7 +185,7 @@
         "link": "https://stackoverflow.com/users/6797003/erbi-silva"
       },
       "is_answered": true,
-      "view_count": 61,
+      "view_count": 62,
       "accepted_answer_id": 76902692,
       "answer_count": 3,
       "score": 0,
@@ -272,7 +272,7 @@
         "link": "https://stackoverflow.com/users/15050200/space-ninja-x"
       },
       "is_answered": true,
-      "view_count": 46,
+      "view_count": 47,
       "answer_count": 1,
       "score": 0,
       "last_activity_date": 1691606657,
@@ -357,7 +357,7 @@
         "link": "https://stackoverflow.com/users/17208064/jfeel"
       },
       "is_answered": true,
-      "view_count": 43,
+      "view_count": 44,
       "accepted_answer_id": 76846086,
       "answer_count": 3,
       "score": 1,
@@ -385,7 +385,7 @@
         "link": "https://stackoverflow.com/users/22319979/jane-lim"
       },
       "is_answered": true,
-      "view_count": 55,
+      "view_count": 56,
       "accepted_answer_id": 76845417,
       "answer_count": 1,
       "score": -1,
@@ -416,7 +416,7 @@
         "link": "https://stackoverflow.com/users/12269799/outkast20"
       },
       "is_answered": true,
-      "view_count": 47,
+      "view_count": 48,
       "accepted_answer_id": 76844040,
       "answer_count": 1,
       "score": 0,
@@ -474,7 +474,7 @@
         "link": "https://stackoverflow.com/users/22344264/witcher"
       },
       "is_answered": true,
-      "view_count": 60,
+      "view_count": 63,
       "accepted_answer_id": 76842597,
       "answer_count": 1,
       "score": 0,
@@ -531,7 +531,7 @@
         "link": "https://stackoverflow.com/users/22217619/mfydev"
       },
       "is_answered": true,
-      "view_count": 28,
+      "view_count": 29,
       "accepted_answer_id": 76840826,
       "answer_count": 2,
       "score": 0,
@@ -639,7 +639,7 @@
         "link": "https://stackoverflow.com/users/15355943/skelaw"
       },
       "is_answered": true,
-      "view_count": 44,
+      "view_count": 45,
       "answer_count": 1,
       "score": 0,
       "last_activity_date": 1690836024,
@@ -782,7 +782,7 @@
         "link": "https://stackoverflow.com/users/11028689/bluetail"
       },
       "is_answered": true,
-      "view_count": 47,
+      "view_count": 48,
       "accepted_answer_id": 76799177,
       "answer_count": 3,
       "score": 0,
@@ -889,7 +889,7 @@
         "link": "https://stackoverflow.com/users/22293320/tu%c4%9fberk-y%c4%b1ld%c4%b1r%c4%b1m"
       },
       "is_answered": true,
-      "view_count": 34,
+      "view_count": 35,
       "closed_date": 1690623385,
       "accepted_answer_id": 76792870,
       "answer_count": 2,
@@ -950,7 +950,7 @@
         "link": "https://stackoverflow.com/users/702977/softtimur"
       },
       "is_answered": true,
-      "view_count": 92,
+      "view_count": 93,
       "accepted_answer_id": 76802647,
       "answer_count": 2,
       "score": 2,
@@ -1266,7 +1266,7 @@
         "link": "https://stackoverflow.com/users/22222310/morgane"
       },
       "is_answered": true,
-      "view_count": 31,
+      "view_count": 32,
       "accepted_answer_id": 76680741,
       "answer_count": 1,
       "score": 2,
@@ -1296,7 +1296,7 @@
         "link": "https://stackoverflow.com/users/21656918/mpiland"
       },
       "is_answered": true,
-      "view_count": 70,
+      "view_count": 71,
       "accepted_answer_id": 76680279,
       "answer_count": 1,
       "score": 0,
@@ -1325,7 +1325,7 @@
         "link": "https://stackoverflow.com/users/13654928/mr-j"
       },
       "is_answered": true,
-      "view_count": 46,
+      "view_count": 47,
       "answer_count": 3,
       "score": 1,
       "last_activity_date": 1689517888,
@@ -1483,7 +1483,7 @@
       ],
       "owner": {
         "account_id": 18781039,
-        "reputation": 43,
+        "reputation": 51,
         "user_id": 13695695,
         "user_type": "registered",
         "profile_image": "https://lh4.googleusercontent.com/-IeH70VNXrMw/AAAAAAAAAAI/AAAAAAAAAAA/AMZuuclqkxXMaceXmbzfi9cVIjUk3tSxqA/photo.jpg?sz=256",
@@ -1491,7 +1491,7 @@
         "link": "https://stackoverflow.com/users/13695695/%d7%a9%d7%9e%d7%a2%d7%95%d7%9f-%d7%a4%d7%95%d7%a7%d7%a1"
       },
       "is_answered": true,
-      "view_count": 440,
+      "view_count": 441,
       "accepted_answer_id": 62449347,
       "answer_count": 1,
       "score": -1,
@@ -1552,7 +1552,7 @@
         "link": "https://stackoverflow.com/users/5788814/dopeat"
       },
       "is_answered": true,
-      "view_count": 4900,
+      "view_count": 4901,
       "accepted_answer_id": 42455611,
       "answer_count": 2,
       "score": 0,
@@ -1635,7 +1635,7 @@
         "link": "https://stackoverflow.com/users/1788736/user1788736"
       },
       "is_answered": true,
-      "view_count": 2095,
+      "view_count": 2096,
       "accepted_answer_id": 32608296,
       "answer_count": 1,
       "score": 0,
@@ -1838,7 +1838,7 @@
         "link": "https://stackoverflow.com/users/4092832/varcor"
       },
       "is_answered": true,
-      "view_count": 65473,
+      "view_count": 65474,
       "closed_date": 1412189774,
       "accepted_answer_id": 26148465,
       "answer_count": 4,
