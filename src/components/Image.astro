@@ -1,5 +1,5 @@
 ---
-import { Image } from "@astrojs/image/components";
+import { Image as AstroImage } from "astro:assets";
 
 type Props = {
   src: string;
@@ -40,7 +40,7 @@ if (isOptimization && (!width || !height)) {
       class={className}
     />
   ) : isOptimization ? (
-    <Image
+    <AstroImage
       src={src}
       class={className}
       alt={alt}

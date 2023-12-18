@@ -3,7 +3,6 @@ import tailwind from "@astrojs/tailwind";
 import partytown from "@astrojs/partytown";
 import sitemap from "@astrojs/sitemap";
 import mdx from "@astrojs/mdx";
-import image from "@astrojs/image";
 import externalLinks from "rehype-external-links";
 
 export default defineConfig({
@@ -29,9 +28,6 @@ export default defineConfig({
     }),
     sitemap(),
     mdx(),
-    image({
-      serviceEntryPoint: "@astrojs/image/sharp",
-    }),
   ],
   markdown: {
     syntaxHighlight: "prism",
