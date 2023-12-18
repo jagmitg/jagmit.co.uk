@@ -2,15 +2,24 @@ import fetch from "node-fetch";
 import { writeFile, readdir, unlink } from "fs/promises";
 import path from "path";
 import dotenv from "dotenv";
+import type { RepoFetchSettings, GithubRepo } from "../types";
 
 dotenv.config();
 
-import type { RepoFetchSettings, GithubRepo } from "../types";
+if (
+  !process.env.USERNAME ||
+  !process.env.TARGET_FOLDER ||
+  !process.env.EXCLUDED_REPOS
+) {
+  throw new Error(
+    "Environment variables USERNAME, TARGET_FOLDER, and EXCLUDED_REPOS must be set.",
+  );
+}
 
 const REPO_FETCH_SETTINGS: RepoFetchSettings = {
-  username: process.env.USERNAME!,
-  targetFolder: process.env.TARGET_FOLDER!,
-  excludedRepos: process.env.EXCLUDED_REPOS!.split(","),
+  username: process.env.USERNAME,
+  targetFolder: process.env.TARGET_FOLDER,
+  excludedRepos: process.env.EXCLUDED_REPOS.split(","),
 };
 
 async function deleteAllMDFiles(): Promise<void[]> {
@@ -26,6 +35,10 @@ async function createMDFiles(): Promise<void> {
     const response = await fetch(
       `https://api.github.com/users/${REPO_FETCH_SETTINGS.username}/repos`,
     );
+    if (!response.ok) {
+      throw new Error(`Failed to fetch repos: ${response.statusText}`);
+    }
+
     const data = (await response.json()) as GithubRepo[];
 
     const writePromises = data
@@ -37,6 +50,12 @@ async function createMDFiles(): Promise<void> {
         const langResponse = await fetch(
           `https://api.github.com/repos/${REPO_FETCH_SETTINGS.username}/${repo.name}/languages`,
         );
+        if (!langResponse.ok) {
+          throw new Error(
+            `Failed to fetch languages for repo ${repo.name}: ${langResponse.statusText}`,
+          );
+        }
+
         const languages = await langResponse.json();
 
         const repoDate = new Date(repo.created_at).toISOString().slice(0, 10);
