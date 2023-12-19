@@ -4,7 +4,7 @@ import { getBlogsAndRepos } from "@utils/collections";
 
 const { allCollections } = await getBlogsAndRepos();
 
-const site = new URL("blog", import.meta.env.SITE).toString();
+const site = new URL("blog", "https://jagmit.co.uk").toString();
 
 export const get = () => generateRss(site, allCollections);
 

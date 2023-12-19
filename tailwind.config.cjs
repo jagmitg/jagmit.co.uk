@@ -1,7 +1,3 @@
-const Color = require("color");
-
-const darken = (clr, val) => Color(clr).darken(val).hex();
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],

@@ -4,7 +4,6 @@ import Layout from "./Layout.astro";
 import MainLayout from "./MainLayout.astro";
 import { getBlogsAndRepos } from "@utils/collections";
 import Archives from "@components/Archives.astro";
-// import ShareButtons from "@components/ShareButtons.astro";
 import Pagination from "@components/Pagination.astro";
 import type { CollectionEntry } from "astro:content";
 import type { MarkdownLayoutProps } from "astro";
@@ -17,6 +16,8 @@ const date = formatDate(new Date(frontmatter.date));
 const indices = headings.filter((heading) => heading.depth < 4);
 const { title, description, image } = frontmatter;
 const { allCollections: posts } = await getBlogsAndRepos();
+
+
 const index = posts.findIndex(
   ({ slug }) =>
     slug.replace(/^\//, "") ===
@@ -81,15 +82,11 @@ const index = posts.findIndex(
         index !== -1 && (
           <Pagination
             prev={index !== 0 ? posts[index - 1].slug : undefined}
-            prevText={index !== 0 ? posts[index - 1].data.title : undefined}
+            prevText={index !== 0 ? (posts[index - 1].data as { title: string }).title : undefined}
             next={
               index !== posts.length - 1 ? posts[index + 1].slug : undefined
             }
-            nextText={
-              index !== posts.length - 1
-                ? posts[index + 1].data.title
-                : undefined
-            }
+            nextText={index !== posts.length - 1 ? (posts[index + 1].data as { title: string }).title : undefined}
             className="mt-3 flex-col md:flex-row gap-2 text-center"
           />
         )

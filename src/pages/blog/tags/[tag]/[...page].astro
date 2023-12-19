@@ -11,7 +11,7 @@ import { BLOG_DESCRIPTION, PAGINATE_CONTENT } from "@const";
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
   const { allCollections } = await getBlogsAndRepos();
   const tags = getAllTags(allCollections);
-  return tags.map((tag) =>
+  return tags.flatMap((tag) =>
     paginate(
       allCollections.filter((post: any) =>
         parseTags(post.data.tags).some(

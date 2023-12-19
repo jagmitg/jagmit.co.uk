@@ -2,9 +2,28 @@ import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { TAGS_DEFINITION } from "@const";
 
-export type BlogEntry = CollectionEntry<"blog">;
-export type RepoEntry = CollectionEntry<"repo">;
+interface EntryData {
+  date: string;
+  isDraft?: boolean;
+  tags: string;
+}
+// Define the Render Function Type
+type RenderFunction = () => Promise<string>;
+
+export type BlogEntry = CollectionEntry<"blog"> & {
+  data: EntryData;
+  slug: string;
+  render: RenderFunction; // Add the render function
+};
+
+export type RepoEntry = CollectionEntry<"repo"> & {
+  data: EntryData;
+  slug: string;
+  render: RenderFunction; // Add the render function
+};
+
 export type BlogOrRepoEntry = BlogEntry | RepoEntry;
+
 type Question = {
   tags: string[];
 };
@@ -18,7 +37,6 @@ export async function getBlogsAndRepos(): Promise<{
   const repos: RepoEntry[] = await getCollection("repo");
 
   const blogs = allBlogs.filter((blog) => blog.data.isDraft !== true);
-
   const sortedBlogs = sortByDate(blogs);
   const sortedRepos = sortByDate(repos);
 
@@ -30,9 +48,16 @@ export async function getBlogsAndRepos(): Promise<{
 }
 
 export function sortByDate<T extends BlogOrRepoEntry>(collections: T[]): T[] {
+  // Check if collections are defined and not null
+  if (!collections || collections.length === 0) {
+    return [];
+  }
+
   return collections.sort((a, b) => {
-    const dateA = new Date(a.data.date);
-    const dateB = new Date(b.data.date);
+    // Check for the existence of 'data' and 'date' properties
+    const dateA = a.data && a.data.date ? new Date(a.data.date) : new Date(0);
+    const dateB = b.data && b.data.date ? new Date(b.data.date) : new Date(0);
+
     return dateB.getTime() - dateA.getTime();
   });
 }
@@ -41,7 +66,7 @@ export function parseTags(tags: string): string[] {
   return tags.split(",").map((v) => v.trim());
 }
 
-export function getAllTags<T extends BlogOrRepoEntry>(
+export function getAllTags<T extends { data: EntryData }>(
   collections: T[],
 ): string[] {
   return [
@@ -58,8 +83,8 @@ export function getAllTags<T extends BlogOrRepoEntry>(
 export function generateUniqueTags(questions: Question[]): string[] {
   let allTags = new Set<string>();
 
-  questions.forEach((question: Question) => {
-    question.tags.forEach((tag: string) => {
+  questions.forEach((question) => {
+    question.tags.forEach((tag) => {
       for (let overarchingTag in TAGS_DEFINITION) {
         if (matchesTagDefinition(tag, TAGS_DEFINITION[overarchingTag])) {
           allTags.add(overarchingTag);
@@ -72,6 +97,7 @@ export function generateUniqueTags(questions: Question[]): string[] {
   return [...allTags];
 }
 
+// Correct the function signature
 export function matchesTagDefinition(
   tag: string,
   definitions: (string | RegExp)[],

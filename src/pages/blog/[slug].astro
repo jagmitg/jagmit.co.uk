@@ -11,10 +11,30 @@ export async function getStaticPaths() {
   }));
 }
 
+
 const { entry } = Astro.props as {
   entry: BlogOrRepoEntry;
 };
-const { Content } = await entry.render();
+
+let ContentComponent = null;
+let isContentString = false;
+
+if (entry.render) {
+  const rendered = await entry.render();
+
+  // Check if the rendered content is a string
+  if (typeof rendered === 'string') {
+    isContentString = true;
+    ContentComponent = rendered;
+  } else {
+    ContentComponent = rendered.Content;
+  }
+}
+
 ---
 
-<Content />
+{isContentString ? (
+  <div>{ContentComponent}</div>
+) : (
+  ContentComponent && <ContentComponent />
+)}

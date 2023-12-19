@@ -11,6 +11,7 @@
   "scripts": {
     "dev": "astro dev",
     "build": "npm run repo && astro check && tsc --noEmit && astro build",
+    "build-test": "astro check && tsc --noEmit && astro build",
     "preview": "astro preview",
     "check": "astro check",
     "test": "playwright test",
