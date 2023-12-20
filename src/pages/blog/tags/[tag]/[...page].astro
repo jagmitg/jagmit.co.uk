@@ -8,6 +8,16 @@ import type { BlogOrRepoEntry } from "@utils/collections";
 import type { GetStaticPathsOptions, Page } from "astro";
 import { BLOG_DESCRIPTION, PAGINATE_CONTENT } from "@const";
 
+type FrontmatterType = {
+  date?: Date;
+  title?: string;
+  description?: string;
+  image?: string;
+  tags?: string;
+  isDraft?: boolean;
+};
+
+
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
   const { allCollections } = await getBlogsAndRepos();
   const tags = getAllTags(allCollections);
@@ -49,11 +59,13 @@ const { page } = Astro.props as {
     <div class="gap-4 flex flex-col">
       {
         page.data.map(({ data, slug }) => {
+          const frontmatterData = data as FrontmatterType;
+
           if ("repo" in data) {
             return (
               <BlogCardItem
-                url={data.repo ? data.repo : `/blog/${slug}/`}
-                frontmatter={data}
+                url={typeof data.repo === 'string' ? data.repo : `/blog/${slug}/`}
+                frontmatter={frontmatterData}
                 repo={!!data.repo}
               />
             );
@@ -61,7 +73,7 @@ const { page } = Astro.props as {
             return (
               <BlogCardItem
                 url={`/blog/${slug}/`}
-                frontmatter={data}
+                frontmatter={frontmatterData}
                 repo={false}
               />
             );

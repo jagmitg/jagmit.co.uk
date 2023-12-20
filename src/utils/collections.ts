@@ -7,19 +7,19 @@ interface EntryData {
   isDraft?: boolean;
   tags: string;
 }
-// Define the Render Function Type
+
 type RenderFunction = () => Promise<string>;
 
 export type BlogEntry = CollectionEntry<"blog"> & {
   data: EntryData;
   slug: string;
-  render: RenderFunction; // Add the render function
+  render: RenderFunction;
 };
 
 export type RepoEntry = CollectionEntry<"repo"> & {
-  data: EntryData;
+  data: EntryData & { repo: string };
   slug: string;
-  render: RenderFunction; // Add the render function
+  render: RenderFunction;
 };
 
 export type BlogOrRepoEntry = BlogEntry | RepoEntry;

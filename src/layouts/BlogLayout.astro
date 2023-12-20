@@ -105,9 +105,7 @@ const index = posts.findIndex(
     @apply sm:text-base;
   }
   .blog h1,
-  .blog h2,
-  .blog h3,
-  .blog h4 {
+  .blog h2{
     @apply font-semibold text-blue-500 mt-10 mb-1;
   }
   .blog h1 {
@@ -117,10 +115,10 @@ const index = posts.findIndex(
     @apply text-xl;
   }
   .blog h3 {
-    @apply text-lg;
+    @apply text-lg text-gray-700 font-semibold pb-2 pt-2;
   }
   .blog h4 {
-    @apply text-base;
+    @apply text-base text-gray-700 font-semibold pb-2 pt-2;
   }
   /* .blog code:not(pre > *) {
     @apply text-gray-200  bg-gray-600 mx-1 px-1 rounded-sm shadow-lg ring-white/5;
@@ -156,7 +154,6 @@ const index = posts.findIndex(
   .blog blockquote {
     @apply px-4 border border-gray-600 border-l-blue-300 border-l-2;
   }
-  /* General styles for all tables inside .blog */
   .blog table {
     @apply border-collapse table-auto w-full text-sm;
   }
@@ -174,32 +171,23 @@ const index = posts.findIndex(
   }
 
   .blog code:not([data-gist-id]) {
-    padding: 4px 8px;
-    color: black;
-    background-color: #b7b7b7;
-    border-radius: 5px;
-    font-size: 0.8em;
+    @apply bg-blue-500 px-2 py-0.5 rounded-lg text-white text-sm
   }
 
-  /* Reset or override styles for tables inside <code> tags */
   .blog code table {
-    /* Reset or override styles here as needed */
-    @apply border-none; /* As an example, removing borders */
+    @apply border-none;
   }
 
   .blog code th {
-    /* Reset or override styles here as needed */
-    @apply border-none; /* As an example */
+    @apply border-none;
   }
 
   .blog code tbody {
-    /* Reset or override styles here as needed */
-    @apply bg-transparent; /* As an example */
+    @apply bg-transparent;
   }
 
   .blog code td {
-    /* Reset or override styles here as needed */
-    @apply border-none; /* As an example */
+    @apply border-none;
   }
 
   .blog iframe {

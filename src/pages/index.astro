@@ -9,14 +9,16 @@ import External from "@components/icons/External.astro";
 
 const { allCollections } = await getBlogsAndRepos();
 
-const posts = allCollections.sort(
-  (b, a) => {
-    const aValue = (a.data.date && a.data.date instanceof Date) ? a.data.date.valueOf() : 0;
-    const bValue = (b.data.date && b.data.date instanceof Date) ? b.data.date.valueOf() : 0;
-
-    return aValue - bValue;
+const posts = allCollections.sort((b, a) => {
+  function getTimestamp(date: any): number {
+    return date instanceof Date ? date.valueOf() : new Date(date).valueOf();
   }
-);
+
+  const aValue = a.data.date ? getTimestamp(a.data.date) : 0;
+  const bValue = b.data.date ? getTimestamp(b.data.date) : 0;
+
+  return aValue - bValue;
+});
 
 function isRepoEntry(entry: BlogOrRepoEntry): entry is RepoEntry {
   return "repo" in entry.data;
@@ -25,6 +27,7 @@ function isRepoEntry(entry: BlogOrRepoEntry): entry is RepoEntry {
 function isBlogEntry(entry: BlogOrRepoEntry): entry is BlogEntry {
   return "image" in entry.data;
 }
+
 ---
 
 <Layout>
@@ -53,7 +56,9 @@ function isBlogEntry(entry: BlogOrRepoEntry): entry is BlogEntry {
           return (
             <a
               href={
-                isRepoEntry(post) ? (post.data.repo ? post.data.repo : `/blog/${post.slug}/`) : `/blog/${post.slug}/`
+                isRepoEntry(post)
+                  ? post.data.repo || `/blog/${post.slug}/`
+                  : `/blog/${post.slug}/`
               }
               class="homepage-recent-blog p-4 border border-neutral-200 bg-neutral-50 rounded flex items-center justify-between px-3 py-4 w-full transform hover:-translate-y-2 hover:bg-neutral-200 transition relative shadow-md hover:shadow-xl"
               style={`--bg-url: url(${backgroundImage}); background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.95)), var(--bg-url); background-size: cover; background-position: center;`}
@@ -62,7 +67,7 @@ function isBlogEntry(entry: BlogOrRepoEntry): entry is BlogEntry {
                 <p class="text-white text-sm">
                   {formatDate(new Date(post.data.date))}
                 </p>
-              <p class="font-bold text-white">{isBlogEntry(post) ? post.data.title : 'Default Title'}</p>
+                <p class="font-bold text-white">{post.data.title}</p>
 
                 {isRepoEntry(post) && (
                   <div class="absolute right-3 top-3 external-svg">
