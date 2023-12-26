@@ -1,0 +1,107 @@
+---
+layout: ../../layouts/BlogLayout.astro
+title: Building a UK Pension Projection Calculator
+date: "2023-10-25"
+description: Choosing Astro framework as the framework of choice and the learning to implement in getStaticPaths
+image: /images/blog/building-uk-pension-projection-calculator/pension-logo.png
+tags: typescript
+isDraft: false
+---
+
+As an engineer who's navigated the complexities of managing multiple pension pots through various positions, I've often found myself wishing for a unified view of my future financial landscape. That's why I decided to build a UK Pension Projection Calculator. This tool is designed to provide a clear projection of retirement savings, allowing adjustments based on different financial levers such as salary growth, pension contributions, and bonuses.
+
+## Approach
+
+The application is built using React with TypeScript, integrating Tailwind CSS for styling. The goal was to create a modular, maintainable, and testable codebase. Here's an overview of the build process and some code snippets to give you an insight into the development.
+
+### Component Architecture
+
+The application is constructed using a component-based architecture, ensuring modularity and reusability. Here's a breakdown of the main components:
+
+1. **CalculatorForm.tsx**
+
+This component is the user's starting point, capturing essential data needed for the projection.
+
+- **State Management**: It uses React's `useState` to manage user inputs like age, salary, contributions, and more.
+- **Tailwind Styling**: Each input is styled with Tailwind CSS, ensuring a responsive and modern user interface.
+- **Interactivity**: On value change, it updates the application's state, readying it for calculation.
+
+2. **GrowthModal.tsx**
+
+When users are curious about the details of their projection, they click on a result row to trigger this modal.
+
+- **Detailed View**: Displays the 2%, 4%, and 6% growth details for a selected projection year.
+- **Close Interaction**: Users can close the modal, returning them to the overall results view.
+- **Tailwind Integration**: Styled for clarity and focus, ensuring the user's attention is on the vital data.
+
+3. **PensionProjectionCalculator.tsx**
+
+The orchestrator of the application, this component brings together the form and results table, managing the overall state and interactions.
+
+- **Local Storage**: Integrates local storage to persist user input across sessions.
+- **Results Calculation**: Upon user interaction with the `CalculatorForm`, it triggers the projection calculations and updates the results.
+- **Component Integration**: Utilizes both `CalculatorForm` and `ResultsTable`, passing necessary props and handling state.
+
+4. **ResultsTable.tsx**
+
+This component presents the calculated pension projections in a clear, tabular format.
+
+- **Interactivity**: Each row, when clicked, opens up the `GrowthModal` to show detailed growth projections.
+- **Responsive Design**: Tailwind CSS ensures the table is as legible and functional on mobile as it is on desktop.
+- **Data Formatting**: Numbers are formatted for readability using `toLocaleString`, making the figures easy to understand.
+
+## Styling with Tailwind CSS
+
+Tailwind CSS was used to ensure the application was not only functional but also visually appealing and responsive. The utility-first classes made it easy to style elements directly within the JSX, leading to a faster development cycle.
+
+## State Management and Local Storage
+
+State management was crucial in handling user inputs and calculation results. React's `useState` and `useEffect` were used to manage the application's state and update local storage respectively, ensuring user inputs were persisted across sessions.
+
+### Setting the `localStorage` with the current state:
+
+<code
+  data-gist-id="3279ae2fb21265594e680003b34ac486"
+  data-gist-file="fetchLocalStorage.tsx"
+  data-gist-hide-footer="true"
+></code>
+
+### Clearing the `localStorage`:
+
+<code
+  data-gist-id="3279ae2fb21265594e680003b34ac486"
+  data-gist-file="clearStorage.ts"
+  data-gist-hide-footer="true"
+></code>
+
+### Fetching the `localStorage`:
+
+<code
+  data-gist-id="3279ae2fb21265594e680003b34ac486"
+  data-gist-file="Initalize.tsx"
+  data-gist-hide-footer="true"
+></code>
+
+## The Calculation Logic
+
+The heart of the application is the pension projection calculation. It takes into account various inputs like current pension pot, expected retirement age, salary growth, and contributions. The calculation needed to be precise and consider UK-specific tax rules and thresholds.
+
+<code
+  data-gist-id="3279ae2fb21265594e680003b34ac486"
+  data-gist-file="calculation.ts"
+  data-gist-hide-footer="true"
+></code>
+
+## Future Prospects
+
+The journey doesn't end here. The application is ripe for enhancement and integration:
+
+- **Salary Calculator Integration**: Integrating with a salary calculator would allow users to forecast their salary growth and see its direct impact on their pension.
+- **Dynamic Financial Lever Inclusion**: Users might benefit from being able to add custom financial levers, like additional income sources or changing pension regulations.
+- **User Account Integration**: Implementing user accounts could allow for saving multiple scenarios and comparing different pension strategies.
+
+## Conclusion
+
+Building the UK Pension Projection Calculator was as much a personal journey as it was a technical challenge. It required careful consideration of user experience, financial accuracy, and scalable code design. The result is a tool that not only serves my needs but hopefully, can help others navigate their financial futures with greater clarity and confidence.
+
+Whether you're a seasoned developer or just starting, I hope this overview provides insight into the process of building a comprehensive tool and inspires you to tackle the challenges that come with developing solutions for complex, real-world problems.
