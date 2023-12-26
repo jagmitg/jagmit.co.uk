@@ -17,8 +17,8 @@
     "test": "playwright test",
     "fmt": "prettier -w --plugin-search-dir=. .",
     "fmt:check": "prettier --check .",
-    "cache": "ts-node --esm scripts/generatecache.ts",
-    "repo": "NODE_TLS_REJECT_UNAUTHORIZED=0 ts-node --esm scripts/fetchRepos.ts",
+    "cache": "node --no-warnings=ExperimentalWarning --experimental-specifier-resolution=node --loader ts-node/esm scripts/generatecache.ts",
+    "repo": "node --no-warnings=ExperimentalWarning --experimental-specifier-resolution=node --loader ts-node/esm scripts/fetchRepos.ts",
     "stackoverflow": "ts-node --esm scripts/fetchStackoverflow.ts"
   },
   "devDependencies": {
