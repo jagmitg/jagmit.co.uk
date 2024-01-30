@@ -28,6 +28,11 @@ export const PAGE_LINKS = <const>[
   },
   {
     icon: "🗒",
+    title: "tools",
+    href: "/tools/",
+  },
+  {
+    icon: "🗒",
     title: "stackoverflow",
     href: "/stackoverflow/",
   },

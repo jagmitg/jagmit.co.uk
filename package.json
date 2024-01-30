@@ -19,7 +19,7 @@
     "fmt:check": "prettier --check .",
     "cache": "node --no-warnings=ExperimentalWarning --experimental-specifier-resolution=node --loader ts-node/esm scripts/generatecache.ts",
     "repo": "node --no-warnings=ExperimentalWarning --experimental-specifier-resolution=node --loader ts-node/esm scripts/fetchRepos.ts",
-    "stackoverflow": "ts-node --esm scripts/fetchStackoverflow.ts"
+    "stackoverflow": "node --no-warnings=ExperimentalWarning --experimental-specifier-resolution=node --loader ts-node/esm scripts/fetchStackoverflow.ts"
   },
   "devDependencies": {
     "@playwright/test": "^1.35.1",

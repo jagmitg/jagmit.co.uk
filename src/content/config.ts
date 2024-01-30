@@ -22,7 +22,17 @@ const repoCollection = defineCollection({
   }),
 });
 
+const toolsCollection = defineCollection({
+  schema: z.object({
+    title: z.string(),
+    url: z.string(),
+    backgroundImage: z.string().optional(),
+    isDraft: z.boolean().default(true),
+  }),
+});
+
 export const collections = <const>{
   blog: blogCollection,
   repo: repoCollection,
+  tool: toolsCollection,
 };

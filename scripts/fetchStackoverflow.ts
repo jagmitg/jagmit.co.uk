@@ -36,11 +36,9 @@ async function fetchAllAnswers(): Promise<number[]> {
       };
       if (!data.items || data.items.length === 0) break;
 
-      // Filter the items based on the conditions
       const filteredItems = data.items.filter(
         (item) => item.is_accepted || item.score > 0,
       );
-
       allAnswers = [
         ...allAnswers,
         ...filteredItems.map((item) => item.question_id),
@@ -95,8 +93,11 @@ async function fetchDataAndSaveToJson(): Promise<void> {
     });
   }
 
-  // Sort the results by creation_date
-  results.sort((a, b) => b.creation_date - a.creation_date);
+  results.sort((a, b) => {
+    const dateA = Number(a.creation_date);
+    const dateB = Number(b.creation_date);
+    return dateB - dateA;
+  });
 
   results.forEach((item, index) => {
     (item as any).key = index + 1;
@@ -106,7 +107,7 @@ async function fetchDataAndSaveToJson(): Promise<void> {
     `Imported details for ${results.length} questions out of ${allQuestionIds.length} unique questions.`,
   );
 
-  console.log("Saving data to 'src/data/stackoverflow.json'...");
+  console.log('Saving data to "src/data/stackoverflow.json"...');
   const output = {
     fetched_data: { date_stamp: new Date().toISOString() },
     data: results,
