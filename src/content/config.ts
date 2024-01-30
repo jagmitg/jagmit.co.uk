@@ -24,6 +24,7 @@ const repoCollection = defineCollection({
 
 const toolsCollection = defineCollection({
   schema: z.object({
+    date: z.date(),
     title: z.string(),
     url: z.string(),
     backgroundImage: z.string().optional(),

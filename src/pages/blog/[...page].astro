@@ -7,7 +7,7 @@ import { getBlogsAndRepos, getAllTags } from "@utils/collections";
 import { BLOG_DESCRIPTION, PAGINATE_CONTENT } from "@const";
 
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
-  const allPosts = await Astro.glob("../../content/**/*.{md,mdx}");
+  const allPosts = await Astro.glob("../../content/{blog,repo}/*.{md,mdx}");
 
   const slugify = (filePath: string) => {
     if (filePath.endsWith("/")) {
