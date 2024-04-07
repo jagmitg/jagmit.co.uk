@@ -17,7 +17,6 @@ const indices = headings.filter((heading) => heading.depth < 4);
 const { title, description, image } = frontmatter;
 const { allCollections: posts } = await getBlogsAndRepos();
 
-
 const index = posts.findIndex(
   ({ slug }) =>
     slug.replace(/^\//, "") ===
@@ -57,20 +56,23 @@ const index = posts.findIndex(
             height={20 * 4}
           />
         </div>
-        <div class="mb-4">
-          <div class="text-lg">&#128278; Post Contents</div>
-          <ol class="mt-4">
-            {
-              indices.map(({ slug, text, depth }) => (
-                <li style={{ marginLeft: `${(depth - 1) * 12}px` }}>
-                  <a href={`#${slug}`} class="text-sm hover:text-blue-800">
-                    &#9758; {text}
-                  </a>
-                </li>
-              ))
-            }
-          </ol>
-        </div>
+        {
+          indices.length > 0 && (
+            <div class="mb-4">
+              <div class="text-lg">&#128278; Post Contents</div>
+              <ol class="mt-4">
+                {indices.map(({ slug, text, depth }) => (
+                  <li style={{ marginLeft: `${(depth - 1) * 12}px` }}>
+                    <a href={`#${slug}`} class="text-sm hover:text-blue-800">
+                      &#9758; {text}
+                    </a>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          )
+        }
+
         <div>
           <Archives />
         </div>
@@ -82,11 +84,19 @@ const index = posts.findIndex(
         index !== -1 && (
           <Pagination
             prev={index !== 0 ? posts[index - 1].slug : undefined}
-            prevText={index !== 0 ? (posts[index - 1].data as { title: string }).title : undefined}
+            prevText={
+              index !== 0
+                ? (posts[index - 1].data as { title: string }).title
+                : undefined
+            }
             next={
               index !== posts.length - 1 ? posts[index + 1].slug : undefined
             }
-            nextText={index !== posts.length - 1 ? (posts[index + 1].data as { title: string }).title : undefined}
+            nextText={
+              index !== posts.length - 1
+                ? (posts[index + 1].data as { title: string }).title
+                : undefined
+            }
             className="mt-3 flex-col md:flex-row gap-2 text-center"
           />
         )
@@ -105,7 +115,7 @@ const index = posts.findIndex(
     @apply sm:text-base;
   }
   .blog h1,
-  .blog h2{
+  .blog h2 {
     @apply font-semibold text-blue-500 mt-10 mb-1;
   }
   .blog h1 {
@@ -173,7 +183,7 @@ const index = posts.findIndex(
   }
 
   .blog code:not([data-gist-id]) {
-    @apply bg-blue-500 px-2 py-0.5 rounded-lg text-white text-sm
+    @apply bg-blue-500 px-2 py-0.5 rounded-lg text-white text-sm;
   }
 
   .blog code table {
