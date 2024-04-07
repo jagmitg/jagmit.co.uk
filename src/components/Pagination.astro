@@ -24,14 +24,14 @@ const { prev, prevText = "Back", next, nextText = "Next Page" } = Astro.props;
           className="flex items-center justify-start text-blue-500 hover:no-underline"
         >
           <svg
-            class="w-6 h-6 rotate-90"
+            class="w-6 h-6 rotate-90 mr-2"
             fill="currentColor"
             viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg"
           >
             <Arrow />
           </svg>
-          <span class="ml-2">{prevText}</span>
+          <span>{prevText}</span>
         </Link>
       ) : (
         <div />
@@ -52,6 +52,7 @@ const { prev, prevText = "Back", next, nextText = "Next Page" } = Astro.props;
             fill="currentColor"
             viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg"
+            style="flex-shrink: 0;"
           >
             <Arrow />
           </svg>
