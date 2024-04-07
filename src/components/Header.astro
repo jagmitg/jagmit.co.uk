@@ -35,7 +35,14 @@ import { PAGE_LINKS } from "@const";
       <div class="text-lg lg:flex-grow">
         {
           PAGE_LINKS.map(({ title, href }) => {
-            let currentPage = Astro.url.pathname === href;
+            let currentPage;
+            if (href === "/") {
+              currentPage = Astro.url.pathname === href;
+            } else {
+              currentPage =
+                Astro.url.pathname.startsWith(href) &&
+                Astro.url.pathname !== "/";
+            }
             return (
               <a
                 href={href}
