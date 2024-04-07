@@ -83,21 +83,22 @@ const index = posts.findIndex(
       {
         index !== -1 && (
           <Pagination
-            prev={index !== 0 ? posts[index - 1].slug : undefined}
+            prev={index !== 0 ? `/blog/${posts[index - 1].slug}/` : undefined}
             prevText={
               index !== 0
                 ? (posts[index - 1].data as { title: string }).title
                 : undefined
             }
             next={
-              index !== posts.length - 1 ? posts[index + 1].slug : undefined
+              index !== posts.length - 1
+                ? `/blog/${posts[index + 1].slug}/`
+                : undefined
             }
             nextText={
               index !== posts.length - 1
                 ? (posts[index + 1].data as { title: string }).title
                 : undefined
             }
-            className="mt-3 flex-col md:flex-row gap-2 text-center"
           />
         )
       }
