@@ -3,84 +3,62 @@ import Layout from "@layouts/Layout.astro";
 import MainLayout from "@layouts/MainLayout.astro";
 import Code from "@components/Code.astro";
 import { formatDate } from "@utils/formatDate";
-import { getBlogsAndRepos } from "@utils/collections";
-import type { BlogOrRepoEntry, RepoEntry, BlogEntry } from "@utils/collections";
+import { getSortedPosts } from "@utils/collections";
 import External from "@components/icons/External.astro";
 
-const { allCollections } = await getBlogsAndRepos();
-
-const posts = allCollections.sort((b, a) => {
-  function getTimestamp(date: any): number {
-    return date instanceof Date ? date.valueOf() : new Date(date).valueOf();
-  }
-
-  const aValue = a.data.date ? getTimestamp(a.data.date) : 0;
-  const bValue = b.data.date ? getTimestamp(b.data.date) : 0;
-
-  return aValue - bValue;
-});
-
-function isRepoEntry(entry: BlogOrRepoEntry): entry is RepoEntry {
-  return "repo" in entry.data;
-}
-
-function isBlogEntry(entry: BlogOrRepoEntry): entry is BlogEntry {
-  return "image" in entry.data;
-}
-
+const allBlogPosts = await getSortedPosts();
 ---
 
 <Layout>
-  <MainLayout title="About">
-    <p class="prose prose-neutral leading-8">
-      Principal Full-Stack Engineer with 12+ years of experience in open-source
-      technologies. A fervent accessibility advocate, Jag champions an inclusive
-      web, demonstrating technical excellence in <Code>TypeScript</Code>,
-      <Code>JavaScript</Code>, <Code>Node.js</Code>, <Code>Python</Code>, and
-      with a focus on Front-end technologies including <Code>React</Code>,
-      <Code>Angular</Code> and <Code>Vue</Code>. He's also a dedicated DevOps
-      enthusiast and a strong believer in test-driven development.
-    </p>
-    <p class="prose prose-neutral leading-8">
-      If you have requests for talking, writing, and so on, feel free to ping me
-      on my email <Code>jag[at]jagmit.co.uk</Code> .
-    </p>
-    <div class="grid gap-4 grid-cols-2 grid-rows-2 mt-5 lg:grid-cols-4">
-      {
-        posts.slice(0, 8).map((post: BlogOrRepoEntry) => {
-          const backgroundImage =
-            isBlogEntry(post) && post.data.image
-              ? post.data.image
-              : "/images/brands/github-big.png";
+  <!-- <MainLayout title="About"> -->
+  <p class="prose prose-neutral leading-8">
+    Principal Full-Stack Engineer with 12+ years of experience in open-source
+    technologies. A fervent accessibility advocate, Jag champions an inclusive
+    web, demonstrating technical excellence in <Code>TypeScript</Code>,
+    <Code>JavaScript</Code>, <Code>Node.js</Code>, <Code>Python</Code>, and with
+    a focus on Front-end technologies including <Code>React</Code>,
+    <Code>Angular</Code> and <Code>Vue</Code>. He's also a dedicated DevOps
+    enthusiast and a strong believer in test-driven development.
+  </p>
+  <p class="prose prose-neutral leading-8">
+    If you have requests for talking, writing, and so on, feel free to ping me
+    on my email <Code>jag[at]jagmit.co.uk</Code> .
+  </p>
+  <div class="grid gap-4 grid-cols-2 grid-rows-2 mt-5 lg:grid-cols-4">
+    {
+      allBlogPosts.slice(0, 8).map((post) => {
+        const backgroundImage =
+          !post.data.repo && post.data.image
+            ? post.data.image
+            : "/images/brands/github-big.png";
 
-          return (
-            <a
-              href={
-                isRepoEntry(post)
-                  ? post.data.repo || `/blog/${post.slug}/`
-                  : `/blog/${post.slug}/`
-              }
-              class="homepage-recent-blog p-4 border border-neutral-200 bg-neutral-50 rounded flex items-center justify-between px-3 py-4 w-full transform hover:-translate-y-2 hover:bg-neutral-200 transition relative shadow-md hover:shadow-xl"
-              style={`--bg-url: url(${backgroundImage}); background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.95)), var(--bg-url); background-size: cover; background-position: center;`}
-            >
-              <div class="flex flex-col ">
-                <p class="text-white text-sm">
-                  {formatDate(new Date(post.data.date))}
-                </p>
-                <p class="font-bold text-white">{post.data.title}</p>
-
-                {isRepoEntry(post) && (
-                  <div class="absolute right-3 top-3 external-svg">
-                    <External />
-                  </div>
-                )}
-              </div>
-            </a>
-          );
-        })
-      }
-    </div>
-  </MainLayout>
+        return (
+          <a
+            href={
+              post.data.repo
+                ? post.data.repo || `/blog/${post.slug}/`
+                : `/blog/${post.slug}/`
+            }
+            class="homepage-recent-blog p-4 border border-neutral-200 bg-neutral-50 rounded flex items-center justify-between px-3 py-4 w-full transform hover:-translate-y-2 hover:bg-neutral-200 transition relative shadow-md hover:shadow-xl"
+            style={`--bg-url: url(${backgroundImage}); background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.95)), var(--bg-url); background-size: cover; background-position: center;`}
+          >
+            <div class="flex flex-col ">
+              <p class="text-white text-sm">
+                {formatDate(new Date(post.data.date))}
+              </p>
+              <p class="font-bold text-white">{post.data.title}</p>
+              {post.data.repo && (
+                <div class="absolute right-3 top-3 external-svg">
+                  <External />
+                </div>
+              )}
+            </div>
+          </a>
+        );
+      })
+    }
+  </div>
+  <!-- </MainLayout> -->
 </Layout>
 
 <style is:inline>

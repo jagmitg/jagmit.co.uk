@@ -1,28 +1,20 @@
-import { defineCollection, z } from "astro:content";
+import { z, defineCollection } from 'astro:content';
 
 const blogCollection = defineCollection({
+  type: 'content',
   schema: z.object({
     date: z.string().transform((str) => new Date(str)),
     title: z.string(),
     description: z.string().optional(),
     image: z.string().optional(),
-    tags: z.string(),
+    tags: z.array(z.string()).optional(),
+    repo: z.string().optional(),
     isDraft: z.boolean().default(false),
   }),
 });
 
-const repoCollection = defineCollection({
-  schema: z.object({
-    date: z.date(),
-    title: z.string(),
-    description: z.string().optional(),
-    repo: z.string(),
-    tags: z.string(),
-    isDraft: z.boolean().default(true),
-  }),
-});
-
 const toolsCollection = defineCollection({
+  type: 'content',
   schema: z.object({
     date: z.date(),
     title: z.string(),
@@ -34,6 +26,5 @@ const toolsCollection = defineCollection({
 
 export const collections = <const>{
   blog: blogCollection,
-  repo: repoCollection,
   tool: toolsCollection,
 };
