@@ -24,7 +24,7 @@ import { PAGE_LINKS } from "@const";
         <h1
           class="font-bold text-3xl sm:text-2xl text-center sm:text-left text-gray-900 flex flex-wrap sm:block"
         >
-          <span>Hi, i'm jag &#128513; <br />nice to meet you!</span>
+          <span>Hi, I'm Jag &#128513; <br />Nice to meet you!</span>
         </h1>
       </div>
     </div>
@@ -33,28 +33,26 @@ import { PAGE_LINKS } from "@const";
       class="heading-nav w-full block flex-grow lg:flex sm:w-auto text-center sm:text-right"
     >
       <div class="text-lg lg:flex-grow">
-        {
-          PAGE_LINKS.map(({ title, href }) => {
-            let currentPage;
-            if (href === "/") {
-              currentPage = Astro.url.pathname === href;
-            } else {
-              currentPage =
-                Astro.url.pathname.startsWith(href) &&
-                Astro.url.pathname !== "/";
-            }
-            return (
-              <a
-                href={href}
-                class={`transition-all block mt-4 lg:inline-block lg:mt-0 ${
-                  currentPage ? "current-page-class" : ""
-                } hover:text-neutral-800`}
-              >
-                <span class="relative py-1 px-2">{title}</span>
-              </a>
-            );
-          })
-        }
+        {PAGE_LINKS.map(({ title, href }) => {
+          let currentPage: boolean;
+          if (href === "/") {
+            currentPage = Astro.url.pathname === href;
+          } else {
+            currentPage =
+              Astro.url.pathname.startsWith(href) &&
+              Astro.url.pathname !== "/";
+          }
+          return (
+            <a
+              href={href}
+              class={`transition-all block mt-4 lg:inline-block lg:mt-0 ${
+                currentPage ? "current-page-class" : ""
+              } hover:text-neutral-800`}
+            >
+              <span class="relative py-1 px-2">{title}</span>
+            </a>
+          );
+        })}
       </div>
     </div>
   </nav>
@@ -142,7 +140,7 @@ import { PAGE_LINKS } from "@const";
   }
 </style>
 
-<script>
+<script is:inline>
   const links = document.querySelectorAll("header nav a");
 
   links.forEach((link) => {

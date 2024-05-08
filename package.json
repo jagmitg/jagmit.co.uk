@@ -17,9 +17,9 @@
     "test": "playwright test",
     "fmt": "prettier -w --plugin-search-dir=. .",
     "fmt:check": "prettier --check .",
-    "cache": "node --no-warnings=ExperimentalWarning --experimental-specifier-resolution=node --loader ts-node/esm scripts/generatecache.ts",
-    "repo": "node --no-warnings=ExperimentalWarning --experimental-specifier-resolution=node --loader ts-node/esm scripts/fetchRepos.ts",
-    "stackoverflow": "node --no-warnings=ExperimentalWarning --experimental-specifier-resolution=node --loader ts-node/esm scripts/fetchStackoverflow.ts"
+    "cache": "tsx scripts/generatecache.ts",
+    "repo": "tsx scripts/fetchRepos.ts",
+    "stackoverflow": "tsx scripts/fetchStackoverflow.ts"
   },
   "devDependencies": {
     "@playwright/test": "^1.35.1",
@@ -35,12 +35,12 @@
     "serve": "^14.2.1",
     "sharp": "^0.33.1",
     "strip-markdown": "^6.0.0",
+    "tsx": "^4.9.3",
     "yaml": "^2.3.4"
   },
   "dependencies": {
     "@astrojs/check": "^0.3.3",
     "@astrojs/mdx": "^2.0.1",
-    "@astrojs/partytown": "^2.0.2",
     "@astrojs/rss": "^4.0.1",
     "@astrojs/sitemap": "^3.0.3",
     "@astrojs/tailwind": "^5.0.3",
@@ -56,7 +56,6 @@
     "stylelint-config-property-sort-order-smacss": "^10.0.0",
     "stylelint-order": "^6.0.4",
     "stylelint-scss": "^6.0.0",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.3.3"
+    "typescript": "^5.4.5"
   }
 }

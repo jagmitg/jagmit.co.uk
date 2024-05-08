@@ -61,12 +61,14 @@ async function createMDFiles(): Promise<void> {
         const repoDate = new Date(repo.created_at).toISOString().slice(0, 10);
         const languageKeys = Object.keys(languages).join(", ");
         const content = `---
-title: ${repo.name}
-date: ${repoDate}
-description: ${repo.description}
-repo: ${repo.html_url}
-tags: ${languageKeys}
+title: "${repo.name}"
+date: "${repoDate}"
+description: "${repo.description.replace(/"/g, '\\"')}"
+repo: "${repo.html_url}"
+tags: [${languageKeys.split(", ").map(key => `${key}`).join(", ")}]
+draft: false
 ---`;
+
 
         return writeFile(
           path.join(REPO_FETCH_SETTINGS.targetFolder, `${repo.name}.mdx`),
