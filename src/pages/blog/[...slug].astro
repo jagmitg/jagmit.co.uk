@@ -1,28 +1,19 @@
 ---
 import BlogLayout from "@layouts/BlogLayout.astro";
-import { getCollection } from "astro:content";
+import { getSortedPosts } from "@utils/collections";
 import { readingTime } from "@utils/readingTime";
 import type { CollectionEntry } from "astro:content";
 
 export async function getStaticPaths() {
-  const blogEntries = await getCollection("blog", ({ data }) => {
-    return import.meta.env.PROD ? !data.draft : true;
-  });
+  const blogEntries = await getSortedPosts();
 
-  const paths = blogEntries.map((entry) => {
-    // More robust regex to ensure directory prefixes are removed
-    let normalizedSlug = entry.slug.replace(/^(content|repo)\//, '');
-    console.log(`Generated slug: ${normalizedSlug}`);  // Logging the normalized slug for debugging
-    return {
-      params: { slug: normalizedSlug },
-      props: { entry },
-    };
-  });
+  const paths = blogEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
 
-  console.log(paths);  // Log all generated paths for verification
   return paths;
 }
-``
 
 
 const { entry } = Astro.props as {
@@ -30,7 +21,7 @@ const { entry } = Astro.props as {
 };
 
 const { Content } = await entry.render();
-const headings = entry.data.headings || [];
+const headings = [];
 ---
 
 <BlogLayout headings={headings} frontmatter={entry.data}>

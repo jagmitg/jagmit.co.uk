@@ -12,12 +12,6 @@ const blogCollection = defineCollection({
     repo: z.string().optional(),
     draft: z.boolean()
   }),
-  filePathPattern: 'blog/**/*.{md,mdx}',
-  slug({ filePath }) {
-    const newPath = filePath.split('/').filter(part => !['content', 'repo'].includes(part)).join('/');
-    console.log(`Original Path: ${filePath}, New Path: ${newPath}`); // This will log the paths
-    return newPath;
-  },
 });
 
 const toolsCollection = defineCollection({

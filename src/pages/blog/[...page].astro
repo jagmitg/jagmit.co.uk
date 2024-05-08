@@ -6,52 +6,46 @@ import Layout from "@layouts/Layout.astro";
 import MainLayout from "@layouts/MainLayout.astro";
 import BlogCardItem from "@components/BlogCardItem.astro";
 import { BLOG_DESCRIPTION, PAGINATE_CONTENT } from "@const";
+import type { CollectionEntry } from "astro:content";
 
-interface BlogPost {
+interface EnhancedBlogPost extends Omit<CollectionEntry<'blog'>, 'slug'> {
   slug: string;
-  data: {
-    date?: string;
-    repo?: string;
-  };
 }
 
 interface YearMonthAccumulator {
-  [key: string]: BlogPost[];
+  [key: string]: EnhancedBlogPost[];
 }
 
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
-  let allBlogPosts = await getSortedPosts();
+  let enhancedBlogPosts: EnhancedBlogPost[] = await getSortedPosts() as unknown as EnhancedBlogPost[];
 
-  // Normalize slugs to ensure no folder names are included
-  allBlogPosts = allBlogPosts.map(post => ({
-    ...post,
-    slug: post.slug.replace(/^(content|repo)\//, '')
-  }));
+  if (!enhancedBlogPosts.length) {
+    console.log("No enhanced posts available for pagination");
+  }
 
-  return paginate(allBlogPosts, {
+  return paginate(enhancedBlogPosts, {
     pageSize: PAGINATE_CONTENT,
   });
 }
 
-const { page } = Astro.props;
-const monthNames = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
+const { page } = Astro.props as {
+  page: {
+    data: EnhancedBlogPost[],
+    url: {
+      prev: string,
+      next: string
+    }
+  };
+};
+const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
-function organizePostsByMonth(posts: BlogPost[]): YearMonthAccumulator {
-  return posts.reduce((acc: YearMonthAccumulator, post: BlogPost) => {
-    if (!post.data || !post.data.date) return acc;
+function organizePostsByMonth(posts: EnhancedBlogPost[]): YearMonthAccumulator {
+  return posts.reduce((acc: YearMonthAccumulator, post: EnhancedBlogPost) => {
+    if (!post || !post.data || !post.data.date) {
+      console.log("Skipping post due to incomplete data:", post);
+      return acc;
+    }
+
     const date = new Date(post.data.date);
     const year = date.getFullYear();
     const monthIndex = date.getMonth();
@@ -68,29 +62,23 @@ function sortedMonthKeys(monthData: YearMonthAccumulator): string[] {
 ---
 
 <Layout title="Read my Blog" description={BLOG_DESCRIPTION}>
-  <MainLayout
-    title="Read my blog..."
-    pagination={{ prev: page.url.prev, next: page.url.next }}
-    dropdowns={true}
-  >
-    {
-      sortedMonthKeys(organizePostsByMonth(page.data)).map(yearMonth => {
-        const [year, monthIndex] = yearMonth.split("-");
-        const monthName = monthNames[parseInt(monthIndex, 10) - 1];
-        return (
-          <>
-            <h3 class="text-xl mb-4 border-b pb-4">{`${monthName} ${year}`}</h3>
-            {organizePostsByMonth(page.data)[yearMonth].map(post => (
-              <BlogCardItem
-                key={post.slug}
-                url={post.data.repo ? post.data.repo : `/blog/${post.slug}/`}
-                frontmatter={post.data}
-                repo={!!post.data.repo}
-              />
-            ))}
-          </>
-        );
-      })
-    }
+  <MainLayout title="Read my blog..." pagination={{ prev: page.url.prev, next: page.url.next }} dropdowns={true}>
+    {sortedMonthKeys(organizePostsByMonth(page.data)).map(yearMonth => {
+      const [year, monthIndex] = yearMonth.split("-");
+      const monthName = monthNames[parseInt(monthIndex, 10) - 1];
+      return (
+        <>
+          <h3 class="text-xl mb-4 border-b pb-4">{`${monthName} ${year}`}</h3>
+          {organizePostsByMonth(page.data)[yearMonth].map(post => (
+            <BlogCardItem
+              key={post.slug}
+              url={post.data.repo ? post.data.repo : `/blog/${post.slug}/`}
+              frontmatter={post.data}
+              repo={!!post.data.repo}
+            />
+          ))}
+        </>
+      );
+    })}
   </MainLayout>
 </Layout>
