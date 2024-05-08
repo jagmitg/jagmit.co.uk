@@ -1,28 +1,27 @@
 ---
-import { getBlogsAndRepos } from "@utils/collections";
+import { getSortedPosts, getTagList } from "@utils/collections";
 import Dropdown from "@components/Dropdown.astro";
 import Breadcrumb from "@components/icons/Breadcrumb.astro";
 import Pagination from "@components/Pagination.astro";
 
 type Props = {
   title?: string;
-  tags?: string[];
   breadcrumb?: boolean;
   pagination?: any;
+  dropdowns?: boolean;
 };
 
-const { title, tags, breadcrumb, pagination } = Astro.props;
+const { title, breadcrumb, pagination, dropdowns } = Astro.props;
 
-const allPosts = (await getBlogsAndRepos()).allCollections;
+const allPosts = await getSortedPosts();
+const allTags = await getTagList();
 const postYears = new Map();
 
-allPosts.forEach((post: any) => {
+allPosts.forEach((post) => {
   const year = new Date(post.data.date).getFullYear();
-
-  if (!postYears.get(year)) {
+  if (!postYears.has(year)) {
     postYears.set(year, []);
   }
-
   postYears.get(year).push(post);
 });
 
@@ -42,7 +41,11 @@ if (archiveIndex !== -1 && archiveIndex + 1 < pathParts.length) {
   currentYear = pathParts[archiveIndex + 1];
 }
 
-const tagOptions = tags?.map((tag) => ({ label: tag, value: tag }));
+const tagOptions = allTags.map((tag) => ({
+  label: `${tag.name} (${tag.count})`,
+  value: tag.name,
+}));
+
 const archiveOptions = [...postYears.entries()].map(
   ([archiveYear, archivePosts]) => ({
     label: `${archiveYear} (${archivePosts.length})`,
@@ -51,43 +54,45 @@ const archiveOptions = [...postYears.entries()].map(
 );
 ---
 
-{
-  title && (
-    <div class="flex flex-col sm:flex-row justify-between sm:justify-between items-center pb-6">
-      <h2 class="text-2xl text-center sm:text-left mb-4 sm:mb-0 flex items-center">
-        {breadcrumb ? (
-          <>
-            <a href="/blog/" class="mr-2">
-              Blog
-            </a>
-            <Breadcrumb />
-            <span>{title}</span>
-          </>
-        ) : (
-          title
-        )}
-      </h2>
+<div
+  class="flex flex-col sm:flex-row justify-between sm:justify-between items-center pb-6"
+>
+  <h2 class="text-2xl text-center sm:text-left mb-4 sm:mb-0 flex items-center">
+    {
+      breadcrumb ? (
+        <>
+          <a href="/blog/" class="mr-2">
+            Blog
+          </a>
+          <Breadcrumb />
+          <span>{title}</span>
+        </>
+      ) : (
+        title
+      )
+    }
+  </h2>
 
-      {tags && (
-        <div class="flex flex-wrap">
-          <Dropdown
-            options={tagOptions}
-            currentSelection={currentTag}
-            baseUrl="/blog/tags/"
-            placeholder="tags..."
-          />
+  {
+    dropdowns && (
+      <div class="flex flex-wrap">
+        <Dropdown
+          options={tagOptions}
+          currentSelection={currentTag || ""}
+          baseUrl="/blog/tags/"
+          placeholder="Select a tag..."
+        />
 
-          <Dropdown
-            options={archiveOptions}
-            currentSelection={currentYear}
-            baseUrl="/blog/archive/"
-            placeholder="archives..."
-          />
-        </div>
-      )}
-    </div>
-  )
-}
+        <Dropdown
+          options={archiveOptions}
+          currentSelection={currentYear || ""}
+          baseUrl="/blog/archive/"
+          placeholder="Select a year..."
+        />
+      </div>
+    )
+  }
+</div>
 
 <slot />
 

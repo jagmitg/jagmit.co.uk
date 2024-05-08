@@ -14,7 +14,8 @@
       "@layouts/*": ["src/layouts/*"],
       "@utils/*": ["src/utils/*"],
       "@const": ["src/constants"],
-      "@data/*": ["src/data"]
+      "@data/*": ["src/data"],
+      "@content/*": ["src/content/*"]
     },
     "verbatimModuleSyntax": true
   }

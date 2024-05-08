@@ -1,17 +1,11 @@
 ---
-import { parseTags } from "@utils/collections";
+// import { parseTags } from "@utils/collections";
 import { formatDate } from "@utils/formatDate";
 import External from "@components/icons/External.astro";
 
 import type { CollectionEntry } from "astro:content";
-type Props = {
-  url: string;
-  frontmatter: CollectionEntry<"blog">["data"];
-  repo: boolean;
-};
 
 const { url, frontmatter, repo } = Astro.props;
-
 ---
 
 <a
@@ -46,13 +40,13 @@ const { url, frontmatter, repo } = Astro.props;
         >
           {formatDate(new Date(frontmatter.date))}
         </span>
-        {
+        <!-- {
           parseTags(frontmatter.tags).map((tag) => (
             <span class="bg-gray-200 text-gray-700 rounded-lg px-3 py-1 text-sm font-semibold mr-2 mb-2 whitespace-normal">
               #{tag}
             </span>
           ))
-        }
+        } -->
       </div>
     </div>
   </div>

@@ -1,61 +1,39 @@
 ---
+// Astro Component Imports and Setup
 import type { GetStaticPathsOptions } from "astro";
+import { getSortedPosts } from "@utils/collections";
 import Layout from "@layouts/Layout.astro";
 import MainLayout from "@layouts/MainLayout.astro";
 import BlogCardItem from "@components/BlogCardItem.astro";
-import { getBlogsAndRepos, getAllTags } from "@utils/collections";
 import { BLOG_DESCRIPTION, PAGINATE_CONTENT } from "@const";
 
+interface BlogPost {
+  slug: string;
+  data: {
+    date?: string;
+    repo?: string;
+  };
+}
+
+interface YearMonthAccumulator {
+  [key: string]: BlogPost[];
+}
+
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
-  const allPosts = (await Astro.glob(
-    "../../content/{blog,repo}/*.{md,mdx}",
-  )) as any;
+  let allBlogPosts = await getSortedPosts();
 
-  const monthNames = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
+  // Normalize slugs to ensure no folder names are included
+  allBlogPosts = allBlogPosts.map(post => ({
+    ...post,
+    slug: post.slug.replace(/^(content|repo)\//, '')
+  }));
 
-  const formattedPosts = allPosts
-    .map((post: any) => {
-      const slugParts = post.url.split("/").filter(Boolean);
-      const fileName = slugParts.pop();
-      const slug = fileName.replace(/\.(md|mdx)$/, "");
-
-      return {
-        ...post,
-        slug: slug ? `${slug}` : "/",
-        year: new Date(post.frontmatter.date).getFullYear(),
-        month: monthNames[new Date(post.frontmatter.date).getMonth()],
-        sortKey: `${new Date(post.frontmatter.date).getFullYear()}-${(
-          new Date(post.frontmatter.date).getMonth() + 1
-        )
-          .toString()
-          .padStart(2, "0")}`,
-      };
-    })
-    .filter((post: any) => !post.frontmatter.isDraft)
-    .sort((a: any, b: any) => b.sortKey.localeCompare(a.sortKey));
-
-  return paginate(formattedPosts, {
+  return paginate(allBlogPosts, {
     pageSize: PAGINATE_CONTENT,
   });
 }
-const { allCollections } = await getBlogsAndRepos();
-const allTags = getAllTags(allCollections);
 
 const { page } = Astro.props;
-
 const monthNames = [
   "January",
   "February",
@@ -70,46 +48,49 @@ const monthNames = [
   "November",
   "December",
 ];
+
+function organizePostsByMonth(posts: BlogPost[]): YearMonthAccumulator {
+  return posts.reduce((acc: YearMonthAccumulator, post: BlogPost) => {
+    if (!post.data || !post.data.date) return acc;
+    const date = new Date(post.data.date);
+    const year = date.getFullYear();
+    const monthIndex = date.getMonth();
+    const yearMonthKey = `${year}-${monthIndex + 1}`;
+    acc[yearMonthKey] = acc[yearMonthKey] || [];
+    acc[yearMonthKey].push(post);
+    return acc;
+  }, {});
+}
+
+function sortedMonthKeys(monthData: YearMonthAccumulator): string[] {
+  return Object.keys(monthData).sort((a, b) => b.localeCompare(a));
+}
 ---
 
 <Layout title="Read my Blog" description={BLOG_DESCRIPTION}>
   <MainLayout
     title="Read my blog..."
-    tags={allTags}
     pagination={{ prev: page.url.prev, next: page.url.next }}
+    dropdowns={true}
   >
     {
-      Object.entries(
-        page.data.reduce((acc: any, curr: any) => {
-          const yearMonthKey = `${curr.year}-${curr.sortKey.split("-")[1]}`;
-          if (!acc[yearMonthKey]) {
-            acc[yearMonthKey] = [];
-          }
-          acc[yearMonthKey].push(curr);
-          return acc;
-        }, {}),
-      )
-        .sort(([keyA], [keyB]) => keyB.localeCompare(keyA))
-        .map(([yearMonth, posts]) => {
-          const [year, monthIndex] = yearMonth.split("-");
-          const monthName = monthNames[parseInt(monthIndex, 10) - 1];
-          return (
-            <>
-              <h3 class="text-xl mb-4 border-b pb-4">{`${monthName} ${year}`}</h3>
-              {posts.map((post) => (
-                <BlogCardItem
-                  url={
-                    post.frontmatter.repo
-                      ? post.frontmatter.repo
-                      : `/blog/${post.slug}/`
-                  }
-                  frontmatter={post.frontmatter}
-                  repo={!!post.frontmatter.repo}
-                />
-              ))}
-            </>
-          );
-        })
+      sortedMonthKeys(organizePostsByMonth(page.data)).map(yearMonth => {
+        const [year, monthIndex] = yearMonth.split("-");
+        const monthName = monthNames[parseInt(monthIndex, 10) - 1];
+        return (
+          <>
+            <h3 class="text-xl mb-4 border-b pb-4">{`${monthName} ${year}`}</h3>
+            {organizePostsByMonth(page.data)[yearMonth].map(post => (
+              <BlogCardItem
+                key={post.slug}
+                url={post.data.repo ? post.data.repo : `/blog/${post.slug}/`}
+                frontmatter={post.data}
+                repo={!!post.data.repo}
+              />
+            ))}
+          </>
+        );
+      })
     }
   </MainLayout>
 </Layout>

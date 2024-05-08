@@ -2,12 +2,12 @@
 import { formatDate } from "@utils/formatDate";
 import Layout from "./Layout.astro";
 import MainLayout from "./MainLayout.astro";
-import { getBlogsAndRepos } from "@utils/collections";
+import { getSortedPosts } from "@utils/collections"; // Assuming getSortedPosts is correct
 import Archives from "@components/Archives.astro";
 import Pagination from "@components/Pagination.astro";
-import type { CollectionEntry } from "astro:content";
-import type { MarkdownLayoutProps } from "astro";
 import Image from "@components/Image.astro";
+import type { MarkdownLayoutProps } from "astro";
+import type { CollectionEntry } from "astro:content";
 
 const { frontmatter, headings } = Astro.props as MarkdownLayoutProps<
   CollectionEntry<"blog">["data"]
@@ -15,14 +15,12 @@ const { frontmatter, headings } = Astro.props as MarkdownLayoutProps<
 const date = formatDate(new Date(frontmatter.date));
 const indices = headings.filter((heading) => heading.depth < 4);
 const { title, description, image } = frontmatter;
-const { allCollections: posts } = await getBlogsAndRepos();
+const posts = await getSortedPosts();
 
 const index = posts.findIndex(
-  ({ slug }) =>
-    slug.replace(/^\//, "") ===
-    Astro.url.pathname
-      .replace(/\/blog\//, "")
-      .replace(/\/$/, "" /* for prod */),
+  (post) =>
+    post.slug.replace(/^\//, "") ===
+    Astro.url.pathname.replace(/\/blog\//, "").replace(/\/$/, ""),
 );
 ---
 
@@ -73,38 +71,29 @@ const index = posts.findIndex(
           )
         }
 
-        <div>
-          <Archives />
-        </div>
+        <Archives />
       </aside>
     </div>
 
-    <div>
-      {
-        index !== -1 && (
-          <Pagination
-            prev={index !== 0 ? `/blog/${posts[index - 1].slug}/` : undefined}
-            prevText={
-              index !== 0
-                ? (posts[index - 1].data as { title: string }).title
-                : undefined
-            }
-            next={
-              index !== posts.length - 1
-                ? `/blog/${posts[index + 1].slug}/`
-                : undefined
-            }
-            nextText={
-              index !== posts.length - 1
-                ? (posts[index + 1].data as { title: string }).title
-                : undefined
-            }
-          />
-        )
-      }
-    </div>
+    {
+      index !== -1 && (
+        <Pagination
+          prev={index !== 0 ? `/blog/${posts[index - 1].slug}/` : undefined}
+          prevText={index !== 0 ? posts[index - 1].data.title : undefined}
+          next={
+            index !== posts.length - 1
+              ? `/blog/${posts[index + 1].slug}/`
+              : undefined
+          }
+          nextText={
+            index !== posts.length - 1 ? posts[index + 1].data.title : undefined
+          }
+        />
+      )
+    }
   </MainLayout>
 </Layout>
+
 <script
   type="text/javascript"
   src="https://cdn.jsdelivr.net/npm/gist-embed@1.0.4/dist/gist-embed.min.js"

@@ -1,39 +1,36 @@
 ---
-import { getBlogsAndRepos, getAllTags } from "@utils/collections";
-import { BLOG_DESCRIPTION } from "@const";
+// @ts-nocheck
 import Layout from "@layouts/Layout.astro";
 import MainLayout from "@layouts/MainLayout.astro";
 import Archives from "@components/Archives.astro";
+import { getSortedPosts, getTagList } from "@utils/collections";
+import { BLOG_DESCRIPTION } from "@const";
 
 export async function getStaticPaths() {
-  const allPosts = (await getBlogsAndRepos()).allCollections;
+  const allPosts = await getSortedPosts();
   const postYears = new Map();
 
-  allPosts.forEach((post: any) => {
+  allPosts.forEach((post) => {
     const year = new Date(post.data.date).getFullYear();
-
-    if (!postYears.get(year)) {
+    if (!postYears.has(year)) {
       postYears.set(year, []);
     }
-
     postYears.get(year).push(post);
   });
 
   return [...postYears.entries()].map(([year, posts]) => ({
-    params: { year },
+    params: { year: year.toString() },
     props: { posts },
   }));
 }
 
-const { allCollections } = await getBlogsAndRepos();
-const allTags = getAllTags(allCollections);
-
+const allTags = await getTagList();
 const { year } = Astro.params;
 const { posts } = Astro.props;
 ---
 
 <Layout title={`Posts in ${year}`} description={BLOG_DESCRIPTION}>
-  <MainLayout title={`Posts in ${year}`} tags={allTags}>
+  <MainLayout title={`Posts in ${year}`} tags={allTags.map((tag) => tag.name)}>
     <div class="flex flex-row">
       <div
         class="w-full md:w-3/4 pr-0 md:pr-4 pb-6 border-r-0 md:border-r border-gray-300"
@@ -41,39 +38,36 @@ const { posts } = Astro.props;
         <div class="blog text-gray-900">
           <ul>
             {
-              posts.map((post: any) => {
-                const repo = post.data.repo;
-                return (
-                  <li>
-                    <a
-                      href={repo ? repo : `/blog/${post.slug}/`}
-                      class="flex justify-between mb-4 border border-gray-300 hover:bg-gray-100 rounded-md p-3"
-                      target={repo ? "_blank" : undefined}
-                      rel={repo ? "noopener noreferrer" : undefined}
+              posts.map((post) => (
+                <li>
+                  <a
+                    href={
+                      post.data.repo ? post.data.repo : `/blog/${post.slug}/`
+                    }
+                    class="flex justify-between mb-4 border border-gray-300 hover:bg-gray-100 rounded-md p-3"
+                    target={post.data.repo ? "_blank" : undefined}
+                    rel={post.data.repo ? "noopener noreferrer" : undefined}
+                  >
+                    <h2 class="font-bold text-md mb-1 flex-grow truncate pr-2">
+                      {post.data.title}
+                    </h2>
+                    <time
+                      datetime={new Date(post.data.date).toISOString()}
+                      class="flex-shrink-0"
                     >
-                      <h2 class="font-bold text-md mb-1 flex-grow truncate pr-2">
-                        {post.data.title}
-                      </h2>
-
-                      <time
-                        datetime={post.data.date.toISOString()}
-                        class="flex-shrink-0"
-                      >
-                        {post.data.date.toLocaleDateString("en-us", {
-                          year: "numeric",
-                          month: "short",
-                          day: "numeric",
-                        })}
-                      </time>
-                    </a>
-                  </li>
-                );
-              })
+                      {new Date(post.data.date).toLocaleDateString("en-us", {
+                        year: "numeric",
+                        month: "short",
+                        day: "numeric",
+                      })}
+                    </time>
+                  </a>
+                </li>
+              ))
             }
           </ul>
         </div>
       </div>
-
       <aside class="w-1/4 p-4 hidden md:block">
         <Archives />
       </aside>

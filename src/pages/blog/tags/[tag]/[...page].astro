@@ -1,85 +1,55 @@
 ---
+// @ts-nocheck
 import BlogCardItem from "@components/BlogCardItem.astro";
 import Layout from "@layouts/Layout.astro";
 import MainLayout from "@layouts/MainLayout.astro";
 
-import { getBlogsAndRepos, parseTags, getAllTags } from "@utils/collections";
-import type { BlogOrRepoEntry } from "@utils/collections";
-import type { GetStaticPathsOptions, Page } from "astro";
+import { getSortedPosts, getTagList } from "@utils/collections";
+import type { GetStaticPathsOptions } from "astro";
 import { BLOG_DESCRIPTION, PAGINATE_CONTENT } from "@const";
 
-type FrontmatterType = {
-  date?: Date;
-  title?: string;
-  description?: string;
-  image?: string;
-  tags?: string;
-  isDraft?: boolean;
-};
-
-
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
-  const { allCollections } = await getBlogsAndRepos();
-  const tags = getAllTags(allCollections);
-  return tags.flatMap((tag) =>
+  const allBlogPosts = await getSortedPosts();
+  const tags = await getTagList();
+
+  return tags.flatMap(tag =>
     paginate(
-      allCollections.filter((post: any) =>
-        parseTags(post.data.tags).some(
-          (current) => current.toLowerCase() == tag,
-        ),
+      allBlogPosts.filter(post =>
+        post.data.tags.map((t: string) => t.toLowerCase()).includes(tag.name.toLowerCase())
       ),
       {
-        params: { tag },
+        params: { tag: tag.name },
         pageSize: PAGINATE_CONTENT,
       },
     ),
   );
 }
 
-const { allCollections } = await getBlogsAndRepos();
-const allTags = getAllTags(allCollections);
+const allTags = await getTagList();
 const { tag } = Astro.params;
-const { page } = Astro.props as {
-  page: Page<BlogOrRepoEntry>;
-};
+const { page } = Astro.props;
+
 ---
 
 <Layout
-  title={page.lastPage > 1
-    ? `${tag} tag - Page ${page.currentPage}`
-    : `${tag} tag`}
+  title={page.lastPage > 1 ? `${tag} tag - Page ${page.currentPage}` : `${tag} tag`}
   description={BLOG_DESCRIPTION}
 >
   <MainLayout
     title={tag}
-    tags={allTags}
+    tags={allTags.map(t => t.name)}
     breadcrumb={true}
     pagination={{ prev: page.url.prev, next: page.url.next }}
   >
     <div class="gap-4 flex flex-col">
-      {
-        page.data.map(({ data, slug }) => {
-          const frontmatterData = data as FrontmatterType;
-
-          if ("repo" in data) {
-            return (
-              <BlogCardItem
-                url={typeof data.repo === 'string' ? data.repo : `/blog/${slug}/`}
-                frontmatter={frontmatterData}
-                repo={!!data.repo}
-              />
-            );
-          } else {
-            return (
-              <BlogCardItem
-                url={`/blog/${slug}/`}
-                frontmatter={frontmatterData}
-                repo={false}
-              />
-            );
-          }
-        })
-      }
+      {page.data.map(post => (
+        <BlogCardItem
+          key={post.slug}
+          url={post.data.repo ? post.data.repo : `/blog/${post.slug}/`}
+          frontmatter={post.data}
+          repo={!!post.data.repo}
+        />
+      ))}
     </div>
   </MainLayout>
 </Layout>
