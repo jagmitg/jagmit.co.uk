@@ -2,7 +2,7 @@
 import BlogLayout from "@layouts/BlogLayout.astro";
 import { getSortedPosts } from "@utils/collections";
 import { readingTime } from "@utils/readingTime";
-import type { CollectionEntry } from "astro:content";
+import type { FlexibleBlogPost } from "@utils/collections"; // Ensure you import the correct type
 
 export async function getStaticPaths() {
   const blogEntries = await getSortedPosts();
@@ -17,8 +17,9 @@ export async function getStaticPaths() {
 
 
 const { entry } = Astro.props as {
-  entry: CollectionEntry<"blog">;
+  entry: FlexibleBlogPost;
 };
+
 
 const { Content } = await entry.render();
 const headings = [];

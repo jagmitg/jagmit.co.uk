@@ -21,7 +21,7 @@ const toolsCollection = defineCollection({
     title: z.string(),
     url: z.string(),
     backgroundImage: z.string().optional(),
-    draft: z.boolean().default(true),
+    draft: z.boolean().default(false),
   }),
 });
 

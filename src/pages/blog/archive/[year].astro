@@ -1,10 +1,18 @@
 ---
-// @ts-nocheck
 import Layout from "@layouts/Layout.astro";
 import MainLayout from "@layouts/MainLayout.astro";
 import Archives from "@components/Archives.astro";
-import { getSortedPosts, getTagList } from "@utils/collections";
+import { getSortedPosts } from "@utils/collections";
 import { BLOG_DESCRIPTION } from "@const";
+
+interface Post {
+  data: {
+    title: string;
+    date: Date;
+    repo?: string;
+  };
+  slug: string;
+}
 
 export async function getStaticPaths() {
   const allPosts = await getSortedPosts();
@@ -24,13 +32,12 @@ export async function getStaticPaths() {
   }));
 }
 
-const allTags = await getTagList();
 const { year } = Astro.params;
-const { posts } = Astro.props;
+const { posts }: { posts: Post[] } = Astro.props;
 ---
 
 <Layout title={`Posts in ${year}`} description={BLOG_DESCRIPTION}>
-  <MainLayout title={`Posts in ${year}`} tags={allTags.map((tag) => tag.name)}>
+  <MainLayout title={`Posts in ${year}`}>
     <div class="flex flex-row">
       <div
         class="w-full md:w-3/4 pr-0 md:pr-4 pb-6 border-r-0 md:border-r border-gray-300"
@@ -38,7 +45,7 @@ const { posts } = Astro.props;
         <div class="blog text-gray-900">
           <ul>
             {
-              posts.map((post) => (
+              posts.map((post: Post) => (
                 <li>
                   <a
                     href={

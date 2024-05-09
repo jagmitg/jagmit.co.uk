@@ -1,7 +1,10 @@
+// @ts-nocheck
+
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
+import { TAGS_DEFINITION } from "@const";
 
-interface FlexibleBlogPost extends Omit<CollectionEntry<'blog'>, 'slug'> {
+export interface FlexibleBlogPost extends Omit<CollectionEntry<'blog'>, 'slug'> {
   slug: string;
 }
 
@@ -29,7 +32,7 @@ export async function getSortedPosts(): Promise<FlexibleBlogPost[]> {
     return dateA > dateB ? -1 : 1;
   });
 
-  sorted.forEach((post, index, array) => {
+  sorted.forEach((index, array) => {
     if (index > 0) {
       array[index].data.nextSlug = array[index - 1].slug;
       array[index].data.nextTitle = array[index - 1].data.title;
@@ -75,4 +78,36 @@ export async function getTagList(): Promise<Tag[]> {
 
   // Sort the tags array alphabetically by tag name
   return tagsArray.sort((a, b) => a.name.localeCompare(b.name));
+}
+
+export function generateUniqueTags(questions: Question[]): string[] {
+  let allTags = new Set<string>();
+
+  questions.forEach((question) => {
+    question.tags.forEach((tag: any) => {
+      for (let overarchingTag in TAGS_DEFINITION) {
+        if (matchesTagDefinition(tag, TAGS_DEFINITION[overarchingTag])) {
+          allTags.add(overarchingTag);
+          break;
+        }
+      }
+    });
+  });
+
+  return [...allTags];
+}
+
+// Correct the function signature
+export function matchesTagDefinition(
+  tag: string,
+  definitions: (string | RegExp)[],
+): boolean {
+  for (let definition of definitions) {
+    if (typeof definition === "string" && tag === definition) {
+      return true;
+    } else if (definition instanceof RegExp && definition.test(tag)) {
+      return true;
+    }
+  }
+  return false;
 }

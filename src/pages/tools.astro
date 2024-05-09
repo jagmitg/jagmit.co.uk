@@ -4,7 +4,7 @@ import MainLayout from "@layouts/MainLayout.astro";
 import { getCollection } from 'astro:content';
 import External from "@components/icons/External.astro";
 
-const posts = (await getCollection("tool")).filter(post => post.data.isDraft !== true);
+const posts = (await getCollection("tool")).filter(post => post.data.draft !== true);
 
 ---
 
@@ -18,9 +18,7 @@ const posts = (await getCollection("tool")).filter(post => post.data.isDraft !==
               href={tool.data.url}
               target="_blank"
               rel="noopener noreferrer"
-              class="p-4 border border-neutral-200 bg-neutral-50 rounded flex items-center justify-between px-3 py-4 w-full transform hover:-translate-y-2 hover:bg-neutral-200 transition relative shadow-md hover:shadow-xl"
-              style={`--bg-url: url(${tool.data.backgroundImage}); background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.95)), var(--bg-url); background-size: cover; background-position: center;`}
-            >
+              class="p-4 border border-neutral-200 bg-black rounded flex items-center justify-between px-3 py-4 w-full transform hover:-translate-y-2 hover:bg-neutral-200 transition relative shadow-md hover:shadow-xl"            >
               <div class="flex flex-col ">
                 <p class="font-bold text-white">{tool.data.title}</p>
 
