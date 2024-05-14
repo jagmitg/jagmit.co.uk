@@ -1,0 +1,64 @@
+---
+title: 'Automator: File Names cleaner'
+date: '2024-05-14'
+description: Creating an archive for blog posts with the Astro framework based on a year system.
+image: /images/blog/astro-blog-archive-implementation/astro.png
+tags: [typescript, astro]
+draft: true
+---
+
+Recently I have had the need to download pdf's from Confluence pages, which can be a hassle, especially when the filenames are a mess of spaces, special characters, and inconsistent formatting. If you're like me and find yourself downloading documents from anywhere, you know how frustrating it can be to end up with filenames like:
+
+PD-Provide how authentication is implemented for the web application-140524-180810.pdf
+
+Not only are these filenames cumbersome, but they can also disrupt your workflow and make file organization a nightmare. This prompted me to create a simple yet effective solution: a Bash script that cleans up these filenames and integrates seamlessly with Automator on macOS.
+
+## The Problem
+
+When downloading PDFs from Confluence, the filenames often contain spaces, special characters, and inconsistent capitalization. For example:
+
+DAST-and-Application-Logic-Testing--140524-180007.pdf
+
+Such filenames are not only aesthetically displeasing but can also lead to issues when handling files via the command line or sharing them across different systems.
+
+## The Solution
+
+To tackle this problem, I created a Bash script that:
+
+1.  Replaces all non-alphanumeric characters with hyphens.
+2.  Consolidates multiple consecutive hyphens into a single hyphen.
+3.  Converts the entire filename to lowercase.
+
+**Here's the script**:
+
+## Implementation with Automator
+
+To make this script even more accessible, I linked it with Automator on my Mac. Automator allows you to create custom workflows, and in this case, I set it up as a Quick Action. This way, I can quickly rename multiple files with a simple right-click.
+
+## Steps to Set Up the Automator Quick Action:
+
+1.  **Open Automator**: Launch Automator from your Applications folder.
+2.  **Create a New Document**: Select "Quick Action" as the type of document.
+3.  **Set Workflow Receives**: Choose "files or folders" in "Finder.app".
+4.  **Add a Run Shell Script Action**: In the search bar, type "Run Shell Script" and drag it to the workflow area.
+5.  **Configure the Shell Script**:
+    - Set "Shell" to /bin/bash.
+    - Set "Pass input" to "as arguments".
+    - Paste the Bash script into the script area.
+6.  **Save the Workflow**: Name it something descriptive like "Clean Confluence PDF Names".
+
+Now, whenever I download PDFs from Confluence, I can simply right-click the files, select "Quick Actions", and apply my custom action to instantly clean up the filenames.
+
+For me, i was downloading files and they where coming out like so:
+
+PD-Provide how authentication is implemented for the web application-140524-180810.pdf
+
+After running the script through the Automator Quick Action, the filename will be transformed into:
+
+pd-provide-how-authentication-is-implemented-for-the-web-application-140524-180810.pdf
+
+This not only makes the file easier to read but also ensures consistency and compatibility across different systems and workflows.
+
+## Conclusion
+
+By creating a simple Bash script and integrating it with Automator, I've streamlined the process of renaming downloaded PDFs from Confluence. This solution saves time and ensures that my files are consistently named, making them easier to manage and share. If you frequently download files with messy filenames, I highly recommend setting up a similar workflow on your system.
