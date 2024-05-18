@@ -2,41 +2,41 @@
 /// <reference types="@astrojs/image/client" />
 
 interface Window {
-  algolia: {
-    applicationId: string;
-    searchOnlyKey: string;
-  };
+	algolia: {
+		applicationId: string
+		searchOnlyKey: string
+	}
 }
 
 interface ImportMetaEnv {
-  readonly GITHUB_TOKEN: string;
-  readonly PROD: boolean
+	readonly GITHUB_TOKEN: string
+	readonly ENVS: string
 }
 
 interface ImportMeta {
-  readonly env: ImportMetaEnv;
+	readonly env: ImportMetaEnv
 }
 
 type DataItem = {
-  siteName?: string;
-  siteUrl?: string;
-  url: string;
-  title: string;
-  description?: string;
-  image?: string;
-  publishedAt: string;
-  category?: string;
-  icon: string;
-  hot?: boolean;
-  prefixForTitle: string;
-  appendixes?: Record<string, string | undefined>;
-};
+	siteName?: string
+	siteUrl?: string
+	url: string
+	title: string
+	description?: string
+	image?: string
+	publishedAt: string
+	category?: string
+	icon: string
+	hot?: boolean
+	prefixForTitle: string
+	appendixes?: Record<string, string | undefined>
+}
 
 type OGPJson = Record<
-  string,
-  {
-    title: string;
-    description: string;
-    image: string;
-  }
->;
+	string,
+	{
+		title: string
+		description: string
+		image: string
+	}
+>
