@@ -32,13 +32,17 @@ const REPO_FETCH_SETTINGS: RepoFetchSettings = {
 }
 
 async function deleteAllMDFiles(): Promise<void[]> {
-	const files = await readdir(REPO_FETCH_SETTINGS.targetFolder)
-	const deletePromises = files
-		.filter((file) => file.endsWith('.mdx'))
-		.map((file) => unlink(path.join(REPO_FETCH_SETTINGS.targetFolder, file)))
-	return Promise.all(deletePromises)
+  await ensureDirectoryExists(REPO_FETCH_SETTINGS.targetFolder)
+  try {
+    const files = await readdir(REPO_FETCH_SETTINGS.targetFolder)
+    const deletePromises = files
+      .filter((file) => file.endsWith('.mdx'))
+      .map((file) => unlink(path.join(REPO_FETCH_SETTINGS.targetFolder, file)))
+    return Promise.all(deletePromises)
+  } catch {
+    return []
+  }
 }
-
 async function createMDFiles(): Promise<void> {
 
   await ensureDirectoryExists(REPO_FETCH_SETTINGS.targetFolder)
