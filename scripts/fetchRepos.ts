@@ -1,4 +1,4 @@
-import fetch from 'node-fetch'
+import { mkdir } from 'fs/promises'
 import { writeFile, readdir, unlink } from 'fs/promises'
 import path from 'path'
 import dotenv from 'dotenv'
@@ -16,6 +16,15 @@ if (
 	)
 }
 
+async function ensureDirectoryExists(dir: string) {
+ try {
+   await mkdir(dir, { recursive: true })
+ } catch (err) {
+   if ((err as NodeJS.ErrnoException).code !== 'EEXIST') throw err
+ }
+}
+
+
 const REPO_FETCH_SETTINGS: RepoFetchSettings = {
 	username: process.env.USERNAME,
 	targetFolder: process.env.TARGET_FOLDER,
@@ -31,6 +40,9 @@ async function deleteAllMDFiles(): Promise<void[]> {
 }
 
 async function createMDFiles(): Promise<void> {
+
+  await ensureDirectoryExists(REPO_FETCH_SETTINGS.targetFolder)
+
 	try {
 		const response = await fetch(
 			`https://api.github.com/users/${REPO_FETCH_SETTINGS.username}/repos`
