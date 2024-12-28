@@ -1,42 +1,33 @@
 ---
 import Layout from '@layouts/Layout.astro'
 import StackoverflowLayout from '@layouts/StackoverflowLayout.astro'
-import { generateUniqueTags, matchesTagDefinition } from '@utils/collections'
-import { PAGINATE_CONTENT, TAGS_DEFINITION } from '@const'
+import { PAGINATE_CONTENT } from '@const'
 import stackOverflowData from '@data/stackoverflow.json'
+import { getSortFunction } from '@utils/collections'
 
 export async function getStaticPaths(): Promise<any> {
 	const questions: any[] = Object.values(stackOverflowData.data)
-	const tags = generateUniqueTags(questions)
+	const sortOptions = [
+		'creation_date_desc',
+		'creation_date_asc',
+		'last_edit_date_desc',
+		'last_edit_date_asc',
+		'view_count_desc',
+		'view_count_asc'
+	]
 
 	let allPaths: any[] = []
-	let questionIndex = 1
 
-	for (const tag of tags) {
-		const filteredQuestions = questions.filter(
-			(post: any) =>
-				post.tags &&
-				post.tags.some((current: any) =>
-					matchesTagDefinition(current, TAGS_DEFINITION[tag] || [])
-				)
-		)
+	for (const sort of sortOptions) {
+		const sortedQuestions = [...questions].sort(getSortFunction(sort))
 
-		filteredQuestions.sort(
-			(a: any, b: any) => b.creation_date - a.creation_date
-		)
-
-		filteredQuestions.forEach((post: any) => {
-			post.key = questionIndex
-			questionIndex++
-		})
-
-		const numberOfPages = Math.ceil(filteredQuestions.length / PAGINATE_CONTENT)
+		const numberOfPages = Math.ceil(sortedQuestions.length / PAGINATE_CONTENT)
 
 		for (let i = 1; i <= numberOfPages; i++) {
 			allPaths.push({
-				params: { tag, page: i },
+				params: { s: sort, page: i },
 				props: {
-					questions: filteredQuestions.slice(
+					questions: sortedQuestions.slice(
 						(i - 1) * PAGINATE_CONTENT,
 						i * PAGINATE_CONTENT
 					),
@@ -44,11 +35,11 @@ export async function getStaticPaths(): Promise<any> {
 						lastPage: numberOfPages,
 						currentPage: i,
 						url: {
-							prev: i === 1 ? null : `/stackoverflow/tags/${tag}/${i - 1}/`,
+							prev: i === 1 ? null : `/stackoverflow/sort/${sort}/${i - 1}/`,
 							next:
 								i === numberOfPages
 									? null
-									: `/stackoverflow/tags/${tag}/${i + 1}/`
+									: `/stackoverflow/sort/${sort}/${i + 1}/`
 						}
 					}
 				}
@@ -59,17 +50,24 @@ export async function getStaticPaths(): Promise<any> {
 	return allPaths
 }
 
-// Extract data from Astro props
 const { questions, page }: any = Astro.props
-const { tag } = Astro.params
+const { s } = Astro.params
+
+const sortLabels = {
+	creation_date_desc: 'Newest First',
+	creation_date_asc: 'Oldest First',
+	last_edit_date_desc: 'Last Updated (Newest)',
+	last_edit_date_asc: 'Last Updated (Oldest)',
+	view_count_desc: 'Most Views',
+	view_count_asc: 'Least Views'
+}
 ---
 
-<Layout
-	title={page.lastPage > 1
-		? `${tag} - My Stackoverflow Tag - Page ${page.currentPage}`
-		: `${tag} - My Stackoverflow Tag`}
->
-	<StackoverflowLayout title={`Tag: ${tag}`} pagination={page.url}>
+<Layout title={`Sorted by ${sortLabels[s]} - Page ${page.currentPage}`}>
+	<StackoverflowLayout
+		title={`Sorted by: ${sortLabels[s]}`}
+		pagination={page.url}
+	>
 		<div class="grid gap-4 grid-cols-1 grid-rows-2 mt-5 lg:grid-cols-2">
 			{
 				questions.map((question: any) => (

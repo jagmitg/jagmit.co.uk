@@ -1,25 +1,25 @@
 {
-  "extends": "astro/tsconfigs/base",
-  "compilerOptions": {
-    "baseUrl": ".",
-    "module": "ESNext",
-    "target": "ESNext",
-    "moduleResolution": "node",
-    "strictNullChecks": true,
-    "allowJs": true,
-    "plugins": [
-      {
-        "name": "@astrojs/ts-plugin"
-      }
-    ],
-    "paths": {
-      "@components/*": ["src/components/*"],
-      "@layouts/*": ["src/layouts/*"],
-      "@utils/*": ["src/utils/*"],
-      "@const": ["src/constants"],
-      "@data/*": ["src/data"],
-      "@content/*": ["src/content/*"]
-    },
-    "verbatimModuleSyntax": true
-  }
+	"extends": "astro/tsconfigs/base",
+	"compilerOptions": {
+		"baseUrl": ".",
+		"module": "ESNext",
+		"target": "ESNext",
+		"moduleResolution": "node",
+		"strictNullChecks": true,
+		"allowJs": true,
+		"plugins": [
+			{
+				"name": "@astrojs/ts-plugin"
+			}
+		],
+		"paths": {
+			"@components/*": ["src/components/*"],
+			"@layouts/*": ["src/layouts/*"],
+			"@utils/*": ["src/utils/*"],
+			"@const": ["src/constants"],
+			"@data/*": ["src/data/*"],
+			"@content/*": ["src/content/*"]
+		},
+		"verbatimModuleSyntax": true
+	}
 }

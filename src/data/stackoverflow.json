@@ -1,8 +1,24 @@
 {
   "fetched_data": {
-    "date_stamp": "2024-01-30T18:23:46.643Z"
+    "date_stamp": "2024-12-28T20:44:43.358Z"
   },
   "data": [
+    {
+      "tags": [
+        "next.js"
+      ],
+      "is_answered": true,
+      "view_count": 37,
+      "answer_count": 1,
+      "score": 0,
+      "last_activity_date": 1729838361,
+      "creation_date": 1729802786,
+      "last_edit_date": 1729838361,
+      "question_id": 79123570,
+      "link": "https://stackoverflow.com/questions/79123570/cannot-zoom-in-an-image-in-nextjs",
+      "title": "Cannot zoom in an image in NextJS",
+      "key": 1
+    },
     {
       "tags": [
         "javascript",
@@ -11,44 +27,25 @@
         "custom-data-attribute",
         "selectedindex"
       ],
-      "owner": {
-        "account_id": 28668863,
-        "reputation": 175,
-        "user_id": 21952321,
-        "user_type": "registered",
-        "profile_image": "https://www.gravatar.com/avatar/6e1d3dede710a471f5d520119f71d4e5?s=256&d=identicon&r=PG&f=y&so-version=2",
-        "display_name": "scorpions77",
-        "link": "https://stackoverflow.com/users/21952321/scorpions77"
-      },
       "is_answered": true,
-      "view_count": 29,
+      "view_count": 54,
       "answer_count": 2,
       "score": 0,
       "last_activity_date": 1693392659,
       "creation_date": 1693389164,
       "last_edit_date": 1693392616,
       "question_id": 77006883,
-      "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/77006883/how-to-compute-the-total-amount-of-all-selected-options-custom-data-price-att",
-      "title": "How to compute the total amount of all selected options&#39; custom &quot;data-price&quot;-attribute values?",
-      "key": 1
+      "title": "How to compute the total amount of all selected options' custom \"data-price\"-attribute values?",
+      "key": 2
     },
     {
       "tags": [
         "javascript",
         "html"
       ],
-      "owner": {
-        "account_id": 28714694,
-        "reputation": 3,
-        "user_id": 21989515,
-        "user_type": "registered",
-        "profile_image": "https://www.gravatar.com/avatar/d912f5b2cabfa98437cc3b75e15bf4c9?s=256&d=identicon&r=PG&f=y&so-version=2",
-        "display_name": "Shulee",
-        "link": "https://stackoverflow.com/users/21989515/shulee"
-      },
       "is_answered": true,
-      "view_count": 55,
+      "view_count": 142,
       "closed_date": 1692218363,
       "accepted_answer_id": 76916902,
       "answer_count": 1,
@@ -60,52 +57,32 @@
       "link": "https://stackoverflow.com/questions/76916869/preventdefault-not-stopping-page-reload",
       "closed_reason": "Duplicate",
       "title": "preventDefault() not stopping page reload",
-      "key": 2
+      "key": 3
     },
     {
       "tags": [
         "python",
         "pandas"
       ],
-      "owner": {
-        "account_id": 2385436,
-        "reputation": 2538,
-        "user_id": 2819689,
-        "user_type": "registered",
-        "accept_rate": 98,
-        "profile_image": "https://www.gravatar.com/avatar/107ab33f8193278753fadbc0616ee568?s=256&d=identicon&r=PG&f=y&so-version=2",
-        "display_name": "MikiBelavista",
-        "link": "https://stackoverflow.com/users/2819689/mikibelavista"
-      },
       "is_answered": true,
-      "view_count": 52,
+      "view_count": 65,
       "accepted_answer_id": 76912859,
       "answer_count": 3,
       "score": 0,
       "last_activity_date": 1692183723,
       "creation_date": 1692182770,
       "question_id": 76912822,
-      "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76912822/how-to-convert-three-columns-into-pandas-datetime",
       "title": "How to convert three columns into pandas datetime?",
-      "key": 3
+      "key": 4
     },
     {
       "tags": [
         "javascript",
         "arrays"
       ],
-      "owner": {
-        "account_id": 15763180,
-        "reputation": 9,
-        "user_id": 11374375,
-        "user_type": "registered",
-        "profile_image": "https://www.gravatar.com/avatar/5b151df959ffb1927e4152ba5755fa23?s=256&d=identicon&r=PG&f=y&so-version=2",
-        "display_name": "JayyRon",
-        "link": "https://stackoverflow.com/users/11374375/jayyron"
-      },
       "is_answered": true,
-      "view_count": 72,
+      "view_count": 79,
       "accepted_answer_id": 76908161,
       "answer_count": 3,
       "score": 0,
@@ -113,10 +90,9 @@
       "creation_date": 1692121696,
       "last_edit_date": 1692125154,
       "question_id": 76908112,
-      "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76908112/checking-duplicate-objects-in-array-with-some-and-2-conditions",
       "title": "Checking duplicate objects in array with some and 2 conditions",
-      "key": 4
+      "key": 5
     },
     {
       "tags": [
@@ -125,12 +101,8 @@
         "csv",
         "flask"
       ],
-      "owner": {
-        "user_type": "does_not_exist",
-        "display_name": "user22395013"
-      },
       "is_answered": true,
-      "view_count": 50,
+      "view_count": 57,
       "accepted_answer_id": 76908125,
       "answer_count": 2,
       "score": 0,
@@ -138,27 +110,16 @@
       "creation_date": 1692121504,
       "last_edit_date": 1692208915,
       "question_id": 76908087,
-      "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76908087/prepending-data-in-pandas",
       "title": "Prepending data in Pandas",
-      "key": 5
+      "key": 6
     },
     {
       "tags": [
         "typescript"
       ],
-      "owner": {
-        "account_id": 6788724,
-        "reputation": 784,
-        "user_id": 5226538,
-        "user_type": "registered",
-        "accept_rate": 46,
-        "profile_image": "https://www.gravatar.com/avatar/4e6ce66c757fb8dd7b5cba5276daed58?s=256&d=identicon&r=PG&f=y&so-version=2",
-        "display_name": "Altaula",
-        "link": "https://stackoverflow.com/users/5226538/altaula"
-      },
       "is_answered": true,
-      "view_count": 28,
+      "view_count": 31,
       "accepted_answer_id": 76907926,
       "answer_count": 1,
       "score": 0,
@@ -166,27 +127,17 @@
       "creation_date": 1692118896,
       "last_edit_date": 1692119411,
       "question_id": 76907816,
-      "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76907816/ts2722-in-combination-with-strict-parameter-in-tsconfig",
       "title": "TS2722 in combination with strict parameter in tsconfig",
-      "key": 6
+      "key": 7
     },
     {
       "tags": [
         "javascript",
         "html"
       ],
-      "owner": {
-        "account_id": 29225813,
-        "reputation": 21,
-        "user_id": 22390541,
-        "user_type": "registered",
-        "profile_image": "https://www.gravatar.com/avatar/686e9bdcf0510d7ff5f0ac04506b8ee7?s=256&d=identicon&r=PG&f=y&so-version=2",
-        "display_name": "thebatz",
-        "link": "https://stackoverflow.com/users/22390541/thebatz"
-      },
       "is_answered": true,
-      "view_count": 57,
+      "view_count": 68,
       "accepted_answer_id": 76902663,
       "answer_count": 1,
       "score": 1,
@@ -194,28 +145,17 @@
       "creation_date": 1692053606,
       "last_edit_date": 1692056944,
       "question_id": 76902578,
-      "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76902578/how-can-i-save-all-the-input-of-the-opening-hours-in-a-variable",
       "title": "How can I save all the input of the opening hours in a variable?",
-      "key": 7
+      "key": 8
     },
     {
       "tags": [
         "html",
         "css"
       ],
-      "owner": {
-        "account_id": 9138006,
-        "reputation": 501,
-        "user_id": 6797003,
-        "user_type": "registered",
-        "accept_rate": 38,
-        "profile_image": "https://www.gravatar.com/avatar/a93bce0191e227eadd1f341eb45b9291?s=256&d=identicon&r=PG",
-        "display_name": "Erbi Silva",
-        "link": "https://stackoverflow.com/users/6797003/erbi-silva"
-      },
       "is_answered": true,
-      "view_count": 67,
+      "view_count": 70,
       "accepted_answer_id": 76902692,
       "answer_count": 3,
       "score": 0,
@@ -223,38 +163,26 @@
       "creation_date": 1692039191,
       "last_edit_date": 1692039293,
       "question_id": 76901476,
-      "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76901476/image-with-div-as-half-background",
       "title": "Image with div as half background",
-      "key": 8
+      "key": 9
     },
     {
       "tags": [
         "python",
         "set"
       ],
-      "owner": {
-        "account_id": 1237641,
-        "reputation": 2270,
-        "user_id": 1200914,
-        "user_type": "registered",
-        "accept_rate": 89,
-        "profile_image": "https://www.gravatar.com/avatar/d3c21d029de13a98c973b98f28ad6867?s=256&d=identicon&r=PG",
-        "display_name": "Learning from masters",
-        "link": "https://stackoverflow.com/users/1200914/learning-from-masters"
-      },
       "is_answered": true,
-      "view_count": 46,
+      "view_count": 56,
       "accepted_answer_id": 76900580,
       "answer_count": 1,
       "score": 0,
       "last_activity_date": 1692029815,
       "creation_date": 1692029613,
       "question_id": 76900560,
-      "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76900560/is-there-any-way-to-define-a-set-element-with-an-or",
       "title": "Is there any way to define a set element with an OR?",
-      "key": 9
+      "key": 10
     },
     {
       "tags": [
@@ -262,27 +190,17 @@
         "express",
         "sequelize.js"
       ],
-      "owner": {
-        "account_id": 28622039,
-        "reputation": 99,
-        "user_id": 21914870,
-        "user_type": "registered",
-        "profile_image": "https://lh3.googleusercontent.com/a/AGNmyxau2tY4A5z-ZBW6RiwgYtTY929JNmzu1stz8GU=k-s256",
-        "display_name": "Jhon Estrada",
-        "link": "https://stackoverflow.com/users/21914870/jhon-estrada"
-      },
       "is_answered": true,
-      "view_count": 19,
+      "view_count": 42,
       "accepted_answer_id": 76900715,
       "answer_count": 1,
       "score": 1,
       "last_activity_date": 1692031162,
       "creation_date": 1692028961,
       "question_id": 76900487,
-      "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76900487/node-js-using-sequalize-relations-one-to-many",
       "title": "Node js using Sequalize, Relations one to many",
-      "key": 10
+      "key": 11
     },
     {
       "tags": [
@@ -292,42 +210,23 @@
         "components",
         "vuejs3"
       ],
-      "owner": {
-        "account_id": 18725445,
-        "reputation": 100,
-        "user_id": 15050200,
-        "user_type": "registered",
-        "profile_image": "https://www.gravatar.com/avatar/71a3258f0e4ab162c1caf4772c14cd21?s=256&d=identicon&r=PG&f=y&so-version=2",
-        "display_name": "space-ninja-x",
-        "link": "https://stackoverflow.com/users/15050200/space-ninja-x"
-      },
       "is_answered": true,
-      "view_count": 163,
+      "view_count": 413,
       "answer_count": 1,
       "score": 0,
       "last_activity_date": 1691606657,
       "creation_date": 1691603589,
       "question_id": 76870195,
-      "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76870195/how-do-i-pass-custom-props-to-dynamic-components-in-vue-3",
       "title": "How do I pass custom props to dynamic components in Vue 3?",
-      "key": 11
+      "key": 12
     },
     {
       "tags": [
         "typescript"
       ],
-      "owner": {
-        "account_id": 26148195,
-        "reputation": 386,
-        "user_id": 19989260,
-        "user_type": "registered",
-        "profile_image": "https://lh3.googleusercontent.com/a/AItbvmlmiuaiNF8e82nRvxQ6cbxAiIpkLtnpJECOxNiZ=k-s256",
-        "display_name": "Ahmet Yazıcı",
-        "link": "https://stackoverflow.com/users/19989260/ahmet-yaz%c4%b1c%c4%b1"
-      },
       "is_answered": true,
-      "view_count": 38,
+      "view_count": 50,
       "accepted_answer_id": 76853781,
       "answer_count": 2,
       "score": 0,
@@ -335,10 +234,9 @@
       "creation_date": 1691427727,
       "last_edit_date": 1691427994,
       "question_id": 76853754,
-      "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76853754/returning-an-object-which-has-keys-as-the-values-of-passed-array",
       "title": "Returning an object which has keys as the values of passed array",
-      "key": 12
+      "key": 13
     },
     {
       "tags": [
@@ -348,17 +246,8 @@
         "line",
         "space"
       ],
-      "owner": {
-        "account_id": 26992916,
-        "reputation": 33,
-        "user_id": 20555528,
-        "user_type": "registered",
-        "profile_image": "https://lh3.googleusercontent.com/a/ALm5wu2ia45zQqAei1pEWKQDmdMnzVCpr3OU0Hg7nuXK=k-s256",
-        "display_name": "Bradley Kohr",
-        "link": "https://stackoverflow.com/users/20555528/bradley-kohr"
-      },
       "is_answered": true,
-      "view_count": 29,
+      "view_count": 92,
       "accepted_answer_id": 76853725,
       "answer_count": 1,
       "score": 0,
@@ -366,10 +255,9 @@
       "creation_date": 1691421975,
       "last_edit_date": 1691427233,
       "question_id": 76853115,
-      "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76853115/how-to-add-a-space-below-each-line",
       "title": "How to add a space below each line",
-      "key": 13
+      "key": 14
     },
     {
       "tags": [
@@ -377,17 +265,8 @@
         "reactjs",
         "react-router-dom"
       ],
-      "owner": {
-        "account_id": 23098303,
-        "reputation": 189,
-        "user_id": 17208064,
-        "user_type": "registered",
-        "profile_image": "https://www.gravatar.com/avatar/0207727e62b2f2430e6bec034884d27c?s=256&d=identicon&r=PG",
-        "display_name": "JFeel",
-        "link": "https://stackoverflow.com/users/17208064/jfeel"
-      },
       "is_answered": true,
-      "view_count": 52,
+      "view_count": 68,
       "accepted_answer_id": 76846086,
       "answer_count": 3,
       "score": 1,
@@ -395,27 +274,17 @@
       "creation_date": 1691327046,
       "last_edit_date": 1691343834,
       "question_id": 76846020,
-      "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76846020/react-js-separator-publictheme-and-publictheme",
       "title": "React JS - Separator PublicTheme and PublicTheme",
-      "key": 14
+      "key": 15
     },
     {
       "tags": [
         "javascript",
         "jquery"
       ],
-      "owner": {
-        "account_id": 29135770,
-        "reputation": 1,
-        "user_id": 22319979,
-        "user_type": "registered",
-        "profile_image": "https://lh3.googleusercontent.com/a/AAcHTtdX-OrqPOTCqbrCBuNuBFrGisnS70BKBktbrZpao49Z=k-s256",
-        "display_name": "Jane Lim",
-        "link": "https://stackoverflow.com/users/22319979/jane-lim"
-      },
       "is_answered": true,
-      "view_count": 65,
+      "view_count": 281,
       "accepted_answer_id": 76845417,
       "answer_count": 1,
       "score": -1,
@@ -423,10 +292,9 @@
       "creation_date": 1691316933,
       "last_edit_date": 1691567739,
       "question_id": 76845393,
-      "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76845393/why-console-shows-scrollintoview-is-not-a-function",
-      "title": "Why console shows &quot;scrollIntoView() is not a function&quot;?",
-      "key": 15
+      "title": "Why console shows \"scrollIntoView() is not a function\"?",
+      "key": 16
     },
     {
       "tags": [
@@ -436,17 +304,8 @@
         "multidimensional-array",
         "jupyter-notebook"
       ],
-      "owner": {
-        "account_id": 16963160,
-        "reputation": 71,
-        "user_id": 12269799,
-        "user_type": "registered",
-        "profile_image": "https://www.gravatar.com/avatar/76bc15d75ddc7dda46c22787b76ca34d?s=256&d=identicon&r=PG&f=y&so-version=2",
-        "display_name": "outkast20",
-        "link": "https://stackoverflow.com/users/12269799/outkast20"
-      },
       "is_answered": true,
-      "view_count": 54,
+      "view_count": 64,
       "accepted_answer_id": 76844040,
       "answer_count": 1,
       "score": 0,
@@ -454,10 +313,9 @@
       "creation_date": 1691279967,
       "last_edit_date": 1691325927,
       "question_id": 76843968,
-      "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76843968/how-to-return-a-similar-match-in-the-same-2d-list",
       "title": "How to return a similar match in the same 2d list",
-      "key": 16
+      "key": 17
     },
     {
       "tags": [
@@ -465,27 +323,17 @@
         "typescript-typings",
         "typescript-generics"
       ],
-      "owner": {
-        "account_id": 16259392,
-        "reputation": 93,
-        "user_id": 11741190,
-        "user_type": "registered",
-        "profile_image": "https://lh6.googleusercontent.com/-_97RFgLtMwE/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3rey6lCOBckKiIO2mvNvYZ3KhU2_Ig/photo.jpg?sz=256",
-        "display_name": "loromagnoni",
-        "link": "https://stackoverflow.com/users/11741190/loromagnoni"
-      },
       "is_answered": true,
-      "view_count": 130,
+      "view_count": 387,
       "accepted_answer_id": 76843965,
       "answer_count": 1,
-      "score": 0,
+      "score": 1,
       "last_activity_date": 1691281809,
       "creation_date": 1691278106,
       "question_id": 76843910,
-      "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76843910/how-to-forward-a-typescript-generic-type-into-inner-function",
       "title": "How to forward a Typescript generic type into inner function",
-      "key": 17
+      "key": 18
     },
     {
       "tags": [
@@ -494,27 +342,17 @@
         "typescript",
         "zod"
       ],
-      "owner": {
-        "account_id": 29166911,
-        "reputation": 13,
-        "user_id": 22344264,
-        "user_type": "registered",
-        "profile_image": "https://lh3.googleusercontent.com/a/AAcHTtdt6Yq5F0XhIloe2L7gSj9yBy2hT7zhXRWpx9Hnnhlv=k-s256",
-        "display_name": "Witcher",
-        "link": "https://stackoverflow.com/users/22344264/witcher"
-      },
       "is_answered": true,
-      "view_count": 5165,
+      "view_count": 32997,
       "accepted_answer_id": 76842597,
       "answer_count": 1,
-      "score": 1,
+      "score": 15,
       "last_activity_date": 1691253343,
       "creation_date": 1691253071,
       "question_id": 76842580,
-      "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76842580/how-to-validate-a-field-in-zod-depending-on-the-value-of-another-field",
       "title": "How to validate a field in Zod depending on the value of another field?",
-      "key": 18
+      "key": 19
     },
     {
       "tags": [
@@ -523,27 +361,17 @@
         "python-imaging-library",
         "attributeerror"
       ],
-      "owner": {
-        "account_id": 28084626,
-        "reputation": 31,
-        "user_id": 21455187,
-        "user_type": "registered",
-        "profile_image": "https://www.gravatar.com/avatar/aaea5228d7290b0c86d55872d04e8bfa?s=256&d=identicon&r=PG&f=y&so-version=2",
-        "display_name": "ismail",
-        "link": "https://stackoverflow.com/users/21455187/ismail"
-      },
       "is_answered": true,
-      "view_count": 199,
+      "view_count": 453,
       "answer_count": 1,
       "score": -1,
       "last_activity_date": 1691244881,
       "creation_date": 1691225437,
       "last_edit_date": 1691244881,
       "question_id": 76840856,
-      "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76840856/attributeerror-photoimage-object-has-no-attribute-tobytes",
-      "title": "AttributeError: &#39;PhotoImage&#39; object has no attribute &#39;tobytes&#39;",
-      "key": 19
+      "title": "AttributeError: 'PhotoImage' object has no attribute 'tobytes'",
+      "key": 20
     },
     {
       "tags": [
@@ -551,17 +379,8 @@
         "less",
         "css-float"
       ],
-      "owner": {
-        "account_id": 29004802,
-        "reputation": 454,
-        "user_id": 22217619,
-        "user_type": "registered",
-        "profile_image": "https://i.stack.imgur.com/WoK3Q.png?s=256&g=1",
-        "display_name": "MfyDev",
-        "link": "https://stackoverflow.com/users/22217619/mfydev"
-      },
       "is_answered": true,
-      "view_count": 32,
+      "view_count": 34,
       "accepted_answer_id": 76840826,
       "answer_count": 2,
       "score": 0,
@@ -569,10 +388,9 @@
       "creation_date": 1691223839,
       "last_edit_date": 1691225065,
       "question_id": 76840747,
-      "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76840747/an-element-with-css-float-moving-out-from-its-parent-element",
       "title": "An element with CSS float moving out from its parent element",
-      "key": 20
+      "key": 21
     },
     {
       "tags": [
@@ -580,106 +398,66 @@
         "bash",
         "pattern-matching"
       ],
-      "owner": {
-        "account_id": 13905064,
-        "reputation": 45,
-        "user_id": 10039647,
-        "user_type": "registered",
-        "profile_image": "https://i.stack.imgur.com/BMHZM.jpg?s=256&g=1",
-        "display_name": "andromda",
-        "link": "https://stackoverflow.com/users/10039647/andromda"
-      },
       "is_answered": true,
-      "view_count": 92,
+      "view_count": 360,
       "answer_count": 3,
       "score": 0,
       "last_activity_date": 1690994249,
       "creation_date": 1690991053,
       "last_edit_date": 1690993812,
       "question_id": 76821532,
-      "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76821532/how-to-match-only-full-directory-file-names-in-bash-script",
       "title": "How to match only full directory/file names in bash script",
-      "key": 21
+      "key": 22
     },
     {
       "tags": [
         "typescript"
       ],
-      "owner": {
-        "account_id": 19615875,
-        "reputation": 2024,
-        "user_id": 15357136,
-        "user_type": "registered",
-        "profile_image": "https://i.stack.imgur.com/ye8nX.jpg?s=256&g=1",
-        "display_name": "Richardson",
-        "link": "https://stackoverflow.com/users/15357136/richardson"
-      },
       "is_answered": true,
-      "view_count": 41,
+      "view_count": 43,
       "answer_count": 1,
       "score": 0,
       "last_activity_date": 1690975451,
       "creation_date": 1690974594,
       "question_id": 76819277,
-      "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76819277/how-to-create-an-array-that-will-adhere-to-certain-union-type-without-having-to",
       "title": "How to create an array that will adhere to certain Union type without having to copy myself?",
-      "key": 22
+      "key": 23
     },
     {
       "tags": [
         "typescript",
         "amazon-dynamodb"
       ],
-      "owner": {
-        "account_id": 17001235,
-        "reputation": 115,
-        "user_id": 12298581,
-        "user_type": "registered",
-        "profile_image": "https://www.gravatar.com/avatar/7a28edc38318233e1c7ab85b1425988c?s=256&d=identicon&r=PG&f=y&so-version=2",
-        "display_name": "salt-pepper",
-        "link": "https://stackoverflow.com/users/12298581/salt-pepper"
-      },
       "is_answered": true,
-      "view_count": 92,
+      "view_count": 172,
       "accepted_answer_id": 76814713,
       "answer_count": 1,
       "score": 0,
       "last_activity_date": 1690918677,
       "creation_date": 1690918510,
       "question_id": 76814703,
-      "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76814703/how-to-get-only-the-key-and-value-from-a-filter-expression-dynamodb-query-in-typ",
       "title": "How to get only the key and value from a Filter expression DynamoDb Query in Typescript",
-      "key": 23
+      "key": 24
     },
     {
       "tags": [
         "javascript",
         "reactjs"
       ],
-      "owner": {
-        "account_id": 20903355,
-        "reputation": 219,
-        "user_id": 15355943,
-        "user_type": "registered",
-        "profile_image": "https://i.stack.imgur.com/dURa1.png?s=256&g=1",
-        "display_name": "skelaw",
-        "link": "https://stackoverflow.com/users/15355943/skelaw"
-      },
       "is_answered": true,
-      "view_count": 47,
+      "view_count": 73,
       "answer_count": 1,
       "score": 0,
       "last_activity_date": 1690836024,
       "creation_date": 1690834977,
       "last_edit_date": 1690836024,
       "question_id": 76806916,
-      "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76806916/input-shows-the-previous-value-for-a-while",
       "title": "Input shows the previous value for a while",
-      "key": 24
+      "key": 25
     },
     {
       "tags": [
@@ -687,17 +465,8 @@
         "typescript",
         "express"
       ],
-      "owner": {
-        "account_id": 19696510,
-        "reputation": 25,
-        "user_id": 14420302,
-        "user_type": "registered",
-        "profile_image": "https://lh3.googleusercontent.com/a-/AOh14GgylLgyuTti_WC7EU_IlEcphyYiGkJow6X_ghF8=k-s256",
-        "display_name": "Alp Durak",
-        "link": "https://stackoverflow.com/users/14420302/alp-durak"
-      },
       "is_answered": true,
-      "view_count": 42,
+      "view_count": 103,
       "accepted_answer_id": 76805678,
       "answer_count": 1,
       "score": -1,
@@ -705,10 +474,9 @@
       "creation_date": 1690821982,
       "last_edit_date": 1690822907,
       "question_id": 76805630,
-      "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76805630/syntaxerror-invalid-regular-expression-while-creating-a-route-with-route-params",
       "title": "SyntaxError: Invalid regular expression while creating a route with route params",
-      "key": 25
+      "key": 26
     },
     {
       "tags": [
@@ -716,18 +484,8 @@
         "mysql",
         "laravel"
       ],
-      "owner": {
-        "account_id": 1934528,
-        "reputation": 4602,
-        "user_id": 1743124,
-        "user_type": "registered",
-        "accept_rate": 75,
-        "profile_image": "https://i.stack.imgur.com/Yhd3l.png?s=256&g=1",
-        "display_name": "Mayeenul Islam",
-        "link": "https://stackoverflow.com/users/1743124/mayeenul-islam"
-      },
       "is_answered": true,
-      "view_count": 48,
+      "view_count": 51,
       "accepted_answer_id": 76803840,
       "answer_count": 1,
       "score": 0,
@@ -735,54 +493,34 @@
       "creation_date": 1690807792,
       "last_edit_date": 1690807896,
       "question_id": 76803803,
-      "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76803803/mysql-grab-last-row-of-a-group-of-data-but-specific-to-a-column-value",
       "title": "MySQL grab last row of a group of data but specific to a column value",
-      "key": 26
+      "key": 27
     },
     {
       "tags": [
         "javascript",
         "reactjs"
       ],
-      "owner": {
-        "account_id": 28998006,
-        "reputation": 53,
-        "user_id": 22212216,
-        "user_type": "registered",
-        "profile_image": "https://www.gravatar.com/avatar/ffcff9601d88d3cb13f4b7056f00f092?s=256&d=identicon&r=PG&f=y&so-version=2",
-        "display_name": "Mercer",
-        "link": "https://stackoverflow.com/users/22212216/mercer"
-      },
       "is_answered": true,
-      "view_count": 61,
+      "view_count": 96,
       "answer_count": 1,
       "score": 0,
       "last_activity_date": 1690801546,
       "creation_date": 1690747988,
       "last_edit_date": 1690801546,
       "question_id": 76799471,
-      "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76799471/modal-is-disappearing-when-click-on-the-input-button-inside-it-reactjs",
       "title": "Modal is disappearing when click on the input button inside it (ReactJS)",
-      "key": 27
+      "key": 28
     },
     {
       "tags": [
         "javascript",
         "google-chrome-extension"
       ],
-      "owner": {
-        "account_id": 26822048,
-        "reputation": 77,
-        "user_id": 20411234,
-        "user_type": "registered",
-        "profile_image": "https://www.gravatar.com/avatar/ce12eee8a49bf3b544a2f94d7d1a99e5?s=256&d=identicon&r=PG",
-        "display_name": "3jay1",
-        "link": "https://stackoverflow.com/users/20411234/3jay1"
-      },
       "is_answered": true,
-      "view_count": 25,
+      "view_count": 26,
       "closed_date": 1690739974,
       "accepted_answer_id": 76799049,
       "answer_count": 1,
@@ -794,7 +532,7 @@
       "link": "https://stackoverflow.com/questions/76799040/use-a-string-as-an-object-name",
       "closed_reason": "Duplicate",
       "title": "Use a string as an object name",
-      "key": 28
+      "key": 29
     },
     {
       "tags": [
@@ -802,17 +540,8 @@
         "pandas",
         "dataframe"
       ],
-      "owner": {
-        "account_id": 15285573,
-        "reputation": 1167,
-        "user_id": 11028689,
-        "user_type": "registered",
-        "profile_image": "https://graph.facebook.com/10157217103299459/picture?type=large",
-        "display_name": "Bluetail",
-        "link": "https://stackoverflow.com/users/11028689/bluetail"
-      },
       "is_answered": true,
-      "view_count": 131,
+      "view_count": 710,
       "accepted_answer_id": 76799177,
       "answer_count": 3,
       "score": 0,
@@ -820,88 +549,56 @@
       "creation_date": 1690738839,
       "last_edit_date": 1690739930,
       "question_id": 76798963,
-      "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76798963/how-to-make-label-column-in-pandas-dataframe-while-grouping-by-counts",
       "title": "How to make label column in pandas dataframe while grouping by counts?",
-      "key": 29
+      "key": 30
     },
     {
       "tags": [
         "css"
       ],
-      "owner": {
-        "account_id": 23469301,
-        "reputation": 185,
-        "user_id": 17523021,
-        "user_type": "registered",
-        "profile_image": "https://lh3.googleusercontent.com/a-/AOh14GgwG-Nn-W9J0Kx3pUj2hb95ae1AUewJnPAWSdShuA=k-s256",
-        "display_name": "Abhishek Mittal",
-        "link": "https://stackoverflow.com/users/17523021/abhishek-mittal"
-      },
       "is_answered": true,
-      "view_count": 67,
+      "view_count": 174,
       "answer_count": 1,
       "score": 0,
       "last_activity_date": 1690741512,
       "creation_date": 1690708283,
       "question_id": 76797076,
-      "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76797076/half-line-ellipsis",
       "title": "Half line ellipsis",
-      "key": 30
+      "key": 31
     },
     {
       "tags": [
         "php",
         "json"
       ],
-      "owner": {
-        "account_id": 4410631,
-        "reputation": 852,
-        "user_id": 3593686,
-        "user_type": "registered",
-        "accept_rate": 76,
-        "profile_image": "https://i.stack.imgur.com/vsoPH.jpg?s=256&g=1",
-        "display_name": "Paulo Hgo",
-        "link": "https://stackoverflow.com/users/3593686/paulo-hgo"
-      },
       "is_answered": true,
-      "view_count": 27,
+      "view_count": 28,
       "answer_count": 1,
       "score": 0,
       "last_activity_date": 1690675079,
       "creation_date": 1690674531,
       "question_id": 76795845,
-      "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76795845/php-traversing-object-fails-if-elements-value-is-not-of-type-string",
-      "title": "PHP - Traversing object fails if element&#39;s value is not of type STRING",
-      "key": 31
+      "title": "PHP - Traversing object fails if element's value is not of type STRING",
+      "key": 32
     },
     {
       "tags": [
         "reactjs",
         "typescript"
       ],
-      "owner": {
-        "account_id": 28799076,
-        "reputation": 1,
-        "user_id": 22056499,
-        "user_type": "registered",
-        "profile_image": "https://lh3.googleusercontent.com/a/AAcHTtd4MO8Ugmatvwz95Mx5zsfCUh2U7G7AVCm6y_6JTA=k-s256",
-        "display_name": "Kapil",
-        "link": "https://stackoverflow.com/users/22056499/kapil"
-      },
       "is_answered": true,
-      "view_count": 64,
+      "view_count": 95,
       "answer_count": 1,
       "score": 0,
       "last_activity_date": 1690621972,
       "creation_date": 1690620931,
       "question_id": 76792826,
-      "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76792826/unexpected-token",
       "title": "Unexpected Token",
-      "key": 32
+      "key": 33
     },
     {
       "tags": [
@@ -909,17 +606,8 @@
         "python-3.x",
         "exception"
       ],
-      "owner": {
-        "account_id": 29101616,
-        "reputation": 15,
-        "user_id": 22293320,
-        "user_type": "registered",
-        "profile_image": "https://lh3.googleusercontent.com/a/AAcHTtfAAqw9uxc3DAYb2kUwCOHNK64P5SD-Jy51ffX2H5ma=k-s256",
-        "display_name": "Tuğberk Yıldırım",
-        "link": "https://stackoverflow.com/users/22293320/tu%c4%9fberk-y%c4%b1ld%c4%b1r%c4%b1m"
-      },
       "is_answered": true,
-      "view_count": 45,
+      "view_count": 60,
       "closed_date": 1690623385,
       "accepted_answer_id": 76792870,
       "answer_count": 2,
@@ -931,7 +619,7 @@
       "link": "https://stackoverflow.com/questions/76792811/how-to-get-detailed-exception-in-python",
       "closed_reason": "Duplicate",
       "title": "How to Get Detailed Exception in Python?",
-      "key": 33
+      "key": 34
     },
     {
       "tags": [
@@ -941,28 +629,17 @@
         "date-fns",
         "date-fns-tz"
       ],
-      "owner": {
-        "account_id": 1077596,
-        "reputation": 3823,
-        "user_id": 1075391,
-        "user_type": "registered",
-        "accept_rate": 77,
-        "profile_image": "https://www.gravatar.com/avatar/7d8255e955a253d66716c79f369e7de2?s=256&d=identicon&r=PG",
-        "display_name": "BigJobbies",
-        "link": "https://stackoverflow.com/users/1075391/bigjobbies"
-      },
       "is_answered": true,
-      "view_count": 1038,
+      "view_count": 3863,
       "accepted_answer_id": 76792901,
       "answer_count": 1,
       "score": 0,
       "last_activity_date": 1690631896,
       "creation_date": 1690620131,
       "question_id": 76792789,
-      "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76792789/date-fns-showing-invalid-interval-when-comparing-dates-using-iswithininterval-an",
       "title": "date-fns showing invalid interval when comparing dates using isWithinInterval and a users timezone",
-      "key": 34
+      "key": 35
     },
     {
       "tags": [
@@ -970,28 +647,17 @@
         "monaco-editor",
         "react-monaco-editor"
       ],
-      "owner": {
-        "account_id": 360789,
-        "reputation": 5002,
-        "user_id": 702977,
-        "user_type": "registered",
-        "accept_rate": 82,
-        "profile_image": "https://www.gravatar.com/avatar/859cd18fc4bc067aa389b7c408eeb572?s=256&d=identicon&r=PG",
-        "display_name": "SoftTimur",
-        "link": "https://stackoverflow.com/users/702977/softtimur"
-      },
       "is_answered": true,
-      "view_count": 493,
+      "view_count": 972,
       "accepted_answer_id": 76802647,
       "answer_count": 1,
       "score": 2,
       "last_activity_date": 1691138120,
       "creation_date": 1690607279,
       "question_id": 76792125,
-      "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76792125/set-up-listeners-when-a-model-is-created-or-disposed-for-monaco-editor-react",
       "title": "Set up listeners when a model is created or disposed for @monaco-editor/react",
-      "key": 35
+      "key": 36
     },
     {
       "tags": [
@@ -1001,44 +667,25 @@
         "optimization",
         "react-hooks"
       ],
-      "owner": {
-        "account_id": 19749653,
-        "reputation": 166,
-        "user_id": 14461286,
-        "user_type": "registered",
-        "profile_image": "https://i.stack.imgur.com/ym9Qw.jpg?s=256&g=1",
-        "display_name": "Takkie253",
-        "link": "https://stackoverflow.com/users/14461286/takkie253"
-      },
       "is_answered": true,
-      "view_count": 71,
+      "view_count": 181,
       "accepted_answer_id": 76772572,
       "answer_count": 2,
       "score": 1,
       "last_activity_date": 1690443362,
       "creation_date": 1690381105,
       "question_id": 76772248,
-      "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76772248/react-bad-performance-in-list-while-selecting-a-listitem",
       "title": "React bad performance in list while selecting a listitem",
-      "key": 36
+      "key": 37
     },
     {
       "tags": [
         "javascript",
         "html"
       ],
-      "owner": {
-        "account_id": 13282871,
-        "reputation": 23,
-        "user_id": 9589858,
-        "user_type": "registered",
-        "profile_image": "https://lh6.googleusercontent.com/-pNbk4gWF2qw/AAAAAAAAAAI/AAAAAAAAAno/bfdcX_Tv2k4/photo.jpg?sz=256",
-        "display_name": "Alyssa",
-        "link": "https://stackoverflow.com/users/9589858/alyssa"
-      },
       "is_answered": true,
-      "view_count": 142,
+      "view_count": 548,
       "accepted_answer_id": 76765603,
       "answer_count": 3,
       "score": 0,
@@ -1046,10 +693,9 @@
       "creation_date": 1690309665,
       "last_edit_date": 1690309907,
       "question_id": 76765578,
-      "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76765578/how-do-i-get-the-even-odd-number-check-to-print-the-results",
       "title": "How do I get the even/odd number check to print the results?",
-      "key": 37
+      "key": 38
     },
     {
       "tags": [
@@ -1059,44 +705,25 @@
         "ecmascript-5",
         "use-strict"
       ],
-      "owner": {
-        "account_id": 15172444,
-        "reputation": 431,
-        "user_id": 10948090,
-        "user_type": "registered",
-        "profile_image": "https://www.gravatar.com/avatar/21df1e3be951fb9ac8234c9e1f740b6e?s=256&d=identicon&r=PG&f=y&so-version=2",
-        "display_name": "mishar",
-        "link": "https://stackoverflow.com/users/10948090/mishar"
-      },
       "is_answered": true,
-      "view_count": 80,
+      "view_count": 244,
       "accepted_answer_id": 76746216,
       "answer_count": 1,
       "score": 0,
       "last_activity_date": 1690071292,
       "creation_date": 1690071023,
       "question_id": 76746213,
-      "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76746213/javascript-duplicate-property-name-and-getter-setter-an-error-in-es5",
       "title": "JavaScript: duplicate property name and getter/setter an error in ES5?",
-      "key": 38
+      "key": 39
     },
     {
       "tags": [
         "javascript",
         "loops"
       ],
-      "owner": {
-        "account_id": 29071733,
-        "reputation": 13,
-        "user_id": 22269893,
-        "user_type": "registered",
-        "profile_image": "https://www.gravatar.com/avatar/8c5aa176b8356cdfcb7aab5e8113165a?s=256&d=identicon&r=PG&f=y&so-version=2",
-        "display_name": "johhny",
-        "link": "https://stackoverflow.com/users/22269893/johhny"
-      },
       "is_answered": true,
-      "view_count": 43,
+      "view_count": 85,
       "accepted_answer_id": 76746245,
       "answer_count": 2,
       "score": 0,
@@ -1104,10 +731,9 @@
       "creation_date": 1690070510,
       "last_edit_date": 1690071404,
       "question_id": 76746195,
-      "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76746195/rock-paper-scissors-round-loop-javascript",
       "title": "Rock, Paper, Scissors - Round Loop Javascript",
-      "key": 39
+      "key": 40
     },
     {
       "tags": [
@@ -1115,27 +741,17 @@
         "reactjs",
         "typescript"
       ],
-      "owner": {
-        "account_id": 26088665,
-        "reputation": 32,
-        "user_id": 19785869,
-        "user_type": "registered",
-        "profile_image": "https://www.gravatar.com/avatar/f7c07fdb30ff706b2f93a05f97761840?s=256&d=identicon&r=PG",
-        "display_name": "Mehrdad Karami Jourabi",
-        "link": "https://stackoverflow.com/users/19785869/mehrdad-karami-jourabi"
-      },
       "is_answered": true,
-      "view_count": 64,
+      "view_count": 283,
       "accepted_answer_id": 76702846,
       "answer_count": 3,
       "score": 0,
       "last_activity_date": 1689584003,
       "creation_date": 1689583134,
       "question_id": 76702745,
-      "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76702745/how-to-pass-types-as-props-in-a-reuseable-component",
       "title": "how to pass types as props in a reuseable component",
-      "key": 40
+      "key": 41
     },
     {
       "tags": [
@@ -1144,28 +760,17 @@
         "pushstate",
         "html5-history"
       ],
-      "owner": {
-        "account_id": 9727029,
-        "reputation": 1351,
-        "user_id": 7219974,
-        "user_type": "registered",
-        "accept_rate": 89,
-        "profile_image": "https://lh3.googleusercontent.com/-4_5zN89Hjdc/AAAAAAAAAAI/AAAAAAAAADI/AIKD9aq0H8s/photo.jpg?sz=256",
-        "display_name": "Rafael Costa",
-        "link": "https://stackoverflow.com/users/7219974/rafael-costa"
-      },
       "is_answered": true,
-      "view_count": 52,
+      "view_count": 289,
       "accepted_answer_id": 76687755,
       "answer_count": 2,
       "score": 0,
       "last_activity_date": 1689338957,
       "creation_date": 1689337916,
       "question_id": 76687719,
-      "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76687719/replacing-history-pushstate-to-send-events-getting-ilegal-invocation-error",
       "title": "Replacing history.pushState to send events (getting Ilegal invocation error)",
-      "key": 41
+      "key": 42
     },
     {
       "tags": [
@@ -1173,27 +778,17 @@
         "typescript",
         "types"
       ],
-      "owner": {
-        "account_id": 2467344,
-        "reputation": 35,
-        "user_id": 2150128,
-        "user_type": "registered",
-        "profile_image": "https://www.gravatar.com/avatar/d3417a1e6e2f73c1688a6b80e1a3b9ab?s=256&d=identicon&r=PG",
-        "display_name": "Giulio",
-        "link": "https://stackoverflow.com/users/2150128/giulio"
-      },
       "is_answered": true,
-      "view_count": 36,
+      "view_count": 49,
       "accepted_answer_id": 76681832,
       "answer_count": 1,
       "score": 0,
       "last_activity_date": 1689268370,
       "creation_date": 1689268158,
       "question_id": 76681808,
-      "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76681808/typescript-deep-pick-by-key-without-specifying-a-path",
       "title": "Typescript deep Pick by key without specifying a path",
-      "key": 42
+      "key": 43
     },
     {
       "tags": [
@@ -1202,27 +797,17 @@
         "maps",
         "hierarchy"
       ],
-      "owner": {
-        "account_id": 22288724,
-        "reputation": 15,
-        "user_id": 16515948,
-        "user_type": "registered",
-        "profile_image": "https://www.gravatar.com/avatar/953176a2c7b61fa084d6537519cf927e?s=256&d=identicon&r=PG&f=y&so-version=2",
-        "display_name": "SAIKAT CHAKRABORTY",
-        "link": "https://stackoverflow.com/users/16515948/saikat-chakraborty"
-      },
       "is_answered": true,
-      "view_count": 35,
+      "view_count": 55,
       "accepted_answer_id": 76681801,
       "answer_count": 1,
       "score": 0,
       "last_activity_date": 1689289876,
       "creation_date": 1689267626,
       "question_id": 76681759,
-      "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76681759/facing-issues-with-typescript-multi-hierarchy-key-map-pair",
       "title": "Facing issues with typescript multi hierarchy key map pair",
-      "key": 43
+      "key": 44
     },
     {
       "tags": [
@@ -1230,28 +815,17 @@
         "typescript",
         "declare"
       ],
-      "owner": {
-        "account_id": 5550454,
-        "reputation": 21668,
-        "user_id": 4403732,
-        "user_type": "registered",
-        "accept_rate": 43,
-        "profile_image": "https://i.stack.imgur.com/ZfiFe.gif?s=256&g=1",
-        "display_name": "Robo Robok",
-        "link": "https://stackoverflow.com/users/4403732/robo-robok"
-      },
       "is_answered": true,
-      "view_count": 109,
+      "view_count": 272,
       "accepted_answer_id": 76681528,
       "answer_count": 1,
       "score": 0,
       "last_activity_date": 1689266289,
       "creation_date": 1689265146,
       "question_id": 76681480,
-      "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76681480/how-to-declare-experimental-global-variables-in-typescript",
       "title": "How to declare experimental global variables in TypeScript?",
-      "key": 44
+      "key": 45
     },
     {
       "tags": [
@@ -1261,43 +835,24 @@
         "react-hooks",
         "axios"
       ],
-      "owner": {
-        "account_id": 22397466,
-        "reputation": 197,
-        "user_id": 16608505,
-        "user_type": "registered",
-        "profile_image": "https://www.gravatar.com/avatar/f79f3b56cf3256adb89ca560918ba68f?s=256&d=identicon&r=PG&f=y&so-version=2",
-        "display_name": "Nicke7117",
-        "link": "https://stackoverflow.com/users/16608505/nicke7117"
-      },
       "is_answered": true,
-      "view_count": 28,
+      "view_count": 29,
       "answer_count": 1,
       "score": 0,
       "last_activity_date": 1689265043,
       "creation_date": 1689264339,
       "question_id": 76681388,
-      "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76681388/setstate-to-a-state-located-in-app-js-from-another-file",
       "title": "setState to a state located in App.js from another file",
-      "key": 45
+      "key": 46
     },
     {
       "tags": [
         "python",
         "expression"
       ],
-      "owner": {
-        "account_id": 29010739,
-        "reputation": 23,
-        "user_id": 22222310,
-        "user_type": "registered",
-        "profile_image": "https://www.gravatar.com/avatar/f3d6edcef370fa7aa65ea7d5976d7a4a?s=256&d=identicon&r=PG&f=y&so-version=2",
-        "display_name": "Morgane",
-        "link": "https://stackoverflow.com/users/22222310/morgane"
-      },
       "is_answered": true,
-      "view_count": 73,
+      "view_count": 180,
       "accepted_answer_id": 76680741,
       "answer_count": 1,
       "score": 2,
@@ -1305,10 +860,9 @@
       "creation_date": 1689259327,
       "last_edit_date": 1689260408,
       "question_id": 76680660,
-      "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76680660/how-to-use-dataarray-values-as-list-indexes",
       "title": "How to use DataArray values ​as list indexes?",
-      "key": 46
+      "key": 47
     },
     {
       "tags": [
@@ -1317,17 +871,8 @@
         "input",
         "touch"
       ],
-      "owner": {
-        "account_id": 28321143,
-        "reputation": 47,
-        "user_id": 21656918,
-        "user_type": "registered",
-        "profile_image": "https://www.gravatar.com/avatar/b6d2995937fb53665e2185322ccd3f48?s=256&d=identicon&r=PG&f=y&so-version=2",
-        "display_name": "MPiland",
-        "link": "https://stackoverflow.com/users/21656918/mpiland"
-      },
       "is_answered": true,
-      "view_count": 811,
+      "view_count": 3489,
       "accepted_answer_id": 76680279,
       "answer_count": 1,
       "score": 0,
@@ -1335,10 +880,9 @@
       "creation_date": 1689256767,
       "last_edit_date": 1689257601,
       "question_id": 76680225,
-      "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76680225/react-input-text-field-how-to-focus-on-touch",
       "title": "React Input Text Field - How to Focus on Touch?",
-      "key": 47
+      "key": 48
     },
     {
       "tags": [
@@ -1346,100 +890,62 @@
         "arrays",
         "angular"
       ],
-      "owner": {
-        "account_id": 18729030,
-        "reputation": 51,
-        "user_id": 13654928,
-        "user_type": "registered",
-        "profile_image": "https://www.gravatar.com/avatar/af383aa21fbb6675bbef0badbe3e5bf8?s=256&d=identicon&r=PG&f=y&so-version=2",
-        "display_name": "Mr.J",
-        "link": "https://stackoverflow.com/users/13654928/mr-j"
-      },
       "is_answered": true,
-      "view_count": 53,
+      "view_count": 71,
       "answer_count": 3,
       "score": 1,
       "last_activity_date": 1689517888,
       "creation_date": 1689250451,
       "last_edit_date": 1689250813,
       "question_id": 76679258,
-      "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76679258/how-to-start-at-a-index-but-without-missing-any-items-in-the-array",
       "title": "How to start at a index but without missing any items in the array?",
-      "key": 48
+      "key": 49
     },
     {
       "tags": [
-        "javascript",
-        "mysql",
-        "express",
-        "sequelize.js",
-        "ejs"
+        "python",
+        "git",
+        "github"
       ],
-      "owner": {
-        "account_id": 29009733,
-        "reputation": 11,
-        "user_id": 22221465,
-        "user_type": "registered",
-        "profile_image": "https://lh3.googleusercontent.com/a/AAcHTtfYbt4GpqYAWUXeuG4SCQYFYXe7dXcgxZ1BqEDJyuX4J4s=k-s256",
-        "display_name": "pedro stahl",
-        "link": "https://stackoverflow.com/users/22221465/pedro-stahl"
-      },
       "is_answered": true,
-      "view_count": 64,
-      "accepted_answer_id": 76679115,
+      "view_count": 48,
+      "closed_date": 1689254715,
+      "accepted_answer_id": 76679185,
       "answer_count": 1,
-      "score": 0,
-      "last_activity_date": 1689249418,
-      "creation_date": 1689249180,
-      "question_id": 76679081,
-      "content_license": "CC BY-SA 4.0",
-      "link": "https://stackoverflow.com/questions/76679081/cannot-read-properties-of-undefined-reading-findall",
-      "title": "Cannot read properties of undefined (reading &#39;findAll&#39;)",
-      "key": 49
+      "score": -1,
+      "last_activity_date": 1689249923,
+      "creation_date": 1689249756,
+      "last_edit_date": 1689249835,
+      "question_id": 76679155,
+      "link": "https://stackoverflow.com/questions/76679155/how-can-i-forbid-commit-file-that-was-already-pushed-git-and-github",
+      "closed_reason": "Duplicate",
+      "title": "How can I forbid commit file that was already pushed? Git and GitHub",
+      "key": 50
     },
     {
       "tags": [
         "reactjs"
       ],
-      "owner": {
-        "account_id": 5058901,
-        "reputation": 93,
-        "user_id": 4061217,
-        "user_type": "registered",
-        "profile_image": "https://lh4.googleusercontent.com/-NNWbgz4AVF0/AAAAAAAAAAI/AAAAAAAAAFQ/Qp7bKtQ4nxo/photo.jpg?sz=256",
-        "display_name": "ipapag",
-        "link": "https://stackoverflow.com/users/4061217/ipapag"
-      },
       "is_answered": true,
-      "view_count": 14,
+      "view_count": 23,
       "accepted_answer_id": 76679089,
       "answer_count": 1,
       "score": 0,
       "last_activity_date": 1689249250,
       "creation_date": 1689248953,
       "question_id": 76679051,
-      "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/76679051/how-the-onchange-event-of-a-switchstacked-can-continue-after-modal",
       "title": "How the onChange event of a SwitchStacked can continue after modal?",
-      "key": 50
+      "key": 51
     },
     {
       "tags": [
         "javascript",
         "html"
       ],
-      "owner": {
-        "account_id": 16044542,
-        "reputation": 23,
-        "user_id": 11580073,
-        "user_type": "registered",
-        "profile_image": "https://www.gravatar.com/avatar/600b53fb0d21c683b2c0d0176b2c67c8?s=256&d=identicon&r=PG&f=y&so-version=2",
-        "display_name": "rexbex",
-        "link": "https://stackoverflow.com/users/11580073/rexbex"
-      },
       "is_answered": true,
-      "view_count": 86,
+      "view_count": 91,
       "accepted_answer_id": 62492471,
       "answer_count": 2,
       "score": 1,
@@ -1447,53 +953,33 @@
       "creation_date": 1592691115,
       "last_edit_date": 1592691742,
       "question_id": 62492305,
-      "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/62492305/onblur-function-not-working-for-me-might-be-my-coding",
       "title": "onblur function not working for me- might be my coding",
-      "key": 51
+      "key": 52
     },
     {
       "tags": [
         "reactjs"
       ],
-      "owner": {
-        "account_id": 9457567,
-        "reputation": 243,
-        "user_id": 9328639,
-        "user_type": "registered",
-        "profile_image": "https://www.gravatar.com/avatar/6872491bea9d929ee82dfd1b48f24e49?s=256&d=identicon&r=PG&f=y&so-version=2",
-        "display_name": "user36339",
-        "link": "https://stackoverflow.com/users/9328639/user36339"
-      },
       "is_answered": true,
-      "view_count": 59,
+      "view_count": 60,
       "answer_count": 2,
       "score": 0,
       "last_activity_date": 1592764852,
       "creation_date": 1592645341,
       "last_edit_date": 1592648667,
       "question_id": 62484015,
-      "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/62484015/how-am-i-getting-this-js-error-from-div-element",
-      "title": "How am I getting this JS error from &lt;div&gt; element?",
-      "key": 52
+      "title": "How am I getting this JS error from <div> element?",
+      "key": 53
     },
     {
       "tags": [
         "javascript",
         "express"
       ],
-      "owner": {
-        "account_id": 18781039,
-        "reputation": 49,
-        "user_id": 13695695,
-        "user_type": "registered",
-        "profile_image": "https://lh4.googleusercontent.com/-IeH70VNXrMw/AAAAAAAAAAI/AAAAAAAAAAA/AMZuuclqkxXMaceXmbzfi9cVIjUk3tSxqA/photo.jpg?sz=256",
-        "display_name": "שמעון פוקס",
-        "link": "https://stackoverflow.com/users/13695695/%d7%a9%d7%9e%d7%a2%d7%95%d7%9f-%d7%a4%d7%95%d7%a7%d7%a1"
-      },
       "is_answered": true,
-      "view_count": 536,
+      "view_count": 602,
       "accepted_answer_id": 62449347,
       "answer_count": 1,
       "score": -1,
@@ -1501,10 +987,9 @@
       "creation_date": 1592480336,
       "last_edit_date": 1592482889,
       "question_id": 62449157,
-      "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/62449157/how-to-change-the-form-to-content-type-application-json",
       "title": "How to change the form to Content-Type: application / json",
-      "key": 53
+      "key": 54
     },
     {
       "tags": [
@@ -1514,26 +999,16 @@
         "file",
         "flask"
       ],
-      "owner": {
-        "account_id": 16134075,
-        "reputation": 117,
-        "user_id": 11646936,
-        "user_type": "registered",
-        "profile_image": "https://www.gravatar.com/avatar/c5226533c2440f27181137110ce8333a?s=256&d=identicon&r=PG&f=y&so-version=2",
-        "display_name": "Chris",
-        "link": "https://stackoverflow.com/users/11646936/chris"
-      },
       "is_answered": true,
-      "view_count": 1096,
+      "view_count": 1154,
       "answer_count": 1,
       "score": 0,
       "last_activity_date": 1591865460,
       "creation_date": 1591864514,
       "question_id": 62320284,
-      "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/62320284/react-best-practice-storing-images-on-server",
       "title": "React best practice storing images on server",
-      "key": 54
+      "key": 55
     },
     {
       "tags": [
@@ -1543,18 +1018,8 @@
         "html-table",
         "slim"
       ],
-      "owner": {
-        "account_id": 7635018,
-        "reputation": 451,
-        "user_id": 5788814,
-        "user_type": "registered",
-        "accept_rate": 100,
-        "profile_image": "https://www.gravatar.com/avatar/f07408753b3365d02d85395f6c9876c1?s=256&d=identicon&r=PG&f=y&so-version=2",
-        "display_name": "DopeAt",
-        "link": "https://stackoverflow.com/users/5788814/dopeat"
-      },
       "is_answered": true,
-      "view_count": 5176,
+      "view_count": 5534,
       "accepted_answer_id": 42455611,
       "answer_count": 2,
       "score": 0,
@@ -1562,10 +1027,9 @@
       "creation_date": 1488021977,
       "last_edit_date": 1492769399,
       "question_id": 42455437,
-      "content_license": "CC BY-SA 3.0",
       "link": "https://stackoverflow.com/questions/42455437/display-json-content-in-php-table",
       "title": "Display json content in php table",
-      "key": 55
+      "key": 56
     },
     {
       "tags": [
@@ -1574,16 +1038,6 @@
         "responsive-design",
         "flexbox"
       ],
-      "owner": {
-        "account_id": 10320654,
-        "reputation": 271,
-        "user_id": 7613665,
-        "user_type": "registered",
-        "accept_rate": 35,
-        "profile_image": "https://graph.facebook.com/1204199846363491/picture?type=large",
-        "display_name": "Sander Helles&#248;",
-        "link": "https://stackoverflow.com/users/7613665/sander-helles%c3%b8"
-      },
       "is_answered": true,
       "view_count": 48,
       "answer_count": 1,
@@ -1592,10 +1046,9 @@
       "creation_date": 1488021213,
       "last_edit_date": 1488035568,
       "question_id": 42455301,
-      "content_license": "CC BY-SA 3.0",
       "link": "https://stackoverflow.com/questions/42455301/flexbox-wont-float-to-center",
       "title": "Flexbox wont float to center",
-      "key": 56
+      "key": 57
     },
     {
       "tags": [
@@ -1603,22 +1056,17 @@
         "foreach",
         "each"
       ],
-      "owner": {
-        "user_type": "does_not_exist",
-        "display_name": "user736893"
-      },
       "is_answered": true,
-      "view_count": 1461,
+      "view_count": 1627,
       "accepted_answer_id": 32850639,
       "answer_count": 2,
       "score": 1,
       "last_activity_date": 1443549983,
       "creation_date": 1443548064,
       "question_id": 32850334,
-      "content_license": "CC BY-SA 3.0",
       "link": "https://stackoverflow.com/questions/32850334/step-through-json-results-with-a-delay-between-each",
       "title": "step through json results with a delay between each?",
-      "key": 57
+      "key": 58
     },
     {
       "tags": [
@@ -1626,18 +1074,8 @@
         "jquery",
         "ajax"
       ],
-      "owner": {
-        "account_id": 1995712,
-        "reputation": 2745,
-        "user_id": 1788736,
-        "user_type": "registered",
-        "accept_rate": 50,
-        "profile_image": "https://www.gravatar.com/avatar/f69cfb4677f123381231f97ea1138f8a?s=256&d=identicon&r=PG",
-        "display_name": "user1788736",
-        "link": "https://stackoverflow.com/users/1788736/user1788736"
-      },
       "is_answered": true,
-      "view_count": 2153,
+      "view_count": 2308,
       "accepted_answer_id": 32608296,
       "answer_count": 1,
       "score": 0,
@@ -1645,10 +1083,9 @@
       "creation_date": 1442404679,
       "last_edit_date": 1494575633,
       "question_id": 32607953,
-      "content_license": "CC BY-SA 3.0",
       "link": "https://stackoverflow.com/questions/32607953/checking-if-a-m3u8-url-is-broken-using-javascript",
       "title": "Checking if a m3u8 URL is broken using Javascript",
-      "key": 58
+      "key": 59
     },
     {
       "tags": [
@@ -1656,18 +1093,8 @@
         "css",
         "wordpress"
       ],
-      "owner": {
-        "account_id": 220208,
-        "reputation": 1333,
-        "user_id": 477488,
-        "user_type": "registered",
-        "accept_rate": 65,
-        "profile_image": "https://graph.facebook.com/551740808/picture?type=large",
-        "display_name": "maxelcat",
-        "link": "https://stackoverflow.com/users/477488/maxelcat"
-      },
       "is_answered": true,
-      "view_count": 71,
+      "view_count": 72,
       "accepted_answer_id": 32584537,
       "answer_count": 2,
       "score": 1,
@@ -1675,28 +1102,17 @@
       "creation_date": 1442312316,
       "last_edit_date": 1442314996,
       "question_id": 32583519,
-      "content_license": "CC BY-SA 3.0",
       "link": "https://stackoverflow.com/questions/32583519/margin-of-one-div-seems-to-affect-whole-site",
       "title": "margin of one div seems to affect whole site",
-      "key": 59
+      "key": 60
     },
     {
       "tags": [
         "html",
         "css"
       ],
-      "owner": {
-        "account_id": 2579856,
-        "reputation": 377,
-        "user_id": 2236787,
-        "user_type": "registered",
-        "accept_rate": 64,
-        "profile_image": "https://www.gravatar.com/avatar/af14723ddaadc772fa5f7714c6974cb9?s=256&d=identicon&r=PG",
-        "display_name": "Ricol",
-        "link": "https://stackoverflow.com/users/2236787/ricol"
-      },
       "is_answered": true,
-      "view_count": 10669,
+      "view_count": 11270,
       "accepted_answer_id": 31819485,
       "answer_count": 6,
       "score": 1,
@@ -1704,66 +1120,43 @@
       "creation_date": 1438721917,
       "last_edit_date": 1438722477,
       "question_id": 31819213,
-      "content_license": "CC BY-SA 3.0",
       "link": "https://stackoverflow.com/questions/31819213/change-color-of-div-with-several-classes-with-css",
       "title": "Change color of div with several classes with CSS",
-      "key": 60
+      "key": 61
     },
     {
       "tags": [
         "javascript",
         "html"
       ],
-      "owner": {
-        "account_id": 5718535,
-        "reputation": 67,
-        "user_id": 4517811,
-        "user_type": "registered",
-        "accept_rate": 100,
-        "profile_image": "https://graph.facebook.com/100002573275527/picture?type=large",
-        "display_name": "Jadwiga Śmiarowska",
-        "link": "https://stackoverflow.com/users/4517811/jadwiga-%c5%9amiarowska"
-      },
       "is_answered": true,
-      "view_count": 90,
+      "view_count": 93,
       "accepted_answer_id": 28268905,
       "answer_count": 5,
       "score": 0,
       "last_activity_date": 1422833698,
       "creation_date": 1422830653,
       "question_id": 28268826,
-      "content_license": "CC BY-SA 3.0",
       "link": "https://stackoverflow.com/questions/28268826/javascript-instead-of-repetitive-html-lines",
       "title": "JavaScript instead of repetitive HTML lines",
-      "key": 61
+      "key": 62
     },
     {
       "tags": [
         "php",
         "wordpress"
       ],
-      "owner": {
-        "account_id": 1690944,
-        "reputation": 3482,
-        "user_id": 1553293,
-        "user_type": "registered",
-        "accept_rate": 91,
-        "profile_image": "https://www.gravatar.com/avatar/12fbb0c5f237d6e3e6c52941e30b0c2a?s=256&d=identicon&r=PG",
-        "display_name": "Muhambi",
-        "link": "https://stackoverflow.com/users/1553293/muhambi"
-      },
       "is_answered": true,
-      "view_count": 32,
+      "view_count": 33,
       "accepted_answer_id": 27026177,
       "answer_count": 1,
       "score": 0,
       "last_activity_date": 1416428235,
       "creation_date": 1416426349,
       "question_id": 27025632,
-      "content_license": "CC BY-SA 3.0",
       "link": "https://stackoverflow.com/questions/27025632/table-and-post-values",
       "title": "Table and post values",
-      "key": 62
+      "key": 63
     },
     {
       "tags": [
@@ -1771,56 +1164,34 @@
         "laravel",
         "laravel-4"
       ],
-      "owner": {
-        "account_id": 2815104,
-        "reputation": 4853,
-        "user_id": 2847689,
-        "user_type": "registered",
-        "accept_rate": 83,
-        "profile_image": "https://www.gravatar.com/avatar/3e38b913ff0c83b7824342f2a1d3354d?s=256&d=identicon&r=PG",
-        "display_name": "Carol.Kar",
-        "link": "https://stackoverflow.com/users/2847689/carol-kar"
-      },
       "is_answered": true,
-      "view_count": 313,
+      "view_count": 332,
       "accepted_answer_id": 26563377,
       "answer_count": 3,
       "score": 0,
       "last_activity_date": 1414246649,
       "creation_date": 1414220024,
       "question_id": 26560024,
-      "content_license": "CC BY-SA 3.0",
       "link": "https://stackoverflow.com/questions/26560024/laravel-4-css-does-not-get-loaded",
       "title": "Laravel 4 - CSS does not get loaded",
-      "key": 63
+      "key": 64
     },
     {
       "tags": [
         "css",
         "ruby-on-rails-3"
       ],
-      "owner": {
-        "account_id": 1270722,
-        "reputation": 1136,
-        "user_id": 1227058,
-        "user_type": "registered",
-        "accept_rate": 81,
-        "profile_image": "https://www.gravatar.com/avatar/cbacebe081b945a7494edb55e1ba8262?s=256&d=identicon&r=PG",
-        "display_name": "Matteo",
-        "link": "https://stackoverflow.com/users/1227058/matteo"
-      },
       "is_answered": true,
-      "view_count": 67,
+      "view_count": 70,
       "accepted_answer_id": 26185428,
       "answer_count": 1,
       "score": 0,
       "last_activity_date": 1412411258,
       "creation_date": 1412363682,
       "question_id": 26185328,
-      "content_license": "CC BY-SA 3.0",
       "link": "https://stackoverflow.com/questions/26185328/dynamic-menu-class-assignment-in-rails",
       "title": "Dynamic menu class assignment in Rails",
-      "key": 64
+      "key": 65
     },
     {
       "tags": [
@@ -1829,18 +1200,8 @@
         "function",
         "onchange"
       ],
-      "owner": {
-        "account_id": 5104209,
-        "reputation": 63,
-        "user_id": 4092832,
-        "user_type": "registered",
-        "accept_rate": 60,
-        "profile_image": "https://www.gravatar.com/avatar/351c2a4329b9e4700260f0a5c8cd6d65?s=256&d=identicon&r=PG&f=y&so-version=2",
-        "display_name": "varcor",
-        "link": "https://stackoverflow.com/users/4092832/varcor"
-      },
       "is_answered": true,
-      "view_count": 66573,
+      "view_count": 67786,
       "closed_date": 1412189774,
       "accepted_answer_id": 26148465,
       "answer_count": 4,
@@ -1852,7 +1213,7 @@
       "link": "https://stackoverflow.com/questions/26148325/textbox-onchange-call-php-function",
       "closed_reason": "Duplicate",
       "title": "textbox onchange call php function",
-      "key": 65
+      "key": 66
     },
     {
       "tags": [
@@ -1861,45 +1222,24 @@
         "url",
         "no-www"
       ],
-      "owner": {
-        "account_id": 2935605,
-        "reputation": 975,
-        "user_id": 2514585,
-        "user_type": "registered",
-        "accept_rate": 94,
-        "profile_image": "https://i.stack.imgur.com/2Tx1k.png?s=256&g=1",
-        "display_name": "StrongJoshua",
-        "link": "https://stackoverflow.com/users/2514585/strongjoshua"
-      },
       "is_answered": true,
-      "view_count": 64,
+      "view_count": 65,
       "accepted_answer_id": 25955201,
       "answer_count": 1,
       "score": 1,
       "last_activity_date": 1411266318,
       "creation_date": 1411265730,
       "question_id": 25955152,
-      "content_license": "CC BY-SA 3.0",
       "link": "https://stackoverflow.com/questions/25955152/php-www-website-pre-fix-and-no-pre-fix-use-different-session-variables",
       "title": "PHP - WWW website pre-fix and no pre-fix use different SESSION variables",
-      "key": 66
+      "key": 67
     },
     {
       "tags": [
         "php"
       ],
-      "owner": {
-        "account_id": 1006689,
-        "reputation": 4294,
-        "user_id": 1020254,
-        "user_type": "registered",
-        "accept_rate": 58,
-        "profile_image": "https://www.gravatar.com/avatar/ca177076efc16a3fcc3be70c3fa55eb2?s=256&d=identicon&r=PG&f=y&so-version=2",
-        "display_name": "jagmitg",
-        "link": "https://stackoverflow.com/users/1020254/jagmitg"
-      },
       "is_answered": true,
-      "view_count": 65,
+      "view_count": 66,
       "accepted_answer_id": 25901133,
       "answer_count": 1,
       "score": -1,
@@ -1907,10 +1247,9 @@
       "creation_date": 1410989506,
       "last_edit_date": 1414846711,
       "question_id": 25900681,
-      "content_license": "CC BY-SA 3.0",
       "link": "https://stackoverflow.com/questions/25900681/passing-a-variable-through-get",
       "title": "Passing a variable through _GET",
-      "key": 67
+      "key": 68
     },
     {
       "tags": [
@@ -1918,27 +1257,17 @@
         "css",
         "forms"
       ],
-      "owner": {
-        "account_id": 4995441,
-        "reputation": 250,
-        "user_id": 4016204,
-        "user_type": "registered",
-        "profile_image": "https://www.gravatar.com/avatar/8656187c3318691eede7c1965f3ae720?s=256&d=identicon&r=PG&f=y&so-version=2",
-        "display_name": "Vaigunth",
-        "link": "https://stackoverflow.com/users/4016204/vaigunth"
-      },
       "is_answered": true,
-      "view_count": 3005,
+      "view_count": 3040,
       "accepted_answer_id": 25708623,
       "answer_count": 2,
       "score": 0,
       "last_activity_date": 1410081708,
       "creation_date": 1410080128,
       "question_id": 25708569,
-      "content_license": "CC BY-SA 3.0",
       "link": "https://stackoverflow.com/questions/25708569/font-awesome-icons-in-html-form",
       "title": "Font awesome icons in html form",
-      "key": 68
+      "key": 69
     },
     {
       "tags": [
@@ -1946,18 +1275,8 @@
         "css",
         "containers"
       ],
-      "owner": {
-        "account_id": 1877879,
-        "reputation": 8484,
-        "user_id": 1698695,
-        "user_type": "registered",
-        "accept_rate": 63,
-        "profile_image": "https://www.gravatar.com/avatar/c1cb93fcc7344b0391f4ecc2570b195e?s=256&d=identicon&r=PG",
-        "display_name": "David Williams",
-        "link": "https://stackoverflow.com/users/1698695/david-williams"
-      },
       "is_answered": true,
-      "view_count": 1849,
+      "view_count": 1999,
       "accepted_answer_id": 25702261,
       "answer_count": 4,
       "score": 0,
@@ -1965,38 +1284,26 @@
       "creation_date": 1410020084,
       "last_edit_date": 1410021713,
       "question_id": 25702190,
-      "content_license": "CC BY-SA 3.0",
       "link": "https://stackoverflow.com/questions/25702190/how-to-create-a-div-container-with-equal-spacing-on-child-divs",
       "title": "How to create a div container with equal spacing on child divs",
-      "key": 69
+      "key": 70
     },
     {
       "tags": [
         "css",
         "html"
       ],
-      "owner": {
-        "account_id": 4637401,
-        "reputation": 69,
-        "user_id": 3758257,
-        "user_type": "registered",
-        "accept_rate": 80,
-        "profile_image": "https://www.gravatar.com/avatar/7d7ee7cc66da3a887d71dd1b02767ab4?s=256&d=identicon&r=PG&f=y&so-version=2",
-        "display_name": "user3758257",
-        "link": "https://stackoverflow.com/users/3758257/user3758257"
-      },
       "is_answered": true,
-      "view_count": 194,
+      "view_count": 197,
       "accepted_answer_id": 25701383,
       "answer_count": 2,
       "score": 3,
       "last_activity_date": 1410015815,
       "creation_date": 1410014312,
       "question_id": 25701335,
-      "content_license": "CC BY-SA 3.0",
       "link": "https://stackoverflow.com/questions/25701335/add-lines-in-html-texarea",
       "title": "Add lines in HTML texarea",
-      "key": 70
+      "key": 71
     },
     {
       "tags": [
@@ -2004,28 +1311,17 @@
         "html",
         "lan"
       ],
-      "owner": {
-        "account_id": 4463716,
-        "reputation": 493,
-        "user_id": 3631886,
-        "user_type": "registered",
-        "accept_rate": 80,
-        "profile_image": "https://www.gravatar.com/avatar/81638974bb3ba0f2c4777161b807e948?s=256&d=identicon&r=PG&f=y&so-version=2",
-        "display_name": "CodeSniper",
-        "link": "https://stackoverflow.com/users/3631886/codesniper"
-      },
       "is_answered": true,
-      "view_count": 879,
+      "view_count": 954,
       "accepted_answer_id": 25698484,
       "answer_count": 2,
       "score": -2,
       "last_activity_date": 1409999483,
       "creation_date": 1409988110,
       "question_id": 25697901,
-      "content_license": "CC BY-SA 3.0",
       "link": "https://stackoverflow.com/questions/25697901/how-to-access-localhost-over-lan-ip-in-php",
       "title": "How to access localhost over LAN ip in php?",
-      "key": 71
+      "key": 72
     },
     {
       "tags": [
@@ -2035,18 +1331,8 @@
         "css",
         "blogger"
       ],
-      "owner": {
-        "account_id": 3982884,
-        "reputation": 2907,
-        "user_id": 3284379,
-        "user_type": "registered",
-        "accept_rate": 67,
-        "profile_image": "https://i.stack.imgur.com/FLrhl.jpg?s=256&g=1",
-        "display_name": "Shan Eapen Koshy",
-        "link": "https://stackoverflow.com/users/3284379/shan-eapen-koshy"
-      },
       "is_answered": true,
-      "view_count": 370,
+      "view_count": 389,
       "accepted_answer_id": 25591604,
       "answer_count": 2,
       "score": -4,
@@ -2054,10 +1340,9 @@
       "creation_date": 1409484296,
       "last_edit_date": 1442800628,
       "question_id": 25591489,
-      "content_license": "CC BY-SA 3.0",
       "link": "https://stackoverflow.com/questions/25591489/how-to-random-color-half-of-the-words-within-h2-tag",
       "title": "How to random color half of the words within h2 tag?",
-      "key": 72
+      "key": 73
     },
     {
       "tags": [
@@ -2065,16 +1350,6 @@
         "thumbnails",
         "vine"
       ],
-      "owner": {
-        "account_id": 4870600,
-        "reputation": 65,
-        "user_id": 3927276,
-        "user_type": "registered",
-        "accept_rate": 75,
-        "profile_image": "https://www.gravatar.com/avatar/3d5c12affd311f2780147454ca962e1f?s=256&d=identicon&r=PG&f=y&so-version=2",
-        "display_name": "posast",
-        "link": "https://stackoverflow.com/users/3927276/posast"
-      },
       "is_answered": true,
       "view_count": 1165,
       "accepted_answer_id": 25582918,
@@ -2084,10 +1359,9 @@
       "creation_date": 1409405363,
       "last_edit_date": 1409408715,
       "question_id": 25582874,
-      "content_license": "CC BY-SA 3.0",
       "link": "https://stackoverflow.com/questions/25582874/getting-vine-thumbnail",
       "title": "Getting vine thumbnail",
-      "key": 73
+      "key": 74
     },
     {
       "tags": [
@@ -2096,27 +1370,16 @@
         "mobile",
         "viewport"
       ],
-      "owner": {
-        "account_id": 4961972,
-        "reputation": 3353,
-        "user_id": 3992768,
-        "user_type": "registered",
-        "accept_rate": 64,
-        "profile_image": "https://www.gravatar.com/avatar/4087ccc79752e83f2f20fa5b6c807491?s=256&d=identicon&r=PG&f=y&so-version=2",
-        "display_name": "tom harrison",
-        "link": "https://stackoverflow.com/users/3992768/tom-harrison"
-      },
       "is_answered": true,
-      "view_count": 109,
+      "view_count": 115,
       "answer_count": 2,
       "score": 0,
       "last_activity_date": 1409402901,
       "creation_date": 1409402557,
       "question_id": 25582487,
-      "content_license": "CC BY-SA 3.0",
       "link": "https://stackoverflow.com/questions/25582487/viewport-tag-not-working",
       "title": "Viewport tag not working",
-      "key": 74
+      "key": 75
     },
     {
       "tags": [
@@ -2125,28 +1388,17 @@
         "overlap",
         "overlapping"
       ],
-      "owner": {
-        "account_id": 4961900,
-        "reputation": 49,
-        "user_id": 3992725,
-        "user_type": "registered",
-        "accept_rate": 80,
-        "profile_image": "https://i.stack.imgur.com/hTIYp.jpg?s=256&g=1",
-        "display_name": "Drea",
-        "link": "https://stackoverflow.com/users/3992725/drea"
-      },
       "is_answered": true,
-      "view_count": 581,
+      "view_count": 586,
       "accepted_answer_id": 25582387,
       "answer_count": 1,
       "score": 0,
       "last_activity_date": 1409401882,
       "creation_date": 1409401689,
       "question_id": 25582368,
-      "content_license": "CC BY-SA 3.0",
       "link": "https://stackoverflow.com/questions/25582368/css-content-overlapping-with-sidebar-tumblr-theme",
       "title": "CSS: Content Overlapping with Sidebar (Tumblr Theme)",
-      "key": 75
+      "key": 76
     },
     {
       "tags": [
@@ -2154,18 +1406,8 @@
         "jquery",
         "html"
       ],
-      "owner": {
-        "account_id": 4943372,
-        "reputation": 1221,
-        "user_id": 3979495,
-        "user_type": "registered",
-        "accept_rate": 17,
-        "profile_image": "https://i.stack.imgur.com/HoQ7x.jpg?s=256&g=1",
-        "display_name": "Chance Smith",
-        "link": "https://stackoverflow.com/users/3979495/chance-smith"
-      },
       "is_answered": true,
-      "view_count": 815,
+      "view_count": 824,
       "closed_date": 1409075080,
       "accepted_answer_id": 25512010,
       "answer_count": 2,
@@ -2176,52 +1418,32 @@
       "question_id": 25511684,
       "link": "https://stackoverflow.com/questions/25511684/javascript-replace-reg-and-html-tags",
       "closed_reason": "Needs details or clarity",
-      "title": "javascript replace &amp;reg; and html tags",
-      "key": 76
+      "title": "javascript replace &reg; and html tags",
+      "key": 77
     },
     {
       "tags": [
         "jquery"
       ],
-      "owner": {
-        "account_id": 411865,
-        "reputation": 31803,
-        "user_id": 784597,
-        "user_type": "registered",
-        "accept_rate": 65,
-        "profile_image": "https://i.stack.imgur.com/osHNj.jpg?s=256&g=1",
-        "display_name": "Pawan",
-        "link": "https://stackoverflow.com/users/784597/pawan"
-      },
       "is_answered": true,
-      "view_count": 46,
+      "view_count": 47,
       "accepted_answer_id": 25484850,
       "answer_count": 1,
       "score": 0,
       "last_activity_date": 1408966309,
       "creation_date": 1408965535,
       "question_id": 25484742,
-      "content_license": "CC BY-SA 3.0",
       "link": "https://stackoverflow.com/questions/25484742/how-to-show-a-default-image-incase-the-image-is-found",
       "title": "how to show a default image Incase the Image is found",
-      "key": 77
+      "key": 78
     },
     {
       "tags": [
         "javascript",
         "html"
       ],
-      "owner": {
-        "account_id": 4537192,
-        "reputation": 17,
-        "user_id": 3686062,
-        "user_type": "registered",
-        "profile_image": "https://www.gravatar.com/avatar/36eb0d3e5a8196e1f6bd0886326ad942?s=256&d=identicon&r=PG&f=y&so-version=2",
-        "display_name": "taliciaem",
-        "link": "https://stackoverflow.com/users/3686062/taliciaem"
-      },
       "is_answered": true,
-      "view_count": 78,
+      "view_count": 81,
       "accepted_answer_id": 25373189,
       "answer_count": 4,
       "score": 0,
@@ -2229,65 +1451,42 @@
       "creation_date": 1408400914,
       "last_edit_date": 1520530678,
       "question_id": 25373027,
-      "content_license": "CC BY-SA 3.0",
       "link": "https://stackoverflow.com/questions/25373027/repeat-block-of-text-for-each-div-instance",
       "title": "Repeat block of text for each DIV instance",
-      "key": 78
+      "key": 79
     },
     {
       "tags": [
         "html",
         "css"
       ],
-      "owner": {
-        "account_id": 4740763,
-        "reputation": 105,
-        "user_id": 3833587,
-        "user_type": "registered",
-        "accept_rate": 0,
-        "profile_image": "https://www.gravatar.com/avatar/c8143ede160392c420428b321674eaef?s=256&d=identicon&r=PG&f=y&so-version=2",
-        "display_name": "Logi",
-        "link": "https://stackoverflow.com/users/3833587/logi"
-      },
       "is_answered": true,
-      "view_count": 3130,
+      "view_count": 3370,
       "answer_count": 1,
       "score": 1,
       "last_activity_date": 1408401161,
       "creation_date": 1408399767,
       "question_id": 25372834,
-      "content_license": "CC BY-SA 3.0",
       "link": "https://stackoverflow.com/questions/25372834/input-box-text-color-with-css-wheather-on-focus-or-not",
       "title": "Input Box Text Color with CSS wheather on focus or not",
-      "key": 79
+      "key": 80
     },
     {
       "tags": [
         "php",
         "wordpress"
       ],
-      "owner": {
-        "account_id": 1816027,
-        "reputation": 299,
-        "user_id": 1651091,
-        "user_type": "registered",
-        "accept_rate": 44,
-        "profile_image": "https://i.stack.imgur.com/OxDW1.jpg?s=256&g=1",
-        "display_name": "Abhi",
-        "link": "https://stackoverflow.com/users/1651091/abhi"
-      },
       "is_answered": true,
-      "view_count": 6115,
+      "view_count": 6622,
       "accepted_answer_id": 25358867,
       "answer_count": 2,
       "score": 2,
       "last_activity_date": 1408349516,
       "creation_date": 1408349290,
       "question_id": 25358804,
-      "content_license": "CC BY-SA 3.0",
       "link": "https://stackoverflow.com/questions/25358804/wordpress-search-for-only-single-category",
       "title": "wordpress search for only single category",
-      "key": 80
+      "key": 81
     },
     {
       "tags": [
@@ -2295,29 +1494,19 @@
         "apache",
         ".htaccess",
         "mod-rewrite",
-        "redirect"
+        "http-redirect"
       ],
-      "owner": {
-        "account_id": 4873515,
-        "reputation": 41,
-        "user_id": 3929284,
-        "user_type": "registered",
-        "profile_image": "https://graph.facebook.com/100000163801880/picture?type=large",
-        "display_name": "Łukasz Trześniewski",
-        "link": "https://stackoverflow.com/users/3929284/%c5%81ukasz-trze%c5%9bniewski"
-      },
       "is_answered": true,
-      "view_count": 55,
+      "view_count": 59,
       "accepted_answer_id": 25358817,
       "answer_count": 1,
       "score": 2,
       "last_activity_date": 1408349338,
       "creation_date": 1408348499,
       "question_id": 25358608,
-      "content_license": "CC BY-SA 3.0",
       "link": "https://stackoverflow.com/questions/25358608/htaccess-friendly-urls-with-parameters-2",
       "title": "HTACCESS friendly urls with parameters 2",
-      "key": 81
+      "key": 82
     },
     {
       "tags": [
@@ -2325,18 +1514,8 @@
         "email",
         "phpmailer"
       ],
-      "owner": {
-        "account_id": 1723393,
-        "reputation": 746,
-        "user_id": 2469474,
-        "user_type": "registered",
-        "accept_rate": 2,
-        "profile_image": "https://i.stack.imgur.com/tpLSu.jpg?s=256&g=1",
-        "display_name": "koe",
-        "link": "https://stackoverflow.com/users/2469474/koe"
-      },
       "is_answered": true,
-      "view_count": 639,
+      "view_count": 644,
       "closed_date": 1408591768,
       "answer_count": 1,
       "score": -1,
@@ -2346,24 +1525,15 @@
       "link": "https://stackoverflow.com/questions/25358576/phpmailer-can-not-send-email-now",
       "closed_reason": "Duplicate",
       "title": "PHPMailer can not send email now",
-      "key": 82
+      "key": 83
     },
     {
       "tags": [
         "php",
         "regex"
       ],
-      "owner": {
-        "account_id": 145465,
-        "reputation": 11,
-        "user_id": 355293,
-        "user_type": "registered",
-        "profile_image": "https://www.gravatar.com/avatar/6e14f06e07c6478040408196fbf5e3a9?s=256&d=identicon&r=PG",
-        "display_name": "jadoon",
-        "link": "https://stackoverflow.com/users/355293/jadoon"
-      },
       "is_answered": true,
-      "view_count": 302,
+      "view_count": 303,
       "closed_date": 1408378563,
       "accepted_answer_id": 25351531,
       "answer_count": 2,
@@ -2375,35 +1545,24 @@
       "link": "https://stackoverflow.com/questions/25351512/in-php-extract-specific-text-from-a-string",
       "closed_reason": "Not suitable for this site",
       "title": "In php extract specific text from a string",
-      "key": 83
+      "key": 84
     },
     {
       "tags": [
         "php",
         "wordpress"
       ],
-      "owner": {
-        "account_id": 1006689,
-        "reputation": 4294,
-        "user_id": 1020254,
-        "user_type": "registered",
-        "accept_rate": 58,
-        "profile_image": "https://www.gravatar.com/avatar/ca177076efc16a3fcc3be70c3fa55eb2?s=256&d=identicon&r=PG&f=y&so-version=2",
-        "display_name": "jagmitg",
-        "link": "https://stackoverflow.com/users/1020254/jagmitg"
-      },
       "is_answered": true,
-      "view_count": 1078,
+      "view_count": 1105,
       "accepted_answer_id": 25837867,
       "answer_count": 2,
       "score": 1,
       "last_activity_date": 1410727644,
       "creation_date": 1407689739,
       "question_id": 25230943,
-      "content_license": "CC BY-SA 3.0",
       "link": "https://stackoverflow.com/questions/25230943/wordpress-paginate-links-select-option",
       "title": "Wordpress paginate_links select option",
-      "key": 84
+      "key": 85
     },
     {
       "tags": [
@@ -2411,82 +1570,49 @@
         "wordpress",
         "advanced-custom-fields"
       ],
-      "owner": {
-        "account_id": 1006689,
-        "reputation": 4294,
-        "user_id": 1020254,
-        "user_type": "registered",
-        "accept_rate": 58,
-        "profile_image": "https://www.gravatar.com/avatar/ca177076efc16a3fcc3be70c3fa55eb2?s=256&d=identicon&r=PG&f=y&so-version=2",
-        "display_name": "jagmitg",
-        "link": "https://stackoverflow.com/users/1020254/jagmitg"
-      },
       "is_answered": true,
-      "view_count": 4143,
+      "view_count": 4187,
       "accepted_answer_id": 24679696,
       "answer_count": 1,
       "score": 0,
       "last_activity_date": 1405003781,
       "creation_date": 1404989823,
       "question_id": 24674750,
-      "content_license": "CC BY-SA 3.0",
       "link": "https://stackoverflow.com/questions/24674750/acf-form-not-creating-unique-entities",
       "title": "ACF Form not creating unique entities",
-      "key": 85
+      "key": 86
     },
     {
       "tags": [
         "php",
         "salesforce"
       ],
-      "owner": {
-        "account_id": 1006689,
-        "reputation": 4294,
-        "user_id": 1020254,
-        "user_type": "registered",
-        "accept_rate": 58,
-        "profile_image": "https://www.gravatar.com/avatar/ca177076efc16a3fcc3be70c3fa55eb2?s=256&d=identicon&r=PG&f=y&so-version=2",
-        "display_name": "jagmitg",
-        "link": "https://stackoverflow.com/users/1020254/jagmitg"
-      },
       "is_answered": true,
-      "view_count": 1021,
+      "view_count": 1050,
       "accepted_answer_id": 25586648,
       "answer_count": 1,
       "score": 0,
       "last_activity_date": 1409431871,
       "creation_date": 1392672096,
       "question_id": 21839498,
-      "content_license": "CC BY-SA 3.0",
       "link": "https://stackoverflow.com/questions/21839498/curl-validation-on-salesforce-web2lead",
       "title": "cURL validation on salesforce Web2Lead",
-      "key": 86
+      "key": 87
     },
     {
       "tags": [
         "excel"
       ],
-      "owner": {
-        "account_id": 1006689,
-        "reputation": 4294,
-        "user_id": 1020254,
-        "user_type": "registered",
-        "accept_rate": 58,
-        "profile_image": "https://www.gravatar.com/avatar/ca177076efc16a3fcc3be70c3fa55eb2?s=256&d=identicon&r=PG&f=y&so-version=2",
-        "display_name": "jagmitg",
-        "link": "https://stackoverflow.com/users/1020254/jagmitg"
-      },
       "is_answered": true,
-      "view_count": 11038,
+      "view_count": 11168,
       "answer_count": 2,
       "score": 0,
       "last_activity_date": 1520255192,
       "creation_date": 1379535919,
       "question_id": 18881715,
-      "content_license": "CC BY-SA 3.0",
       "link": "https://stackoverflow.com/questions/18881715/run-two-vlookup-if-an-n-a",
-      "title": "Run two vlookup if an &#39;N/A&#39;",
-      "key": 87
+      "title": "Run two vlookup if an 'N/A'",
+      "key": 88
     },
     {
       "tags": [
@@ -2495,18 +1621,8 @@
         "styles",
         "opacity"
       ],
-      "owner": {
-        "account_id": 2290540,
-        "reputation": 363,
-        "user_id": 2013488,
-        "user_type": "registered",
-        "accept_rate": 95,
-        "profile_image": "https://www.gravatar.com/avatar/fc24de79eb96a26faa1b18499a1bb2dd?s=256&d=identicon&r=PG",
-        "display_name": "user2013488",
-        "link": "https://stackoverflow.com/users/2013488/user2013488"
-      },
       "is_answered": true,
-      "view_count": 93,
+      "view_count": 95,
       "accepted_answer_id": 15862259,
       "answer_count": 2,
       "score": 1,
@@ -2514,10 +1630,9 @@
       "creation_date": 1365335848,
       "last_edit_date": 1543722512,
       "question_id": 15862096,
-      "content_license": "CC BY-SA 4.0",
       "link": "https://stackoverflow.com/questions/15862096/transparent-div-with-text-on-image",
       "title": "Transparent div with text on image",
-      "key": 88
+      "key": 89
     },
     {
       "tags": [
@@ -2527,18 +1642,8 @@
         "drupal",
         "mod-rewrite"
       ],
-      "owner": {
-        "account_id": 1006689,
-        "reputation": 4294,
-        "user_id": 1020254,
-        "user_type": "registered",
-        "accept_rate": 58,
-        "profile_image": "https://www.gravatar.com/avatar/ca177076efc16a3fcc3be70c3fa55eb2?s=256&d=identicon&r=PG&f=y&so-version=2",
-        "display_name": "jagmitg",
-        "link": "https://stackoverflow.com/users/1020254/jagmitg"
-      },
       "is_answered": true,
-      "view_count": 1420,
+      "view_count": 1429,
       "accepted_answer_id": 13303914,
       "answer_count": 1,
       "score": 1,
@@ -2546,10 +1651,9 @@
       "creation_date": 1352330553,
       "last_edit_date": 1352358691,
       "question_id": 13280015,
-      "content_license": "CC BY-SA 3.0",
       "link": "https://stackoverflow.com/questions/13280015/apache-404-error-drupal",
       "title": "Apache 404 Error - Drupal",
-      "key": 89
+      "key": 90
     }
   ]
 }

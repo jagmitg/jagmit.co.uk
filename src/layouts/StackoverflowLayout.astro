@@ -1,52 +1,68 @@
 ---
-import Breadcrumb from "@components/icons/Breadcrumb.astro";
-import Pagination from "@components/Pagination.astro";
-import Dropdown from "@components/Dropdown.astro";
-import { generateUniqueTags } from "@utils/collections";
-import stackOverflowData from "../data/stackoverflow.json";
+import Breadcrumb from '@components/icons/Breadcrumb.astro'
+import Pagination from '@components/Pagination.astro'
+import Dropdown from '@components/Dropdown.astro'
+import { generateUniqueTags } from '@utils/collections'
+import stackOverflowData from '@data/stackoverflow.json'
 
 type Props = {
-  title?: string;
-  tags?: string[];
-  breadcrumb?: boolean;
-  pagination?: any;
-};
-const allQuestions = Object.values(stackOverflowData.data);
-const uniqueTags = generateUniqueTags(allQuestions);
-const tagOptions = uniqueTags.map((tag) => ({
-  label: tag,
-  value: `${tag}/1`,
-}));
+	title?: string
+	tags?: string[]
+	breadcrumb?: boolean
+	pagination?: any
+}
 
-const { title, breadcrumb, pagination } = Astro.props;
+const sortOptions = [
+	{ label: 'Newest First', value: 'creation_date_desc' },
+	{ label: 'Oldest First', value: 'creation_date_asc' },
+	{ label: 'Last Updated (Newest)', value: 'last_edit_date_desc' },
+	{ label: 'Last Updated (Oldest)', value: 'last_edit_date_asc' },
+	{ label: 'Most Views', value: 'view_count_desc' },
+	{ label: 'Least Views', value: 'view_count_asc' }
+]
+
+const allQuestions = Object.values(stackOverflowData.data)
+const uniqueTags = generateUniqueTags(allQuestions)
+const tagOptions = uniqueTags.map((tag) => ({
+	label: tag,
+	value: `${tag}/1`
+}))
+
+const { title, breadcrumb, pagination } = Astro.props
 ---
 
 {
-  title && (
-    <div class="flex flex-col sm:flex-row justify-between sm:justify-between items-center pb-6">
-      <h2 class="text-2xl text-center sm:text-left mb-4 sm:mb-0 flex items-center">
-        {breadcrumb ? (
-          <>
-            <a href="/blog" class="mr-2">
-              Blog
-            </a>
-            <Breadcrumb />
-            <span>{title}</span>
-          </>
-        ) : (
-          title
-        )}
-      </h2>
-      <div class="flex flex-wrap">
-        <Dropdown
-          options={tagOptions}
-          currentSelection={Astro.params.tag}
-          baseUrl="/stackoverflow/tags/"
-          placeholder="tags..."
-        />
-      </div>
-    </div>
-  )
+	title && (
+		<div class="flex flex-col sm:flex-row justify-between sm:justify-between items-center pb-6">
+			<h2 class="text-2xl text-center sm:text-left mb-4 sm:mb-0 flex items-center">
+				{breadcrumb ? (
+					<>
+						<a href="/blog" class="mr-2">
+							Blog
+						</a>
+						<Breadcrumb />
+						<span>{title}</span>
+					</>
+				) : (
+					title
+				)}
+			</h2>
+			<div class="flex flex-wrap gap-2 ">
+				<Dropdown
+					options={sortOptions}
+					currentSelection={Astro.params.sort}
+					baseUrl="/stackoverflow/sort/"
+					placeholder="Sort by..."
+				/>
+				<Dropdown
+					options={tagOptions}
+					currentSelection={Astro.params.tag}
+					baseUrl="/stackoverflow/tags/"
+					placeholder="tags..."
+				/>
+			</div>
+		</div>
+	)
 }
 
 <slot />

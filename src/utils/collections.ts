@@ -75,13 +75,11 @@ export async function getTagList(): Promise<Tag[]> {
 		})
 	})
 
-	// Convert the countMap into a sorted array of Tag objects
 	const tagsArray: Tag[] = Object.entries(countMap).map(([name, count]) => ({
 		name,
 		count
 	}))
 
-	// Sort the tags array alphabetically by tag name
 	return tagsArray.sort((a, b) => a.name.localeCompare(b.name))
 }
 
@@ -93,7 +91,6 @@ export function generateUniqueTags(questions: Question[]): string[] {
 			for (let overarchingTag in TAGS_DEFINITION) {
 				if (matchesTagDefinition(tag, TAGS_DEFINITION[overarchingTag])) {
 					allTags.add(overarchingTag)
-					break
 				}
 			}
 		})
@@ -114,4 +111,51 @@ export function matchesTagDefinition(
 		}
 	}
 	return false
+}
+
+export function sortByCreationDate(
+	a: any,
+	b: any,
+	isDesc: boolean = true
+): number {
+	const dateA = a.creation_date
+	const dateB = b.creation_date
+	return isDesc ? dateB - dateA : dateA - dateB
+}
+
+export function sortByLastEditDate(
+	a: any,
+	b: any,
+	isDesc: boolean = true
+): number {
+	const dateA = a.last_edit_date || a.creation_date
+	const dateB = b.last_edit_date || b.creation_date
+	return isDesc ? dateB - dateA : dateA - dateB
+}
+
+export function sortByViewCount(
+	a: any,
+	b: any,
+	isDesc: boolean = true
+): number {
+	return isDesc ? b.view_count - a.view_count : a.view_count - b.view_count
+}
+
+export function getSortFunction(sortType: string): (a: any, b: any) => number {
+	switch (sortType) {
+		case 'creation_date_desc':
+			return (a, b) => sortByCreationDate(a, b, true)
+		case 'creation_date_asc':
+			return (a, b) => sortByCreationDate(a, b, false)
+		case 'last_edit_date_desc':
+			return (a, b) => sortByLastEditDate(a, b, true)
+		case 'last_edit_date_asc':
+			return (a, b) => sortByLastEditDate(a, b, false)
+		case 'view_count_desc':
+			return (a, b) => sortByViewCount(a, b, true)
+		case 'view_count_asc':
+			return (a, b) => sortByViewCount(a, b, false)
+		default:
+			return (a, b) => sortByCreationDate(a, b, true)
+	}
 }
