@@ -23,20 +23,20 @@
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.44.0",
-		"cheerio": "1.0.0-rc.12",
+		"cheerio": "1.0.0",
 		"color": "^4.2.3",
-		"dotenv": "^16.4.5",
-		"emoji-js": "^3.8.0",
+		"dotenv": "^16.4.7",
+		"emoji-js": "^3.8.1",
 		"octokit": "^3.2.1",
-		"prettier": "^3.2.5",
-		"prettier-plugin-astro": "^0.12.3",
+		"prettier": "3.4.2",
+		"prettier-plugin-astro": "^0.14.1",
 		"remark": "^15.0.1",
 		"remark-frontmatter": "^5.0.0",
 		"serve": "^14.2.3",
-		"sharp": "^0.33.3",
+		"sharp": "^0.33.5",
 		"strip-markdown": "^6.0.0",
-		"tsx": "^4.9.3",
-		"yaml": "^2.4.2"
+		"tsx": "^4.19.2",
+		"yaml": "^2.6.1"
 	},
 	"dependencies": {
 		"@astrojs/check": "^0.9.4",
@@ -56,6 +56,6 @@
 		"stylelint-config-property-sort-order-smacss": "^10.0.0",
 		"stylelint-order": "^6.0.4",
 		"stylelint-scss": "^6.3.0",
-		"typescript": "^5.4.5"
+		"typescript": "^5.7.2"
 	}
 }

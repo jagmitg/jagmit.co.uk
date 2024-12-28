@@ -19,14 +19,16 @@ const { entry } = Astro.props as {
 	entry: FlexibleBlogPost
 }
 
+
 const { Content } = await entry.render()
+const content = await entry.render().then(result => result.toString())
 const headings = []
 ---
 
 <BlogLayout
-	headings={headings}
-	frontmatter={entry.data}
-	readingTime={readingTime(entry.body)}
+  headings={headings}
+  frontmatter={entry.data}
+  readingTime={readingTime(content)}
 >
-	<Content />
+  <Content />
 </BlogLayout>
