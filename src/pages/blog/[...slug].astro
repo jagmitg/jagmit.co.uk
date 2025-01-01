@@ -2,10 +2,16 @@
 import BlogLayout from '@layouts/BlogLayout.astro'
 import { getSortedPosts } from '@utils/collections'
 import type { CollectionEntry } from 'astro:content'
+import type { BlogPost } from '@utils/collections'
 import { readingTime } from '@utils/readingTime'
 
 export async function getStaticPaths() {
-  const blogEntries = await getSortedPosts()
+  const allEntries = await getSortedPosts()
+
+  const blogEntries = allEntries.filter((entry): entry is BlogPost =>
+    entry.collection === 'blog'
+  )
+
   return blogEntries.map((entry) => ({
     params: { slug: entry.slug },
     props: { entry }

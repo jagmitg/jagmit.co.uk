@@ -1,17 +1,25 @@
-import { mkdir } from 'fs/promises'
-import { writeFile } from 'fs/promises'
+import { mkdir, access, writeFile } from 'fs/promises'
 import path from 'path'
 import 'dotenv/config'
 import type { RepoFetchSettings, GithubRepo } from '../types'
 
-if (!process.env.USERNAME || !process.env.TARGET_FOLDER || !process.env.EXCLUDED_REPOS) {
-  throw new Error('Environment variables USERNAME, TARGET_FOLDER, and EXCLUDED_REPOS must be set.')
+if (!process.env.USERNAME || !process.env.TARGET_FOLDER || !process.env.EXCLUDED_REPOS || !process.env.ENVS) {
+  throw new Error('Environment variables USERNAME, TARGET_FOLDER, EXCLUDED_REPOS, and ENVS must be set.')
 }
 
 const REPO_FETCH_SETTINGS: RepoFetchSettings = {
   username: process.env.USERNAME,
   targetFolder: process.env.TARGET_FOLDER,
   excludedRepos: process.env.EXCLUDED_REPOS.split(',')
+}
+
+async function fileExists(filepath: string): Promise<boolean> {
+  try {
+    await access(filepath)
+    return true
+  } catch {
+    return false
+  }
 }
 
 async function ensureDirectoryExists(dir: string) {
@@ -62,6 +70,17 @@ interface RepoData {
 }
 
 async function updateReposJson(): Promise<void> {
+  // Check if we're in development environment and if repos.json exists
+  if (process.env.ENVS === 'development') {
+    const jsonFilePath = path.join(REPO_FETCH_SETTINGS.targetFolder, 'repos.json')
+    const reposFileExists = await fileExists(jsonFilePath)
+
+    if (reposFileExists) {
+      console.log('repos.json already exists in development environment. Skipping update.')
+      return
+    }
+  }
+
   // Only ensure the directory exists if it doesn't already
   await ensureDirectoryExists(REPO_FETCH_SETTINGS.targetFolder)
   const repoList: RepoData[] = [];

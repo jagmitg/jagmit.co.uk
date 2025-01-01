@@ -23,7 +23,6 @@ export async function getStaticPaths(): Promise<any> {
         const sortedQuestions = [...questions].sort(getSortFunction(sort))
         const numberOfPages = Math.ceil(sortedQuestions.length / PAGINATE_CONTENT)
 
-        // Add path without page number (defaults to page 1)
         allPaths.push({
             params: { s: sort, page: undefined },
             props: {
@@ -39,7 +38,6 @@ export async function getStaticPaths(): Promise<any> {
             }
         })
 
-        // Add paths with explicit page numbers
         for (let i = 1; i <= numberOfPages; i++) {
             allPaths.push({
                 params: { s: sort, page: i.toString() },
@@ -72,8 +70,8 @@ type Props = {
         lastPage: number;
         currentPage: number;
         url: {
-            prev: string | null;
-            next: string | null;
+            prev?: string | undefined;
+            next?: string | undefined;
         }
     }
 }
@@ -94,7 +92,10 @@ const sortLabels: Record<string, string> = {
 <Layout title={`Sorted by ${sortLabels[s]} - Page ${page.currentPage}`}>
     <StackoverflowLayout
         title={`Sorted by: ${sortLabels[s]}`}
-        pagination={page.url}
+        pagination={{
+            prev: page.url.prev || undefined,  // Convert null to undefined
+            next: page.url.next || undefined   // Convert null to undefined
+        }}
     >
         <div class="grid gap-4 grid-cols-1 grid-rows-2 mt-5 lg:grid-cols-2">
             {questions.map((question) => (
@@ -107,7 +108,7 @@ const sortLabels: Record<string, string> = {
                     <div class="flex flex-col">
                         <p class="font-bold text-neutral-900">{question.data.title}</p>
                         <p class="text-neutral-600">
-                            Tags: {question.data.tags.join(', ')}
+                            Tags: {question.data.tags?.join(', ') || 'No tags'}
                         </p>
                     </div>
                 </a>

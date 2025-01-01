@@ -1,4 +1,6 @@
 import { writeFileSync } from 'fs'
+import { access } from 'fs/promises'
+import path from 'path'
 import type {
   Config,
   AnswerResponseItem,
@@ -7,12 +9,26 @@ import type {
 } from '../types'
 import 'dotenv/config'
 
+if (!process.env.USER_ID || !process.env.PAGE_SIZE || !process.env.ENDPOINT_ANSWERS || !process.env.ENDPOINT_QUESTION || !process.env.TARGET_FOLDER || !process.env.ENVS) {
+  throw new Error('Required environment variables are not set.')
+}
+
 const config: Config = {
   userId: Number(process.env.USER_ID),
   pageSize: Number(process.env.PAGE_SIZE),
   endpoints: {
     answers: process.env.ENDPOINT_ANSWERS!,
     question: process.env.ENDPOINT_QUESTION!
+  },
+  targetFolder: process.env.TARGET_FOLDER
+}
+
+async function fileExists(filepath: string): Promise<boolean> {
+  try {
+    await access(filepath)
+    return true
+  } catch {
+    return false
   }
 }
 
@@ -99,6 +115,17 @@ function processQuestionDetail(
 }
 
 async function fetchDataAndSaveToJson(): Promise<void> {
+  // Check if we're in development environment and if stackoverflow.json exists
+  if (process.env.ENVS === 'development') {
+    const jsonFilePath = path.join(config.targetFolder, 'stackoverflow.json')
+    const stackoverflowFileExists = await fileExists(jsonFilePath)
+
+    if (stackoverflowFileExists) {
+      console.log('stackoverflow.json already exists in development environment. Skipping update.')
+      return
+    }
+  }
+
   let results: QuestionDetail[] = []
   const allQuestionIds = await fetchAllAnswers()
 
@@ -127,9 +154,11 @@ async function fetchDataAndSaveToJson(): Promise<void> {
     `Imported details for ${results.length} questions out of ${allQuestionIds.length} unique questions.`
   )
 
-  console.log('Saving data to "src/data/stackoverflow.json"...')
-  writeFileSync('src/data/stackoverflow.json', JSON.stringify(processedResults, null, 2))
+  console.log(`Saving data to ${config.targetFolder}/stackoverflow.json...`)
+  const jsonFilePath = path.join(config.targetFolder, 'stackoverflow.json')
+  writeFileSync(jsonFilePath, JSON.stringify(processedResults, null, 2))
+
   console.log('Data saved successfully!')
 }
 
-fetchDataAndSaveToJson()
+fetchDataAndSaveToJson().catch((error) => console.error('An error occurred:', error))

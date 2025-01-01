@@ -1,6 +1,7 @@
 export interface Config {
   userId: number
   pageSize: number
+  targetFolder: string
   endpoints: {
     answers: string
     question: string
