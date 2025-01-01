@@ -2,7 +2,8 @@
 	"name": "jagmit.co.uk",
 	"version": "1.0.0",
 	"author": "Jagmit Gabba",
-	"type": "module",
+  "type": "module",
+  "private": true,
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/jagmitg/jagmit.co.uk.git",
@@ -15,6 +16,7 @@
 		"preview": "astro preview",
 		"check": "astro check",
 		"test": "playwright test",
+    "sync": "astro sync",
 		"fmt": "prettier -w --plugin-search-dir=. .",
 		"fmt:check": "prettier --check .",
 		"cache": "tsx scripts/generatecache.ts",

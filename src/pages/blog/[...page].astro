@@ -1,45 +1,43 @@
 ---
 import type { GetStaticPathsOptions } from "astro";
 import { getSortedPosts } from "@utils/collections";
+import type { Post } from "@utils/collections";
 import Layout from "@layouts/Layout.astro";
 import MainLayout from "@layouts/MainLayout.astro";
 import BlogCardItem from "@components/BlogCardItem.astro";
 import { BLOG_DESCRIPTION, PAGINATE_CONTENT } from "@const";
-import type { CollectionEntry } from "astro:content";
-
-interface EnhancedBlogPost extends Omit<CollectionEntry<'blog'>, 'slug'> {
-  slug: string;
-}
 
 interface YearMonthAccumulator {
-  [key: string]: EnhancedBlogPost[];
+  [key: string]: Post[];
 }
 
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
-  let enhancedBlogPosts: EnhancedBlogPost[] = await getSortedPosts() as unknown as EnhancedBlogPost[];
+  const posts = await getSortedPosts();
 
-  if (!enhancedBlogPosts.length) {
-    console.log("No enhanced posts available for pagination");
+  if (!posts.length) {
+    console.log("No posts available for pagination");
   }
 
-  return paginate(enhancedBlogPosts, {
+  return paginate(posts, {
     pageSize: PAGINATE_CONTENT,
   });
 }
 
 const { page } = Astro.props as {
   page: {
-    data: EnhancedBlogPost[],
+    data: Post[],
     url: {
       prev: string,
       next: string
     }
   };
 };
-const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
-function organizePostsByMonth(posts: EnhancedBlogPost[]): YearMonthAccumulator {
-  return posts.reduce((acc: YearMonthAccumulator, post: EnhancedBlogPost) => {
+const monthNames = ["January", "February", "March", "April", "May", "June",
+                   "July", "August", "September", "October", "November", "December"];
+
+function organizePostsByMonth(posts: Post[]): YearMonthAccumulator {
+  return posts.reduce((acc: YearMonthAccumulator, post: Post) => {
     if (!post || !post.data || !post.data.date) {
       console.log("Skipping post due to incomplete data:", post);
       return acc;
@@ -58,10 +56,21 @@ function organizePostsByMonth(posts: EnhancedBlogPost[]): YearMonthAccumulator {
 function sortedMonthKeys(monthData: YearMonthAccumulator): string[] {
   return Object.keys(monthData).sort((a, b) => b.localeCompare(a));
 }
+
+function getPostUrl(post: Post): string {
+  if (post.collection === 'repo' && 'repo' in post.data && post.data.repo) {
+    return post.data.repo;
+  }
+  return `/blog/${post.slug}/`;
+}
 ---
 
 <Layout title="Read my Blog" description={BLOG_DESCRIPTION}>
-  <MainLayout title="Read my blog..." pagination={{ prev: page.url.prev, next: page.url.next }} dropdowns={true}>
+  <MainLayout
+    title="Read my blog..."
+    pagination={{ prev: page.url.prev, next: page.url.next }}
+    dropdowns={true}
+  >
     {sortedMonthKeys(organizePostsByMonth(page.data)).map(yearMonth => {
       const [year, monthIndex] = yearMonth.split("-");
       const monthName = monthNames[parseInt(monthIndex, 10) - 1];
@@ -71,9 +80,9 @@ function sortedMonthKeys(monthData: YearMonthAccumulator): string[] {
           {organizePostsByMonth(page.data)[yearMonth].map(post => (
             <BlogCardItem
               key={post.slug}
-              url={post.data.repo ? post.data.repo : `/blog/${post.slug}/`}
+              url={getPostUrl(post)}
               frontmatter={post.data}
-              repo={!!post.data.repo}
+              repo={post.collection === 'repo'}
             />
           ))}
         </>

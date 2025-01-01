@@ -1,26 +1,26 @@
 ---
 import type { GetStaticPathsOptions } from 'astro'
+import { getCollection } from 'astro:content'
 import Layout from '@layouts/Layout.astro'
 import StackoverflowLayout from '@layouts/StackoverflowLayout.astro'
-import stackOverflowData from '@data/stackoverflow.json'
 import { formatDate } from '@utils/formatDate'
 import External from '@components/icons/External.astro'
 import { PAGINATE_CONTENT } from '@const'
 
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
-	const questions = Object.values(stackOverflowData.data)
+  const questions = await getCollection('stackoverflow');
 
-	const sortedQuestions = questions.sort(
-		(a, b) => b.creation_date - a.creation_date
-	)
-
-	return paginate(sortedQuestions, {
-		pageSize: PAGINATE_CONTENT
-	})
+  const sortedQuestions = questions.sort((a, b) =>
+    b.data.creation_date.valueOf() - a.data.creation_date.valueOf()
+  );
+  return paginate(sortedQuestions, {
+    pageSize: PAGINATE_CONTENT
+  });
 }
 
 const { page } = Astro.props
 const questions = page.data
+
 ---
 
 <Layout
@@ -37,17 +37,17 @@ const questions = page.data
 				questions.map((question: any) => (
 					<>
 						<a
-							href={question.link}
+							href={question.data.link}
 							target="_blank"
 							rel="noopener noreferrer"
 							class="p-4 border mb-2 border-neutral-200 relative bg-neutral-50 rounded flex items-center justify-between px-3 py-4 w-full hover:bg-neutral-200 transition-colors"
 						>
 							<div class="flex flex-col">
-								<p class="font-bold text-neutral-900">{question.title}</p>
+								<p class="font-bold text-neutral-900">{question.data.title}</p>
 								<p class="text-neutral-600">
-									{formatDate(new Date(question.creation_date * 1000))}
+									{formatDate(new Date(question.data.creation_date))}
 								</p>
-								<p class="text-neutral-600">Tags: {question.tags.join(', ')}</p>
+								<p class="text-neutral-600">Tags: {question.data.tags.join(', ')}</p>
 							</div>
 							<div class="text-neutral-700">
 								<External />

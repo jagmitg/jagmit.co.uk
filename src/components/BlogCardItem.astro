@@ -1,13 +1,13 @@
 ---
 // import { parseTags } from "@utils/collections";
 import { formatDate } from "@utils/formatDate";
-import External from "@components/icons/External.astro";
+import ExternalWrapper from "./ExternalWrapper.astro";
 
 const { url, frontmatter, repo } = Astro.props;
 ---
 
 <a
-  class="blogItemLink mb-6 hover:bg-gray-100 rounded-md border-top"
+  class="blogItemLink mb-6 hover:bg-gray-100 rounded-md border-top group"
   href={url}
   target={repo ? "_blank" : undefined}
   rel={repo ? "noopener noreferrer" : undefined}
@@ -25,9 +25,7 @@ const { url, frontmatter, repo } = Astro.props;
     <div class="w-3/4 md:w-6/7 p-2 pl-4 relative">
       {
         repo && (
-          <div class="absolute right-0">
-            <External />
-          </div>
+          <ExternalWrapper />
         )
       }
       <h2 class="font-bold mb-2">{frontmatter.title}</h2>

@@ -1,10 +1,8 @@
 import { mkdir } from 'fs/promises'
-import { writeFile, readdir, unlink } from 'fs/promises'
+import { writeFile } from 'fs/promises'
 import path from 'path'
-import dotenv from 'dotenv'
+import 'dotenv/config'
 import type { RepoFetchSettings, GithubRepo } from '../types'
-
-dotenv.config()
 
 if (!process.env.USERNAME || !process.env.TARGET_FOLDER || !process.env.EXCLUDED_REPOS) {
   throw new Error('Environment variables USERNAME, TARGET_FOLDER, and EXCLUDED_REPOS must be set.')
@@ -53,18 +51,20 @@ async function fetchWithRetry(url: string, retries = 3, delayMs = 1000): Promise
   throw new Error('Max retries reached')
 }
 
-async function getExistingRepos(targetFolder: string): Promise<Set<string>> {
-  try {
-    const files = await readdir(targetFolder)
-    return new Set(files.map(file => file.replace('.mdx', '')))
-  } catch {
-    return new Set()
-  }
+interface RepoData {
+  title: string;
+  date: string;
+  slug: string;
+  description: string;
+  repo: string;
+  tags: string[];
+  draft: boolean;
 }
 
-async function createMDFiles(): Promise<void> {
+async function updateReposJson(): Promise<void> {
+  // Only ensure the directory exists if it doesn't already
   await ensureDirectoryExists(REPO_FETCH_SETTINGS.targetFolder)
-  const existingRepos = await getExistingRepos(REPO_FETCH_SETTINGS.targetFolder)
+  const repoList: RepoData[] = [];
 
   try {
     const response = await fetchWithRetry(
@@ -73,9 +73,7 @@ async function createMDFiles(): Promise<void> {
     const data = (await response.json()) as GithubRepo[]
 
     for (const repo of data) {
-      if (repo.fork ||
-          REPO_FETCH_SETTINGS.excludedRepos.includes(repo.name) ||
-          existingRepos.has(repo.name)) {
+      if (repo.fork || REPO_FETCH_SETTINGS.excludedRepos.includes(repo.name)) {
         continue
       }
 
@@ -87,21 +85,20 @@ async function createMDFiles(): Promise<void> {
 
         if (typeof languages === 'object' && languages !== null) {
           const repoDate = new Date(repo.created_at).toISOString().slice(0, 10)
-          const languageKeys = Object.keys(languages).join(', ')
-          const content = `---
-title: "${repo.name}"
-date: "${repoDate}"
-description: "${repo.description ? repo.description.replace(/"/g, '\\"') : 'No description'}"
-repo: "${repo.html_url}"
-tags: [${languageKeys.split(', ').map((key) => `${key}`).join(', ')}]
-draft: false
----`
+          const languageKeys = Object.keys(languages)
 
-          await writeFile(
-            path.join(REPO_FETCH_SETTINGS.targetFolder, `${repo.name}.mdx`),
-            content
-          )
-          console.log(`Created file for ${repo.name}`)
+          const repoData: RepoData = {
+            title: repo.name,
+            slug: repo.name,
+            date: repoDate,
+            description: repo.description || 'No description',
+            repo: repo.html_url,
+            tags: languageKeys,
+            draft: false
+          }
+
+          repoList.push(repoData)
+          console.log(`Processed repo ${repo.name}`)
           await delay(1000)
         }
       } catch (error) {
@@ -109,10 +106,13 @@ draft: false
       }
     }
 
-    console.log('All markdown files have been created successfully.')
+    // Write/update only the repos.json file
+    const jsonFilePath = path.join(REPO_FETCH_SETTINGS.targetFolder, 'repos.json')
+    await writeFile(jsonFilePath, JSON.stringify(repoList, null, 2))
+    console.log('repos.json has been updated successfully.')
   } catch (error) {
     console.error('An error occurred:', error)
   }
 }
 
-createMDFiles().catch((error) => console.error('An error occurred:', error))
+updateReposJson().catch((error) => console.error('An error occurred:', error))

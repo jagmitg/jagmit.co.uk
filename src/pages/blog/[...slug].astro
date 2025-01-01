@@ -1,28 +1,24 @@
 ---
 import BlogLayout from '@layouts/BlogLayout.astro'
 import { getSortedPosts } from '@utils/collections'
-import type { FlexibleBlogPost } from '@utils/collections'
+import type { CollectionEntry } from 'astro:content'
 import { readingTime } from '@utils/readingTime'
 
 export async function getStaticPaths() {
-	const blogEntries = await getSortedPosts()
-
-	const paths = blogEntries.map((entry) => ({
-		params: { slug: entry.slug },
-		props: { entry }
-	}))
-
-	return paths
+  const blogEntries = await getSortedPosts()
+  return blogEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry }
+  }))
 }
 
-const { entry } = Astro.props as {
-	entry: FlexibleBlogPost
+interface Props {
+  entry: CollectionEntry<'blog'> & { slug: string }
 }
 
-
-const { Content } = await entry.render()
+const { entry } = Astro.props
+const { Content, headings } = await entry.render()
 const content = await entry.render().then(result => result.toString())
-const headings = []
 ---
 
 <BlogLayout

@@ -1,12 +1,15 @@
 ---
+import ExternalWrapper from '@components/ExternalWrapper.astro';
 import Layout from '@layouts/Layout.astro'
 import MainLayout from '@layouts/MainLayout.astro'
-import { getCollection } from 'astro:content'
-import External from '@components/icons/External.astro'
+import { getCollection } from "astro:content";
 
 const posts = (await getCollection('tool')).filter(
-	(post) => post.data.draft !== true
-)
+  (post) => post.data.draft !== true
+).sort((a, b) =>
+  b.data.date.valueOf() - a.data.date.valueOf()
+);
+
 ---
 
 <Layout>
@@ -17,17 +20,16 @@ const posts = (await getCollection('tool')).filter(
 					<a
 						href={tool.data.url}
 						target="_blank"
-						rel="noopener noreferrer"
-						class="group relative p-5 border border-neutral-300 bg-sky-300 rounded-lg shadow-md transform transition-transform duration-500 ease-in-out hover:-translate-y-2 hover:scale-105 hover:bg-sky-400 hover:shadow-xl focus:ring-2 focus:ring-offset-2 focus:ring-sky-500"
+						class="group relative flex items-center justify-center p-5 border border-neutral-300 rounded-lg shadow-md transform transition-transform duration-500 ease-in-out hover:-translate-y-2 hover:scale-105 hover:shadow-xl focus:ring-2 focus:ring-offset-2 focus:ring-sky-500 h-32"
+						style={{ backgroundImage: `url(${tool.data.backgroundImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
 					>
-						<div class="flex flex-col space-y-2">
-							<p class="font-semibold text-black group-hover:text-neutral-900 text-lg transition-colors duration-300 ease-in-out">
+						<div class="absolute inset-0 bg-black bg-opacity-65 rounded-lg"></div>
+						<div class="relative z-10 flex flex-col items-center justify-center space-y-2 text-center">
+							<p class="font-semibold text-white group-hover:text-gray-200 text-lg transition-colors duration-300 ease-in-out">
 								{tool.data.title}
 							</p>
 						</div>
-						<div class="absolute top-4 right-4 text-neutral-500 group-hover:text-neutral-700 transform transition-transform duration-500 ease-in-out group-hover:rotate-45">
-							<External />
-						</div>
+            <ExternalWrapper />
 					</a>
 				))
 			}
