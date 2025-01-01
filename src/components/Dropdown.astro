@@ -12,7 +12,7 @@ const { options, currentSelection, baseUrl, placeholder } = Astro.props
 	<select
 		class="customSelectbox border shadow-sm bg-gray-700 rounded-md border-gray-300 text-gray-300"
 		data-base-url={baseUrl}
-		onchange="location.href = `${this.getAttribute('data-base-url')}${this.value}/1/`;"
+		onchange="location.href = `${this.getAttribute('data-base-url')}${this.value}/`;"
 	>
 		<option selected disabled>{placeholder}</option>
 		{
