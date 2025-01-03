@@ -2,8 +2,8 @@
 	"name": "jagmit.co.uk",
 	"version": "1.0.0",
 	"author": "Jagmit Gabba",
-  "type": "module",
-  "private": true,
+	"type": "module",
+	"private": true,
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/jagmitg/jagmit.co.uk.git",
@@ -11,17 +11,17 @@
 	},
 	"scripts": {
 		"dev": "astro dev",
-		"build": "pnpm run repo && astro check && tsc --noEmit && astro build",
-		"build-test": "astro check && tsc --noEmit && astro build",
+		"build": "astro check && tsc --noEmit && astro build",
 		"preview": "astro preview",
 		"check": "astro check",
 		"test": "playwright test",
-    "sync": "astro sync",
+		"sync": "astro sync",
 		"fmt": "prettier -w --plugin-search-dir=. .",
 		"fmt:check": "prettier --check .",
 		"cache": "tsx scripts/generatecache.ts",
 		"repo": "tsx scripts/fetchRepos.ts",
-		"stackoverflow": "tsx scripts/fetchStackoverflow.ts"
+		"stackoverflow": "tsx scripts/fetchStackoverflow.ts",
+		"builder": "pnpm run repo && pnpm run stackoverflow"
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.44.0",
