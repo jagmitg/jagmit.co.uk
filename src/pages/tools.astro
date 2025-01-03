@@ -1,15 +1,12 @@
 ---
-import ExternalWrapper from '@components/ExternalWrapper.astro';
+import ExternalWrapper from '@components/ExternalWrapper.astro'
 import Layout from '@layouts/Layout.astro'
 import MainLayout from '@layouts/MainLayout.astro'
-import { getCollection } from "astro:content";
+import { getCollection } from 'astro:content'
 
-const posts = (await getCollection('tool')).filter(
-  (post) => post.data.draft !== true
-).sort((a, b) =>
-  b.data.date.valueOf() - a.data.date.valueOf()
-);
-
+const posts = (await getCollection('tool'))
+	.filter((post) => post.data.draft !== true)
+	.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
 ---
 
 <Layout>
@@ -20,19 +17,38 @@ const posts = (await getCollection('tool')).filter(
 					<a
 						href={tool.data.url}
 						target="_blank"
-						class="group relative flex items-center justify-center p-5 border border-neutral-300 rounded-lg shadow-md transform transition-transform duration-500 ease-in-out hover:-translate-y-2 hover:scale-105 hover:shadow-xl focus:ring-2 focus:ring-offset-2 focus:ring-sky-500 h-32"
-						style={{ backgroundImage: `url(${tool.data.backgroundImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+						class="tool-card group relative p-4 border border-neutral-200 bg-neutral-50 rounded-lg flex items-center justify-center px-3 py-4 w-full transform hover:-translate-y-2 hover:scale-105 transition-transform shadow-md duration-500 ease-in-out hover:shadow-xl focus:ring-2 focus:ring-offset-2 h-32"
+						style={`--bg-url: url(${tool.data.backgroundImage}); background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.95)), var(--bg-url); background-size: cover; background-position: center;`}
 					>
-						<div class="absolute inset-0 bg-black bg-opacity-65 rounded-lg"></div>
 						<div class="relative z-10 flex flex-col items-center justify-center space-y-2 text-center">
-							<p class="font-semibold text-white group-hover:text-gray-200 text-lg transition-colors duration-300 ease-in-out">
+							<p class="font-bold text-white group-hover:text-gray-200 text-lg transition-colors duration-300">
 								{tool.data.title}
 							</p>
 						</div>
-            <ExternalWrapper />
+						<ExternalWrapper />
 					</a>
 				))
 			}
 		</div>
 	</MainLayout>
 </Layout>
+
+<style is:inline>
+	.tool-card {
+		box-shadow:
+			0 4px 6px -1px rgba(0, 0, 0, 0.1),
+			0 2px 4px -1px rgba(0, 0, 0, 0.06);
+	}
+
+	.tool-card:hover {
+		box-shadow:
+			0 20px 25px -5px rgba(0, 0, 0, 0.1),
+			0 10px 10px -5px rgba(0, 0, 0, 0.04);
+		background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+			var(--bg-url);
+	}
+
+	.external-svg svg {
+		color: white;
+	}
+</style>
