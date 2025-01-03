@@ -6,31 +6,31 @@ import type { BlogPost } from '@utils/collections'
 import { readingTime } from '@utils/readingTime'
 
 export async function getStaticPaths() {
-  const allEntries = await getSortedPosts()
+	const allEntries = await getSortedPosts()
 
-  const blogEntries = allEntries.filter((entry): entry is BlogPost =>
-    entry.collection === 'blog'
-  )
+	const blogEntries = allEntries.filter(
+		(entry): entry is BlogPost => entry.collection === 'blog'
+	)
 
-  return blogEntries.map((entry) => ({
-    params: { slug: entry.slug },
-    props: { entry }
-  }))
+	return blogEntries.map((entry) => ({
+		params: { slug: entry.slug },
+		props: { entry }
+	}))
 }
 
 interface Props {
-  entry: CollectionEntry<'blog'> & { slug: string }
+	entry: CollectionEntry<'blog'> & { slug: string }
 }
 
 const { entry } = Astro.props
 const { Content, headings } = await entry.render()
-const content = await entry.render().then(result => result.toString())
+const content = await entry.body
 ---
 
 <BlogLayout
-  headings={headings}
-  frontmatter={entry.data}
-  readingTime={readingTime(content)}
+	headings={headings}
+	frontmatter={entry.data}
+	readingTime={readingTime(content)}
 >
-  <Content />
+	<Content />
 </BlogLayout>
