@@ -2,7 +2,7 @@
 import { formatDate } from '@utils/formatDate'
 import Layout from './Layout.astro'
 import MainLayout from './MainLayout.astro'
-import { getSortedPosts } from '@utils/collections'
+import { getSortedPosts, type RepoPost } from '@utils/collections'
 import Archives from '@components/Archives.astro'
 import Pagination from '@components/Pagination.astro'
 import Image from '@components/Image.astro'
@@ -85,11 +85,19 @@ const index = posts.findIndex(
 		{
 			index !== -1 && (
 				<Pagination
-					prev={index !== 0 ? `/blog/${posts[index - 1].slug}/` : undefined}
+					prev={
+						index !== 0
+							? posts[index - 1].collection === 'repo'
+								? (posts[index - 1] as RepoPost).data.repo
+								: `/blog/${posts[index - 1].slug}/`
+							: undefined
+					}
 					prevText={index !== 0 ? posts[index - 1].data.title : undefined}
 					next={
 						index !== posts.length - 1
-							? `/blog/${posts[index + 1].slug}/`
+							? posts[index + 1].collection === 'repo'
+								? (posts[index + 1] as RepoPost).data.repo
+								: `/blog/${posts[index + 1].slug}/`
 							: undefined
 					}
 					nextText={
