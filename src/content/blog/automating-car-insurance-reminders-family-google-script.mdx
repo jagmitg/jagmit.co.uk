@@ -1,0 +1,50 @@
+---
+title: Automating Car Insurance Reminders for Family
+date: "2024-01-21"
+description: Navigating Car Insurance Chaos through automating the reminder system for family.
+image: /images/blog/automating-insurance-family-google-script/logo.png
+tags: [googlescript]
+draft: false
+---
+
+In our family, dealing with car insurance has always been a bit of a juggling act. With multiple drivers and policies to keep track of, it often feels like an overwhelming maze. Questions like "Which insurance company am I with?" or "What's my policy number?" are commonplace amongst our family. This confusion is further compounded by our habit of shopping around for the best deals, a practice that, while financially prudent, adds layers of complexity to our insurance management.
+
+Our family's approach to car insurance is reactive, primarily focused on the renewal period. This procrastination often leads to frantic searches for policy details and last-minute decision-making. According to [MoneySavingExpert Martin Lewis' research](https://www.moneysavingexpert.com/insurance/car-insurance/how-to-get-cheap-car-insurance/), the optimal time to seek quotes and renew car insurance is **23 days** before the expiry date, as prices escalate closer to the renewal date. This crucial piece of information highlighted the need for a proactive approach in managing our car insurance.
+
+## What i came up with...
+
+To streamline this process, we decided to leverage technology, specifically Google Sheets and Google Calendar, to create a system that automatically reminds us of important insurance dates. We developed a Google Sheets script that syncs with our "Family Events" calendar, creating and updating calendar events based on our insurance data.
+
+## Breakdown
+
+1. **Data Extraction**: Our script pulls data from a Google Sheet, where we maintain details like the start and end dates of policies, car registration numbers, insurance companies, policy numbers, and the crucial "23rd day" for getting new quotes.
+
+2: **Calendar Integration**: The script interfaces with Google Calendar, specifically targeting a shared calendar named "Family Events." It creates all-day events to remind us of the start and end dates of each policy and the best day to shop for new quotes.
+
+<code
+  data-gist-id="d5062dc3ab49cb0cefacbce8298823fe"
+  data-gist-file="grabbingSheets.gs"
+  data-gist-hide-footer="true"
+></code>
+
+3: **Avoiding Duplicates**: To prevent clutter, the script checks for existing events before creating new ones. If details have changed, it updates the existing event instead of creating a duplicate.
+
+<code
+  data-gist-id="d5062dc3ab49cb0cefacbce8298823fe"
+  data-gist-file="createOrUpdate.gs"
+  data-gist-hide-footer="true"
+></code>
+
+4: **Monthly Trigger**: We set up the script to run automatically once a month. This ensures that our calendar stays up-to-date with all the latest insurance information without any manual intervention.
+
+![Trigger Automatic Google Script](/images/blog/automating-insurance-family-google-script/trigger.png)
+
+## Outcome
+
+This automated system has been a helpful tool the family. We no longer scramble at the last minute to find policy details or miss out on the best renewal deals. Our **"Family Events"** calendar now diligently reminds us of upcoming insurance dates, making the whole process more manageable and less stressful.
+
+<code
+  data-gist-id="d5062dc3ab49cb0cefacbce8298823fe"
+  data-gist-file="fullCode.gs"
+  data-gist-hide-footer="true"
+></code>

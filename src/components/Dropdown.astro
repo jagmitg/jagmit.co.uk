@@ -1,86 +1,85 @@
 ---
 type Props = {
-  options: { label: string; value: string; count?: number }[];
-  currentSelection: string;
-  baseUrl: string;
-  placeholder: string;
-};
-const { options, currentSelection, baseUrl, placeholder } = Astro.props;
+	options: { label: string; value: string; count?: number }[]
+	currentSelection?: string
+	baseUrl: string
+	placeholder: string
+}
+const { options, currentSelection, baseUrl, placeholder } = Astro.props
 ---
 
 <div class="select-wrapper">
-  <select
-    class="customSelectbox border shadow-sm bg-gray-700 rounded-md border-gray-300 text-gray-300"
-    data-base-url={baseUrl}
-    onchange="location.href = `${this.getAttribute('data-base-url')}${this.value}/`;"
-  >
-    <option selected disabled>{placeholder}</option>
-    {
-      options.map((option) => (
-        <option
-          value={option.value}
-          selected={option.value === currentSelection}
-        >
-          {option.label}
-          {option.count ? ` (${option.count})` : ""}
-        </option>
-      ))
-    }
-  </select>
+	<select
+		class="customSelectbox border shadow-sm bg-gray-700 rounded-md border-gray-300 text-gray-300"
+		data-base-url={baseUrl}
+		onchange="location.href = `${this.getAttribute('data-base-url')}${this.value}/`;"
+	>
+		<option selected disabled>{placeholder}</option>
+		{
+			options.map((option) => (
+				<option
+					value={option.value}
+					selected={option.value === currentSelection}
+				>
+					{option.label}
+					{option.count ? ` (${option.count})` : ''}
+				</option>
+			))
+		}
+	</select>
 </div>
 
 <script is:inline>
-  document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll(".dropdown-el").forEach(function (el) {
-      el.addEventListener("click", function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        this.classList.toggle("expanded");
-        document.getElementById(e.target.getAttribute("for")).checked = true;
-      });
-    });
+	document.addEventListener('DOMContentLoaded', function () {
+		document.querySelectorAll('.dropdown-el').forEach(function (el) {
+			el.addEventListener('click', function (e) {
+				e.preventDefault()
+				e.stopPropagation()
+				this.classList.toggle('expanded')
+				document.getElementById(e.target.getAttribute('for')).checked = true
+			})
+		})
 
-    document.addEventListener("click", function () {
-      document.querySelectorAll(".dropdown-el").forEach(function (el) {
-        el.classList.remove("expanded");
-      });
-    });
-  });
+		document.addEventListener('click', function () {
+			document.querySelectorAll('.dropdown-el').forEach(function (el) {
+				el.classList.remove('expanded')
+			})
+		})
+	})
 </script>
 
 <style is:global>
-  .select-wrapper {
-    display: inline-block;
-    position: relative;
-  }
-  .select-wrapper:not(:last-child) {
-    margin-right: 1rem;
-  }
+	.select-wrapper {
+		display: inline-block;
+		position: relative;
+	}
+	.select-wrapper:not(:last-child) {
+		margin-right: 1rem;
+	}
 
-  .select-wrapper::after {
-    content: "»";
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    top: 14px;
-    right: 5px;
-    font-size: 24px;
-    line-height: 20px;
-    pointer-events: none;
-    z-index: 0;
-    transform: rotate(90deg);
-    color: #333333;
-  }
-  .select-wrapper select {
-    position: relative;
-    background-color: transparent;
-    color: #333333;
-    padding: 10px 35px 10px 5px;
-    line-height: 20px;
-    font-size: 17px;
-    outline: none;
-    appearance: none;
-    -webkit-appearance: none;
-    text-align-last: center;
-  }
+	.select-wrapper::after {
+		content: '»';
+		position: absolute;
+		width: 20px;
+		height: 20px;
+		top: 14px;
+		right: 5px;
+		font-size: 24px;
+		line-height: 20px;
+		pointer-events: none;
+		z-index: 0;
+		transform: rotate(90deg);
+		color: #333333;
+	}
+	.select-wrapper select {
+		position: relative;
+		background-color: transparent;
+		color: #333333;
+		padding: 0.8em 2em 0.8em 1em;
+		line-height: 20px;
+		font-size: 1em;
+		outline: none;
+		appearance: none;
+		-webkit-appearance: none;
+	}
 </style>

@@ -19,7 +19,7 @@ const titleContent =
   pageTitle === "" ? SITE_TITLE : `${pageTitle} - ${SITE_TITLE}`;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="text-black bg-white">
   <head>
     <meta charset="utf-8" />
@@ -63,6 +63,7 @@ const titleContent =
       <Footer />
     </div>
   </body>
+
   {import.meta.env.PROD && <GA />}
 </html>
 

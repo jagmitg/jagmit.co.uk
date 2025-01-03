@@ -1,61 +1,65 @@
 ---
-import { mergeClass } from "@utils/mergeClass";
-import Arrow from "./icons/Arrow.astro";
-import Link from "./Link.astro";
+import Arrow from './icons/Arrow.astro'
+import Link from './Link.astro'
 
 type Props = {
-  prev?: string;
-  prevText?: string;
-  next?: string;
-  nextText?: string;
-  className?: string;
-};
+	prev?: string
+	prevText?: string
+	next?: string
+	nextText?: string
+}
 
-const {
-  prev,
-  prevText = "Back",
-  next,
-  nextText = "Next Page",
-  className,
-} = Astro.props;
+const { prev, prevText = 'Back', next, nextText = 'Next Page' } = Astro.props
 ---
 
 <div
-  class={mergeClass(
-    "flex justify-between items-center pt-3 border-t border-gray-300",
-    className ?? ""
-  )}
+	class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 pt-3 border-t border-gray-300 w-full"
 >
-  {
-    prev ? (
-      <Link href={prev} name="prev" className="flex items-center text-blue-500">
-        <svg
-          class="w-6 h-6 rotate-90"
-          fill="currentColor"
-          viewBox="0 0 20 20"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <Arrow />
-        </svg>
-        {prevText}
-      </Link>
-    ) : (
-      <div />
-    )
-  }
-  {
-    next && (
-      <Link href={next} name="next" className="flex items-center text-blue-500">
-        {nextText}
-        <svg
-          class="w-6 h-6 -rotate-90"
-          fill="currentColor"
-          viewBox="0 0 20 20"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <Arrow />
-        </svg>
-      </Link>
-    )
-  }
+	<div class="flex-1">
+		{
+			prev ? (
+				<Link
+					href={prev}
+					name="prev"
+					className="flex items-center justify-start text-sky-500 hover:text-sky-700"
+				>
+					<svg
+						class="w-6 h-6 rotate-90 mr-2"
+						fill="currentColor"
+						viewBox="0 0 20 20"
+						xmlns="http://www.w3.org/2000/svg"
+					>
+						<Arrow />
+					</svg>
+					<span>{prevText}</span>
+				</Link>
+			) : (
+				<div />
+			)
+		}
+	</div>
+	<div class="flex-1 text-right">
+		{
+			next ? (
+				<Link
+					href={next}
+					name="next"
+					className="inline-flex items-center justify-end text-sky-500 hover:text-sky-700"
+				>
+					<span class="mr-2">{nextText}</span>
+					<svg
+						class="w-6 h-6 -rotate-90"
+						fill="currentColor"
+						viewBox="0 0 20 20"
+						xmlns="http://www.w3.org/2000/svg"
+						style="flex-shrink: 0;"
+					>
+						<Arrow />
+					</svg>
+				</Link>
+			) : (
+				<div />
+			)
+		}
+	</div>
 </div>

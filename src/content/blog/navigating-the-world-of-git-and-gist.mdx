@@ -1,0 +1,115 @@
+---
+title: Navigating the World of Git and Gist
+date: '2023-12-15'
+description: Guide to Git and GitHub for collaborative coding, tracking changes, and version control.
+image: /images/blog/navigating-the-world-of-git-and-gist/git.png
+tags: [git]
+draft: false
+---
+
+When my cousin just started university, she plunged into the world of Java programming — a language I hadn't touched in nearly a decade. Despite my rusty skills, my experience in Object-Oriented Programming (OOP) came to the rescue. We started going back and fourth with debugging sessions and coding challenges from university, traversing through Java. However, we soon realised that our biggest hurdle wasn't the code itself, but managing its evolution and sharing it efficiently. Enter Git and Gist.
+
+As we delved deeper into programming, the need for a systematic way to track changes became evident. We were constantly updating code, fixing bugs, and adding features. Sharing these updates over whatsapp was annoying and prone to errors. That's when I introduced my cousin to Git and Gist, tools that I knew would revolutionise our collaboration.
+
+## Step 1:
+
+To start using Git and GitHub, the first steps involve installing Git on your computer and creating a GitHub account. Installing Git is straightforward:
+
+- **Download Git**: Visit the [Git website](https://git-scm.com/downloads) and download the version compatible with your operating system.
+
+- **Install Git**: Run the downloaded installer and follow the prompts to complete the installation. During the setup, you can choose the default editor for Git, adjust your PATH environment, and configure line ending conversions.
+
+After installing Git, creating a GitHub account is the next step:
+
+- **Visit GitHub**: Go to the [GitHub website](https://github.com).
+- **Sign Up**: Click on the ["Sign Up"](https://github.com/signup) button and enter your details, including a username, email address, and password.
+- **Verify Account**: Follow the instructions to verify your account, which may include solving a puzzle or confirming your email address.
+
+With [Git](https://git-scm.com/downloads) installed and a [GitHub](https://github.com) account ready, you're set to start managing and sharing your projects using these powerful tools.
+
+## Local Git vs Remote Git
+
+In the world of Git, there's a fundamental distinction between local and remote repositories. A local Git repository resides on your personal computer, providing a private space where you can create, edit, delete, and manage files.
+
+It's where you make initial changes, commit them, and track the version history. On the other hand, a remote repository, like those hosted on GitHub, is stored on a server, accessible over the network. This is where you push your local changes for sharing and collaboration.
+
+Remote repositories enable multiple developers to work on the same project simultaneously, offering a centralized hub for storing, tracking, and exchanging code changes.
+
+## Step 2
+
+Adding a new file to a Git repository involves a clear and straightforward process:
+
+1. **Create a New File**: In your project directory, create a new file.
+2. **Open Git Bash/Terminal**: Navigate to your project's directory.
+3. **Initialize Git Repository**: If not already a Git repository, run `git init`.
+4. **Add File to Staging Area**: Execute `git add [filename]` to stage the new file.
+
+That's it! You've successfully added a file to your Git repository.
+
+## Step 3
+
+Creating a commit message in Git is an essential part of documenting your project's history.
+
+1. **Stage Your Changes**: Once you've added all the files and stagged them.
+2. **Commit**: Type `git commit` in your terminal.
+3. **Write a Message**: After `git commit, add -m` followed by a concise, descriptive message in quotes. For example, `git commit -m "Fixed login bug"`.
+
+This message should briefly explain what changes you've made. A good commit message helps others (and your future self) understand the purpose of the changes.
+
+## Step 4
+
+The next step is creating new branch in Git, both locally and remotely, involves a few steps:
+
+- **Local Branch Creation**: In your Git terminal, use `git branch [branch-name]` to create a new branch locally. Replace [branch-name] with your desired branch name.
+
+- **Switch to the New Branch**: Use `git checkout [branch-name]` to switch to your new branch.
+
+- **Push to Remote**: After making changes and committing them, push the branch to the remote repository using `git push -u origin [branch-name]`. This creates a remote branch linked to your local branch.
+
+## Step 5
+
+Now we have to create a new repository on GitHub is a simple process:
+
+1. **Log into GitHub**: First, sign in to your GitHub account.
+2. **Go to Repositories**: Click on the "+" icon in the top-right corner and select "New repository".
+3. **Repository Details** : Enter a name for your repository, add a description (optional), and choose whether it's public or private.
+4. **Initialize**: You can initialize the repository with a README, .gitignore, and license if desired.
+   Create Repository: Finally, click "Create repository".
+
+## Step 6
+
+Pushing changes to a branch in Git, both locally and remotely is the next step.
+
+- **Commit Local Changes**: Make sure all your changes are committed locally in your current branch using git commit.
+
+- **Push Locally**: If you're pushing to a new branch that doesn't exist on your remote, just use `git push`. Git will prompt you with the correct command if the branch doesn't exist remotely.
+
+- **Push to Remote**: Execute `git push origin [branch-name]` to push your commits from your local branch to the remote branch on GitHub.
+
+## Step 7
+
+A pull request in Git is like asking others / peers to review and approve your code changes. You make changes in your version of the project, then request to merge these into the main project. This lets other team members check your changes, give feedback, and ensure everything works well before the changes become part of the main project. It's a key part of working together on code.
+
+1. **Ensure Your Branch is Updated**: Start by making sure your branch has the latest changes committed and pushed to GitHub.
+
+2. **Navigate to the Repository**: Go to the GitHub page of the repository where you want to merge your changes.
+
+3. **Start a New Pull Request**: Click the 'Pull Requests' tab and then 'New Pull Request'. Choose the base repository and base branch (usually 'main' or 'master') where you want to merge your changes, and select your feature branch.
+
+4. **Compare Changes**: GitHub will show a comparison between your branch and the base branch. Review these differences to ensure they are as expected.
+
+5. **Create the Pull Request**: Click 'Create Pull Request'. Provide a clear, descriptive title and a detailed comment explaining your changes and why they should be merged.
+
+6. **Review and Discuss**: Once the pull request is created, other team members can review it, provide feedback, and suggest changes.
+
+7. **Merge the Pull Request**: After review and approval, either you or a repository maintainer can merge the pull request into the base branch.
+
+This process is essential for collaborative coding, ensuring that changes are reviewed and discussed before they become part of the main project.
+
+## Step 8
+
+1. **Open Terminal/Git Bash**: Go to your project's folder on your computer.
+
+2. **Fetch Changes**: Type git fetch origin to fetch updates from GitHub without merging them into your local branch.
+
+3. **Pull Changes**: If you're ready to merge these changes, type `git pull origin [branch-name]`, replacing [branch-name] with the name of the branch you're updating.

@@ -1,13 +1,13 @@
 ---
-import { getBlogsAndRepos } from "@utils/collections";
+import { getSortedPosts } from "@utils/collections";
 
-const allPosts = (await getBlogsAndRepos()).allCollections;
+const allPosts = await getSortedPosts();
 const postYears = new Map();
 
-allPosts.forEach((post: any) => {
+allPosts.forEach((post) => {
   const year = new Date(post.data.date).getFullYear();
 
-  if (!postYears.get(year)) {
+  if (!postYears.has(year)) {
     postYears.set(year, []);
   }
 
@@ -18,15 +18,17 @@ allPosts.forEach((post: any) => {
 <div class="text-lg">&#128278; Archives</div>
 <ol class="mt-4">
   {
-    [...postYears.entries()].map(([archiveYear, archivePosts]) => (
-      <li>
-        <a
-          href={`/blog/archive/${archiveYear}/`}
-          class="text-sm hover:text-blue-800"
-        >
-          {archiveYear} ({archivePosts.length})
-        </a>
-      </li>
-    ))
+    [...postYears.entries()]
+      .sort((a, b) => b[0] - a[0])
+      .map(([archiveYear, archivePosts]) => (
+        <li>
+          <a
+            href={`/blog/archive/${archiveYear}/`}
+            class="text-sm hover:text-blue-800"
+          >
+            {archiveYear} ({archivePosts.length})
+          </a>
+        </li>
+      ))
   }
 </ol>

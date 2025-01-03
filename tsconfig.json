@@ -1,19 +1,27 @@
 {
   "extends": "astro/tsconfigs/base",
-  "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@components/*": ["src/components/*"],
-      "@layouts/*": ["src/layouts/*"],
-      "@utils/*": ["src/utils/*"],
-      "@const": ["src/constants"],
-      "@data/*": ["src/data"]
-    },
-    "verbatimModuleSyntax": true,
-    "plugins": [
-      {
-        "name": "@astrojs/ts-plugin"
-      }
-    ]
-  }
+  "include": [".astro/types.d.ts", "**/*"],
+  "exclude": ["dist"],
+	"compilerOptions": {
+		"baseUrl": ".",
+		"module": "ESNext",
+		"target": "ESNext",
+		"moduleResolution": "node",
+		"strictNullChecks": true,
+		"allowJs": true,
+		"plugins": [
+			{
+				"name": "@astrojs/ts-plugin"
+			}
+		],
+		"paths": {
+			"@components/*": ["src/components/*"],
+			"@layouts/*": ["src/layouts/*"],
+			"@utils/*": ["src/utils/*"],
+			"@const": ["src/constants"],
+			"@data/*": ["src/data/*"],
+			"@content/*": ["src/content/*"]
+		},
+		"verbatimModuleSyntax": true
+	}
 }

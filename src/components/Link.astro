@@ -1,32 +1,31 @@
 ---
 type Props = {
-  name: string;
-  href: string;
-  isBlank?: boolean;
-  isNoReferrer?: boolean;
-  className?: string;
-  // TODO: astroのバグ
-  text?: string;
-};
+	name: string
+	href: string
+	isBlank?: boolean
+	isNoReferrer?: boolean
+	className?: string
+	text?: string
+}
 
 const {
-  name,
-  href,
-  isBlank = false,
-  isNoReferrer = true,
-  className,
-  text,
-} = Astro.props;
+	name,
+	href,
+	isBlank = false,
+	isNoReferrer = true,
+	className,
+	text
+} = Astro.props
 ---
 
 <a
-  href={href}
-  target={isBlank ? "_blank" : undefined}
-  class={className ?? "text-blue-500"}
-  rel={isNoReferrer ? "noreferrer" : undefined}
-  aria-label={`Link for ${name}`}
-  >{
-    // TODO: astroのバグ
-    text ? text : <slot />
-  }
+	href={href}
+	target={isBlank ? '_blank' : undefined}
+	class={className ?? 'text-sky-500'}
+	rel={isNoReferrer ? 'noreferrer' : undefined}
+	aria-label={`Link for ${name}`}
+	>{
+		// TODO: astroのバグ
+		text ? text : <slot />
+	}
 </a>

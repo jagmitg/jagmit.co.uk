@@ -1,204 +1,206 @@
 ---
-import { formatDate } from "@utils/formatDate";
-import Layout from "./Layout.astro";
-import MainLayout from "./MainLayout.astro";
-import { getBlogsAndRepos } from "@utils/collections";
-import Archives from "@components/Archives.astro";
-// import ShareButtons from "@components/ShareButtons.astro";
-import Pagination from "@components/Pagination.astro";
-import type { CollectionEntry } from "astro:content";
-import type { MarkdownLayoutProps } from "astro";
-import Image from "@components/Image.astro";
+import { formatDate } from '@utils/formatDate'
+import Layout from './Layout.astro'
+import MainLayout from './MainLayout.astro'
+import { getSortedPosts } from '@utils/collections'
+import Archives from '@components/Archives.astro'
+import Pagination from '@components/Pagination.astro'
+import Image from '@components/Image.astro'
 
-const { frontmatter, headings } = Astro.props as MarkdownLayoutProps<
-  CollectionEntry<"blog">["data"]
->;
-const date = formatDate(new Date(frontmatter.date));
-const indices = headings.filter((heading) => heading.depth < 4);
-const { title, description, image } = frontmatter;
-const { allCollections: posts } = await getBlogsAndRepos();
+import type { MarkdownLayoutProps } from 'astro'
+import type { CollectionEntry } from 'astro:content'
+
+const { frontmatter, headings, readingTime } =
+	Astro.props as MarkdownLayoutProps<CollectionEntry<'blog'>['data']> & {
+		readingTime: string
+	}
+
+const date = formatDate(new Date(frontmatter.date))
+const indices = headings.filter((heading) => heading.depth < 4)
+
+const { title, description, image } = frontmatter
+const posts = await getSortedPosts()
+
 const index = posts.findIndex(
-  ({ slug }) =>
-    slug.replace(/^\//, "") ===
-    Astro.url.pathname
-      .replace(/\/blog\//, "")
-      .replace(/\/$/, "" /* for prod */),
-);
+	(post) =>
+		post.slug.replace(/^\//, '') ===
+		Astro.url.pathname.replace(/\/blog\//, '').replace(/\/$/, '')
+)
 ---
 
 <Layout title={title} description={description} image={image}>
-  <MainLayout>
-    <div class="flex flex-row">
-      <div
-        class="w-full md:w-3/4 pr-0 md:pr-4 pb-6 border-r-0 md:border-r border-gray-300"
-      >
-        <div class="flex flex-wrap pt-3">
-          <div class="w-3/4">
-            <h2 class="text-2xl">{title}</h2>
-          </div>
-          <div class="w-1/4 flex flex-col items-end">
-            <div class="text-right text-lg">&#128467; {date}</div>
-          </div>
-        </div>
-        <div class="blog text-gray-900">
-          <slot />
-        </div>
-      </div>
+	<MainLayout>
+		<div class="flex flex-row">
+			<div
+				class="w-full md:w-3/4 pr-0 md:pr-4 pb-6 border-r-0 md:border-r border-gray-300"
+			>
+				<div class="flex flex-wrap pt-3">
+					<div class="w-3/5">
+						<h2 class="text-2xl font-bold">{title}</h2>
+					</div>
+					<div class="w-2/5 flex flex-col items-end">
+						<div class="text-right text-lg">&#128467; {date}</div>
+						<div class="text-right text-lg">
+							&#9200; {readingTime}
+						</div>
+					</div>
+				</div>
+				<div class="blog text-gray-900">
+					<slot />
+				</div>
+			</div>
 
-      <aside class="w-1/4 p-4 hidden md:block">
-        <div class="mb-4">
-          <Image
-            src={image ? image : "/images/brands/github-big.png"}
-            alt={title}
-            className="w-30 h-30 rounded-md border image-center"
-            isOptimization
-            width={20 * 4}
-            height={20 * 4}
-          />
-        </div>
-        <div class="mb-4">
-          <div class="text-lg">&#128278; Post Contents</div>
-          <ol class="mt-4">
-            {
-              indices.map(({ slug, text, depth }) => (
-                <li style={{ marginLeft: `${(depth - 1) * 12}px` }}>
-                  <a href={`#${slug}`} class="text-sm hover:text-blue-800">
-                    &#9758; {text}
-                  </a>
-                </li>
-              ))
-            }
-          </ol>
-        </div>
-        <div>
-          <Archives />
-        </div>
-      </aside>
-    </div>
+			<aside class="w-1/4 p-4 hidden md:block">
+				<div class="mb-4">
+					<Image
+						src={image ? image : '/images/brands/github-big.png'}
+						alt={title}
+						className="w-30 h-30 rounded-md border image-center"
+						isOptimization
+						width={20 * 4}
+						height={20 * 4}
+					/>
+				</div>
+				{
+					indices.length > 0 && (
+						<div class="mb-4">
+							<div class="text-lg">&#128278; Post Contents</div>
+							<ol class="mt-4">
+								{indices.map(({ slug, text, depth }) => (
+									<li style={{ marginLeft: `${(depth - 1) * 12}px` }}>
+										<a href={`#${slug}`} class="text-sm hover:text-blue-800">
+											&#9758; {text}
+										</a>
+									</li>
+								))}
+							</ol>
+						</div>
+					)
+				}
 
-    <div>
-      {
-        index !== -1 && (
-          <Pagination
-            prev={index !== 0 ? posts[index - 1].slug : undefined}
-            prevText={index !== 0 ? posts[index - 1].data.title : undefined}
-            next={
-              index !== posts.length - 1 ? posts[index + 1].slug : undefined
-            }
-            nextText={
-              index !== posts.length - 1
-                ? posts[index + 1].data.title
-                : undefined
-            }
-            className="mt-3 flex-col md:flex-row gap-2 text-center"
-          />
-        )
-      }
-    </div>
-  </MainLayout>
+				<Archives />
+			</aside>
+		</div>
+
+		{
+			index !== -1 && (
+				<Pagination
+					prev={index !== 0 ? `/blog/${posts[index - 1].slug}/` : undefined}
+					prevText={index !== 0 ? posts[index - 1].data.title : undefined}
+					next={
+						index !== posts.length - 1
+							? `/blog/${posts[index + 1].slug}/`
+							: undefined
+					}
+					nextText={
+						index !== posts.length - 1 ? posts[index + 1].data.title : undefined
+					}
+				/>
+			)
+		}
+	</MainLayout>
 </Layout>
+
 <script
-  type="text/javascript"
-  src="https://cdn.jsdelivr.net/npm/gist-embed@1.0.4/dist/gist-embed.min.js"
+	is:inline
+	src="https://cdn.jsdelivr.net/npm/gist-embed@1.0.4/dist/gist-embed.min.js"
 ></script>
 
 <style is:global>
-  .blog {
-    font-size: 16px;
-    @apply sm:text-base;
-  }
-  .blog h1,
-  .blog h2,
-  .blog h3,
-  .blog h4 {
-    @apply font-semibold text-gray-700 mt-10 mb-1;
-  }
-  .blog h1 {
-    @apply text-2xl;
-  }
-  .blog h2 {
-    @apply text-xl;
-  }
-  .blog h3 {
-    @apply text-lg;
-  }
-  .blog h4 {
-    @apply text-base;
-  }
-  /* .blog code:not(pre > *) {
+	.blog {
+		font-size: 16px;
+		@apply sm:text-base;
+	}
+	.blog h1,
+	.blog h2 {
+		@apply font-semibold text-sky-500 mt-10 mb-1;
+	}
+	.blog h1 {
+		@apply text-2xl;
+	}
+	.blog h2 {
+		@apply text-xl;
+	}
+	.blog h3 {
+		@apply text-lg text-gray-700 font-semibold pb-2 pt-2;
+	}
+	.blog h4 {
+		@apply text-base text-gray-700 font-semibold pb-2 pt-2;
+	}
+	/* .blog code:not(pre > *) {
     @apply text-gray-200  bg-gray-600 mx-1 px-1 rounded-sm shadow-lg ring-white/5;
   } */
-  .blog ul {
-    @apply list-hyphen pl-4 my-2;
-  }
-  .blog ol {
-    @apply pl-4 my-2;
-    list-style: decimal;
-  }
-  .blog li > ul {
-    @apply my-0;
-  }
-  .blog p {
-    @apply my-4;
-  }
-  .blog pre {
-    @apply p-4 text-sm rounded-lg;
-  }
-  .blog a {
-    @apply text-blue-500;
-  }
-  .blog hr {
-    @apply my-4 border-gray-700;
-  }
-  .blog img {
-    @apply mx-auto;
-  }
-  .blog strong {
-    @apply font-semibold text-blue-500;
-  }
-  .blog blockquote {
-    @apply px-4 border border-gray-600 border-l-blue-300 border-l-2;
-  }
-  /* General styles for all tables inside .blog */
-  .blog table {
-    @apply border-collapse table-auto w-full text-sm;
-  }
+	.blog ul {
+		@apply list-hyphen pl-4 my-2;
+	}
+	.blog ol {
+		@apply pl-4 my-2;
+		list-style: decimal;
+	}
+	.blog li > ul {
+		@apply my-0;
+	}
+	.blog p {
+		@apply my-4;
+	}
+	.blog pre {
+		@apply p-4 text-sm rounded-lg;
+	}
+	.blog a {
+		@apply text-sky-500;
+	}
+	.blog hr {
+		@apply my-4 border-gray-700;
+	}
+	.blog img {
+		@apply mx-auto;
+		box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+		border-radius: 2%;
+	}
+	.blog strong {
+		@apply font-semibold text-sky-500;
+	}
+	.blog blockquote {
+		@apply px-4 border border-gray-600 border-l-blue-300 border-l-2;
+	}
+	.blog table {
+		@apply border-collapse table-auto w-full text-sm;
+	}
 
-  .blog th {
-    @apply border-b border-gray-600 p-4 pl-8 pt-0 text-gray-200 text-left;
-  }
+	.blog th {
+		@apply border-b border-gray-600 p-4 pl-8 pt-0 text-gray-200 text-left;
+	}
 
-  .blog tbody {
-    @apply bg-gray-800;
-  }
+	.blog tbody {
+		@apply bg-gray-800;
+	}
 
-  .blog td {
-    @apply border-b border-slate-700 p-4 pl-8 text-gray-400;
-  }
+	.blog td {
+		@apply border-b border-slate-700 p-4 pl-8 text-gray-400;
+	}
 
-  /* Reset or override styles for tables inside <code> tags */
-  .blog code table {
-    /* Reset or override styles here as needed */
-    @apply border-none; /* As an example, removing borders */
-  }
+	.blog code:not([data-gist-id]) {
+		@apply bg-sky-300 px-2 py-0.5 rounded-lg text-black text-sm;
+	}
 
-  .blog code th {
-    /* Reset or override styles here as needed */
-    @apply border-none; /* As an example */
-  }
+	.blog code table {
+		@apply border-none;
+	}
 
-  .blog code tbody {
-    /* Reset or override styles here as needed */
-    @apply bg-transparent; /* As an example */
-  }
+	.blog code th {
+		@apply border-none;
+	}
 
-  .blog code td {
-    /* Reset or override styles here as needed */
-    @apply border-none; /* As an example */
-  }
+	.blog code tbody {
+		@apply bg-transparent;
+	}
 
-  .blog iframe {
-    max-width: 100%;
-    margin: auto;
-  }
+	.blog code td {
+		@apply border-none;
+	}
+
+	.blog iframe {
+		max-width: 100%;
+		margin: auto;
+	}
 </style>

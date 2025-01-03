@@ -1,0 +1,181 @@
+[
+  {
+    "title": "botservice",
+    "slug": "botservice",
+    "date": "2022-06-07",
+    "description": "Bot Service example",
+    "repo": "https://github.com/jagmitg/botservice",
+    "tags": [
+      "JavaScript",
+      "Batchfile",
+      "Shell"
+    ],
+    "draft": false
+  },
+  {
+    "title": "crime-map",
+    "slug": "crime-map",
+    "date": "2019-07-22",
+    "description": "This project is a visualization tool that displays crime data from the UK using data from the Police UK API. As users zoom in on specific areas within the map, more detailed crime data is revealed.",
+    "repo": "https://github.com/jagmitg/crime-map",
+    "tags": [
+      "TypeScript",
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "draft": false
+  },
+  {
+    "title": "font-compare-dynamic",
+    "slug": "font-compare-dynamic",
+    "date": "2024-02-02",
+    "description": "font-compare-dynamic",
+    "repo": "https://github.com/jagmitg/font-compare-dynamic",
+    "tags": [
+      "CSS",
+      "TypeScript",
+      "HTML"
+    ],
+    "draft": false
+  },
+  {
+    "title": "food-selector",
+    "slug": "food-selector",
+    "date": "2024-01-07",
+    "description": "Food selector automation",
+    "repo": "https://github.com/jagmitg/food-selector",
+    "tags": [
+      "JavaScript",
+      "CSS",
+      "HTML"
+    ],
+    "draft": false
+  },
+  {
+    "title": "invoice-generator-localstorage",
+    "slug": "invoice-generator-localstorage",
+    "date": "2023-08-28",
+    "description": "Invoice Generator with Localstorage",
+    "repo": "https://github.com/jagmitg/invoice-generator-localstorage",
+    "tags": [
+      "TypeScript",
+      "HTML",
+      "SCSS",
+      "JavaScript"
+    ],
+    "draft": false
+  },
+  {
+    "title": "jagmit.co.uk",
+    "slug": "jagmit.co.uk",
+    "date": "2023-07-10",
+    "description": "The portfolio website as well as blog built on astro framework as well as an experimentation platform.",
+    "repo": "https://github.com/jagmitg/jagmit.co.uk",
+    "tags": [
+      "MDX",
+      "Astro",
+      "TypeScript",
+      "JavaScript",
+      "Shell"
+    ],
+    "draft": false
+  },
+  {
+    "title": "pern-template",
+    "slug": "pern-template",
+    "date": "2020-08-02",
+    "description": "Lightweight PERN template with built-in Passport authentication.",
+    "repo": "https://github.com/jagmitg/pern-template",
+    "tags": [
+      "TypeScript",
+      "HTML"
+    ],
+    "draft": false
+  },
+  {
+    "title": "Preloader",
+    "slug": "Preloader",
+    "date": "2017-09-12",
+    "description": "Preloader library",
+    "repo": "https://github.com/jagmitg/Preloader",
+    "tags": [
+      "JavaScript",
+      "HTML"
+    ],
+    "draft": false
+  },
+  {
+    "title": "Salesforce-Web2lead",
+    "slug": "Salesforce-Web2lead",
+    "date": "2014-08-30",
+    "description": "Salesforce Web2lead framework - sending leads directly into Salesforce CRM with validation",
+    "repo": "https://github.com/jagmitg/Salesforce-Web2lead",
+    "tags": [
+      "PHP"
+    ],
+    "draft": false
+  },
+  {
+    "title": "things3todogenerator",
+    "slug": "things3todogenerator",
+    "date": "2024-07-14",
+    "description": "Things3 Custom Generator",
+    "repo": "https://github.com/jagmitg/things3todogenerator",
+    "tags": [
+      "TypeScript",
+      "JavaScript",
+      "CSS"
+    ],
+    "draft": false
+  },
+  {
+    "title": "uk-pension-projection-calculator",
+    "slug": "uk-pension-projection-calculator",
+    "date": "2023-12-25",
+    "description": "UK pension calculator ",
+    "repo": "https://github.com/jagmitg/uk-pension-projection-calculator",
+    "tags": [
+      "TypeScript",
+      "HTML",
+      "JavaScript",
+      "CSS"
+    ],
+    "draft": false
+  },
+  {
+    "title": "webgl-experiment",
+    "slug": "webgl-experiment",
+    "date": "2023-08-15",
+    "description": "WebGL or D3 Experiment with concentric circles",
+    "repo": "https://github.com/jagmitg/webgl-experiment",
+    "tags": [
+      "JavaScript",
+      "HTML",
+      "CSS"
+    ],
+    "draft": false
+  },
+  {
+    "title": "Wordpress-breadcrumb-Plugin",
+    "slug": "Wordpress-breadcrumb-Plugin",
+    "date": "2014-10-25",
+    "description": "Wordpress breadcrumb plugin",
+    "repo": "https://github.com/jagmitg/Wordpress-breadcrumb-Plugin",
+    "tags": [
+      "PHP"
+    ],
+    "draft": false
+  },
+  {
+    "title": "Wordpress-Select-Pagination",
+    "slug": "Wordpress-Select-Pagination",
+    "date": "2014-09-06",
+    "description": "Wordpress pagination plugin with select dropdown option",
+    "repo": "https://github.com/jagmitg/Wordpress-Select-Pagination",
+    "tags": [
+      "PHP"
+    ],
+    "draft": false
+  }
+]

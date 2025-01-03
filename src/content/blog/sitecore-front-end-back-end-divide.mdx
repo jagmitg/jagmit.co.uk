@@ -1,0 +1,22 @@
+---
+title: "Opinion: Streamlining Sitecore Front-end with CDN"
+date: "2024-03-21"
+description: Explore innovative strategies for swiftly diagnosing and resolving Sitecore development challenges, bypassing the need for full project installation.
+image: /images/blog/sitecore-front-end-back-end-divide/streamlining_sitecore.png
+tags: [javascript, sitecore]
+draft: false
+---
+
+Starting my career as a backend developer, transitioning into frontend, and ultimately evolving into a fullstack developer, I've encountered numerous challenges, particularly in the recent years with Sitecore projects.
+
+A recurring issue in these Sitecore projects is the necessity for developers to install the entire project on their local machines. This process can be daunting for those lacking a .NET background, with some considering it an overly cumbersome step. Moreover, the scenario becomes even more complex when backend-focused developers are expected to manage frontend code without the aid of tools like [Storybook Js](https://storybook.js.org/) to streamline design integration.
+
+Reflecting on my past experiences, I discovered a solution to a similar problem years ago, which involved utilising Azure. By embedding styling and JavaScript files and leveraging CDN capabilities or EC2 servers, we could employ automation tools such as GitHub Actions, Azure DevOps, or Jenkins. This approach allowed us to maintain JavaScript and styling changes within the frontend ecosystem, enabling rapid deployments that circumvent the lengthy waits associated with Sitecore deployments.
+
+This strategy not only simplified the development process but also highlighted the importance of maintaining a clear distinction yet coherence between frontend and backend workflows. Centralising the frontend assets on a cloud platform fostered a more agile and rapid development environment, which is crucial for addressing P1 situations or when the complexity of project installation seems insurmountable.
+
+Moreover, in situations where direct control over project installation is not an option, tools like [Charles](https://www.charlesproxy.com/) and [Fiddler](https://www.telerik.com/fiddler) have proven to be indispensable. These tools facilitate the redirection of remote URLs to local instances for debugging, enabling the quick identification and resolution of issues. This technique serves as an effective interim solution, allowing for swift adjustments and solutions, thereby reducing downtime and frustration.
+
+Through these experiences, it's evident that navigating the issues of backend and frontend development in Sitecore projects demands a nuanced approach. By leveraging cloud technology and innovative practices to bridge the divide, we can cultivate a more seamless and efficient development process. This not only benefits the development team by enhancing project quality but also ensures a smoother journey from concept to deployment.
+
+In essence, the transition from backend to fullstack development, especially within the Sitecore landscape, is riddled with hurdles. Yet, with appropriate strategies and tools, these challenges can be transformed into opportunities for innovation and advancement. As developers, embracing these solutions and pushing the limits of what's achievable is our duty, leading the way toward a more integrated and productive future in web development.

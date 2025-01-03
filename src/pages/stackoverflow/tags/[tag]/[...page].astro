@@ -1,95 +1,88 @@
 ---
-import { generateUniqueTags, matchesTagDefinition } from "@utils/collections";
-import Layout from "@layouts/Layout.astro";
-import { PAGINATE_CONTENT, TAGS_DEFINITION } from "@const";
-import stackOverflowData from "../../../../data/stackoverflow.json";
-import StackoverflowLayout from "@layouts/StackoverflowLayout.astro";
+import Layout from '@layouts/Layout.astro'
+import StackoverflowLayout from '@layouts/StackoverflowLayout.astro'
+import { generateUniqueTags, matchesTagDefinition } from '@utils/collections'
+import type { Post } from '@utils/collections'
+import { PAGINATE_CONTENT, TAGS_DEFINITION } from '@const'
+import { getCollection, type CollectionEntry } from 'astro:content'
 
-export async function getStaticPaths() {
-  const questions = Object.values(stackOverflowData.data);
-  const tags = generateUniqueTags(questions);
+type StackOverflowEntry = CollectionEntry<'stackoverflow'>
 
-  let allPaths = [];
-  let questionIndex = 1;
-
-  for (const tag of tags) {
-    const filteredQuestions = questions.filter(
-      (post) =>
-        post.tags &&
-        post.tags.some((current) =>
-          matchesTagDefinition(current, TAGS_DEFINITION[tag] || []),
-        ),
-    );
-
-    filteredQuestions.sort((a, b) => b.creation_date - a.creation_date);
-
-    filteredQuestions.map((post) => {
-      post.key = questionIndex;
-      questionIndex++;
-      return post;
-    });
-
-    const numberOfPages = Math.ceil(
-      filteredQuestions.length / PAGINATE_CONTENT,
-    );
-
-    for (let i = 1; i <= numberOfPages; i++) {
-      const prevPage = i === 1 ? null : `/stackoverflow/tags/${tag}/${i - 1}/`;
-      const nextPage =
-        i === numberOfPages ? null : `/stackoverflow/tags/${tag}/${i + 1}/`;
-
-      allPaths.push({
-        params: { tag, page: i },
-        props: {
-          questions: filteredQuestions.slice(
-            (i - 1) * PAGINATE_CONTENT,
-            i * PAGINATE_CONTENT,
-          ),
-          page: {
-            lastPage: i.toString(),
-            currentPage: 1,
-            url: {
-              prev: prevPage,
-              next: nextPage,
-            },
-          },
-        },
-      });
-    }
-  }
-
-  return allPaths;
+interface Props {
+    page: {
+        data: StackOverflowEntry[];
+        start: number;
+        end: number;
+        total: number;
+        currentPage: number;
+        size: number;
+        lastPage: number;
+        url: {
+            current: string;
+            prev: string | undefined;
+            next: string | undefined;
+        };
+    };
 }
 
-const { questions, page } = Astro.props;
+export async function getStaticPaths({ paginate }) {
+    const questions = await getCollection('stackoverflow');
+    const questionPosts = questions.map(q => ({
+        id: q.id,
+        collection: 'stackoverflow' as const,
+        slug: q.id,
+        data: {
+            ...q.data,
+            tags: q.data.tags || []
+        }
+    })) as unknown as Post[];
+
+    const uniqueTags = generateUniqueTags(questionPosts);
+
+    return uniqueTags.flatMap(tag => {
+        const filteredQuestions = questions.filter(question =>
+            question.data.tags?.some(t =>
+                matchesTagDefinition(t, TAGS_DEFINITION[tag] || [])
+            )
+        ).sort((a, b) =>
+            new Date(b.data.creation_date).getTime() - new Date(a.data.creation_date).getTime()
+        );
+
+        return paginate(filteredQuestions, {
+            params: { tag },
+            pageSize: PAGINATE_CONTENT,
+        });
+    });
+}
+
+const { page } = Astro.props;
+const { tag } = Astro.params;
 ---
 
-<Layout
-  title={page?.lastPage > 1
-    ? `${Astro.params.tag} - My Stackoverflow Tag - Page ${page.currentPage}`
-    : `${Astro.params.tag} - My Stackoverflow Tag`}
->
-  <StackoverflowLayout
-    title={`Tag: ${Astro.params.tag}`}
-    pagination={{ prev: page?.url?.prev, next: page?.url?.next }}
-  >
-    <div class="grid gap-4 grid-cols-1 grid-rows-2 mt-5 lg:grid-cols-2">
-      {
-        questions?.map((question: any) => (
-          <a
-            href={question.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="p-4 border mb-2 relative border-neutral-200  bg-neutral-50 rounded flex items-center justify-between px-3 py-4 w-full hover:bg-neutral-200 transition-colors"
-          >
-            <div class="flex flex-col">
-              <p class="font-bold text-neutral-900 ">{question.title}</p>
-              <p class="text-neutral-600 " />
-              <p class="text-neutral-600 ">Tags: {question.tags.join(", ")}</p>
-            </div>
-          </a>
-        ))
-      }
-    </div>
-  </StackoverflowLayout>
+<Layout title={`${tag} Questions - Page ${page.currentPage}`}>
+    <StackoverflowLayout
+        title={`Tag: ${tag}`}
+        pagination={page.url}
+        breadcrumb={true}
+    >
+        <div class="grid gap-4 grid-cols-1 grid-rows-2 mt-5 lg:grid-cols-2">
+            {page.data.map((question) => (
+                <a
+                    href={question.data.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="p-4 border mb-2 relative border-neutral-200 bg-neutral-50 rounded flex items-center justify-between px-3 py-4 w-full hover:bg-neutral-200 transition-colors"
+                >
+                    <div class="flex flex-col">
+                        <p class="font-bold text-neutral-900">
+                            {question.data.title}
+                        </p>
+                        <p class="text-neutral-600">
+                            Tags: {question.data.tags?.join(', ')}
+                        </p>
+                    </div>
+                </a>
+            ))}
+        </div>
+    </StackoverflowLayout>
 </Layout>

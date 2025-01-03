@@ -1,93 +1,114 @@
 ---
-import { getBlogsAndRepos } from "@utils/collections";
+import { getSortedPosts, getTagList } from "@utils/collections";
 import Dropdown from "@components/Dropdown.astro";
 import Breadcrumb from "@components/icons/Breadcrumb.astro";
 import Pagination from "@components/Pagination.astro";
+import type { Post } from "@utils/collections";
+
 
 type Props = {
-  title?: string;
-  tags?: string[];
-  breadcrumb?: boolean;
-  pagination?: any;
+    title?: string;
+    breadcrumb?: boolean;
+    pagination?: {
+        prev?: string;
+        next?: string;
+    };
+    dropdowns?: boolean;
+    allPosts?: Post[];
 };
 
-const { title, tags, breadcrumb, pagination } = Astro.props;
 
-const allPosts = (await getBlogsAndRepos()).allCollections;
-const postYears = new Map();
+const { title, breadcrumb, pagination, dropdowns } = Astro.props;
 
-allPosts.forEach((post: any) => {
-  const year = new Date(post.data.date).getFullYear();
+const allPosts = await getSortedPosts();
+const allTags = await getTagList();
 
-  if (!postYears.get(year)) {
-    postYears.set(year, []);
-  }
 
-  postYears.get(year).push(post);
-});
+function getCurrentPathPart(path: string, segment: string): string | null {
+    const parts = path.split("/").filter(part => part !== "");
+    const index = parts.indexOf(segment);
+    return index !== -1 && index + 1 < parts.length ? parts[index + 1] : null;
+}
 
 const currentPath = new URL(Astro.request.url).pathname;
-const pathParts = currentPath.split("/").filter((part) => part !== "");
+const currentTag = getCurrentPathPart(currentPath, "tags") || "";
+const currentYear = getCurrentPathPart(currentPath, "archive") || "";
 
-let currentTag: string | null = null;
-let currentYear: string | null = null;
-
-const tagsIndex = pathParts.indexOf("tags");
-if (tagsIndex !== -1 && tagsIndex + 1 < pathParts.length) {
-  currentTag = pathParts[tagsIndex + 1];
+const postYears = new Map<number, Post[]>();
+if (allPosts.length > 0) {
+    allPosts.forEach((post) => {
+        const year = new Date(post.data.date).getFullYear();
+        if (!postYears.has(year)) {
+            postYears.set(year, []);
+        }
+        postYears.get(year)!.push(post);
+    });
 }
 
-const archiveIndex = pathParts.indexOf("archive");
-if (archiveIndex !== -1 && archiveIndex + 1 < pathParts.length) {
-  currentYear = pathParts[archiveIndex + 1];
+const uniqueTags = new Set<string>();
+if (allPosts.length > 0) {
+    allPosts.forEach(post => {
+        if (post.data.tags) {
+            post.data.tags.forEach(tag => uniqueTags.add(tag));
+        }
+    });
 }
 
-const tagOptions = tags?.map((tag) => ({ label: tag, value: tag }));
-const archiveOptions = [...postYears.entries()].map(
-  ([archiveYear, archivePosts]) => ({
-    label: `${archiveYear} (${archivePosts.length})`,
-    value: archiveYear.toString(),
-  }),
-);
+
+const tagOptions = allTags.map((tag) => ({
+  label: `${tag.name} (${tag.count})`,
+  value: tag.name,
+}));
+
+const archiveOptions = [...postYears.entries()].map(([year, posts]) => ({
+    label: `${year} (${posts.length})`,
+    value: year.toString(),
+}));
+
 ---
 
+<div class="flex flex-col sm:flex-row justify-between sm:justify-between items-center pb-6">
+    <h2 class="text-2xl text-center sm:text-left mb-4 sm:mb-0 flex items-center">
+        {
+            breadcrumb ? (
+                <>
+                    <a href="/blog/" class="mr-2">
+                        Blog
+                    </a>
+                    <Breadcrumb />
+                    <span>{title}</span>
+                </>
+            ) : (
+                title
+            )
+        }
+    </h2>
+
 {
-  title && (
-    <div class="flex flex-col sm:flex-row justify-between sm:justify-between items-center pb-6">
-      <h2 class="text-2xl text-center sm:text-left mb-4 sm:mb-0 flex items-center">
-        {breadcrumb ? (
-          <>
-            <a href="/blog/" class="mr-2">
-              Blog
-            </a>
-            <Breadcrumb />
-            <span>{title}</span>
-          </>
-        ) : (
-          title
-        )}
-      </h2>
+    dropdowns && allPosts.length > 0 && (
+        <div class="flex flex-wrap gap-2">
+            {tagOptions.length > 0 && (
+                <Dropdown
+                    options={tagOptions}
+                    currentSelection={currentTag}
+                    baseUrl="/blog/tags/"
+                    placeholder="Select a tag..."
+                />
+            )}
 
-      {tags && (
-        <div class="flex flex-wrap">
-          <Dropdown
-            options={tagOptions}
-            currentSelection={currentTag}
-            baseUrl="/blog/tags/"
-            placeholder="tags..."
-          />
-
-          <Dropdown
-            options={archiveOptions}
-            currentSelection={currentYear}
-            baseUrl="/blog/archive/"
-            placeholder="archives..."
-          />
+            {archiveOptions.length > 0 && (
+                <Dropdown
+                    options={archiveOptions}
+                    currentSelection={currentYear}
+                    baseUrl="/blog/archive/"
+                    placeholder="Select a year..."
+                />
+            )}
         </div>
-      )}
-    </div>
-  )
+    )
 }
+
+</div>
 
 <slot />
 

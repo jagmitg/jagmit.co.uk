@@ -1,0 +1,118 @@
+---
+import Layout from '@layouts/Layout.astro'
+import StackoverflowLayout from '@layouts/StackoverflowLayout.astro'
+import { PAGINATE_CONTENT } from '@const'
+import { getCollection } from 'astro:content'
+import type { CollectionEntry } from 'astro:content'
+import { getSortFunction } from '@utils/collections'
+
+export async function getStaticPaths(): Promise<any> {
+    const questions = await getCollection('stackoverflow')
+    const sortOptions = [
+        'creation_date_desc',
+        'creation_date_asc',
+        'last_edit_date_desc',
+        'last_edit_date_asc',
+        'view_count_desc',
+        'view_count_asc'
+    ]
+
+    let allPaths: any[] = []
+
+    for (const sort of sortOptions) {
+        const sortedQuestions = [...questions].sort(getSortFunction(sort))
+        const numberOfPages = Math.ceil(sortedQuestions.length / PAGINATE_CONTENT)
+
+        allPaths.push({
+            params: { s: sort, page: undefined },
+            props: {
+                questions: sortedQuestions.slice(0, PAGINATE_CONTENT),
+                page: {
+                    lastPage: numberOfPages,
+                    currentPage: 1,
+                    url: {
+                        prev: null,
+                        next: numberOfPages > 1 ? `/stackoverflow/sort/${sort}/2/` : null
+                    }
+                }
+            }
+        })
+
+        for (let i = 1; i <= numberOfPages; i++) {
+            allPaths.push({
+                params: { s: sort, page: i.toString() },
+                props: {
+                    questions: sortedQuestions.slice(
+                        (i - 1) * PAGINATE_CONTENT,
+                        i * PAGINATE_CONTENT
+                    ),
+                    page: {
+                        lastPage: numberOfPages,
+                        currentPage: i,
+                        url: {
+                            prev: i === 1 ? null : `/stackoverflow/sort/${sort}/${i - 1}/`,
+                            next: i === numberOfPages
+                                ? null
+                                : `/stackoverflow/sort/${sort}/${i + 1}/`
+                        }
+                    }
+                }
+            })
+        }
+    }
+
+    return allPaths
+}
+
+type Props = {
+    questions: CollectionEntry<'stackoverflow'>[];
+    page: {
+        lastPage: number;
+        currentPage: number;
+        url: {
+            prev?: string | undefined;
+            next?: string | undefined;
+        }
+    }
+}
+
+const { questions, page } = Astro.props;
+const { s } = Astro.params;
+
+const sortLabels: Record<string, string> = {
+    creation_date_desc: 'Newest First',
+    creation_date_asc: 'Oldest First',
+    last_edit_date_desc: 'Last Updated (Newest)',
+    last_edit_date_asc: 'Last Updated (Oldest)',
+    view_count_desc: 'Most Views',
+    view_count_asc: 'Least Views'
+}
+---
+
+<Layout title={`Sorted by ${sortLabels[s]} - Page ${page.currentPage}`}>
+    <StackoverflowLayout
+        title={`Sorted by: ${sortLabels[s]}`}
+        pagination={{
+            prev: page.url.prev || undefined,  // Convert null to undefined
+            next: page.url.next || undefined   // Convert null to undefined
+        }}
+    >
+        <div class="grid gap-4 grid-cols-1 grid-rows-2 mt-5 lg:grid-cols-2">
+            {questions.map((question) => (
+                <a
+                    href={question.data.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="p-4 border mb-2 relative border-neutral-200 bg-neutral-50 rounded flex items-center justify-between px-3 py-4 w-full hover:bg-neutral-200 transition-colors"
+                >
+                    <div class="flex flex-col">
+                        <p class="font-bold text-neutral-900">{question.data.title}</p>
+                        <p class="text-neutral-600">
+                            Tags: {question.data.tags?.join(', ') || 'No tags'}
+                        </p>
+                    </div>
+                </a>
+            ))}
+        </div>
+    </StackoverflowLayout>
+</Layout>

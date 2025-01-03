@@ -3,29 +3,31 @@ import Layout from "@layouts/Layout.astro";
 import MainLayout from "@layouts/MainLayout.astro";
 import Code from "@components/Code.astro";
 import { formatDate } from "@utils/formatDate";
-import { getBlogsAndRepos } from "@utils/collections";
-import type { BlogOrRepoEntry, RepoEntry, BlogEntry } from "@utils/collections";
-import External from "@components/icons/External.astro";
+import { getSortedPosts } from "@utils/collections";
+import type { Post } from "@utils/collections";
+import ExternalWrapper from "@components/ExternalWrapper.astro";
 
-const { allCollections } = await getBlogsAndRepos();
+const allPosts = await getSortedPosts();
 
-const posts = allCollections.sort(
-  (b, a) => a.data.date.valueOf() - b.data.date.valueOf(),
-);
-
-function isRepoEntry(entry: BlogOrRepoEntry): entry is RepoEntry {
-  return "repo" in entry.data;
+function getPostUrl(post: Post): string {
+  if (post.collection === 'repo' && 'repo' in post.data && post.data.repo) {
+    return post.data.repo;
+  }
+  return `/blog/${post.slug}/`;
 }
 
-function isBlogEntry(entry: BlogOrRepoEntry): entry is BlogEntry {
-  return "image" in entry.data;
+function getBackgroundImage(post: Post): string {
+  if (post.collection === 'repo' || !post.data.image) {
+    return "/images/brands/github-big.png";
+  }
+  return post.data.image;
 }
 ---
 
 <Layout>
   <MainLayout title="About">
     <p class="prose prose-neutral leading-8">
-      Principle Full-Stack Engineer with 12+ years of experience in open-source
+      Principal Full-Stack Engineer with 12+ years of experience in open-source
       technologies. A fervent accessibility advocate, Jag champions an inclusive
       web, demonstrating technical excellence in <Code>TypeScript</Code>,
       <Code>JavaScript</Code>, <Code>Node.js</Code>, <Code>Python</Code>, and
@@ -39,32 +41,23 @@ function isBlogEntry(entry: BlogOrRepoEntry): entry is BlogEntry {
     </p>
     <div class="grid gap-4 grid-cols-2 grid-rows-2 mt-5 lg:grid-cols-4">
       {
-        posts.slice(0, 8).map((post: BlogOrRepoEntry) => {
-          const backgroundImage =
-            isBlogEntry(post) && post.data.image
-              ? post.data.image
-              : "/images/brands/github-big.png";
+        allPosts.slice(0, 8).map((post) => {
+          const backgroundImage = getBackgroundImage(post);
+          const url = getPostUrl(post);
 
           return (
             <a
-              href={
-                isRepoEntry(post) && post.data.repo
-                  ? post.data.repo
-                  : `/blog/${post.slug}/`
-              }
-              class="homepage-recent-blog p-4 border border-neutral-200 bg-neutral-50 rounded flex items-center justify-between px-3 py-4 w-full transform hover:-translate-y-2 hover:bg-neutral-200 transition relative shadow-md hover:shadow-xl"
+              href={url}
+              class="homepage-recent-blog group p-4 border border-neutral-200 bg-neutral-50 rounded flex items-center justify-between px-3 py-4 w-full transform hover:-translate-y-2 hover:bg-neutral-200 transition relative shadow-md hover:shadow-xl"
               style={`--bg-url: url(${backgroundImage}); background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.95)), var(--bg-url); background-size: cover; background-position: center;`}
             >
-              <div class="flex flex-col ">
+              <div class="flex flex-col">
                 <p class="text-white text-sm">
                   {formatDate(new Date(post.data.date))}
                 </p>
                 <p class="font-bold text-white">{post.data.title}</p>
-
-                {isRepoEntry(post) && (
-                  <div class="absolute right-3 top-3 external-svg">
-                    <External />
-                  </div>
+                {post.collection === 'repo' && (
+                  <ExternalWrapper />
                 )}
               </div>
             </a>
@@ -73,23 +66,23 @@ function isBlogEntry(entry: BlogOrRepoEntry): entry is BlogEntry {
       }
     </div>
   </MainLayout>
+
+  <style is:inline>
+    .external-svg svg {
+      color: white;
+    }
+    .homepage-recent-blog {
+      box-shadow:
+        0 4px 6px -1px rgba(0, 0, 0, 0.1),
+        0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+
+    .homepage-recent-blog:hover {
+      box-shadow:
+        0 20px 25px -5px rgba(0, 0, 0, 0.1),
+        0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        var(--bg-url);
+    }
+  </style>
 </Layout>
-
-<style is:inline>
-  .external-svg svg {
-    color: white;
-  }
-  .homepage-recent-blog {
-    box-shadow:
-      0 4px 6px -1px rgba(0, 0, 0, 0.1),
-      0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  }
-
-  .homepage-recent-blog:hover {
-    box-shadow:
-      0 20px 25px -5px rgba(0, 0, 0, 0.1),
-      0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-      var(--bg-url);
-  }
-</style>

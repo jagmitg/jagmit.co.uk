@@ -1,76 +1,75 @@
 ---
-import type { GetStaticPathsOptions } from "astro";
-import Layout from "@layouts/Layout.astro";
-import StackoverflowLayout from "@layouts/StackoverflowLayout.astro";
-import stackOverflowData from "../../data/stackoverflow.json";
-import { formatDate } from "@utils/formatDate";
-import External from "@components/icons/External.astro";
-import { PAGINATE_CONTENT } from "@const";
+import type { GetStaticPathsOptions } from 'astro'
+import { getCollection } from 'astro:content'
+import Layout from '@layouts/Layout.astro'
+import StackoverflowLayout from '@layouts/StackoverflowLayout.astro'
+import { formatDate } from '@utils/formatDate'
+import External from '@components/icons/External.astro'
+import { PAGINATE_CONTENT } from '@const'
 
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
-  const questions = Object.values(stackOverflowData.data);
+  const questions = await getCollection('stackoverflow');
 
-  return paginate(questions, {
-    pageSize: PAGINATE_CONTENT,
+  const sortedQuestions = questions.sort((a, b) =>
+    b.data.creation_date.valueOf() - a.data.creation_date.valueOf()
+  );
+  return paginate(sortedQuestions, {
+    pageSize: PAGINATE_CONTENT
   });
 }
 
-const { page } = Astro.props;
-const questions = page.data;
+const { page } = Astro.props
+const questions = page.data
+
 ---
 
 <Layout
-  title={page.lastPage > 1
-    ? `My Stackoverflow Answers - Page ${page.currentPage}`
-    : `My Stackoverflow Answers`}
+	title={page.lastPage > 1
+		? `My Stackoverflow Answers - Page ${page.currentPage}`
+		: 'My Stackoverflow Answers'}
 >
-  <StackoverflowLayout
-    title="My StackOverflow Answers"
-    pagination={{ prev: page.url.prev, next: page.url.next }}
-  >
-    <div class="grid gap-4 grid-cols-1 grid-rows-2 mt-5 lg:grid-cols-2">
-      {
-        questions.map((question: any) => (
-          <>
-            <a
-              href={question.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="p-4 border mb-2 border-neutral-200 relative bg-neutral-50 rounded flex items-center justify-between px-3 py-4 w-full hover:bg-neutral-200 transition-colors"
-            >
-              <div class="questionKeys">{question.key}</div>
+	<StackoverflowLayout
+		title="My StackOverflow Answers"
+		pagination={{ prev: page.url.prev, next: page.url.next }}
+	>
+		<div class="grid gap-4 grid-cols-1 grid-rows-2 mt-5 lg:grid-cols-2">
+			{
+				questions.map((question: any) => (
+					<>
+						<a
+							href={question.data.link}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="p-4 border mb-2 border-neutral-200 relative bg-neutral-50 rounded flex items-center justify-between px-3 py-4 w-full hover:bg-neutral-200 transition-colors"
+						>
+							<div class="flex flex-col">
+								<p class="font-bold text-neutral-900">{question.data.title}</p>
+								<p class="text-neutral-600">
+									{formatDate(new Date(question.data.creation_date))}
+								</p>
+								<p class="text-neutral-600">Tags: {question.data.tags.join(', ')}</p>
+							</div>
+							<div class="text-neutral-700">
+								<External />
+							</div>
+						</a>
+					</>
+				))
+			}
+		</div>
+	</StackoverflowLayout>
+</Layout><style>
+	.questionKeys {
+		position: absolute;
+		top: -20px;
+		right: 0;
+		border-top-right-radius: 33%;
+		border-top-left-radius: 33%;
+		padding: 0 10px;
+		box-shadow: 0 4px 2px -2px gray;
 
-              <div class="flex flex-col">
-                <p class="font-bold text-neutral-900 ">{question.title}</p>
-                <p class="text-neutral-600 ">
-                  {formatDate(question.creation_date)}
-                </p>
-                <p class="text-neutral-600 ">
-                  Tags: {question.tags.join(", ")}
-                </p>
-              </div>
-              <div class="text-neutral-700">
-                <External />
-              </div>
-            </a>
-          </>
-        ))
-      }
-    </div>
-  </StackoverflowLayout>
-</Layout>
-<style>
-  .questionKeys {
-    position: absolute;
-    top: -20px;
-    right: 0;
-    border-top-right-radius: 33%;
-    border-top-left-radius: 33%;
-    padding: 0 10px;
-    box-shadow: 0 4px 2px -2px gray;
-
-    @apply text-neutral-100;
-    @apply font-bold;
-    @apply bg-blue-400;
-  }
+		@apply text-neutral-100;
+		@apply font-bold;
+		@apply bg-blue-400;
+	}
 </style>
