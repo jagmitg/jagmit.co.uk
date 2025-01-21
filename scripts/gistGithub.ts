@@ -46,7 +46,7 @@ async function findMdxFiles(directory: string): Promise<string[]> {
 }
 
 function extractCodeBlocks(content: string): CodeBlock[] {
-	const codeBlockRegex = /```([\w-]+\.(?:json|ts|sh))\n([\s\S]*?)```/g
+	const codeBlockRegex = /```([\w.-]+(?:\.[a-zA-Z]+)?)\n([\s\S]*?)```/g
 	const matches: CodeBlock[] = []
 	let match
 
@@ -103,7 +103,6 @@ async function processFile(filePath: string, token: string): Promise<void> {
 		if (Object.keys(gistFiles).length > 0) {
 			const gistId = await createGistWithMultipleFiles(gistFiles, token)
 
-			// Replace each code block with the same gist ID but different file references
 			for (const block of codeBlocks) {
 				const replacement = `<code
   data-gist-id="${gistId}"
