@@ -7,8 +7,6 @@ tags: [nextjs, google]
 draft: false
 ---
 
-# Building a Simple Shop Display with Next.js and Google Sheets
-
 Last month, my mate rang me up with an interesting challenge. Running a busy shop, he needed a modern click and collect system, but without the faff of complicated inventory management software. He wanted customers to browse products on a tablet in his shop window, select items they want, and place orders for collection. Meanwhile, his team needed to manage stock levels and fulfil orders through familiar tools - no complex systems, just straightforward spreadsheets.
 
 **FYI - i don’t recommend people using this for anything other than a simple usecase! Not very scalable from my perspective.**
@@ -23,6 +21,8 @@ We built a system that works like this:
 - The shop manager receives an instant email notification about new orders
 - The email contains a secure "Fulfill" button
 - Once items are gathered and the button is clicked, stock levels automatically update in the spreadsheet
+
+![Mock of Shop iPad Service](/images/blog/building-simple-shop-display-nextjs-google-sheets/gsheet-nextjs.png)
 
 ## Setting Up the Google Sheet
 
