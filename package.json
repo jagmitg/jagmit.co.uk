@@ -21,6 +21,7 @@
 		"cache": "tsx scripts/generatecache.ts",
 		"repo": "tsx scripts/fetchRepos.ts",
 		"stackoverflow": "tsx scripts/fetchStackoverflow.ts",
+		"gist": "tsx scripts/gistGithub.ts",
 		"builder": "pnpm run repo && pnpm run stackoverflow"
 	},
 	"devDependencies": {
