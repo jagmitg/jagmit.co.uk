@@ -66,7 +66,15 @@ function organizePostsByMonth(posts: Post[]): YearMonthAccumulator {
 }
 
 function sortedMonthKeys(monthData: YearMonthAccumulator): string[] {
-	return Object.keys(monthData).sort((a, b) => b.localeCompare(a))
+	return Object.keys(monthData).sort((a, b) => {
+		const [yearA, monthA] = a.split('-').map(Number)
+		const [yearB, monthB] = b.split('-').map(Number)
+
+		if (yearA !== yearB) {
+			return yearB - yearA
+		}
+		return monthB - monthA
+	})
 }
 
 function getPostUrl(post: Post): string {

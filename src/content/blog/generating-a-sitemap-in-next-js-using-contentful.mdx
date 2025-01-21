@@ -1,0 +1,89 @@
+---
+title: Generating a Sitemap in Next.js Using Contentful
+date: '2024-10-07'
+description: A detailed technical guide explaining how to implement dynamic sitemap generation in Next.js using Contentful's seoMetaData content type for improved SEO management and content control.
+image: /images/blog/generating-a-sitemap-in-next-js-using-contentful/nextjs-contentful.png
+tags: [nextjs, typescript, contentful]
+draft: false
+---
+
+## Overview
+
+The goal of this implementation was to leverage Contentful's `seoMetaData` content type to dynamically generate a sitemap for a Next.js application. By utilising structured metadata from Contentful, we can control which pages appear on the sitemap, manage SEO settings, and ensure accurate canonical links. This approach streamlines the sitemap generation process and provides more flexibility than manually maintaining a sitemap file.
+
+### Key Components in the `seoMetaData` Content Type
+
+The `seoMetaData` content type in Contentful contains several key fields that enable effective SEO management. These fields include:
+
+- **Title**: The meta title for the webpage, used to improve SEO and display on search engine results.
+- **Description**: The meta description to provide a summary of the page’s content.
+- **Keywords**: Relevant keywords associated with the page to improve search indexing.
+- **No Follow (Boolean)**: Determines if search engines should not follow links on this page.
+- **No Index (Boolean)**: Specifies whether the page should be excluded from search engine indexing.
+- **Canonical Link**: A URL generated using the page's slug, ensuring that duplicate content across different URLs is managed effectively by search engines.
+- **Include in Sitemap (Boolean)**: Controls whether the page should appear in the sitemap, providing fine-tuned control over the visibility of content.
+
+## Next.js Application Structure for Sitemap Generation
+
+To implement this solution, the Next.js application uses the following structure:
+
+<code
+	data-gist-id="5f98d2fc7844c40de30853ef2907092a"
+	data-gist-file="order.txt"
+></code>
+
+### Explanation of Files
+
+1. **`sitemap.xml/route.ts`**: This file generates the main sitemap index, containing links to segmented sitemaps. It fetches all the entries from the `seoMetaData` content type and determines how many sitemaps need to be created based on the number of URLs.
+2. **`sitemap.xml/[id]/route.ts`**: Handles the generation of segmented sitemaps. It fetches a subset of URLs to be included in a specific sitemap file, ensuring that each sitemap contains a manageable number of URLs for better search engine processing.
+3. **`client.ts`**: This file configures the Contentful client, enabling communication with the Contentful API to fetch data from the `seoMetaData` content type.
+
+## Implementation Details
+
+### Step 1: Fetching SEO Metadata from Contentful
+
+In the Next.js application, the `seoMetaData` metadata is fetched from Contentful using the Contentful client. The client retrieves entries of the `seoMetaData` content type and processes their fields to determine which pages should be included in the sitemap.
+
+<code
+	data-gist-id="5f98d2fc7844c40de30853ef2907092a"
+	data-gist-file="fetch.ts"
+></code>
+
+### Step 2: Creating the Sitemap Structure
+
+The sitemap generator is structured to first build a sitemap index, listing all segmented sitemaps. Each segment contains a manageable number of URLs, which ensures efficient processing by search engines.
+
+Here’s an example of how the sitemap index might be generated:
+
+<code
+	data-gist-id="5f98d2fc7844c40de30853ef2907092a"
+	data-gist-file="get.ts"
+></code>
+
+### Step 3: Generating Individual Sitemap Segments
+
+Each segmented sitemap retrieves a subset of the total URLs, ensuring that only the URLs marked for inclusion in the sitemap are processed:
+
+<code
+	data-gist-id="5f98d2fc7844c40de30853ef2907092a"
+	data-gist-file="segmented.ts"
+></code>
+
+## Benefits of Using Contentful's SEO Metadata for Sitemap Generation
+
+- **Dynamic Control**: Editors can dynamically adjust which pages should be indexed by search engines by toggling the `sitemap` boolean in Contentful. This eliminates the need for developers to manually update sitemap files.
+- **Accurate Canonical URLs**: Ensures that each page has a proper canonical link, which prevents search engine penalties for duplicate content.
+- **Ease of Maintenance**: By consolidating SEO-related settings within a single content type (`seoMetaData`), managing and updating SEO becomes much simpler.
+
+## Review of Previous Issues and Solutions
+
+Based on previous feedback, several challenges were identified, including issues with generating incorrect URLs due to improper concatenation and using unnecessary custom domain mapping. The following updates were made:
+
+1. **Correct URL Generation**: The sitemap now accurately builds URLs using the `canonical` field, only prefixing them with the site’s base URL if necessary.
+2. **Simplified Domain Logic**: Removed `customDomainMapper`, reducing complexity and improving consistency.
+
+## Conclusion
+
+Integrating Contentful's `seoMetaData` content type with Next.js for dynamic sitemap generation provides a scalable and efficient solution for managing SEO across a website. It enables non-technical content editors to have more control over SEO settings while ensuring that search engines have access to the most up-to-date and accurate sitemap information.
+
+By centralising SEO settings in Contentful and allowing the Next.js application to dynamically generate sitemaps, the process is simplified and made more robust, leading to improved search engine performance and easier maintenance.

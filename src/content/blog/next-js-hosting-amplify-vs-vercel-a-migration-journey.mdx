@@ -1,0 +1,94 @@
+---
+title: Next.js Hosting - Amplify vs Vercel - A Migration Journey
+date: '2025-01-21'
+description: A technical comparison of AWS Amplify versus Vercel for Next.js hosting, examining costs, features, and migration challenges.
+image: /images/blog/next-js-hosting-amplify-vs-vercel-a-migration-journey/aws-vercel.png
+tags: [nextjs, aws]
+draft: false
+---
+
+## Introduction
+
+As organisations evolve their tech stacks, choosing the right hosting platform becomes increasingly crucial. In this piece, I'll share our journey of migrating from a legacy content management system to a modern Next.js application powered by Contentful, and the critical decision between AWS Amplify and Vercel for hosting.
+
+## The Starting Point
+
+Our journey began with a traditional setup: VPS instances on AWS hosting our legacy CMS. While functional, this architecture wasn't optimised for our growing needs, particularly as we moved towards a GraphQL-based content distribution model serving multiple mobile, SaaS applications and websites. We needed a platform that could support our evolution whilst reducing operational costs.
+
+## The Vercel Proposition
+
+Vercel presents an enticing option, particularly given its intimate relationship with Next.js. Their platform has been meticulously crafted to provide an optimal Next.js deployment experience. However, this excellence comes at a price - literally.
+
+Our analysis revealed that Vercel's costs would scale exponentially with our growth. With millions of transactions, page views, and sessions, the financial implications became increasingly concerning. Our current infrastructure costs were already in the hundreds of thousands, making cost optimisation a critical factor in our platform selection. While the technical merits of Vercel's platform are undeniable, the cost structure posed a significant barrier to our scaling ambitions.
+
+## The Amplify Alternative
+
+AWS Amplify emerged as our chosen solution, offering a compelling balance of features and cost-effectiveness. Being an AWS house already, the transition felt natural, especially considering our requirements for enterprise security, SSO integration, sophisticated caching mechanisms, and potential CloudFront distribution channels. The decision wasn't merely about cost savings; it encompassed several crucial factors.
+
+### Cost Efficiency
+
+Amplify's pricing model proved more sustainable for our scale. By leveraging our existing AWS infrastructure, we could achieve significant cost optimisation compared to our VPS setup and Vercel's pricing structure.
+
+### Developer Experience
+
+One of our primary concerns was maintaining developer productivity. Amplify surprised us with its robust developer tooling:
+
+- Seamless integration with various git providers (GitHub, BitBucket, GitLab, CodeCommit)
+- Sophisticated environment management
+- Preview deployments for stakeholder reviews
+- Template-based project initialisation
+
+### Security and Control
+
+The recent release of AWS WAF (Web Application Firewall) support has been a game-changer, providing us with comprehensive control over our web application security. This enterprise-grade security feature demonstrates AWS's commitment to providing robust protection for production applications.
+
+### Serverless Architecture
+
+Our migration strategy included moving away from monolithic architecture towards microservices. AWS serverless capabilities aligned perfectly with this vision, allowing us to maintain our core GraphQL service while deploying auxiliary functions as needed.
+
+## Current Challenges and Limitations
+
+### CloudFront Integration
+
+Amplify Generation 2's use of CloudFront presents some interesting challenges:
+
+- Limited cache control options
+- No direct access to CloudFront distributions
+- Cookie handling complexities affecting caching strategies
+
+### ISR Implementation
+
+A significant limitation currently is the lack of Incremental Static Regeneration support. While promised for early 2025, this affects our content update workflow. Though deployments cost mere pennies, triggering a full build for every content change isn't ideal - it goes against the fundamental purpose of content management systems and their integration with modern web frameworks.
+
+Interestingly, AWS has been collaborating closely with Vercel to ensure their ISR implementation meets the high standards of the Next.js community. This collaborative approach to developing performant applications demonstrates AWS's commitment to the broader Next.js ecosystem.
+
+### Redirect Challenges
+
+One of the most significant hurdles we've encountered is managing our extensive redirect configuration. With approximately 1,700 to 1,900 redirects, we've experienced severe performance issues in the Amplify Console. The redirect management interface becomes nearly unusable, with the page taking upwards of two minutes to load in manage redirect mode, often resulting in browser crashes. Even opening redirects in editor mode requires several minutes of loading time before becoming unresponsive.
+
+This issue appears to stem from the console loading all redirects simultaneously rather than implementing pagination or dynamic loading. AWS has acknowledged this limitation and is actively working on a solution. Their engineering team has prioritised transitioning from the current table view to a more efficient code editor view/component, with an estimated completion timeline of 2-3 weeks.
+
+It's worth noting that such challenges aren't unique to Amplify. During our evaluation, we discovered that Vercel imposes a hard limit of 1,024 redirects on their platform. For applications requiring more extensive redirect configurations, Vercel recommends implementing a custom solution using their Middleware feature. This limitation actually influenced our platform decision, as our redirect requirements significantly exceeded this threshold.
+
+## Feature Gaps
+
+We're actively working with the AWS team on several desired features:
+
+- Configuration file support for rewrites and redirects
+- Enhanced environment variable management
+- More granular cache control
+- CLI features for cache invalidation
+
+## Looking Forward
+
+The relationship between Vercel and Next.js remains symbiotic, with Vercel often leading in feature implementation. However, Amplify is rapidly evolving within the AWS ecosystem. The recent addition of WAF support demonstrates AWS's commitment to enterprise-ready features.
+
+![Web Application Firewall](/images/blog/next-js-hosting-amplify-vs-vercel-a-migration-journey/waf.png)
+
+## Conclusion
+
+Our decision to choose Amplify over Vercel wasn't just about cost savings - it was about finding a platform that could grow with us while maintaining operational efficiency. While Amplify has its limitations and is still catching up in some areas, its integration with the broader AWS ecosystem and more sustainable cost model made it the right choice for our use case.
+
+As we await promised features like ISR support and enhanced cache management, our experience suggests that Amplify is maturing into a robust platform for Next.js hosting at scale. For teams already invested in the AWS ecosystem, Amplify presents a compelling alternative to Vercel, despite its current limitations.
+
+Remember, though, that hosting decisions should always align with your specific needs, scale, and technical requirements. What worked for us might not be the optimal solution for every team.

@@ -68,8 +68,8 @@ const index = posts.findIndex(
 							<ol class="mt-4">
 								{indices.map(({ slug, text, depth }) => (
 									<li style={{ marginLeft: `${(depth - 1) * 12}px` }}>
-										<a href={`#${slug}`} class="text-sm hover:text-blue-800">
-											&#9758; {text}
+										<a href={`#${slug}`} class="text-xs hover:text-blue-800">
+											&#8250; {text}
 										</a>
 									</li>
 								))}
