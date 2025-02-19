@@ -1,0 +1,71 @@
+---
+title: Managing Locales in Next.js Using Contentful
+date: '2024-08-20'
+description: Dynamically downloading locales for server side rendering.
+image: /images/blog/managing-locales-nextjs-using-contentful/logo.png
+tags: [typescript]
+draft: false
+---
+
+When building a Next.js application that integrates with Contentful, one of the key requirements in our current project is to define the available locales. Typically, developers might hardcode these locales in an environment file, but this approach can lead to unnecessary maintenance and defeats the purpose of using a content management system (CMS) like Contentful, which should handle such dynamic configurations.
+
+In this article, I’ll explain how I approached the problem of defining locales dynamically, the challenges faced with the Contentful CLI, and how I ultimately landed on a Node.js script that fetches and processes locale data directly from Contentful.
+
+## Problem Statement
+
+The goal was simple: dynamically define locales for the Next.js application by fetching them directly from Contentful. Hardcoding locales in an `.env` file is impractical, especially when the CMS already manages these configurations. A CMS should allow for easy updates without needing code changes, and hardcoding values goes against this philosophy. Therefore, my solution focused on leveraging Contentful’s ability to dynamically control locales.
+
+## Initial Approach: Using Contentful CLI
+
+The Contentful CLI offers a way to export content and settings from a space, which seems like a straightforward method to retrieve locales. Using the following command, I attempted to extract only the locales:
+
+<code
+	data-gist-id="45f7f46100e799bd88031d7650ffbd17"
+	data-gist-file="file.sh"
+></code>
+
+## Issues Faced with the Contentful CLI
+
+While the CLI can export space data, it has several drawbacks when you only need locale information:
+
+1. **Lack of Granular Control**: Even with flags like `--skip-content` and `--skip-content-model`, the exported file contains more information than just locales, resulting in unnecessary data when you only want locales.
+2. **Cumbersome Testing**: Adjusting various CLI flags often results in inconsistent outputs, which complicates things when you only need a small subset of your data.
+
+The CLI’s focus on exporting entire content models or full content often makes it too heavyweight for small, frequent tasks like retrieving locales.
+
+## A Better Solution: Using a Node.js Script to Fetch and Process Locales
+
+Instead of continuing with the CLI, I wrote a Node.js script that directly interacts with the Contentful Management API. This script not only fetches the locales but also applies some processing—such as mapping certain locale codes to match external systems—and writes the final JSON to specified files. Here’s the full script:
+
+<code
+	data-gist-id="45f7f46100e799bd88031d7650ffbd17"
+	data-gist-file="locales.mjs"
+></code>
+
+## How the Script Works
+
+1. **Environment Variables**: The script reads environment variables (`CONTENTFUL_SPACE_ID`, `CONTENTFUL_API_TOKEN`, `CONTENTFUL_ENVIRONMENT`) from a `.env` file (thanks to dotenv). Make sure these values are set correctly.
+2. **Locale Fetching**: It constructs the Contentful Management API URL based on the provided space ID and environment, then fetches the locale data.
+3. **Processing**:
+
+- A `processData` function checks the structure of the returned JSON to ensure it contains the expected `items` array.
+- It maps over each locale item, applying `LOCALE_OVERRIDES` if needed. This can be useful for aligning Contentful locale codes with external or legacy systems (e.g., matching `en-GB` to `en_US`).
+
+4. Saving Files: Finally, it writes the processed JSON to two files:
+
+- `src/locales.json`
+- `functions/src/locales.json`
+
+You can adjust these output paths as needed for your project structure.
+
+## Why This Approach is Better
+
+1. **Dynamic Control**: By directly interfacing with the Contentful Management API, we avoid the need to hardcode locales. Changes to locales in Contentful automatically reflect in the application without requiring code updates.
+2. **Cleaner Output**: The API call returns only the locale data you need, unlike the CLI which can produce large, verbose JSON files containing unnecessary content.
+3. **Easier Testing & Maintenance**: This script is self-contained. You can quickly run it, verify the output JSON, and adapt it to any changes in the API response format.
+
+## Conclusion
+
+While the Contentful CLI is powerful for large-scale exports, it’s often too cumbersome for simple tasks like retrieving and processing locales. Writing a small Node.js script that directly interfaces with Contentful’s Management API provides a cleaner, more dynamic approach. By adopting this strategy, you can streamline the localization setup for your Next.js application, ensuring that updates to locales are fully managed in the CMS with minimal code changes required.
+
+This method not only keeps your codebase free of hardcoded values but also lets you leverage Contentful’s dynamic capabilities as intended—making your Next.js project more maintainable and future-proof.

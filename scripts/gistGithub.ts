@@ -4,10 +4,6 @@ import * as dotenv from 'dotenv'
 
 dotenv.config()
 
-interface GistFile {
-	content: string
-}
-
 interface GistResponse {
 	id: string
 	files: {
