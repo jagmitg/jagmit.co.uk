@@ -13,3 +13,5 @@ service_account_secret.json
 .githooks/*
 !/.githooks/pre-commit
 .DS_Store
+/public/images/blog/.DS_Store
+public/images/blog/.DS_Store
