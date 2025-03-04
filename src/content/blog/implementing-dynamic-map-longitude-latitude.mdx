@@ -1,0 +1,119 @@
+---
+title: Implementing a Dynamic Office Map Using Latitude and Longitude
+date: '2024-11-07'
+description: This blog post details how to create an interactive office map using a flat SVG, coordinate conversion algorithms, and Contentful integration to dynamically manage and adjust office pin placements.
+image: /images/blog/implementing-dynamic-map-longitude-latitude/globe.png
+tags: [contentful, nextjs, typescript]
+draft: false
+---
+
+In this technical article, we will explore the implementation of a dynamic office map that accurately positions office locations on a flat SVG map using latitude and longitude coordinates. This approach allows users to visualise office locations across different continents, leveraging data from Contentful, a headless CMS, to ensure precise placement. This article will detail the algorithms used, discuss challenges with flat map projections, and explain how Contentful integration plays a crucial role in fine-tuning the map.
+
+### Problem Statement
+
+When representing geographic locations on a flat map, there is an inherent distortion. Traditional latitude and longitude values do not always correlate directly to positions on a flat SVG map, especially when different projections (like Mercator) are used. Therefore, simply plotting points based on coordinates can result in inaccurate placements. This issue becomes even more pronounced when dealing with a global map that needs to be visually accurate.
+
+The goal was to create an interactive map that places markers (pins) on a flat SVG map accurately, representing real-world office locations around the world. The challenge lay in adjusting for map distortions and ensuring that users could interact with these markers to see additional details about each office, such as the address, phone number, and a link to the location on Google Maps.
+
+### Solution Overview
+
+To solve this problem, the implementation utilised:
+
+- **SVG Maps**: A flat SVG map of the world that serves as the canvas for placing markers.
+- **Algorithms to Translate Latitude/Longitude to SVG Coordinates**: An algorithm to calculate the appropriate x and y positions on the SVG map.
+- **Contentful CMS Integration**: Leveraging Contentful to dynamically adjust and store the latitude and longitude of each office, as well as to make minor adjustments to the pin positions.
+
+### Algorithm: Translating Latitude and Longitude to SVG Coordinates
+
+The core of the solution was an algorithm to convert geographic coordinates (latitude and longitude) into x and y positions on a flat SVG map. However, due to the inherent distortion in flat maps, this translation is not perfect.
+
+#### Step-by-Step Breakdown:
+
+1. **Longitude Translation:**
+   - Longitude values range from -180° (west) to 180° (east).
+   - To convert this to an x position on the map, we normalised the longitude to fit the width of the SVG:
+
+<code
+	data-gist-id="8dd54f3074dc5f3a1c398bb5918294a3"
+	data-gist-file="long.ts"
+></code>
+
+- This formula maps -180° to the leftmost point of the SVG and 180° to the rightmost point.
+
+2. **Latitude Translation:**
+   - Latitude values range from -90° (south) to 90° (north). 
+   - For a flat map, the formula must account for the inverted y-axis in SVG coordinates:
+
+<code
+	data-gist-id="8dd54f3074dc5f3a1c398bb5918294a3"
+	data-gist-file="lat.ts"
+></code>
+
+- This approach places the equator at the middle of the map, with 90° being the top.
+
+3. **Adjustments for Distortion:**
+   - Because flat maps distort areas closer to the poles, this formula can lead to inaccuracies.
+   - To address this, we added an option for manual offsets:
+
+<code
+	data-gist-id="8dd54f3074dc5f3a1c398bb5918294a3"
+	data-gist-file="adjusted.ts"
+></code>
+
+- These offsets allowed for fine-tuning, particularly useful for pin placements that needed to be visually accurate, compensating for map distortions.
+
+### Using Contentful for Precise Adjustments
+
+One of the key challenges was ensuring that office markers appeared correctly despite the distortions of a flat map. This issue necessitated minor manual adjustments. Instead of hardcoding these adjustments, we chose to store them dynamically in Contentful.
+
+#### Why Contentful?
+
+1. **Dynamic Adjustments Without Code Changes:**
+   - Using Contentful, a headless CMS, allowed us to store not only the latitude and longitude of each office but also fine-tuning offsets.
+   - Content editors could adjust these values directly in Contentful without requiring a code deployment, making the system more flexible and responsive to real-world adjustments.
+2. **Centralised Management:**
+   - All office details, including addresses, phone numbers, and Google Maps links, were centrally managed in Contentful.
+   - This integration ensured that updates could be managed without having to redeploy the application, making content management seamless.
+3. **Flexible Content Model:**
+   - The content model included fields for the exact latitude and longitude, as well as additional optional `offsetX` and `offsetY` values.
+   - This flexibility was crucial for manually tweaking pin positions when geographic translation didn’t align perfectly with the SVG map.
+
+### Implementation: How It Works in Code
+
+1. **SVG Map Component (`MapSvg.tsx`):** The `MapSvg` component served as the foundation, allowing dynamic insertion of pins. It leveraged properties passed to it to render map markers accurately:
+
+<code
+	data-gist-id="8dd54f3074dc5f3a1c398bb5918294a3"
+	data-gist-file="map.tsx"
+></code>
+
+2. **Pin Component (`MapPin.tsx`):** Each pin’s position was calculated using the translation formulas mentioned earlier. Adjustments were made dynamically based on offsets fetched from Contentful:
+
+<code
+	data-gist-id="8dd54f3074dc5f3a1c398bb5918294a3"
+	data-gist-file="pin.tsx"
+></code>
+
+3. **Main Application Integration:**
+
+<code
+	data-gist-id="8dd54f3074dc5f3a1c398bb5918294a3"
+	data-gist-file="main_app.tsx"
+></code>
+
+### Challenges Faced
+
+1. **Handling Map Distortions:**
+   - Flat maps distort certain areas, especially near the poles. As a result, directly translating latitude and longitude coordinates often placed markers incorrectly.
+   - Our solution involved manual offset adjustments, which worked well to counter these effects but required a bit of manual intervention.
+2. **Managing Flexibility vs. Precision:**
+   - Using Contentful allowed dynamic adjustments, but it also meant that managing many manual tweaks across multiple locations could be cumbersome.
+   - To counter this, we provided simple controls in Contentful to tweak offsets, making it easy for content editors to refine pin placements without needing technical expertise.
+
+### Conclusion
+
+The implementation of this dynamic office map provided a robust way to visualise global office locations using a flat SVG map. By leveraging algorithms to convert latitude and longitude, combined with the flexibility of Contentful for precise adjustments, we created a solution that is both scalable and easy to maintain.
+
+This approach highlights the importance of combining programmatic logic with dynamic content management. While the algorithms provide a strong foundation for translating geographic data, the ability to fine-tune and adjust in real-time via Contentful ensures accuracy and ease of management.
+
+The end result is a clean, interactive map that accurately displays office locations worldwide, allowing users to see and interact with each office through a simple and intuitive interface.
